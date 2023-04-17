@@ -1,19 +1,19 @@
 const projectsData = [
   {
-    title: 'A Search Engine',
-    description: `What if you could look up any information in the world? Webpages, images, videos
-    and more. Google has many features to help you find exactly what you're looking
-    for.`,
-    imgSrc: '/static/images/google.png',
+    title: 'Ferris Wheel',
+    description: `Going around the world, taking picture, and writing about them`,
+    imgSrc: '/static/images/FerrisWheel.png',
     href: 'https://www.google.com',
   },
   {
     title: 'Gravity',
-    description: `Imagine being able to travel back in time or to the future. Simple turn the knob
-    to the desired date and press "Go". No more worrying about lost keys or
-    forgotten headphones with this simple yet affordable solution.`,
+    description: `Jumping as high as I can`,
     imgSrc: '/static/images/HighJump.jpg',
     href: '/blog/the-time-machine',
+  },
+  {
+    title: 'Ambient',
+    description: `I make music`,
   },
 ]
 
