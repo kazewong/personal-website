@@ -1,16 +1,14 @@
 ---
-name: Tails Azimuth
-avatar: /static/images/avatar.png
-occupation: Professor of Atmospheric Science
-company: Stanford University
-email: address@yoursite.com
-twitter: https://twitter.com/Twitter
-linkedin: https://www.linkedin.com
-github: https://github.com
+name: Kaze W. K. Wong
+avatar: /static/images/portrait.jpg
+occupation: Flatiron research fellow
+company: Flatiron Institute
+email: kazewong.physics@gmail.com
+twitter: https://twitter.com/physicskaze
+linkedin: https://www.linkedin.com/in/kazewkwong/
+github: https://github.com/kazewong
 ---
 
-Tails Azimuth is a professor of atmospheric sciences at the Stanford AI Lab. His research interests includes complexity modelling of tailwinds, headwinds and crosswinds.
+I am a research fellow at the Flatiron Institute, mostly spending my time **building codes** to analyze **gravitational-wave** data and studying **black holes**. I also spend a significant amount of time trying to figure out how to use **machine-learning** techniques to answer science questions in **robust and interpretable ways**.
 
-He leads the clean energy group which develops 3D air pollution-climate models, writes differential equation solvers, and manufactures titanium plated air ballons. In his free time he bakes raspberry pi.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate.
+Feel free to use whatever materials you find on this site, but I will greatly appreciate it if you can credit me for the material.
