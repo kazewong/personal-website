@@ -21,13 +21,13 @@ export default function Code({ posts, initialDisplayPosts, pagination }) {
   return (
     <>
       <PageSEO title={`Code - ${siteMetadata.author}`} description={siteMetadata.description} />
-      <GalleryLayout
+      {/* <GalleryLayout
         posts={posts}
         initialDisplayPosts={initialDisplayPosts}
         pagination={pagination}
         title="Code"
         description="Code, demo, and tutorials"
-      />
+      /> */}
     </>
   )
 }
