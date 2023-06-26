@@ -14,7 +14,17 @@ export default function Layout({
 }) {
   return (
     <html lang="en">
-      <body className={oswald.className}>{children}</body>
+
+      <body className={oswald.className}>
+      <header>
+
+      </header>
+        {children}
+      <footer>
+
+      </footer>
+      </body>
+      
     </html>
   )
 }
