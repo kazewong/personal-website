@@ -1,3 +1,4 @@
+import { NavBar } from '@/ui/navbar'
 import './globals.css'
 import { Oswald } from 'next/font/google'
 
@@ -15,7 +16,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={oswald.className}>{children}</body>
+      
+      <body className={oswald.className}>
+        <header>
+          <NavBar />
+        </header>
+        <main>
+          {children}
+        </main>        
+        <footer>
+
+        </footer>  
+      </body>
     </html>
   )
 }

@@ -13,18 +13,10 @@ export default function Layout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
 
-      <body className={oswald.className}>
-      <header>
-
-      </header>
+      <section className={oswald.className}>
         {children}
-      <footer>
-
-      </footer>
-      </body>
+      </section>
       
-    </html>
   )
 }
