@@ -15,18 +15,16 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="[color-scheme:dark]">
       
       <body className={oswald.className}>
-        <header>
           <NavBar />
-        </header>
-        <main>
+        <div>
           {children}
-        </main>        
-        <footer>
+        </div>        
+        <div>
 
-        </footer>  
+        </div>  
       </body>
     </html>
   )
