@@ -1,13 +1,10 @@
-import Image from 'next/image'
-import Link from 'next/link'
+import { FigureCard } from './components/figureCard'
 
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <Link href="/about">
-        About
-      </Link>
+      <FigureCard title='Kaze Wong' description='Example' image='/../public/static/images/portrait.jpg'/>
     </main>
   )
 }
