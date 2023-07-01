@@ -11,19 +11,19 @@ function getBlog() {
 export default function Home() {
   const allPostsData = getBlog();
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between w-1/1">
-        <div className="py-16 rounded-[25px] flex-col place-content-center w-3/5">
-            <div className="flex place-content-center">
-              <Image src='/../public/static/images/portrait.jpg' alt="" width={147} height={147} className="rounded-full" priority={true} />
-            </div>
-            <div className="flex-row">
+    <main className="flex flex-col items-center h-screen">
+        <div className="lg:flex py-16 rounded-[25px] w-3/5">
+          <div className="flex justify-center">
+            <Image src='/../public/static/images/portrait.jpg' alt="" width={147} height={147} className="rounded-full" priority={true} />
+          </div>
+            {/* <div className="flex-row">
 
-            </div>
+            </div> */}
             <div className="px-4">
-                <div className="text-black text-4xl ">
+                <div className="text-black text-4xl justify-center flex lg:justify-start">
                   Kaze
                 </div>
-                <div className="text-black text-">
+                <div className="text-black text-xl flex justify-start">
                   Hi
                 </div>
             </div>
