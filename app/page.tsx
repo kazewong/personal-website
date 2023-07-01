@@ -17,8 +17,10 @@ export default function Home() {
             <div className="justify-center flex">
               <Image src='/../public/static/images/portrait.jpg' alt="" width={147} height={147} className="rounded-full"/>
             </div>
-            <div className="text-black text-3xl justify-center flex lg:justify-start">
-                  Kaze W. K Wong
+            <div className="justify-center flex-col">
+                  <p className="text-black text-3xl text-center">Kaze W. K Wong</p>
+                  <p className="text-gray-500 text-base text-center">Flatiron research fellow</p>
+                  <p className="text-gray-500 text-base text-center">Flatiron institute</p>
             </div>
           </div>
             {/* <div className="flex-row">
