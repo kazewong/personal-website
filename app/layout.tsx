@@ -1,6 +1,7 @@
-import { NavBar } from '@/ui/navbar'
+import { NavBar } from '@/app/components/navbar'
 import './globals.css'
 import { Oswald } from 'next/font/google'
+import { Providers } from '@/app/components/themeProvider'
 
 const oswald = Oswald({ subsets: ['latin'] })
 
@@ -18,13 +19,15 @@ export default function RootLayout({
     <html lang="en" className="[color-scheme:dark]">
       
       <body className={oswald.className}>
+        <Providers>
           <NavBar />
         <div>
           {children}
         </div>        
         <div>
 
-        </div>  
+        </div> 
+        </Providers>
       </body>
     </html>
   )
