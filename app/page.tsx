@@ -1,6 +1,6 @@
 import { getSortedPostsData } from './blog/contentParser';
-import { BlogPostPreview } from './components/blogPost';
-import { FigureCard } from './components/figureCard'
+import Link from 'next/link'
+
 import Image from 'next/image'
 
 function getBlog() {
@@ -36,17 +36,16 @@ export default function Home() {
                 <p className="text-gray-500 py-3 text-base">
                 Feel free to use whatever materials you find on this site, and I will greatly appreciate it if you can credit me for the material.
                 </p>
-                <p className="text-gray-500 py-3 text-base">Link to CV: https://kazewong.github.io/CV/</p>
-
-                <p className="text-gray-500 py-3 text-base">Publication profile: https://inspirehep.net/authors/1789361?ui-citation-summary=true</p>
+                <p className="text-gray-500 py-3 text-base">Link to CV: <Link href="https://kazewong.github.io/CV" className='text-cyan-500 underline'>https://kazewong.github.io/CV</Link></p>
+                <p className="text-gray-500 py-3 text-base">Publication profile: <Link href="https://inspirehep.net/authors/1789361?ui-citation-summary=true" className='text-cyan-500  underline'>https://inspirehep.net/authors/1789361?ui-citation-summary=true</Link></p>
                 </div>
             </div>
         </div>
-      <ul className="">
+      {/* <ul className="">
           {allPostsData.map(({ id, data}) => (
             <BlogPostPreview key={id} {...data} />
           ))}
-        </ul>
+        </ul> */}
     </main>
   )
 }
