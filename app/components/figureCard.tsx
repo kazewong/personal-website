@@ -8,11 +8,14 @@ type FigureCardProps = {
 
 export function FigureCard(props: FigureCardProps): JSX.Element {
     return (
-        <div className=" px-[61px] py-[52px]  rounded-[25px] justify-start items-start gap-[75px] inline-flex">
-        <div className=" bg-zinc-300 rounded-full">
-            <Image src={props.image} alt="Kaze Wong" width={147} height={147} className="rounded-full" priority={true} />
-        </div>
-        <div className="text-black text-[12px] font-normal">{props.description}</div>
+        <div className="py-16 rounded-[25px] flex-col w-3/5">
+            <div className="flex place-content-center">
+            <Image src={props.image} alt="" width={147} height={147} className="rounded-full" priority={true} />
+            </div>
+            <div className="px-4">
+                <div className="text-black text-4xl ">{props.title}</div>
+                <div className="text-black text-">{props.description}</div>
+            </div>
         </div>
     );
 }

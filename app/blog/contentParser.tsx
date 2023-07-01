@@ -2,9 +2,16 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 
-const postsDirectory = path.join(process.cwd(), 'posts');
+const postsDirectory = path.join(process.cwd(), 'app/blog/posts');
 
-export function getSortedPostsData() {
+export type PostMetaData = {
+    id: string;
+    title: string;
+    date: string;
+    tags: string[];
+}
+
+export function getSortedPostsData(): {id: string, data: PostMetaData}[] {
   // Get file names under /posts
   const fileNames = fs.readdirSync(postsDirectory);
   const allPostsData = fileNames.map((fileName) => {
@@ -17,16 +24,16 @@ export function getSortedPostsData() {
 
     // Use gray-matter to parse the post metadata section
     const matterResult = matter(fileContents);
-
+    const data = matterResult.data as PostMetaData;
     // Combine the data with the id
     return {
       id,
-      ...matterResult.data,
+      data,
     };
   });
   // Sort posts by date
   return allPostsData.sort((a, b) => {
-    if (a.date < b.date) {
+    if (a.data.date < b.data.date) {
       return 1;
     } else {
       return -1;

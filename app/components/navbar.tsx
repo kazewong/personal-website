@@ -19,8 +19,8 @@ export function NavBar() {
           <Link href="/outreach" className="flex items-center justify-center">
               Outreach
           </Link>
-          <Link href="/projects" className="flex items-center justify-center">
-              Project
+          <Link href="/project" className="flex items-center justify-center">
+              Projects
           </Link>
 
         </div>
