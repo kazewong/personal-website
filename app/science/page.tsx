@@ -1,7 +1,7 @@
 import '../globals.css'
 export default function Science() {
     return (
-            <main className="flex min-h-screen flex-col items-center justify-between p-24">
+            <main className="lg:flex py-16 w-[640px] lg:w-[840px]">
 
 
             <div>

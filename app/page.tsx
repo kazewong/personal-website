@@ -12,7 +12,7 @@ export default function Home() {
   const allPostsData = getBlog();
   return (
     <main className="flex flex-col items-center h-screen">
-        <div className="lg:flex py-16 rounded-[25px] w-[640px] lg:w-[840px]">
+        <div className="lg:flex py-16 w-[640px] lg:w-[840px]">
           <div className="flex-col justify-center">
             <div className="justify-center flex">
               <Image src='/../public/static/images/portrait.jpg' alt="" width={147} height={147} className="rounded-full"/>
