@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base{
+  body {
+      @apply dark:bg-gray-800 bg-white
+  }
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -13,19 +19,16 @@
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
+    --text-color: 0, 0, 0;
   }
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: var(--background-end-rgb)
 }
 
 div {
   font: oswald;
+  color: rgb(var(--text-color));
 }

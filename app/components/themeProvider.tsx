@@ -7,7 +7,7 @@ export function Providers({
   }: {
     children: React.ReactNode
   }) {
-  return <ThemeProvider>{children}</ThemeProvider>
+  return <ThemeProvider attribute="class">{children}</ThemeProvider>
 }
 
 export function ModeToggle() {
@@ -15,7 +15,7 @@ export function ModeToggle() {
   
     return (
       <button
-        onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+        onClick={() => setTheme(theme == "light" ? "dark" : "light")}
         className="border rounded-md w-6 h-6 flex items-center justify-center">
         <span className="sr-only">Toggle mode</span>
         {theme !== "dark" ? (
