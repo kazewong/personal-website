@@ -13,7 +13,7 @@ export function NavBar() {
           <Link href="/science" className="flex items-center justify-center">
               Science
           </Link>
-          <Link href="/code" className="flex items-center justify-center">
+          {/* <Link href="/code" className="flex items-center justify-center">
               Code
           </Link>
           <Link href="/outreach" className="flex items-center justify-center">
@@ -21,7 +21,7 @@ export function NavBar() {
           </Link>
           <Link href="/project" className="flex items-center justify-center">
               Projects
-          </Link>
+          </Link> */}
 
         </div>
     </nav>
