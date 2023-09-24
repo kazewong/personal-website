@@ -1,5 +1,6 @@
 
 import {PostMetaData} from '@/app/blog/contentParser';
+import { useState } from 'react';
 
 export function BlogPostPreview(metadata: PostMetaData){
 
