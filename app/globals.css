@@ -19,16 +19,21 @@
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
-    --text-color: 0, 0, 0;
+    --text-color: 160, 160, 160;
   }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
+  color: rgb(var(--text-color));
   background: var(--background-end-rgb)
 }
 
 div {
+  font: oswald;
+  color: rgb(var(--text-color));
+}
+
+p {
   font: oswald;
   color: rgb(var(--text-color));
 }
