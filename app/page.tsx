@@ -15,7 +15,7 @@ export default function Home() {
         <div className="lg:flex py-16 w-[640px] lg:w-[840px]">
           <div className="flex-col justify-center">
             <div className="justify-center flex">
-              <Image src='/public/static/images/portrait.jpg' alt="" width={147} height={147} className="rounded-full"/>
+              <Image src='/static/images/portrait.jpg' alt="" width={147} height={147} className="rounded-full"/>
             </div>
             <div className="justify-center flex-col">
                   <p className="text-3xl text-center">Kaze W. K Wong</p>
