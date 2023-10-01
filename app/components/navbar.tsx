@@ -24,22 +24,18 @@ export function MyNavBar() {
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
-
-        <NavbarItem>
-          <Link href="/" color="foreground">
-            Home
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link href="/science" color="foreground">
-              Science
-          </Link>
-        </NavbarItem>
-        {/* <NavbarItem>
-          <Link color="foreground" href="#">
-            Integrations
-          </Link>
-        </NavbarItem> */}
+      {menuItems.map((item, index) => (
+          <NavbarItem key={`${item}-${index}`}>
+            <Link
+            color="foreground"
+              className="w-full"
+              href={menuLinks[index]}
+              size="lg"
+            >
+            {item}
+            </Link>
+          </NavbarItem>
+        ))}
       </NavbarContent>
       <NavbarContent justify="end">
         <NavbarItem>
@@ -47,21 +43,21 @@ export function MyNavBar() {
         </NavbarItem>
       </NavbarContent>
       <NavbarMenu>
-            {menuItems.map((item, index) => (
-              <NavbarMenuItem key={`${item}-${index}`}>
-                <Link
-                  color={
-                    index === 2 ? "primary" : index === menuItems.length - 1 ? "danger" : "foreground"
-                  }
-                  className="w-full"
-                  href={menuLinks[index]}
-                  size="lg"
-                >
-                  {item}
-                </Link>
-              </NavbarMenuItem>
-            ))}
-          </NavbarMenu>
+        {menuItems.map((item, index) => (
+          <NavbarMenuItem key={`${item}-${index}`}>
+            <Link
+              color={
+                index === 2 ? "primary" : index === menuItems.length - 1 ? "danger" : "foreground"
+              }
+              className="w-full"
+              href={menuLinks[index]}
+              size="lg"
+            >
+              {item}
+            </Link>
+          </NavbarMenuItem>
+        ))}
+        </NavbarMenu>
     </Navbar>
   )
 }
