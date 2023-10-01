@@ -7,7 +7,8 @@ export function MyNavBar() {
 
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
-  const menuItems= ["Home", "Code", "Blog"]
+  const menuItems= ["Home", "Science", "Code", "Blog"]
+  const menuLinks= ["/", "science", "/code", "/blog"]
 
   return (
 
@@ -53,7 +54,7 @@ export function MyNavBar() {
                     index === 2 ? "primary" : index === menuItems.length - 1 ? "danger" : "foreground"
                   }
                   className="w-full"
-                  href="#"
+                  href={menuLinks[index]}
                   size="lg"
                 >
                   {item}
