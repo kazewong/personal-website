@@ -1,7 +1,7 @@
-import { NavBar } from '@/app/components/navbar'
+import { MyNavBar } from '@/app/components/navbar'
 import './globals.css'
 import { Oswald } from 'next/font/google'
-import { Providers } from '@/app/components/themeProvider'
+import { Providers } from '@/app/provider'
 
 const oswald = Oswald({ subsets: ['latin'] })
 
@@ -16,17 +16,12 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="[color-scheme:dark]">
+    <html lang="en" className="dark">
       
       <body className={oswald.className}>
         <Providers>
-          <NavBar />
-        <div>
+          <MyNavBar />
           {children}
-        </div>        
-        <div>
-
-        </div> 
         </Providers>
       </body>
     </html>
