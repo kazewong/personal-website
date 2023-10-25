@@ -13,7 +13,7 @@ export function MyNavBar() {
   return (
 
     <Navbar onMenuOpenChange={setIsMenuOpen}>
-      <NavbarContent>
+      <NavbarContent> 
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           className="sm:hidden"
