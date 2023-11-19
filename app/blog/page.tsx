@@ -1,5 +1,10 @@
 import Head from 'next/head';
+import { getSortedPostsData } from './contentParser';
 
+function getBlog() {
+	const allPostsData = getSortedPostsData();
+	return allPostsData;
+  }
 
 export default function Blog() {
   return (

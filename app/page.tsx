@@ -1,15 +1,11 @@
-import { getSortedPostsData } from './blog/contentParser';
 import Link from 'next/link'
 
 import Image from 'next/image'
 
-function getBlog() {
-  const allPostsData = getSortedPostsData();
-  return allPostsData;
-}
+
 
 export default function Home() {
-  const allPostsData = getBlog();
+  // const allPostsData = getBlog();
   return (
     <main className="flex flex-col items-center h-screen">
         <div className="lg:flex py-16 w-full lg:w-[840px]">
