@@ -15,9 +15,7 @@ export default function Blog() {
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       {allPostsData.map((post, index) => (
           <div key={index}>
-            {/* Replace this with the actual properties of the post object */}
-            <h2>{post.data.title}</h2>
-            <p>{post.data.tags}</p>
+            <BlogPostPreview {...post.data} />
           </div>
         ))}
     </main>

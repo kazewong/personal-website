@@ -4,10 +4,8 @@ export default function Layout({
   children: React.ReactNode
 }) {
   return (
-
       <section>
         {children}
       </section>
-      
   )
 }
