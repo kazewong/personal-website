@@ -9,6 +9,7 @@ export type PostMetaData = {
     title: string;
     date: string;
     tags: string[];
+    shortDescription: string;
 }
 
 export function getSortedPostsData(): {id: string, data: PostMetaData}[] {
