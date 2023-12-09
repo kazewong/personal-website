@@ -14,21 +14,23 @@ export type PostMetaData = {
     shortDescription: string;
 }
 
-export default function BlogPost( postData: PostMetaData ){
+export default async function BlogPost({params}: {params: {slug: string}}) {
+    const postData = await getPostData(params.slug);
+    
     return (
         <div>
-            {postData.title}
+            {postData.matterResult.data.title}
             <br />
             {postData.id}
             <br />
-            {postData.date}
+            {postData.matterResult.data.date}
             <br />
-            {/* <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} /> */}
+            <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
         </div>
     )
 }
 
-export function getSortedPostsIDs(): {params: {id: string}}[] {
+function getSortedPostsIDs(): {params: {id: string}}[] {
     const fileNames = fs.readdirSync(postsDirectory);
 
     return fileNames.map((fileName) => {
@@ -40,12 +42,13 @@ export function getSortedPostsIDs(): {params: {id: string}}[] {
     });
 }
 
-export async function getPostData(id: string){
+async function getPostData(id: string){
     const fullPath = path.join(postsDirectory, `${id}.md`);
     const fileContents = fs.readFileSync(fullPath, 'utf8');
 
     // Use gray-matter to parse the post metadata section
     const matterResult = matter(fileContents);
+    const metadata = matterResult.data as PostMetaData;
 
     // Use remark to convert markdown into HTML string
     const processedContent = await remark()
@@ -57,16 +60,11 @@ export async function getPostData(id: string){
     return {
     id,
     contentHtml,
-    ...matterResult.data,
+    matterResult,
     };
-
 }
 
 export async function generateStaticParams() {
-  return getSortedPostsIDs()
+  const result = getSortedPostsIDs();
+  return result
 }
-
-export async function getPosts(params: PostMetaData) {
-    const postData = await getPostData(params.id);
-    return postData
-  }
