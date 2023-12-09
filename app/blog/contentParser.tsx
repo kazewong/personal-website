@@ -26,10 +26,13 @@ export function getSortedPostsData(): {id: string, data: PostMetaData}[] {
     // Use gray-matter to parse the post metadata section
     const matterResult = matter(fileContents);
     const data = matterResult.data as PostMetaData;
+    const content = matterResult.content;
+    data.id = id;
     // Combine the data with the id
     return {
       id,
       data,
+      content
     };
   });
   // Sort posts by date
