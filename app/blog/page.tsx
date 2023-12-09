@@ -12,13 +12,13 @@ export default function Blog() {
 
   return (
     <div>
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      {allPostsData.map((post, index) => (
+      <main className="flex min-h-screen flex-col items-center justify-between p-24">
+        {allPostsData.map((post, index) => (
           <div key={index}>
             <BlogPostPreview {...post.data} />
           </div>
         ))}
-    </main>
+      </main>
     </div>
   )
 }

@@ -1,17 +1,16 @@
 'use client'
 import {PostMetaData} from '@/app/blog/contentParser';
-import { Divider } from '@nextui-org/react';
+import { Link } from '@nextui-org/react';
 
 export function BlogPostPreview(metadata: PostMetaData){
+    console.log(metadata.id)
     return(
-        <div className="">
-        <div className="font-semibold text-[36px]">{metadata.title}</div>
-        <div className='font-normal text-[12px]'>{metadata.date}</div>
-        <div className='font-normal text-[12px]'>{metadata.tags}</div>
-        <Divider/>
-        <div className='font-normal text-[12px]'>{metadata.shortDescription}</div>
-        </div>
-
+          <div className="flex flex-row justify-between py-2">
+            <div className="text-left font-semibold">{metadata.date}</div>
+            <div className="text-right hover:text-blue-800" color="foreground">
+              <Link href={`/blog/posts/${encodeURIComponent(metadata.id)}`}>{metadata.title}</Link>
+            </div>
+          </div>
     )
 }
 
