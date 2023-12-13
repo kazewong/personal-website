@@ -8,7 +8,7 @@
   }
 
   .title {
-      @apply text-4xl font-semibold text-center
+      @apply text-4xl font-semibold text-center p-8
   }
 
   a {
