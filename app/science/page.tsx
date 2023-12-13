@@ -1,14 +1,13 @@
 import '../globals.css'
 export default function Science() {
 	return (
-		<main className="lg:flex py-16 justify-center">
-			<div className="items-center">
-					{/* Header */}
-					<div className='text-center'>
-						<h1 className='text-5xl'>Science Kaze</h1>
-					</div>
-
+		<div className="lg:flex flex-col py-8 justify-center">
+			<div className='text-center py-4'>
+				<h1 className='text-5xl'>Science Kaze</h1>
 			</div>
-		</main>
+			<div className='text-center py-4'>
+				<h2> Coming soon</h2>
+			</div>
+		</div>
 	);
 }
