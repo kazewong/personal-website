@@ -1,7 +1,7 @@
 ---
 title: "flowMC"
 date: "03-12-2023"
-tags: ["next.js", "markdown", "blog"]
+tags: ["flowMC", "bayesian", "inference", "MCMC"]
 shortDescription: "Working principle behind flowMC"
 ---
 

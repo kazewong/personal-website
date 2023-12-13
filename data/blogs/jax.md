@@ -1,8 +1,10 @@
 ---
-title: 'A tutorial on JAX'
+title: 'Anti patterns in JAX'
 date: "03-12-2023"
 tags: ['jax', 'python']
-shortDescription: "A tutorial on JAX"
+shortDescription: "Common antipatterns in JAX"
 ---
 
-# A tutorial on JAX
+Coding in Jax is fairly straight forward, as advertised on their [github repo](https://github.com/google/jax).
+
+However, thinking in Jax takes quite a bit of suffering to get used to. Here are some common antipatterns I have come across while coding in Jax. However, thinking in Jax takes quite a bit of suffering to get used to. Here are some common antipatterns I have come across while coding in Jax. 

@@ -6,6 +6,15 @@
   body {
       @apply dark:bg-gray-800 bg-white
   }
+
+  .title {
+      @apply text-4xl font-semibold text-center
+  }
+
+  a {
+      @apply text-blue-500
+  }
+
 }
 
 :root {
@@ -37,3 +46,5 @@ p {
   font: oswald;
   color: rgb(var(--text-color));
 }
+
+

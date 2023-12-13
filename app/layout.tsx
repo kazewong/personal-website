@@ -17,13 +17,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark">
-      
-      <body className={oswald.className}>
-        <Providers>
-          <MyNavBar />
-          {children}
-        </Providers>
-      </body>
+      <div className="min-[320px]:">
+        <body className={oswald.className}>
+          <Providers>
+            <MyNavBar />
+            {children}
+          </Providers>
+        </body>
+
+      </div>
     </html>
   )
 }

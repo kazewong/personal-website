@@ -18,15 +18,19 @@ export default async function BlogPost({params}: {params: {slug: string}}) {
     const postData = await getPostData(params.slug);
     
     return (
-        <div>
-            {postData.matterResult.data.title}
-            <br />
-            {postData.id}
-            <br />
-            {postData.matterResult.data.date}
-            <br />
-            <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+        <div className='flex justify-center'>
+          <div className="flex-col py-8 max-w-screen-sm sm:max-w-prose lg:max-w-screen-lg">
+              <div className="title">
+                {postData.matterResult.data.title}
+
+              </div>
+              {postData.matterResult.data.date}
+              <br />
+              <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+          </div>
+
         </div>
+        
     )
 }
 
