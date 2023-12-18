@@ -19,7 +19,7 @@ export default async function BlogPost({params}: {params: {slug: string}}) {
     
     return (
         <div className='flex justify-center'>
-          <div className="flex-col py-8 max-w-screen-sm   sm:max-w-prose lg:max-w-screen-lg">
+          <div className="flex-col py-8 max-w-screen-sm sm:max-w-prose lg:max-w-screen-lg">
               <div className="title">
                 {postData.matterResult.data.title}
 
