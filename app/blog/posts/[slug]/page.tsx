@@ -4,7 +4,7 @@ import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
 
-const postsDirectory = path.join(process.cwd(), 'data/blogs/');
+const postsDirectory = path.join(process.cwd(), 'public/static/content/blog/');
 
 export type PostMetaData = {
     id: string;

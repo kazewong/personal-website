@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 
-const postsDirectory = path.join(process.cwd(), 'data/blogs/');
+const postsDirectory = path.join(process.cwd(), 'public/static/content/blog/');
 
 export type PostMetaData = {
     id: string;
