@@ -4,8 +4,10 @@ export default function Layout({
   children: React.ReactNode
 }) {
   return (
-      <section>
-        {children}
-      </section>
+    <section className={"flex flex-col items-center h-screen"}>
+      <div className='px-8 w-[640px] lg:w-[840px] '>
+          {children}
+      </div>
+    </section>
   )
 }
