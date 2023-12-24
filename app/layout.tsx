@@ -20,7 +20,7 @@ export default function RootLayout({
       <div className="min-[320px]:">
         <body className={oswald.className}>
           <Providers>
-            <MyNavBar />
+            <MyNavBar/>
             {children}
           </Providers>
         </body>
