@@ -4,7 +4,7 @@ import { Link } from "@nextui-org/link"
 export default function Home() {
   // const allPostsData = getBlog();
   return (
-    <main className="flex flex-col items-center justify-center h-5/6">
+    <main className="h-screen flex flex-col items-center justify-center">
         <h1 className="text-6xl font-bold pb-8">
           Hello, I am <span className="text-blue-600">Kaze Wong</span>
         </h1>

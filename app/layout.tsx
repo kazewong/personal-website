@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark">
-      <div className="min-[320px]:">
+      <div className="min-[320px]">
         <body className={oswald.className}>
           <Providers>
             <MyNavBar/>
