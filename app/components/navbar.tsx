@@ -1,6 +1,7 @@
 'use client'
 import React from "react";
-import {Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, Link, Button, NavbarMenuItem} from "@nextui-org/react";
+import {Link} from "@nextui-org/link";
+import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem} from "@nextui-org/navbar";
 import { ThemeSwitcher } from "./themeSwitcher";
 
 export function MyNavBar() {

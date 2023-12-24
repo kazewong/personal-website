@@ -1,6 +1,5 @@
-'use client'
 import {PostMetaData} from '@/app/blog/contentParser';
-import { Link } from '@nextui-org/react';
+import { Link } from '@nextui-org/link';
 
 export function BlogPostPreview(metadata: PostMetaData){
     console.log(metadata.id)
