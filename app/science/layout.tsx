@@ -14,7 +14,7 @@ export default function Layout({
 }) {
   return (
 
-      <section className={oswald.className + " flex flex-col items-center h-screen"}>
+      <section className={oswald.className + " flex flex-col items-center"}>
         <div className='px-8 w-[480px] md:w-[640px] lg:w-[840px] '>
           {children}
         </div>
