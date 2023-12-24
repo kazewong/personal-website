@@ -9,7 +9,7 @@ export default function Science() {
 	const data = getScienceHighlightData();
 
 	return (
-		<div className="lg:flex flex-col py-8 justify-center">
+		<div className="h-screen lg:flex flex-col py-8 justify-center">
 			<div className='text-center py-4'>
 				<h1 className='text-5xl'>Science Kaze</h1>
 			</div>
