@@ -3,10 +3,11 @@ import '../globals.css'
 import { getScienceHighlightData } from '../science/contentParser';
 import Image from 'next/image'
 import Link from 'next/link'
+import {ImageCard} from '../components/imageCard';
 
-export default function Science() {
+export default async function Science() {
 
-	const data = getScienceHighlightData();
+	const data = await getScienceHighlightData();
 
 	return (
 		<div className="h-screen lg:flex flex-col py-8">
@@ -35,7 +36,6 @@ export default function Science() {
 								I also spend a significant amount of time trying to figure out how to use <b>machine-learning</b> techniques to answer science questions in <b>robust and interpretable ways</b>.
 								</p>
 								<p className=" py-3 text-base">
-								Feel free to use whatever materials you find on this site, and I will greatly appreciate it if you can credit me for the material.
 								</p>
 								<p className="py-3 text-base">Link to CV: <Link href="https://kazewong.github.io/CV" className='text-cyan-500 underline'>https://kazewong.github.io/CV</Link></p>
 								<p className="py-3 text-base">Publication profile: <Link href="https://inspirehep.net/authors/1789361?ui-citation-summary=true" className='text-cyan-500  underline'>https://inspirehep.net/authors/1789361?ui-citation-summary=true</Link></p>
@@ -46,7 +46,12 @@ export default function Science() {
 				<div className='text-start'>
 					<h3 className='text-2xl'>Research Highlight</h3>
 					<Divider className='my-4'/>
-					
+					<div className="flex flex-col lg:flex-row justify-center">
+						{data.map((individual_data) => (
+							// console.log(data),
+							ImageCard(individual_data)
+						))}
+					</div>
 				</div>
 				<div className='text-start'>
 					<h3 className='text-2xl'>Materials</h3>

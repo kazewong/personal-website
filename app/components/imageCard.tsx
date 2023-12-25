@@ -1,5 +1,5 @@
-import React from "react";
-import {Card, CardHeader, CardBody, CardFooter, Image, Button} from "@nextui-org/react";
+import {Card, CardHeader} from "@nextui-org/card";
+import {Image} from "@nextui-org/image";
 
 export type ImageCardData = {
     header: string;
@@ -10,8 +10,7 @@ export type ImageCardData = {
 
 export function ImageCard(data: ImageCardData) {
     return (
-    <div className="max-w-[900px] gap-2 grid grid-cols-12 grid-rows-2 px-8">
-    <Card className="col-span-12 sm:col-span-4 h-[300px]" isPressable onPress={()=>console.log("item pressed")}>
+    <Card className="col-span-12 sm:col-span-4 h-[300px]">
         <CardHeader className="absolute z-10 top-1 flex-col !items-start">
         <p className="text-tiny text-white/60 uppercase font-bold">{data.header}</p>
         <h4 className="text-white font-medium text-large">{data.title}</h4>
@@ -23,6 +22,5 @@ export function ImageCard(data: ImageCardData) {
         src={data.image_path}
         />
     </Card>
-    </div>
     );
 }
