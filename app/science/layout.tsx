@@ -1,12 +1,3 @@
-import { Oswald } from 'next/font/google'
-
-const oswald = Oswald({ subsets: ['latin'] })
-
-export const metadata = {
-  title: 'Kaze Wong',
-  description: 'Kaze Wong\'s personal website',
-}
-
 export default function Layout({
   children,
 }: {
@@ -14,7 +5,7 @@ export default function Layout({
 }) {
   return (
 
-      <section className={oswald.className + " flex justify-center"}>
+      <section className=" flex justify-center">
         <div className='px-8 w-[480px] md:w-[640px] lg:w-[840px] '>
           {children}
         </div>

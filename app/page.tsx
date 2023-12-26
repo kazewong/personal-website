@@ -9,7 +9,7 @@ export default function Home() {
           Hello, I am <span className="text-blue-600">Kaze Wong</span>
         </h1>
       <h2 className="text-4xl font-semibold pb-8">
-        I do science, I jump, and I play music
+        I do science, I jump, and I make stuffs.
       </h2>
       <div className="flex-row">
         <Link href="https://github.com/kazewong" className="px-2 dark:invert">
