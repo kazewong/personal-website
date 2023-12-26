@@ -8,8 +8,8 @@ export function MyNavBar() {
 
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
-  const menuItems= ["Home", "Blog", "Science", "High Jump", "Music", "Animation"]
-  const menuLinks= ["/", "/blog", "/science", "/highjump", "/music", "/animation"]
+  const menuItems= ["Home", "Blog", "Science", "High Jump", "Animation", "Code", "Music"]
+  const menuLinks= ["/", "/blog", "/science", "/highjump", "/animation", "/code", "/music"]
 
   return (
 
