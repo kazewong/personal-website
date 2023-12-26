@@ -9,22 +9,32 @@ export type ImageCardData = {
     link: string;
 }
 
-export function ImageCard(data: ImageCardData) {
+export function ImageCard(props: {data: ImageCardData, expanded?: boolean}) {
+
+    const data = props.data;
+    const expanded = props.expanded;
+
+    if (expanded) {
+        return(
+            <Link href={data.link}>
+            </Link>
+        );
+    }
     return (
         <Link href={data.link}>
         {
-             <Card className="h-32 w-32 md:h-48 md:w-48 md:m-8">
-             <CardHeader className="absolute z-10 top-1 flex-col !items-start">
-             <p className="text-tiny text-white/60 uppercase font-bold">{data.header}</p>
-             <h4 className="text-white font-medium text-large">{data.title}</h4>
-             </CardHeader>
-             <Image
-             removeWrapper
-             alt="Card background"
-             className="z-0 w-full h-full object-cover"
-             src={data.image_path}
-             />
-         </Card>
+            <Card className="h-32 w-32 md:h-48 md:w-48 md:m-8">
+            <CardHeader className="absolute z-10 top-1 flex-col !items-start">
+            <p className="text-tiny text-white/60 uppercase font-bold">{data.header}</p>
+            <h4 className="text-white font-medium text-large">{data.title}</h4>
+            </CardHeader>
+            <Image
+            removeWrapper
+            alt="Card background"
+            className="z-0 w-full h-full object-cover"
+            src={data.image_path}
+            />
+        </Card>
         }
         </Link>
     );

@@ -48,9 +48,12 @@ export default async function Science() {
 					<Divider className='my-4'/>
 					<div className="grid grid-cols-2 lg:grid-cols-3">
 						{data.map((individual_data) => (
-							ImageCard(individual_data)
+							<ImageCard data={individual_data} />
 						))}
 					</div>
+						{/* <div className='absolute'>
+							<ImageCard data={data[0]} />
+						</div> */}
 				</div>
 				<div className='text-start'>
 					<h3 className='text-2xl'>Materials</h3>
