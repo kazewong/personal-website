@@ -46,9 +46,8 @@ export default async function Science() {
 				<div className='text-start'>
 					<h3 className='text-2xl'>Research Highlight</h3>
 					<Divider className='my-4'/>
-					<div className="flex flex-col lg:flex-row justify-center">
+					<div className="grid grid-cols-2 lg:grid-cols-3">
 						{data.map((individual_data) => (
-							// console.log(data),
 							ImageCard(individual_data)
 						))}
 					</div>
