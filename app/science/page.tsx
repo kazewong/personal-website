@@ -18,7 +18,7 @@ export default async function Science() {
 				<div className='text-start'>
 					<h3 className='text-2xl'>Summary</h3>
 					<Divider className='my-4'/>
-					<div className="lg:flex py-16 w-full lg:w-[840px]">
+					<div className="lg:flex py-8 w-full lg:w-[840px]">
 						<div className="flex-col justify-center">
 							<div className="justify-center flex">
 								<Image src='/static/images/portrait.jpg' alt="" width={147} height={147} className="rounded-full"/>
@@ -35,29 +35,35 @@ export default async function Science() {
 								I am a research fellow at the Flatiron Institute, mostly spending my time <b>building codes</b> to analyze <b>gravitational-wave</b> data and studying <b>black holes</b>.
 								I also spend a significant amount of time trying to figure out how to use <b>machine-learning</b> techniques to answer science questions in <b>robust and interpretable ways</b>.
 								</p>
-								<p className=" py-3 text-base">
-								</p>
 								<p className="py-3 text-base">Link to CV: <Link href="https://kazewong.github.io/CV" className='text-cyan-500 underline'>https://kazewong.github.io/CV</Link></p>
 								<p className="py-3 text-base">Publication profile: <Link href="https://inspirehep.net/authors/1789361?ui-citation-summary=true" className='text-cyan-500  underline'>https://inspirehep.net/authors/1789361?ui-citation-summary=true</Link></p>
 							</div>
 						</div>
 					</div>
 				</div>
+
 				<div className='text-start'>
 					<h3 className='text-2xl'>Research Highlight</h3>
 					<Divider className='my-4'/>
-					<div className="grid grid-cols-2 lg:grid-cols-3">
-						{data.map((individual_data) => (
-							<ImageCard data={individual_data} />
-						))}
-					</div>
-						{/* <div className='absolute'>
-							<ImageCard data={data[0]} />
-						</div> */}
+						<p className='px-4 py-2 lg:w-2/3'>
+							Here are some of research projects I am or have been working on.
+						</p>
+						<div className="grid grid-cols-2 lg:grid-cols-3">
+							{data.map((individual_data) => (
+								<ImageCard data={individual_data} />
+							))}
+						</div>
+							{/* <div className='absolute'>
+								<ImageCard data={data[0]} />
+							</div> */}
 				</div>
+
 				<div className='text-start'>
 					<h3 className='text-2xl'>Materials</h3>
 					<Divider className='my-4'/>
+					<p className='px-4 '>
+							Open science is one of my fundamental beliefs. I spent a great deal of time developing open-source codes and workflow, as well as writing tutorials (for teaching myself, more often than not) and documentations, so it would be weird if I don't share them here. You can find my codes, tutorials, as well as presentations and other kind of materials below, feel free to use them and share them. I would appreciate any feedbacks and if you can cite the relevant papers if you find them useful.
+					</p>
 				</div>
 			</div>
 		</div>

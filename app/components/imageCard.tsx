@@ -23,7 +23,7 @@ export function ImageCard(props: {data: ImageCardData, expanded?: boolean}) {
     return (
         <Link href={data.link}>
         {
-            <Card className="h-32 w-32 md:h-48 md:w-48 md:m-8">
+            <Card className="h-32 w-32 m-4 md:h-48 md:w-48 ">
             <CardHeader className="absolute z-10 top-1 flex-col !items-start">
             <p className="text-tiny text-white/60 uppercase font-bold">{data.header}</p>
             <h4 className="text-white font-medium text-large">{data.title}</h4>
