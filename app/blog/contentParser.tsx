@@ -38,9 +38,9 @@ export function getSortedPostsData(): {id: string, data: PostMetaData}[] {
   // Sort posts by date
   return allPostsData.sort((a, b) => {
     if (a.data.date > b.data.date) {
-      return 1;
-    } else {
       return -1;
+    } else {
+      return 1;
     }
   });
 }
