@@ -16,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="h-screen dark">
       <div className="min-[320px]">
         <body className={oswald.className}>
           <Providers>
