@@ -10,7 +10,7 @@ export default async function Science() {
 	const data = await getScienceHighlightData();
 
 	return (
-		<div className="lg:flex flex-col py-8">
+		<div className="h-screen lg:flex flex-col py-8">
 			<div className='text-center py-4'>
 				<h1 className='text-5xl'>Science Kaze</h1>
 			</div>
