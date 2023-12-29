@@ -47,9 +47,9 @@ export function MyNavBar() {
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
             <Link
-              color={
-                index === 2 ? "primary" : index === menuItems.length - 1 ? "danger" : "foreground"
-              }
+              // color={
+              //   index === 2 ? "primary" : index === menuItems.length - 1 ? "danger" : "foreground"
+              // }
               className="w-full"
               href={menuLinks[index]}
               size="lg"
