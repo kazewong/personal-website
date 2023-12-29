@@ -1,20 +1,38 @@
 [
     {
-        "header": "Gravitational wave",
-        "title": "Gravitational wave",
+        "header": "Just count",
+        "title": "Data driven astrophysics",
         "image_path": "hi",
-        "link": "string"
+        "link": "science/highlights/DataDrivenAstrophysics"
     },
     {
-        "header": "Gravitational wave",
-        "title": "Gravitational wave",
+        "header": "Why does it work",
+        "title": "Interpretable machine learning",
         "image_path": "hi",
-        "link": "string"
+        "link": "science/highlights/InterpretableMachineLearning"
     },
     {
-        "header": "Gravitational wave",
+        "header": "Understanding gravity",
         "title": "Gravitational wave",
         "image_path": "hi",
-        "link": "string"
+        "link": "science/highlights/GravitationalWave"
+    },
+    {
+        "header": "Next generation",
+        "title": "ML enhanced simulation",
+        "image_path": "hi",
+        "link": "science/highlights/MLEnhancedSimulation"
+    },
+    {
+        "header": "More than painting",
+        "title": "Reproducible science",
+        "image_path": "hi",
+        "link": "science/highlights/ReproducibleScience"
+    },
+    {
+        "header": "Sharpen your tools",
+        "title": "Scientific software",
+        "image_path": "hi",
+        "link": "science/highlights/ScientificSoftware"
     }
 ]
