@@ -46,16 +46,13 @@ export default async function Science() {
 					<h3 className='text-2xl'>Research Highlight</h3>
 					<Divider className='my-4'/>
 						<p className='px-4 py-2 lg:w-2/3'>
-							Here are some of research projects I am or have been working on.
+							Here are some topics I am or have been working on.
 						</p>
 						<div className="grid grid-cols-2 lg:grid-cols-3">
 							{data.map((individual_data) => (
 								<ImageCard data={individual_data} />
 							))}
 						</div>
-							{/* <div className='absolute'>
-								<ImageCard data={data[0]} />
-							</div> */}
 				</div>
 
 				<div className='text-start'>
