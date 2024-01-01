@@ -16,16 +16,13 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="dark">
-      <div className="min-[320px]">
-        <body className={oswald.className}>
+    <html lang="en" className="dark h-screen">
+        <body className={oswald.className + " h-screen"}>
           <Providers>
             <MyNavBar/>
             {children}
           </Providers>
         </body>
-
-      </div>
     </html>
   )
 }
