@@ -13,7 +13,7 @@ export function MyNavBar() {
 
   return (
 
-    <Navbar onMenuOpenChange={setIsMenuOpen}>
+    <Navbar onMenuOpenChange={setIsMenuOpen} className="dark:bg-gray-900">
       <NavbarContent> 
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
