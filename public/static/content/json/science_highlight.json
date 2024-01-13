@@ -17,22 +17,17 @@
         "image_path": "https://www.energy.gov/sites/default/files/2023-09/092823-blog-gravitational-waves.jpg",
         "link": "science/highlights/GravitationalWave"
     },
-    {
-        "header": "Next generation",
-        "title": "ML enhanced simulation",
-        "image_path": "hi",
-        "link": "science/highlights/MLEnhancedSimulation"
-    },
+
     {
         "header": "More than painting",
         "title": "Reproducible science",
-        "image_path": "hi",
+        "image_path": "https://raw.githubusercontent.com/showyourwork/.github/main/images/showyourwork.png",
         "link": "science/highlights/ReproducibleScience"
     },
     {
         "header": "Sharpen your tools",
         "title": "Scientific software",
-        "image_path": "hi",
+        "image_path": "static/images/software.jpg",
         "link": "science/highlights/ScientificSoftware"
     }
 ]
