@@ -1,23 +1,22 @@
 [
     {
-        "header": "Just count",
-        "title": "Data driven astrophysics",
-        "image_path": "hi",
-        "link": "science/highlights/DataDrivenAstrophysics"
-    },
-    {
-        "header": "Why does it work",
-        "title": "Interpretable machine learning",
-        "image_path": "hi",
-        "link": "science/highlights/InterpretableMachineLearning"
-    },
-    {
         "header": "Understanding gravity",
         "title": "Gravitational wave",
         "image_path": "https://www.energy.gov/sites/default/files/2023-09/092823-blog-gravitational-waves.jpg",
         "link": "science/highlights/GravitationalWave"
     },
-
+    {
+        "header": "Just count",
+        "title": "Data driven astrophysics",
+        "image_path": "https://www.e-education.psu.edu/astro801/sites/www.e-education.psu.edu.astro801/files/image/hubbleslaw_plot.jpg",
+        "link": "science/highlights/DataDrivenAstrophysics"
+    },
+    {
+        "header": "Why does it work",
+        "title": "Interpretable machine learning",
+        "image_path": "https://d2r55xnwy6nx47.cloudfront.net/uploads/2022/02/SCALING_NETS_2880x1620_Lede.svg",
+        "link": "science/highlights/InterpretableMachineLearning"
+    },
     {
         "header": "More than painting",
         "title": "Reproducible science",
