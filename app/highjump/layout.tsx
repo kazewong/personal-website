@@ -4,6 +4,10 @@ export default function Layout({
   children: React.ReactNode
 }) {
   return (
-    children  
+    <section className="flex justify-center">
+    <div className='px-8 w-[480px] md:w-[640px] lg:w-[840px] '>
+      {children}
+    </div>
+  </section>
   )
 }
