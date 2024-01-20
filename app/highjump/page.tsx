@@ -7,7 +7,7 @@ export default function HighJump() {
 			</div>
 			<div className='flex justify-center'>
 				
-			<iframe width="560" height="315" src="https://www.youtube.com/embed/W2OABKUAQgg?si=MQR_-A1JPnXhru9E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/W2OABKUAQgg?si=MQR_-A1JPnXhru9E" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ></iframe>
 			</div>
 		</div>
 	);
