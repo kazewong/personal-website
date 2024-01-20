@@ -5,8 +5,9 @@ export default function HighJump() {
 			<div className='text-center py-4'>
 				<h1 className='text-5xl'>Athletic Kaze</h1>
 			</div>
-			<div className='text-center py-4'>
-				<h2> Coming soon</h2>
+			<div className='flex justify-center'>
+				
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/W2OABKUAQgg?si=MQR_-A1JPnXhru9E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 			</div>
 		</div>
 	);
