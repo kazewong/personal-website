@@ -40,12 +40,10 @@ body {
 }
 
 div {
-  font: oswald;
   color: rgb(var(--text-color));
 }
 
 p {
-  font: oswald;
   color: rgb(var(--text-color));
 }
 
