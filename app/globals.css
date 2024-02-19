@@ -29,7 +29,7 @@
   }
   
   h1{
-    @apply text-3xl py-3
+    @apply text-3xl py-3 font-bold
   }
 
 }
