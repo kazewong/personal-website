@@ -3,6 +3,7 @@ import './globals.css'
 import { Oswald } from 'next/font/google'
 import { Providers } from '@/app/provider'
 
+
 const oswald = Oswald({ subsets: ['latin'] })
 
 export const metadata = {
@@ -17,6 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark h-screen">
+      <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Oswald" />
         <body className={oswald.className + " h-screen"}>
           <Providers>
             <MyNavBar/>
