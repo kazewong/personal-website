@@ -28,7 +28,8 @@ export default async function BlogPost({params}: {params: {slug: string}}) {
                 {postData.matterResult.data.date}
 
               </div>
-              <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+              <div className="text-justify"
+              dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
           </div>
 
         </div>

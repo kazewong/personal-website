@@ -14,7 +14,10 @@ export default function Blog() {
     <div>
       <main className="flex min-h-screen flex-col items-center justify-start px-24 py-16">
         <div className='pb-8'>
-          <div className="text-xl lg:text-2xl text-justify max-w-screen-prose">Here are a bunch of random thoughts I have or materials I like to point people to, that are too informal to be put into a more formal form.
+          <div className="text-lg lg:text-xl text-justify max-w-screen-prose">
+            Here are a bunch of random thoughts I have or materials I like to point people to, that are too informal to be put into a more formal form.
+          <br />
+          <br />
           Note that while I try to keep the main content, especially the technical detail, as accurate and factual as possible, outside that I will have random mumble jumble flying here and there. Please don't take them too seriously.
           </div>
         </div>
