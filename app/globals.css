@@ -4,6 +4,10 @@
 
 @layer base{
 
+  html{
+    font-family: "Oswald", sans-serif;
+  }
+
   body {
       @apply dark:bg-gray-800 bg-white
   }
