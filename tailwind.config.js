@@ -8,6 +8,9 @@ module.exports = {
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    fontFamily: {
+      sans: ['Oswald'],
+    },
     extend: {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
@@ -20,15 +23,6 @@ module.exports = {
   plugins: [nextui({
     themes:{
       dark:{
-        textColors:{
-          primary: "#ffffff",
-          secondary: "#d1d5db",
-          placeholder: "#9ca3af",
-          disabled: "#9ca3af",
-          hint: "#9ca3af",
-          accent: "#fcd34d",
-          dimmed: "#9ca3af",
-        },
         colors:{
           background: "#1f2937",
         }
