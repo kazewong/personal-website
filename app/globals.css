@@ -5,7 +5,7 @@
 @layer base{
 
   body {
-      @apply dark:bg-gray-800 bg-white font-sans
+      @apply dark:bg-gray-800 bg-white
   }
 
   .title {
