@@ -24,16 +24,16 @@ export default async function Science() {
 								<Image src='/static/images/portrait.jpg' alt="" width={147} height={147} className="rounded-full"/>
 							</div>
 							<div className="justify-center flex-col">
-								<p className="text-3xl text-center">Kaze W. K Wong</p>
-								<p className="text-base text-center">Flatiron research fellow</p>
-								<p className=" text-base text-center">Flatiron institute</p>
+								<p className="text-3xl text-center dark:text-gray-300">Kaze W. K Wong</p>
+								<p className="text-base text-center dark:text-gray-300">Flatiron research fellow</p>
+								<p className=" text-base text-center dark:text-gray-300">Flatiron institute</p>
 							</div>
 						</div>
 						<div className="px-4 lg:w-2/3">
 							<div className=" text-xl flex-row justify-start">
 								<p className="py-3 text-base">
-								I am a research fellow at the Flatiron Institute, mostly spending my time <b>building codes</b> to analyze <b>gravitational-wave</b> data and studying <b>black holes</b>.
-								I also spend a significant amount of time trying to figure out how to use <b>machine-learning</b> techniques to answer science questions in <b>robust and interpretable ways</b>.
+								I am a research fellow at the Flatiron Institute, mostly spending my time <b className='dark:text-gray-300'>building codes</b> to analyze <b className='dark:text-gray-300'>gravitational-wave</b> data and studying <b className='dark:text-gray-300'>black holes</b>.
+								I also spend a significant amount of time trying to figure out how to use <b className='dark:text-gray-300'>machine-learning</b> techniques to answer science questions in <b className='dark:text-gray-300'>robust and interpretable ways</b>.
 								</p>
 								<p className="py-3 text-base">Link to CV: <Link href="https://kazewong.github.io/CV" className='text-cyan-500 underline'>https://kazewong.github.io/CV</Link></p>
 								<p className="py-3 text-base">Publication profile: <Link href="https://inspirehep.net/authors/1789361?ui-citation-summary=true" className='text-cyan-500  underline'>https://inspirehep.net/authors/1789361?ui-citation-summary=true</Link></p>
