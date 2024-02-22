@@ -5,3 +5,12 @@ tags: ["julia", "parallel", "computational geometry", "triangulation"]
 shortDescription: "Drawing many triangles fast in julia"
 ---
 
+# Why am I interested in Delaunay Triangulation?
+
+# Plan of attack 
+
+# Serial version
+
+# Parallel version
+
+# Current state
