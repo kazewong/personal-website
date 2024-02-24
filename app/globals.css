@@ -21,7 +21,7 @@
   }
 
   p {
-    @apply dark:text-gray-400
+    @apply dark:text-gray-300 font-light
   }
 
   strong {
@@ -30,6 +30,10 @@
   
   h1{
     @apply text-3xl py-3 font-bold
+  }
+
+  h2{
+    @apply text-2xl py-3 font-bold
   }
 
 }
