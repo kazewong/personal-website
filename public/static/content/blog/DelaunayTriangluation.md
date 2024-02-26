@@ -14,9 +14,11 @@ The backbone of Voronoi tessellation used in ZOBOV is [Qhull](http://www.qhull.o
 
 There are some effort to parallelize the Voronoi tessellation, such as breaking the problem into many small sub problems and [stitch them together](https://arxiv.org/pdf/1406.1191.pdf). They manage to build the Voronoi diagram for 10^9 in 10 hours on 16 cores, which is impressive. However, the problem is, the solution is not exact, as in it is not actually a Voronoi diagram. This may create some unwanted artifacts in the density field. While it may not necessarily cause massive problems, but it is not ideal.
 
-When I first learned about this issue, I thought to myself, "It's 2024 and you are telling me that we can't process 10^9 points in a reasonable time?". If you are not aware, let me bring your attention to this [Unreal Engine 5 demo](https://youtu.be/qC5KtatMcUw?si=UfkbPzi8aw9wIJOJ&t=86) from **2020**. The can render 10^9 triangles in real time, and I cannot believe we do not have the technology to make a Voronoi diagram for 10^9 points within a couple of minutes in 2024. Beside, I wanted to learn how to make parallized code in Julia for a while, so I figured this could be an opportunity and embarked to this journey of drawing many triangles and tetrahedra.
+When I first learned about this issue, I thought to myself, "It's 2024 and you are telling me that we can't process 10^9 points in a reasonable time?". If you are not aware, let me bring your attention to this [Unreal Engine 5 demo](https://youtu.be/qC5KtatMcUw?si=UfkbPzi8aw9wIJOJ&t=86) from **2020**. The can render 10^9 triangles in real time, and I cannot believe we do not have the technology to make a Voronoi diagram for 10^9 points within a couple of minutes in 2024. Besides, I wanted to learn how to make parallelized code in Julia for a while, so I figured this could be an opportunity and embarked to this journey of drawing many triangles and tetrahedra.
 
-## Plan of attack 
+## Plan of attack
+
+
 
 ## Serial version
 

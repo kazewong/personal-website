@@ -22,7 +22,9 @@ export default async function BlogPost({params}: {params: {slug: string}}) {
           <div className="flex-col py-8 max-w-screen-sm sm:max-w-prose lg:max-w-screen-lg">
               <div className="title">
                 {postData.matterResult.data.title}
-
+              </div>
+              <div className="text-center pb-4 text-xl">
+                {postData.matterResult.data.shortDescription}
               </div>
               <div className="text-center pb-4">
                 {postData.matterResult.data.date}
