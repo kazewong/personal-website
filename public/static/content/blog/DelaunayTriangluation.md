@@ -16,7 +16,9 @@ There are some effort to parallelize the Voronoi tessellation, such as breaking 
 
 When I first learned about this issue, I thought to myself, "It's 2024 and you are telling me that we can't process 10^9 points in a reasonable time?". If you are not aware, let me bring your attention to this [Unreal Engine 5 demo](https://youtu.be/qC5KtatMcUw?si=UfkbPzi8aw9wIJOJ&t=86) from **2020**. The can render 10^9 triangles in real time, and I cannot believe we do not have the technology to make a Voronoi diagram for 10^9 points within a couple of minutes in 2024. Besides, I wanted to learn how to make parallelized code in Julia for a while, so I figured this could be an opportunity and embarked to this journey of drawing many triangles and tetrahedra.
 
-## Plan of attack
+## Background and plan of attack
+
+In brief, the task of Delaunay Triangulation can be described as follows: **given a set of points in a plane, connect them with triangles such that no point is inside the circumcircle of any triangle**. Since Wikipedia has a pretty good explanation of [Delaunay Triangulation](https://en.wikipedia.org/wiki/Delaunay_triangulation), so I won't go into detail of what it is here. Instead, I will describe the idea of the specific algorithm I choose to construct the Delaunay Triangulation, and layout the plan of implementing it.
 
 
 
