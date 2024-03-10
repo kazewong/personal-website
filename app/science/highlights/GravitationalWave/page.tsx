@@ -43,13 +43,14 @@ export default async function GravitationalWave() {
 						There has been different attempts to speed up parameter estimation, either through more modern engineering but sticking with traditional sampling method, or completely new deep learning-based method such as simulation-based inference.
 					</p>
 
-					<h4 className='text-xl'>Modern wave waveform model</h4>
+					<h4 className='text-xl py-1'>Modern wave waveform model</h4>
 					<p>
 
 					</p>
-					<h4 className='text-xl'>Numerical relativitiy</h4>
+					<h4 className='text-xl py-1'>Numerical relativitiy</h4>
 					<p>
-						
+						Having incredibly accurate numerical relativity (NR) simulations and waveform catalog is one of the reason why the community can build surrogate waveform models such IMRPhenom, SEOB, and the surrogate, which in turns give our detector more sensitivity through match filtering. In the coming decade (2030-2040), next generation detectors are going to be built. They are sensitive enough which the accuracy of NR simulation could be a limiting factor. One of the question is how can we improve the existing model, in turns requiuring us to simulate NR signal in a more precise fashion. 
+						There are multiple famous group such as caltech and cornnell working on this, I am by no mean an expert in simulation, as my education background is not based on works related to simulations. Yet, I am very curious about what modern computing paradigm and deep learning can do for numerical relativitiy. For me, it is not so important that I make the best NR simulations or gain some new insights to a particular system, there are more qualified people than me to do that. I am more interested in designing algorithms and making code that might contribute to building the next generation NR simulations. For example, when the mass ratio of the system is going to more and more extreme, there are multiple time and length scales one has to resolve. This is usually done either by domain decomposition or adaptive mesh refinement. <span className="font-bold">Whenever there is such hierarchy of scales, there is some interpolation involved in between different scales. Can machine learning learning helps?</span> Another example is eccentric system. Ideally we would want to simulate the entire signal with the prescription from NR, but then we are spending a lot of time in parts which the two objects are far apart and interacting weakly. <span className="font-bold">Can we learn to approximate that part on-the-fly.</span>
 					</p>
 				</div>
 				<div className='text-start'>
