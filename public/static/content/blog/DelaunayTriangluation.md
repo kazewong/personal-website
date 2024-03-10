@@ -20,7 +20,7 @@ When I first learned about this issue, I thought to myself, "It's 2024 and you a
 
 In brief, the task of Delaunay Triangulation can be described as follows: **given a set of points in a plane, connect them with triangles such that no point is inside the circumcircle of any triangle**. Since Wikipedia has a pretty good explanation of [Delaunay Triangulation](https://en.wikipedia.org/wiki/Delaunay_triangulation), so I won't go into detail of what it is here. Instead, I will describe the idea of the specific algorithm I choose to construct the Delaunay Triangulation, and layout the plan of implementing it.
 
-
+The specific algorithm I choose to use is the rip-and-tent algorithm, and the idea is: **You add one point at a time, remove the triangles that are in conflict with the new point, and connect the new points with the relevant points.** You might be wondering, how does this sound parallelizable? The idea is as the number of points grow, the triangles that needed to be removed are only the ones that are in immediate vacinity of the new point, meaning one can also insert another point in parallel as long as it is far enough and does not interact with any of the triangles. The best part of this algorithm is it works for general dimension. So far we describe the algorithm and the problem in 2D with triangles and circles. In higher dimension, one can just replace the triangles with simplex (tetrahedron in 3D) and hypersphere, and the rest of the algorithm remains unchanged.
 
 ## Serial version
 
