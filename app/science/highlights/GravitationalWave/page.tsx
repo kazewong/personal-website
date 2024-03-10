@@ -45,7 +45,7 @@ export default async function GravitationalWave() {
 
 					<h4 className='text-xl py-1'>Modern wave waveform model</h4>
 					<p>
-
+						
 					</p>
 					<h4 className='text-xl py-1'>Numerical relativitiy</h4>
 					<p>

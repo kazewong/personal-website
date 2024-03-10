@@ -24,6 +24,40 @@ The specific algorithm I choose to use is the rip-and-tent algorithm, and the id
 
 ## Serial version
 
+The core algorithm can be broken down into following steps:
+1. Construct initial bounding triangle
+2. Given a point, locates which triangles in the graph are in conflict with the new points.
+3. Insert the point, make the new triangles.
+4. Repeat step 2 and 3 until all points are inserted.
+
+Let's break each of the steps down 
+
 ## Parallel version
 
-## Current state
+Some difficulties
+1. There is a lot of update to a single graph, making distributing the data structure quite difficult.
+2. Race condition could happen if we are not careful enough.
+
+### Multithreading in Julia
+
+### Determining which points can be inserted at the same time
+
+Now we are given a bunch of points, we need to figure 
+
+The first version I tried to implement 
+
+To recap, here is a brief timeline of this part:
+1. Locate which sites each point are in conflict with. Check if there is any intersection between the sites ripped by this point and any other point. If yes, discard the later point in this batch. This is horrible, since this scales O(n^2) with the number of point in a batch, and it wastes computation because we do not insert some points.
+2. Create an "occupancy" dictionary of list. For each point, push the id of the point into the entry with key equal to the sites the point is in conflict with. After populating the occupancy dictionary, we will have a dictionary with keys being a particular site id, and the value being all the point in conflict with that site. This is way better, since the construction of the occupancy dictionary is basically O(n). When checking whether a point can be inserted, we just have to check whether the sites and their neighbors contains other point. If not, the point can be safely inserted.
+3. 
+
+## Another way out
+
+A combination of the race condition and the garbage collector makes it quite hard to push for maximum performance in Julia.
+For example, the most expensive part of the algorithm is computing the circumsphere of a simplex, which ideally I would want to parallel that part as much as possible.
+
+```
+Threads.@threads for i in 1:length(updates)
+    updates[i] = make_update(...)
+    end
+```
