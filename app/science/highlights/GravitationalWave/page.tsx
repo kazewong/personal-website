@@ -14,6 +14,8 @@ export default async function GravitationalWave() {
                 <div className='text-start'>
 					<h3 className='text-3xl'>Background</h3>
 					<Divider className='my-4'/>
+					<p>
+					</p>
 				</div>
 				<div className='text-start'>
 					<h3 className='text-3xl'>Why am I interested?</h3>
@@ -33,9 +35,22 @@ export default async function GravitationalWave() {
 					<p>
 						I am mostly interested in the tool development and the data analysis side of GWs. Here is a list of research problems I am working on:
 					</p>
-					<h4 className='text-xl'>Accelerated parameter estimation</h4>
+					<h4 className='text-xl py-1'>Accelerated parameter estimation</h4>
+					<p>
+						One of the most important task in GW data analysis is parameter estimation: given a time series of the strain and a model of the signal, guess what are the parameters corresponds to the observed event. This is often done by some sort of sampling such as nested sampling or MCMC, which can be quite expensive, ranging from hundreds to thounsands of CPU hours per event.
+					</p>
+					<p>
+						There has been different attempts to speed up parameter estimation, either through more modern engineering but sticking with traditional sampling method, or completely new deep learning-based method such as simulation-based inference.
+					</p>
+
 					<h4 className='text-xl'>Modern wave waveform model</h4>
+					<p>
+
+					</p>
 					<h4 className='text-xl'>Numerical relativitiy</h4>
+					<p>
+						
+					</p>
 				</div>
 				<div className='text-start'>
 					<h3 className='text-3xl'>Materials</h3>
