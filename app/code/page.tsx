@@ -12,6 +12,7 @@ export default function Code() {
 					<div className='text-start'>
 						<h3 className='text-2xl'>Libraries</h3>
 						<Divider className='my-4'/>
+						<a href='https://github.com/kazewong/flowMC'>flowMC</a>-Normalizing flow-enhanced MCMC sampler
 					</div>
 					<div className='text-start'>
 						<h3 className='text-2xl'>Web demo gallery</h3>
