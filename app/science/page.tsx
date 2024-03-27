@@ -49,8 +49,8 @@ export default async function Science() {
 							Here are some topics I am or have been working on. I am big believer in collaborative work instead of racing against each other, so if you find any of the following topics interested you, feel free to reach out to me.
 						</p>
 						<div className="grid grid-cols-2 lg:grid-cols-3">
-							{data.map((individual_data) => (
-								<ImageCard data={individual_data} />
+							{data.map((item, index) => (
+								
 							))}
 						</div>
 				</div>
