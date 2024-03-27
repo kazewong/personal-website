@@ -1,32 +1,27 @@
 [
     {
-        "header": "Understanding gravity",
         "title": "Gravitational wave",
-        "desciption": "Understanding the nature of gravity through ripples in spacetime",
+        "description": "Understanding the nature of gravity through ripples in spacetime",
         "link": "science/highlights/GravitationalWave"
     },
     {
-        "header": "Just count",
         "title": "Data driven astrophysics",
-        "image_path": "https://www.e-education.psu.edu/astro801/sites/www.e-education.psu.edu.astro801/files/image/hubbleslaw_plot.jpg",
+        "description": "Ho",
         "link": "science/highlights/DataDrivenAstrophysics"
     },
     {
-        "header": "Why does it work",
-        "title": "Interpretable machine learning",
-        "image_path": "https://d2r55xnwy6nx47.cloudfront.net/uploads/2022/02/SCALING_NETS_2880x1620_Lede.svg",
+        "title": "Robustness and Interpretability in machine learning",
+        "description": "Hi",
         "link": "science/highlights/InterpretableMachineLearning"
     },
     {
-        "header": "More than painting",
         "title": "Reproducible science",
-        "image_path": "https://raw.githubusercontent.com/showyourwork/.github/main/images/showyourwork.png",
+        "description": "Hi",
         "link": "science/highlights/ReproducibleScience"
     },
     {
-        "header": "Sharpen your tools",
         "title": "Scientific software",
-        "image_path": "static/images/software.jpg",
+        "description": "Hi",
         "link": "science/highlights/ScientificSoftware"
     }
 ]

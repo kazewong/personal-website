@@ -3,7 +3,6 @@ import '../globals.css'
 import { getScienceHighlightData } from '../science/contentParser';
 import Image from 'next/image'
 import Link from 'next/link'
-import {ImageCard} from '../components/imageCard';
 
 export default async function Science() {
 
@@ -48,9 +47,12 @@ export default async function Science() {
 						<p className='px-4 py-2'>
 							Here are some topics I am or have been working on. I am big believer in collaborative work instead of racing against each other, so if you find any of the following topics interested you, feel free to reach out to me.
 						</p>
-						<div className="grid grid-cols-2 lg:grid-cols-3">
-							{data.map((item, index) => (
-								
+						<div className="flex-column">
+							{data.map((HighlighData) => (
+								<div className="p-2">
+									<Link href={HighlighData.link} className='text-cyan-500 text-large'>{HighlighData.title}</Link>
+									<div className="text-san">{HighlighData.description}</div>
+								</div>	
 							))}
 						</div>
 				</div>
