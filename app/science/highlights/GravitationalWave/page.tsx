@@ -4,29 +4,24 @@ import Link from 'next/link'
 
 
 export default async function GravitationalWave() {
-
 	return (
 		<div className="h-screen lg:flex flex-col py-8">
 			<div className='text-center py-4'>
 				<h1 className='text-5xl'>Gravitational waves</h1>
 			</div>
 			<div className=''>
-                <div className='text-start'>
-					<h3 className='text-3xl'>Background</h3>
-					<Divider className='my-4'/>
-					<p>
-					</p>
-				</div>
 				<div className='text-start'>
 					<h3 className='text-3xl'>Why am I interested?</h3>
 					<Divider className='my-4'/>
-					{/* <p>
-					The year was 2016, which is the year when the first direct detection of GWs was announced by the LIGO collaboration. Before I started doing GW, I was working on a project that was related to trying to improve <a href='https://en.wikipedia.org/wiki/Baryon_acoustic_oscillations'>Baryonic Acostic Oscillation</a> (BAO) reconstruction to beyond first order method. Failing to make any significant progress, thinking I am too dumb for any research and considering dropping out of physics. A new faculty member <a href='https://www.google.com/search?client=firefox-b-1-e&q=tjonnie+li'>Tjonnie G.F. Li</a>. joined the department and started a research group on GWs. Decided to give myself another chance, I started working on GWs as my final year project.</p>
 					<p>
-					Instead of driven by fascination of the discovery, I enjoyed problem solving and programming more. As opposed to more "astro" type of research problem, problems in GWs are usually very well and clearly defined. I love how I can check whether a problem is solved quickly and move on to the next one
-					</p> */}
+						To begin with, I did my Ph.D. in gravitational waves (GW). I was often asked how did I decide to study black holes and GWs, and my answer is: it is simple. In my mind, black holes and GWs are highly idealized objects. Think about a black hole binaries, the model we use to describe the GW it generates has 15 numbers: 2 masses, 6 spins, 4 sky angles, time and phase of coalescence, and distance. And how does the data look like? A time series of the strain and that's it. On top of that, our theory of gravity is incredibly clean and well verified. Claiming you found something wrong in general relativity usually put you in the last session of the last day in APS, or a special table with similar minded people in any other conference.
+					</p>
 					<p>
-					GWs problems are very well defined yet challenging. For example, the parameter estimation (PE) problem is quite simply defined: given a time series and a model, establish the parameters of the source. In principle, one can just throw a big enough machine and MCMC at it and get the answer. However, the challenge is to do it in a reasonable time and with a reasonable accuracy. GW PE has all sort of technical challenges to it, multimodality, (somewhat) high dimensionality, local correlation, etc. This makes the problem straightforward and difficult at the same time, and it makes GW a great test bench for many statistical and computational methods. 
+						Yet, problems in GW are quite challenging. Our data is extremely noisy (Veritasium has <a href="https://www.youtube.com/watch?v=iphcyNWFD10">a great video</a> on this), the statistics we have is small, and the accuracy requirement on our model is brutal because of how well we know GR. For example, the parameter estimation (PE) problem is quite simply defined: given a time series and a model, establish the parameters of the source. In principle, one can just throw a big enough machine and MCMC at it and get the answer. However, the challenge is to do it in a reasonable time and with a reasonable accuracy. GW PE has all sort of technical challenges to it, multimodality, (somewhat) high dimensionality, local correlation, etc. Working on GWs problem is kind of like pushing a boulder uphill like Sisyphus: here is your boulder, now put it on top of the hill. Very well defined and simple, but boy it is hard.
+					</p>
+					<p>
+					
+					This makes the problem straightforward and difficult at the same time, and it makes GW a great test bench for many statistical and computational methods. 
 					</p>
 				</div>
 				<div className='text-start'>
@@ -45,7 +40,7 @@ export default async function GravitationalWave() {
 
 					<h4 className='text-xl py-1'>Modern wave waveform model</h4>
 					<p>
-						Numerical relativity simulations provide the most accurate waveform model. However, they usually takes hours or even weeks to simulate for one set of source parameters. PE often requires at least 10^5 waveform evaluation to get a good estimate of the posterior, so using NR waveform directly is not feasible. Because of this, many groups have contributed to building approximation to NR waveform, such as IMRPhenom, SEOBNR, and the surrogate model.
+						Numerical relativity simulations provide the most accurate waveform model. However, they usually takes hours or even weeks to simulate for one set of source parameters. PE often requires at least 10^5 waveform evaluation to get a good estimate of the posterior, so using NR waveform directly is not feasible. Because of this, many groups have contributed to building approximation to NR waveform, such as <a href="https://arxiv.org/abs/2004.06503">IMRPhenom</a>, <a href="https://arxiv.org/abs/2003.12079">SEOBNR</a>, and the <a href="https://arxiv.org/abs/1905.09300">surrogate model</a>.
 					</p>
 					<h4 className='text-xl py-1'>Numerical relativity</h4>
 					<p>

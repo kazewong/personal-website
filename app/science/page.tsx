@@ -45,8 +45,8 @@ export default async function Science() {
 				<div className='text-start'>
 					<h3 className='text-2xl'>Research Highlight</h3>
 					<Divider className='my-4'/>
-						<p className='px-4 py-2 lg:w-2/3'>
-							Here are some topics I am or have been working on.
+						<p className='px-4 py-2'>
+							Here are some topics I am or have been working on. I am big believer in collaborative work instead of racing against each other, so if you find any of the following topics interested you, feel free to reach out to me.
 						</p>
 						<div className="grid grid-cols-2 lg:grid-cols-3">
 							{data.map((individual_data) => (
