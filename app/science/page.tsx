@@ -24,9 +24,9 @@ export default async function Science() {
 								<Image src='/static/images/portrait.jpg' alt="" width={147} height={147} className="rounded-full"/>
 							</div>
 							<div className="justify-center flex-col">
-								<p className="text-3xl text-center dark:text-gray-300">Kaze W. K Wong</p>
-								<p className="text-base text-center dark:text-gray-300">Flatiron research fellow</p>
-								<p className=" text-base text-center dark:text-gray-300">Flatiron institute</p>
+								<div className="text-3xl text-center dark:text-gray-300">Kaze W. K Wong</div>
+								<div className="text-base text-center dark:text-gray-300">Flatiron research fellow</div>
+								<div className=" text-base text-center dark:text-gray-300">Flatiron institute</div>
 							</div>
 						</div>
 						<div className="px-4 lg:w-2/3">
