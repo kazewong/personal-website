@@ -6,22 +6,22 @@
     },
     {
         "title": "Data driven astrophysics",
-        "description": "Ho",
+        "description": "Bridging the gap between all observatories with machine learning",
         "link": "science/highlights/DataDrivenAstrophysics"
     },
     {
         "title": "Robustness and Interpretability in machine learning",
-        "description": "Hi",
+        "description": "Ensuring we learn something meaningful from our models",
         "link": "science/highlights/InterpretableMachineLearning"
     },
     {
         "title": "Reproducible science",
-        "description": "Hi",
+        "description": "Making scientific research more transparent and reliable",
         "link": "science/highlights/ReproducibleScience"
     },
     {
         "title": "Scientific software",
-        "description": "Hi",
+        "description": "A collection of software tools for scientific research",
         "link": "science/highlights/ScientificSoftware"
     }
 ]
