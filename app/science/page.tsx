@@ -64,7 +64,9 @@ export default async function Science() {
 					<p className='px-4 '>
 							Open science is one of my fundamental beliefs. I spent a great deal of time developing open-source codes and workflow, as well as writing tutorials (for teaching myself, more often than not) and documentations, so it would be weird if I don't share them here. You can find my codes, tutorials, as well as presentations and other kind of materials below, feel free to use them and share them. I would appreciate any feedbacks and if you can cite the relevant papers if you find them useful.
 					</p>
-					<MaterialGroup/>
+					<div className='flex justify-center'>
+						<MaterialGroup/>
+					</div>
 				</div>
 			</div>
 		</div>
