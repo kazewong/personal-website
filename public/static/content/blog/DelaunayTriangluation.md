@@ -42,7 +42,7 @@ Some difficulties
 
 ### Determining which points can be inserted at the same time
 
-Now we are given a bunch of points, we need to figure 
+Now we are given a bunch of points, we need to figure out what is the order of insertion. If two points are going to modify a common object within the tree, that means they are in-conflitc with each other, so one have to be inserted after another. 
 
 The first version I tried to implement 
 
@@ -50,6 +50,8 @@ To recap, here is a brief timeline of this part:
 1. Locate which sites each point are in conflict with. Check if there is any intersection between the sites ripped by this point and any other point. If yes, discard the later point in this batch. This is horrible, since this scales O(n^2) with the number of point in a batch, and it wastes computation because we do not insert some points.
 2. Create an "occupancy" dictionary of list. For each point, push the id of the point into the entry with key equal to the sites the point is in conflict with. After populating the occupancy dictionary, we will have a dictionary with keys being a particular site id, and the value being all the point in conflict with that site. This is way better, since the construction of the occupancy dictionary is basically O(n). When checking whether a point can be inserted, we just have to check whether the sites and their neighbors contains other point. If not, the point can be safely inserted.
 3. While method 2 is better in figuring out which point can be inserted currently, it still waste computation checking for point that cannot be inserted right away. The next come to jesus moment I had was realizing the order of points in the occupancy dictionary can be used to figure out the order insertion. When two points are both in conflict with the same site, it just means we have to insert one after another. So we should be able to figure out independent lines of insertion and run them in parallel. This means we only have to construct the occupancy dictionary once, and figure out the order of insertion (also once), then we just let the insertion runs until finish.
+
+
 
 ## Another way out
 
