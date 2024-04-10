@@ -55,9 +55,15 @@ To recap, here is a brief timeline of this part:
 
 A combination of the race condition and the garbage collector makes it quite hard to push for maximum performance in Julia.
 For example, the most expensive part of the algorithm is computing the circumsphere of a simplex, which ideally I would want to parallel that part as much as possible.
-
+This can be done by threading in Julia (I don't use distributed computing since that will involve sharding my tree, which is an absolute nightmare):
 ```
-Threads.@threads for i in 1:length(updates)
+Threads.@threads for i in 1:length(vertex)
     updates[i] = make_update(...)
     end
 ```
+
+The problem is not all vertices can be inserted at once because of insertion conflicts. The next best thing I can do is to divide them in batches, with each batch contains only points that are not in conflict with each other, then I can at least parallelize inside each batch. The processing speed of each batch is limited by the slowest update within each batch, since we have to wait until the last update finishes before starting the next batch to avoid conflicts.
+Now if every updates within a batch takes about the same time to process, this would not be a big problem. However, the garbage collector seems to like to kick in once in a while and slow down that one particular updates a lot, meaning the runtime is actually domainated by the garbage collector.
+This is basically the nail in the coffin that makes me rage switch to rust.
+
+As of writing this paragraph, I actually made the rust version scales amazingly. I am so happy that I switched to rust, and I have become a rust zealot. I will make another blog post going through my experience in refactoring my julia code into rust, and how amazing that experience was.

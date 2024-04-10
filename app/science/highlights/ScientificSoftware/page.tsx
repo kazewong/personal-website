@@ -5,7 +5,7 @@ export default async function ScientificSoftware() {
 	return (
 		<div className="h-screen lg:flex flex-col py-8">
 			<div className='text-center py-4'>
-				<h1 className='text-5xl'>Scientific Software</h1>
+				<h1 className='text-5xl'>Open Source Scientific Software</h1>
 			</div>
 			<div className=''>
 
@@ -22,7 +22,7 @@ export default async function ScientificSoftware() {
                         I deeply enjoy helping others solving their problems, and build high quality open source software to serve the broad community. It is really fun to be able to work on black holes, biomechanical models, and seeing my CPU and GPU utilization goes to 100% at the same time!
                     </p>
                     <p>
-                        Beside deeply enjoying supporting others and building efficient code, I believe this is also of interest the science community.
+                        Beside deeply enjoying supporting others and building efficient code, I believe this is also of interest the science community. 
                     </p>
 
 				</div>
