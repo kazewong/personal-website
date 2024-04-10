@@ -1,6 +1,5 @@
 import { Divider } from '@nextui-org/divider';
-import Image from 'next/image'
-import Link from 'next/link'
+
 
 
 export default async function GravitationalWave() {
