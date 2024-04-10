@@ -11,6 +11,7 @@ export default async function GravitationalWave() {
 			</div>
 			<div className=''>
 				<div className='text-start'>
+					<img className="py-2" src="https://www.nasa.gov/wp-content/uploads/2016/02/ns_gw_art.jpg"/>
 					<h3 className='text-3xl'>Why am I interested?</h3>
 					<Divider className='my-4'/>
 					<p>
@@ -36,8 +37,12 @@ export default async function GravitationalWave() {
 					</p>
 					<p>
 						There has been different attempts to speed up parameter estimation, either through more modern engineering but sticking with traditional sampling method, or completely new deep learning-based method such as simulation-based inference.
+						On this topic, I developed an open-source package <a href="https://github.com/kazewong/jim">jim</a> to provide the community a fast code to estimate parameters.
+						We used a bag of tricks, including some machine learning, some GPUs, smart math related to gravitational wave, and more. The idea behind jim is it should be extensible by the user, run fast, and reasonably robust (and if it start failing, at least it should tell you so).
+						Jim is still in active development, if you are interested or have feedbacks, please feel free to <a href="https://github.com/kazewong/jim/issues/new">open an issue</a>!
+						We welcome suggestions and contribution with our open arms. 
 					</p>
-
+					
 					<h4 className='text-xl py-1'>Modern wave waveform model</h4>
 					<p>
 						Numerical relativity simulations provide the most accurate waveform model. However, they usually takes hours or even weeks to simulate for one set of source parameters. PE often requires at least 10^5 waveform evaluation to get a good estimate of the posterior, so using NR waveform directly is not feasible. Because of this, many groups have contributed to building approximation to NR waveform, such as <a href="https://arxiv.org/abs/2004.06503">IMRPhenom</a>, <a href="https://arxiv.org/abs/2003.12079">SEOBNR</a>, and the <a href="https://arxiv.org/abs/1905.09300">surrogate model</a>.
