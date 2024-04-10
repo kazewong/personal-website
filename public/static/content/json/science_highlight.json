@@ -15,11 +15,6 @@
         "link": "science/highlights/InterpretableMachineLearning"
     },
     {
-        "title": "Reproducible science",
-        "description": "Making scientific research more transparent and reproducible",
-        "link": "science/highlights/ReproducibleScience"
-    },
-    {
         "title": "Scientific software",
         "description": "A collection of software tools for scientific research",
         "link": "science/highlights/ScientificSoftware"
