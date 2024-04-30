@@ -9,7 +9,7 @@ Coding in Jax is fairly straight forward, as advertised on their [github repo](h
 
 However, thinking in Jax takes quite a bit of suffering to get used to. Here are some common antipatterns I have come across while coding in Jax. 
 
-## 1. for-loops
+## For-loops
 
 Let say I have some function I want to loop over
 
@@ -19,4 +19,8 @@ def many_f(x):
         x = f(x)
     return x
 ```
+
+## In-place replacement
+
+## 
 
