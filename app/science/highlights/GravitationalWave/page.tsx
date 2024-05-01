@@ -58,7 +58,7 @@ export default async function GravitationalWave() {
 				<div className='text-start'>
 					<h3 className='text-3xl'>Materials</h3>
 					<Divider className='my-4'/>
-					
+					Here 
 				</div>
 			</div>
 		</div>
