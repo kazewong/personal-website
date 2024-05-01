@@ -36,6 +36,19 @@
     @apply text-2xl py-3 font-bold
   }
 
+  h3{
+    @apply text-xl py-3 font-bold
+  }
+
+  ol{
+    @apply list-decimal list-inside p-4 
+  }
+
+  li{
+    @apply dark:marker:text-white dark:text-gray-300 font-light text-large font-sans leading-tight py-1
+  
+  }
+
 }
 
 :root {
