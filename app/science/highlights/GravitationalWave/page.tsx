@@ -39,12 +39,15 @@ export default async function GravitationalWave() {
 						On this topic, I developed an open-source package <a href="https://github.com/kazewong/jim">jim</a> to provide the community a fast code to estimate parameters.
 						We used a bag of tricks, including some machine learning, some GPUs, smart math related to gravitational wave, and more. The idea behind jim is it should be extensible by the user, run fast, and reasonably robust (and if it start failing, at least it should tell you so).
 						Jim is still in active development, if you are interested or have feedbacks, please feel free to <a href="https://github.com/kazewong/jim/issues/new">open an issue</a>!
-						We welcome suggestions and contribution with our open arms. 
+						We welcome any suggestions and contributions.
 					</p>
 					
 					<h4 className='text-xl py-1'>Modern wave waveform model</h4>
 					<p>
-						Numerical relativity simulations provide the most accurate waveform model. However, they usually takes hours or even weeks to simulate for one set of source parameters. PE often requires at least 10^5 waveform evaluation to get a good estimate of the posterior, so using NR waveform directly is not feasible. Because of this, many groups have contributed to building approximation to NR waveform, such as <a href="https://arxiv.org/abs/2004.06503">IMRPhenom</a>, <a href="https://arxiv.org/abs/2003.12079">SEOBNR</a>, and the <a href="https://arxiv.org/abs/1905.09300">surrogate model</a>.
+						Numerical relativity simulations provide the most accurate waveform model. However, they usually takes hours or even weeks to simulate for one set of source parameters. PE often requires at least 10^5 waveform evaluation to get a good estimate of the posterior, so using NR waveform directly is not feasible. Because of this, many groups have contributed to building approximation to NR waveform, such as <a href="https://arxiv.org/abs/2004.06503">IMRPhenom</a>, <a href="https://arxiv.org/abs/2003.12079">SEOBNR</a>, and the <a href="https://arxiv.org/abs/1905.09300">surrogate model</a>. Since these approximation families have different assumptions going into their model, they have different systematics and tradeoffs compared to NR as a baseline. 
+					</p>
+					<p>
+						Waveform models are crictical to any GW studies ranging from search, parameter estimation to interpertation, so making sure they are high performance and suitable for downstream tasks is what I am passion about. More specifically, I am interested making "modern" waveforms, which should include features such as automatically differentiable, compatible with accelerators, and be able to account for calibration uncertainties. I am a developer involved in an open-source package <a href="https://github.com/tedwards2412/ripple">ripple</a>. Once again if you have suggestions or want to contribute, please get in touch!
 					</p>
 					<h4 className='text-xl py-1'>Numerical relativity</h4>
 					<p>
@@ -55,7 +58,7 @@ export default async function GravitationalWave() {
 				<div className='text-start'>
 					<h3 className='text-3xl'>Materials</h3>
 					<Divider className='my-4'/>
-
+					
 				</div>
 			</div>
 		</div>

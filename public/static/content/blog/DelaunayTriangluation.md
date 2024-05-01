@@ -59,7 +59,7 @@ And here are the different iterations I had:
 
 Because of my HPC background, the first thing that comes to my mind was how can I distribute the computation across multiple cores. But some more careful thought, this is actually not the best way to parallelize the algorithm. Unlike a typical distributed workload that nodes only communicate at some interface (e.g. if we are simulating a 3D turbulence simulation, the nearby block only talk to each other through their interface.), every newly inserted point essentially need to query the entire graph to figure out where the insertion should be and how to make the new neighbor. Communication cost is usually the biggest overhead in distributed workload, and one can guess distributing a big graph will be an absolute nightmare. So instead of thinking along the line of distributing and communicating, I went the route of staying in one node and multi-threading within a unifed memory environment.
 
-Julia has pretty good out-of-the-box threading support, 
+Julia has pretty good out-of-the-box threading support. For example, let say I want to turn 
 
 ```
 Threads.@threads for i in 1:length(vertex)
