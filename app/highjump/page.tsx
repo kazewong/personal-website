@@ -4,7 +4,7 @@ export default function HighJump() {
 	return (
 		<div className="lg:flex flex-col py-8 justify-center">
 			<div className='text-center py-4'>
-				<h1 className='text-5xl'>Athletic Kaze</h1>
+				<h1 className='text-5xl'>I jump</h1>
 			</div>
 			<div className=''>
 				<div className='text-start'>

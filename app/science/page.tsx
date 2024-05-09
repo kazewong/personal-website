@@ -12,7 +12,7 @@ export default async function Science() {
 	return (
 		<div className="h-screen lg:flex flex-col py-8">
 			<div className='text-center py-4'>
-				<h1 className='text-5xl'>Science Kaze</h1>
+				<h1 className='text-5xl'>I do science</h1>
 			</div>
 			<div className=''>
 				<div className='text-start'>
