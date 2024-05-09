@@ -5,7 +5,7 @@ export default function Code() {
 	return (
 		<div className="lg:flex flex-col py-8 justify-center">
 			<div className='text-center py-4'>
-				<h1 className='text-5xl'>Nerdy Kaze</h1>
+				<h1 className='text-5xl'>I code</h1>
 			</div>
 			<div className="lg:flex flex-col py-8 justify-center">
 				<div className=''>
