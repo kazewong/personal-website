@@ -18,12 +18,23 @@ export default async function InterpretableMachineLearning() {
 							While non-robustness can lead to serious issues such as exploding rockets and mistreatments, I have a bigger issue with uninterpretability. By definition, we cannot understand how the universe works if our model of the universe is uninterpretable. This goes directly against the main purpose of science, and that's why I think DL is more similar to alchemy instead of chemistry. Nothing wrong about trying different things and see what sticks, but claming victory after the test loss is beating all other benchmarks annoy me to no end. 
 						</p>
 						<p>
-							Beyond pratical purposes, I think making our model robust and interpretable actually go hand-in-hand with understand deep neural networks. There are neural networks that work better than others for specific problems, and we have some ideas on why that is the case. 
+							Beyond pratical purposes, I think making our model robust and interpretable actually go hand-in-hand with understanding deep neural networks. There are neural networks that work better than others for specific problems, and we have some ideas on why that is the case. But there are relatively few literature going into understanding neural networks in a practical setting. There are seminal works on understanding neural networks in a theoretical setting, but ultimately I care about applying neural networks to real-world problems, so having guides and principles behind choosing the architechtures and hyperparameters is very important to me.
 						</p>
 				</div>
 				<div className='text-start'>
 					<h3 className='text-2xl'>What do I work on?</h3>
 					<Divider className='my-4'/>
+					<h4 className='text-xl py-1'>Tuning guide for practical architechtures</h4>
+					<p>
+					</p>
+					<h4 className='text-xl py-1'>Smoothness of neural networks</h4>
+					<p>
+					</p>
+					<h4 className='text-xl py-1'></h4>
+					<p>
+					</p>
+					
+
 				</div>
 
 				<div className='text-start'>
