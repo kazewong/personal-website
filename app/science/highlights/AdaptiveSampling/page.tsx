@@ -24,11 +24,16 @@ export default async function AdaptiveSampling() {
 				<div className='text-start'>
 					<h3 className='text-2xl'>What do I work on?</h3>
 					<Divider className='my-4'/>
-					<h4 className='text-xl py-1'>Tuning for flowMC</h4>
+					<h4 className='text-xl py-1'>Robust tuning for flowMC</h4>
 					<p>
+						I am the main developer and maintainer of an adaptive MCMC sampler  <a href="https://github.com/kazewong/flowMC">flowMC</a>, so I think I have the right to say the tuning procedure of flowMC may not be the most friendly and robust. Part of the reason is flowMC is designed to handle sampling problems that have bad geometries such as multi-modality and local correlation (e.g. a donut), and these problems can be really hard! In fact, global optimization of non-convex problem is known to be <a href="https://github.com/kazewong/flowMC">NP-complete</a>, and if I tell you there is a generic way for me to handle this class of problems in a provably fast way, you can be sure that is a lie since that will mean I have proven P=NP, which is a way bigger deal.
+					</p>
+					<p>
+						Now that is not to say this problem is hopeless either. It is very hard to solve the problem in a genral sense, but for a specific usecase which the users have some insights about the complexity of the problem, there could be a guide for the user to tune the sampler to be efficient enough for them. I won't say flowMC is the best solution for your problem, but flowMC should be a reasonably good start. And if flowMC cannot solve your problem, it should provide you insights on where are the difficulties of the problem.
 					</p>
 					<h4 className='text-xl py-1'>Scaling to higher dimension</h4>
 					<p>
+						
 					</p>
 
 				</div>
