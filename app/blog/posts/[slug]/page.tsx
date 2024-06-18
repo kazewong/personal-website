@@ -1,8 +1,13 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import { remark } from 'remark';
-import html from 'remark-html';
+import rehypeKatex from 'rehype-katex'
+import rehypeStringify from 'rehype-stringify'
+import remarkMath from 'remark-math'
+import remarkParse from 'remark-parse'
+import remarkRehype from 'remark-rehype'
+import rehypeFormat from 'rehype-format'
+import {unified} from 'unified'
 
 const postsDirectory = path.join(process.cwd(), 'public/static/content/blog/');
 
@@ -60,8 +65,13 @@ async function getPostData(id: string){
     const metadata = matterResult.data as PostMetaData;
 
     // Use remark to convert markdown into HTML string
-    const processedContent = await remark()
-    .use(html)
+    const processedContent = await unified()
+    .use(remarkParse)
+    .use(remarkRehype)
+    .use(remarkMath)
+    .use(rehypeFormat)
+    .use(rehypeKatex, {output: 'mathml'})
+    .use(rehypeStringify)
     .process(matterResult.content);
     const contentHtml = processedContent.toString();
 
