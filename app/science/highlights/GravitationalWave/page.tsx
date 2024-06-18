@@ -42,7 +42,7 @@ export default async function GravitationalWave() {
 						We welcome any suggestions and contributions.
 					</p>
 					
-					<h4 className='text-xl py-1'>Modern wave waveform model</h4>
+					<h4 className='text-xl py-1'>Modern waveform model</h4>
 					<p>
 						Numerical relativity simulations provide the most accurate waveform model. However, they usually takes hours or even weeks to simulate for one set of source parameters. PE often requires at least 10^5 waveform evaluation to get a good estimate of the posterior, so using NR waveform directly is not feasible. Because of this, many groups have contributed to building approximation to NR waveform, such as <a href="https://arxiv.org/abs/2004.06503">IMRPhenom</a>, <a href="https://arxiv.org/abs/2003.12079">SEOBNR</a>, and the <a href="https://arxiv.org/abs/1905.09300">surrogate model</a>. Since these approximation families have different assumptions going into their model, they have different systematics and tradeoffs compared to NR as a baseline. 
 					</p>
