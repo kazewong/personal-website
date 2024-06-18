@@ -25,18 +25,47 @@ export default async function Science() {
 							</div>
 							<div className="justify-center flex-col">
 								<div className="text-3xl text-center dark:text-gray-300">Kaze W. K Wong</div>
-								<div className="text-base text-center dark:text-gray-300">Flatiron research fellow</div>
-								<div className=" text-base text-center dark:text-gray-300">Flatiron institute</div>
+								<div className="text-base text-center dark:text-gray-300">Assistant research professor</div>
+								<div className=" text-base text-center dark:text-gray-300">Johns Hopkins University</div>
 							</div>
 						</div>
 						<div className="px-4 lg:w-2/3">
 							<div className=" text-xl flex-row justify-start">
 								<p className="py-3 text-base">
-								I am a research fellow at the Flatiron Institute, mostly spending my time <b className='dark:text-gray-300'>building codes</b> to analyze <b className='dark:text-gray-300'>gravitational-wave</b> data and studying <b className='dark:text-gray-300'>black holes</b>.
-								I also spend a significant amount of time trying to figure out how to use <b className='dark:text-gray-300'>machine-learning</b> techniques to answer science questions in <b className='dark:text-gray-300'>robust and interpretable ways</b>.
+								I am an assistant research professor in the Department of Applied Mathematics and Statistics at Johns Hopkins University. I am also a software engineer with the Data Science and AI Institute.
+								
+								I have very broad interest in many different subjects. In brief, I spend 20-30% of my time thinking about <strong>astrophysics</strong>, ~40% of my time trying to <strong>understand to make neural network robust and how to make them go fast</strong>, and the remaining time <strong>building production-grade domain science applications</strong>. My work is primarily computational and I care about <strong>open source software</strong> a lot. See below for some of the topics I am currently working on. 
+								
+								<div className='flex flex-col py-4'>
+									<div className='flex flex-row py-2'>
+										<p className='px-2'>
+											<a href="https://kazewong.github.io/CV">
+												<img src="https://img.shields.io/badge/My-CV-blue?style=for-the-badge" alt="" className="h-6"/>
+											</a>
+										</p>
+
+									</div>
+									<div className='flex flex-row py-2'>
+										<p className='px-2'>
+											<a href="https://inspirehep.net/authors/1789361?ui-citation-summary=true">
+												<img src="https://img.shields.io/badge/publication-inspire-green?style=for-the-badge" alt="" className="h-6"/>
+											</a>
+										</p>
+										<p className='px-2'>
+											<a href="https://scholar.google.com/citations?user=oQDoPMsAAAAJ&hl=en">
+												<img src="https://img.shields.io/badge/publication-google-green?style=for-the-badge" alt="" className="h-6"/>
+											</a>
+										</p>
+
+									</div>
+									<div className='flex flex-row py-2'>
+										<p className='px-2'>
+											<img src="https://img.shields.io/github/stars/kazewong"/>
+										</p>
+									</div>
+								</div>
+
 								</p>
-								<p className="py-3 text-base">Link to CV: <Link href="https://kazewong.github.io/CV" className='text-cyan-500 underline'>https://kazewong.github.io/CV</Link></p>
-								<p className="py-3 text-base">Publication profile: <Link href="https://inspirehep.net/authors/1789361?ui-citation-summary=true" className='text-cyan-500  underline'>https://inspirehep.net/authors/1789361?ui-citation-summary=true</Link></p>
 							</div>
 						</div>
 					</div>
