@@ -21,7 +21,7 @@
   }
 
   p {
-    @apply dark:text-gray-300 font-light text-large font-sans leading-tight
+    @apply dark:text-gray-300 font-light text-large font-sans leading-tight py-1
   }
 
   strong {

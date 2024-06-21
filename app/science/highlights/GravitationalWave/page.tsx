@@ -41,7 +41,9 @@ export default async function GravitationalWave() {
 						Jim is still in active development, if you are interested or have feedbacks, please feel free to <a href="https://github.com/kazewong/jim/issues/new">open an issue</a>!
 						We welcome any suggestions and contributions.
 					</p>
-					
+					<a href="https://github.com/kazewong/jim" className='py-2'>
+						<img src="https://img.shields.io/badge/kazewong-jim-cyan?style=for-the-badge&logo=github" alt="" className="h-6"/>
+					</a>
 					<h4 className='text-xl py-1'>Modern waveform model</h4>
 					<p>
 						Numerical relativity simulations provide the most accurate waveform model. However, they usually takes hours or even weeks to simulate for one set of source parameters. PE often requires at least 10^5 waveform evaluation to get a good estimate of the posterior, so using NR waveform directly is not feasible. Because of this, many groups have contributed to building approximation to NR waveform, such as <a href="https://arxiv.org/abs/2004.06503">IMRPhenom</a>, <a href="https://arxiv.org/abs/2003.12079">SEOBNR</a>, and the <a href="https://arxiv.org/abs/1905.09300">surrogate model</a>. Since these approximation families have different assumptions going into their model, they have different systematics and tradeoffs compared to NR as a baseline. 
@@ -49,6 +51,9 @@ export default async function GravitationalWave() {
 					<p>
 						Waveform models are critical to any GW studies ranging from search, parameter estimation to interpretation, so making sure they are high performance and suitable for downstream tasks is what I am passion about. More specifically, I am interested making "modern" waveforms, which should include features such as automatically differentiable, compatible with accelerators, and be able to account for calibration uncertainties. I am a developer involved in an open-source package <a href="https://github.com/tedwards2412/ripple">ripple</a>. Once again if you have suggestions or want to contribute, please get in touch!
 					</p>
+					<a href="https://github.com/tedwards2412/ripple">
+						<img src="https://img.shields.io/badge/tedwards2412-ripple-cyan?style=for-the-badge&logo=github" alt="" className="h-6"/>
+					</a>
 					<h4 className='text-xl py-1'>Numerical relativity</h4>
 					<p>
 						Having incredibly accurate numerical relativity (NR) simulations and waveform catalog is one of the reason why the community can build surrogate waveform models such IMRPhenom, SEOB, and the surrogate, which in turns give our detector more sensitivity through match filtering. In the coming decade (2030-2040), next generation detectors are going to be built. They are sensitive enough which the accuracy of NR simulation could be a limiting factor. One of the question is how can we improve the existing model, in turns requiring us to simulate NR signal in a more precise fashion. 

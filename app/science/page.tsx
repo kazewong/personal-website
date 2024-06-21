@@ -87,6 +87,14 @@ export default async function Science() {
 						</div>
 				</div>
 
+				<div className='text-start'>
+					<h3 className='text-2xl'>Machine learning clinic</h3>
+					<Divider className='my-4'/>
+						<p className='px-4 py-2'>
+							
+						</p>
+				</div>
+
 				{/* <div className='text-start'>
 					<h3 className='text-2xl'>Materials</h3>
 					<Divider className='my-4'/>
