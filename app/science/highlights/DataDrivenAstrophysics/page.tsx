@@ -11,10 +11,15 @@ export default async function DataDrivenAstrophysics() {
                 <div className='text-start'>
 					<h3 className='text-2xl'>Why am I interested?</h3>
 					<Divider className='my-4'/>
-					Astrophysics 
+					 
 				</div>
 				<div className='text-start'>
 					<h3 className='text-2xl'>What do I work on?</h3>
+					<Divider className='my-4'/>
+
+				</div>
+				<div className='text-start'>
+					<h3 className='text-2xl'>Publications</h3>
 					<Divider className='my-4'/>
 				</div>
 			</div>
