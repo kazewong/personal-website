@@ -12,7 +12,17 @@ export default function Code() {
 					<div className='text-start'>
 						<h3 className='text-2xl'>Libraries</h3>
 						<Divider className='my-4'/>
-						<a href='https://github.com/kazewong/flowMC'>flowMC</a>-Normalizing flow-enhanced MCMC sampler
+						<div className='flex flex-col space-y-2'>
+							<a href="https://github.com/kazewong/flowMC">
+								<img src="https://img.shields.io/badge/kazewong-flowMC-cyan?style=for-the-badge&logo=github" alt="" className="h-6"/>
+							</a>
+							<a href="https://github.com/kazewong/jim">
+								<img src="https://img.shields.io/badge/kazewong-jim-cyan?style=for-the-badge&logo=github" alt="" className="h-6"/>
+							</a>
+							<a href="https://github.com/tedwards2412/ripple">
+								<img src="https://img.shields.io/badge/tedwards2412-ripple-cyan?style=for-the-badge&logo=github" alt="" className="h-6"/>
+							</a>
+						</div>
 					</div>
 					<div className='text-start'>
 						<h3 className='text-2xl'>Web demo gallery</h3>
