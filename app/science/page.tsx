@@ -34,7 +34,7 @@ export default async function Science() {
 								<p className="py-3 text-base">
 								I am an assistant research professor in the Department of Applied Mathematics and Statistics at Johns Hopkins University. I am also a software engineer with the Data Science and AI Institute.
 								
-								I have very broad interest in many different subjects. In brief, I spend 20-30% of my time thinking about <strong>astrophysics</strong>, ~40% of my time trying to <strong>understand to make neural network robust and how to make them go fast</strong>, and the remaining time <strong>building production-grade domain science applications</strong>. My work is primarily computational and I care about <strong>open source software</strong> a lot. See below for some of the topics I am currently working on. 
+								I have very broad interest in many different subjects. In brief, I spend 20-30% of my time thinking about <strong>astrophysics</strong>, ~40% of my time trying to <strong>understand to make neural network robust and how to tune them</strong>, and the remaining time <strong>building production-grade domain science applications</strong>. My work is primarily computational and I care about <strong>open source software</strong> a lot. See below for some of the topics I am currently working on. 
 								
 								<div className='flex flex-col py-4'>
 									<div className='flex flex-row py-2'>
