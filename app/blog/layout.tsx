@@ -5,7 +5,7 @@ export default function Layout({
 }) {
   return (
     <section className={"flex flex-col items-center"}>
-      <div className='px-8 w-[640px] lg:w-[840px] '>
+      <div className='px-8 w-[480px] lg:w-[840px] '>
           {children}
       </div>
     </section>

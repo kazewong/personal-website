@@ -12,7 +12,7 @@ export default function Blog() {
 
   return (
     <div>
-      <main className="flex min-h-screen flex-col items-center justify-start px-24 py-16">
+      <main className="flex h-screen flex-col items-center justify-start pt-12 sm:px-6 lg:px-8">
         <div className='pb-8'>
           <div className="text-lg lg:text-xl text-justify max-w-screen-prose">
             Here are a bunch of random thoughts I have or materials I like to point people to, that are too informal to be put into a more formal form.
