@@ -1,6 +1,6 @@
 import { Divider } from '@nextui-org/divider';
 import '../globals.css'
-import { getScienceHighlightData } from '../science/contentParser';
+import { getPresentationData, getScienceHighlightData } from '../science/contentParser';
 import Image from 'next/image'
 import Link from 'next/link'
 import { MaterialGroup } from './materialGroup';
@@ -8,6 +8,7 @@ import { MaterialGroup } from './materialGroup';
 export default async function Science() {
 
 	const data = await getScienceHighlightData();
+  const presentation_data = await getPresentationData();
 
 	return (
 		<div className="h-screen lg:flex flex-col py-8">
@@ -88,11 +89,30 @@ export default async function Science() {
 				</div>
 
 				<div className='text-start'>
-					<h3 className='text-2xl'>Machine learning clinic</h3>
+					<h3 className='text-2xl'>Course and presentations</h3>
 					<Divider className='my-4'/>
-						<p className='px-4 py-2'>
-							
-						</p>
+						<div>
+              Courses
+            </div>
+            <div>
+              <h3>Presentations</h3>
+              <p>
+                My presentation slides are hosted on <Link href='https://github.com/kazewong/MyUnhingedPresnetations' className='text-cyan-500'>github</Link>
+              </p>
+              <p>And also, here are some talks I did with recording that are publicly available </p>
+              <div className="flex-column">
+							{presentation_data.map((PresentationData) => (
+								<div className="py-2">
+                  <div className='flex flex-row justify-between'>
+                    <div className="text-san text-left">{PresentationData.name}</div>
+                    <div className="text-san text-right">{PresentationData.date}</div>
+                  </div>
+
+									<Link href={PresentationData.link} className='text-cyan-500 text-large'>{PresentationData.title}</Link>
+								</div>	
+							))}
+						</div>
+            </div>
 				</div>
 			</div>
 		</div>
