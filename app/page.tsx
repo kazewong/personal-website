@@ -4,11 +4,11 @@ import { Link } from "@nextui-org/link"
 export default function Home() {
   // const allPostsData = getBlog();
   return (
-    <main className="h-screen flex flex-col items-center justify-center">
-        <h1 className="text-6xl font-bold pb-8">
+    <main className="h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold pb-4 sm:pb-6 md:pb-8">
           Hello, I am <span className="text-blue-600">Kaze Wong</span>
         </h1>
-      <h2 className="text-4xl font-semibold pb-8">
+      <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold pb-4 sm:pb-6 md:pb-8">
         I do science, I jump, and I make stuffs.
       </h2>
       <div className="flex-row">
