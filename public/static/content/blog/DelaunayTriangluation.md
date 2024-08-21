@@ -1,6 +1,6 @@
 ---
 title: "Delanuay Triangulation"
-date: "07-02-2024"
+date: "2024-02-07"
 tags: ["julia", "parallel", "computational geometry", "triangulation"]
 shortDescription: "Drawing many triangles fast in julia"
 ---

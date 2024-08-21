@@ -1,6 +1,6 @@
 ---
 title: 'Anti patterns in JAX'
-date: "03-12-2023"
+date: "2023-12-03"
 tags: ['jax', 'python']
 shortDescription: "Common antipatterns in JAX"
 ---

@@ -1,6 +1,6 @@
 ---
 title: "flowMC"
-date: "03-12-2023"
+date: "2023-12-03"
 tags: ["flowMC", "bayesian", "inference", "MCMC"]
 shortDescription: "Basic working principle behind flowMC"
 ---
