@@ -18,7 +18,6 @@ export default async function DataDrivenAstrophysics() {
 					<Divider className='my-4'/>
 					<h4 className='text-xl py-1'>Heterogenous </h4>
 					<h4 className='text-xl py-1'>Accelerated parameter estimation</h4>
-					<h4 className='text-xl py-1'>Accelerated parameter estimation</h4>
 
 				</div>
 				<div className='text-start'>
