@@ -2,10 +2,7 @@
 export default {
   content: ['./src/**/*.{html,js,svelte,ts}'],
   theme: {
-      fontFamily: {
-        sans: ['Oswald'],
-        serif: ['Oswald'],
-      }
+
   },
   plugins: [],
 }

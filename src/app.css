@@ -6,7 +6,7 @@
 @layer base{
 
     html{
-      font-family: Oswald;
+      font-family: "Oswald";
     }
   
     body {
@@ -30,7 +30,7 @@
     }
     
     h1{
-      @apply text-3xl py-3 font-bold
+      @apply text-3xl py-3 font-bold font-sans
     }
   
     h2{
