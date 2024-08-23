@@ -18,7 +18,7 @@
     }
   
     a {
-        @apply text-blue-500
+        @apply dark:text-gray-100 
     }
   
     p {
@@ -30,11 +30,11 @@
     }
     
     h1{
-      @apply text-3xl py-3 font-bold font-sans
+      @apply text-4xl py-3 font-bold font-sans dark:text-gray-100
     }
   
     h2{
-      @apply text-2xl py-3 font-bold
+      @apply text-3xl py-3 font-bold dark:text-gray-100
     }
   
     h3{
