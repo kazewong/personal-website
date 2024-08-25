@@ -38,7 +38,7 @@
     }
   
     h3{
-      @apply text-xl py-3 font-bold
+      @apply text-xl py-3 dark:text-gray-100
     }
   
     ol{
