@@ -36,6 +36,8 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@fontsource/oswald": "^5.0.21"
+		"@fontsource/oswald": "^5.0.21",
+		"dompurify": "^3.1.6",
+		"marked": "^14.0.0"
 	}
 }
