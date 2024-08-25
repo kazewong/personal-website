@@ -73,8 +73,7 @@
             </div>
         </div>
     </nav>
-
 {/if}
-
-
+<main class="flex flex-col h-screen items-center justify-center px-4 sm:px-6 lg:px-8 my-auto mx-auto max-w-[1024px]">
 <slot />
+</main>
