@@ -1,5 +1,21 @@
 <script lang="ts">
 
+    const blogPosts = import.meta.glob('/src/lib/assets/blogs/*.md',
+        {
+            eager: true,
+            query: {
+                enhanced: true
+            }
+        }
+    );
+
+    for (const path in blogPosts) {
+        console.log(path);
+        // blogPosts[path]().then((data: any) => {
+        //     console.log(path, data);
+        // });
+    }
+
     type BlogMetaData = {
         id: string;
         title: string;
