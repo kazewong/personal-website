@@ -1,6 +1,7 @@
 <script>
     import "../app.css";
 
+
     let innerWidth = 0;
     let isDarkMode = false;
 
@@ -46,7 +47,7 @@
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke-width={1.5}
-                        stroke="currentColor"
+                        stroke="white"
                         class="w-8 h-8">
                         <path
                         stroke-linecap="round"
@@ -60,7 +61,7 @@
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke-width={1.5}
-                        stroke="currentColor"
+                        stroke="white"
                         class="w-8 h-8">
                         <path
                         stroke-linecap="round"
@@ -74,6 +75,11 @@
         </div>
     </nav>
 {/if}
-<main class="flex flex-col h-screen items-center justify-center px-4 sm:px-6 lg:px-8 my-auto mx-auto max-w-[1024px]">
+
+<svelte:head>
+    <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
+</svelte:head>
+
+<main class="flex flex-col h-screen items-center justify-center px-4 sm:px-6 lg:px-8 my-auto mx-auto max-w-[1024px] {isDarkMode ? 'dark': ''}">
 <slot />
 </main>

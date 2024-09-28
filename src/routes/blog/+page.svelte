@@ -1,45 +1,45 @@
 <script lang="ts">
 
-    const blogPosts = import.meta.glob('/src/lib/assets/blogs/*.md',
-        {
-            eager: true,
-            query: {
-                enhanced: true
-            }
-        }
-    );
+    // const blogPosts = import.meta.glob('/src/lib/assets/blogs/*.md',
+    //     {
+    //         eager: true,
+    //         query: {
+    //             enhanced: true
+    //         }
+    //     }
+    // );
 
-    for (const path in blogPosts) {
-        console.log(path);
-        // blogPosts[path]().then((data: any) => {
-        //     console.log(path, data);
-        // });
-    }
+    // for (const path in blogPosts) {
+    //     console.log(path);
+    //     // blogPosts[path]().then((data: any) => {
+    //     //     console.log(path, data);
+    //     // });
+    // }
 
-    type BlogMetaData = {
-        id: string;
-        title: string;
-        date: string;
-        tags: string[];
-    }
+    // type BlogMetaData = {
+    //     id: string;
+    //     title: string;
+    //     date: string;
+    //     tags: string[];
+    // }
 
-    let blogs: BlogMetaData[] = getPostData();
+    // let blogs: BlogMetaData[] = getPostData();
 
-    function getPostData(): BlogMetaData[] {
-        return [
-            {
-                id: "1",
-                title: "First Post",
-                date: "2021-10-01",
-                tags: ["first", "post"]
-            },
-            {
-                id: "2",
-                title: "Second Post",
-                date: "2021-10-02",
-                tags: ["second", "post"]
-            }]
-    }
+    // function getPostData(): BlogMetaData[] {
+    //     return [
+    //         {
+    //             id: "1",
+    //             title: "First Post",
+    //             date: "2021-10-01",
+    //             tags: ["first", "post"]
+    //         },
+    //         {
+    //             id: "2",
+    //             title: "Second Post",
+    //             date: "2021-10-02",
+    //             tags: ["second", "post"]
+    //         }]
+    // }
 
 </script>
 
