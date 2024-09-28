@@ -1,6 +1,6 @@
 
 <div class="flex justify-center">
-    <h1 class="text-6xl"> High Jump </h1>
+    <h1 class="text-6xl"> I Jump </h1>
 </div>
 
 <div class="divider dark:divider-primary"></div>
