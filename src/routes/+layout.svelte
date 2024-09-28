@@ -32,10 +32,10 @@
                         <a href="/blog">Blog</a>
                     </li>
                     <li>
-                        <a href="/blog">Science</a>
+                        <a href="/science">Science</a>
                     </li>
                     <li>
-                        <a href="/blog">High Jump</a>
+                        <a href="/highjump">High Jump</a>
                     </li>
                 </ul>
             </div>
@@ -79,6 +79,7 @@
 <svelte:head>
     <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
 </svelte:head>
+
 
 <main class="{isDarkMode ? 'dark': ''}">
     <div class="flex flex-col h-screen items-center justify-center px-4 sm:px-6 lg:px-8 my-auto mx-auto max-w-[1024px] ">
