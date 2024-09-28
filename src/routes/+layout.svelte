@@ -80,6 +80,8 @@
     <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
 </svelte:head>
 
-<main class="flex flex-col h-screen items-center justify-center px-4 sm:px-6 lg:px-8 my-auto mx-auto max-w-[1024px] {isDarkMode ? 'dark': ''}">
-<slot />
+<main class="{isDarkMode ? 'dark': ''}">
+    <div class="flex flex-col h-screen items-center justify-center px-4 sm:px-6 lg:px-8 my-auto mx-auto max-w-[1024px] ">
+        <slot />
+    </div>
 </main>
