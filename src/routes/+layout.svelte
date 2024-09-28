@@ -82,7 +82,7 @@
 
 
 <main class="{isDarkMode ? 'dark': ''}">
-    <div class="flex flex-col min-h-screen items-center justify-center px-4 sm:px-6 lg:px-8 my-auto mx-auto max-w-[1024px] ">
+    <div class="flex flex-col min-h-screen px-4 sm:px-6 lg:px-8 my-auto mx-auto max-w-[1024px] ">
         <slot />
     </div>
 </main>

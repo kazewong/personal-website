@@ -1,10 +1,9 @@
-<h1 class="text-6xl"> I Do Science </h1>
+<h1 class="flex justify-center text-6xl"> I Do Science </h1>
 
 <div class="divider dark:divider-primary divider-start">
     <h3 class="text-4xl">
         Who am I
     </h3>
-    
 </div>
 
 
