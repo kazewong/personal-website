@@ -21,7 +21,7 @@
         @apply text-5xl font-semibold text-center p-4
     }
   
-    a {
+    a, code {
         @apply dark:text-gray-100 
     }
   
