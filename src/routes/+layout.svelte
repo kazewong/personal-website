@@ -18,7 +18,7 @@
         </svg>
     <!-- </div> -->
 {:else}
-    <nav id="NavBar" class="w-full mx-auto bg-gray-900">
+    <nav id="NavBar" class="w-full mx-auto bg-indigo-50 dark:bg-gray-900 {isDarkMode ? 'dark': ''}">
         <div id="NavContainer" class = "flex flex-row py-4 max-w-[1024px] mx-auto">
             <div id="NavLogo" class="basis-1/5 px-8">
                 <p class="text-nowrap">Kaze Wong</p>
@@ -61,7 +61,7 @@
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke-width={1.5}
-                        stroke="white"
+                        stroke="black"
                         class="w-8 h-8">
                         <path
                         stroke-linecap="round"
