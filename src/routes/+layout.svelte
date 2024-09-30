@@ -3,7 +3,7 @@
 
 
     let innerWidth = 0;
-    let isDarkMode = false;
+    let isDarkMode = true;
 
     $: isMobile = innerWidth < 768;
 </script>

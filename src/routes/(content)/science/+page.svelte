@@ -1,3 +1,7 @@
+<script>
+    import portrait from '$lib/assets/images/portrait.jpg';
+</script>
+
 <h1 class="flex justify-center text-6xl"> I Do Science </h1>
 
 <div class="divider dark:divider-primary divider-start">
@@ -6,6 +10,29 @@
     </h3>
 </div>
 
+<div class="lg:flex py-8 w-full lg:w-[840px]">
+    <!-- Portrait -->
+    <div class="flex-col justify-center w-2/5">
+        <div class="justify-center flex">
+            <img src={portrait} alt="" width={147} height={147} class="rounded-full"/>
+        </div>
+        <div class="justify-center flex-col">
+            <h2 class="text-4xl text-center p-0">Kaze W. K Wong</h2>
+            <h3 class="text-xl text-center p-0">Assistant Research Professor</h3>
+            <h3 class="text-xl text-center p-0">Research Software Engineer</h3>
+            <h3 class=" text-xl text-center p-0">Johns Hopkins University</h3>
+        </div>
+    </div>
+
+    <!-- Description -->
+    <div class=" w-3/5">
+        <p>
+            I am an assistant research professor in the Department of Applied Mathematics and Statistics at Johns Hopkins University. I am also a software engineer with the Data Science and AI Institute.
+								
+            I have very broad interest in many different subjects. In brief, I spend 20-30% of my time thinking about <strong>astrophysics</strong>, ~40% of my time trying to <strong>understand to make neural network robust and how to tune them</strong>, and the remaining time <strong>building production-grade domain science applications</strong>. My work is primarily computational and I care about <strong>open source software</strong> a lot. See below for some of the topics I am currently working on. 
+        </p>
+    </div>
+</div>
 
 <div class="divider dark:divider-primary divider-start">
     <h3 class="text-4xl">
