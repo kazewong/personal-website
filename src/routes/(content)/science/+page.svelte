@@ -1,5 +1,7 @@
 <script>
     import portrait from '$lib/assets/images/portrait.jpg';
+    
+    import ResponsiveCard from '../../../components/ResponsiveCard.svelte';
 </script>
 
 <h1 class="flex justify-center text-6xl"> I Do Science </h1>
@@ -40,9 +42,15 @@
     </h3>
 </div>
 
+<div class="flex flex-col justify-center py-8 w-full lg:w-[840px]">
+    <ResponsiveCard image="https://www.ligo.caltech.edu/system/pages/images/24/page/Gravity_Waves_StillImage.jpg?1699659823" title="Gravitational Wave" description="test"/>
+    <!-- <ResponsiveCard  image={"test"} title="Gravitational Wave" description="test" reverse={true}/> -->
+</div>
+
 <div class="divider dark:divider-primary divider-start">
     <h3 class="text-4xl">
         Teaching
     </h3>
 </div>
+
 

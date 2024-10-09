@@ -39,7 +39,7 @@
                     </li>
                 </ul>
             </div>
-            <div id="NavThemeSwitch" class="basis-1/5">
+            <div id="NavThemeSwitch" class="basis-1/5 swap swap-rotate">
                 <button on:click={() => isDarkMode = !isDarkMode}>
                     {#if isDarkMode}
                         <svg
