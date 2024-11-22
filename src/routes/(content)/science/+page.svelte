@@ -10,7 +10,7 @@
 	<h3 class="text-4xl">Who am I</h3>
 </div>
 
-<div class="lg:flex py-8 w-full lg:w-[840px]">
+<div class="lg:flex justify-center py-8 w-full lg:w-[840px]">
 	<!-- Portrait -->
 	<div class="flex-col justify-center w-2/5">
 		<div class="justify-center flex">
@@ -40,7 +40,18 @@
 </div>
 
 <div class="divider dark:divider-primary divider-start">
-	<h3 class="text-4xl">Research</h3>
+	<h3 class="text-4xl">Profile Summary</h3>
+</div>
+
+<p>
+Number of papers:
+Awards:
+Grants:
+Softwares
+</p>
+
+<div class="divider dark:divider-primary divider-start">
+	<h3 class="text-4xl">Research Highlights</h3>
 </div>
 
 <div class="flex justify-center py-8 w-full lg:w-[840px] mx-auto">
@@ -70,5 +81,9 @@
 </div>
 
 <div class="divider dark:divider-primary divider-start">
-	<h3 class="text-4xl">Teaching</h3>
+	<h3 class="text-4xl">Publications</h3>
+</div>
+
+<div class="divider dark:divider-primary divider-start">
+	<h3 class="text-4xl">Students and collaborators</h3>
 </div>

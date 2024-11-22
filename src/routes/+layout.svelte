@@ -1,7 +1,6 @@
 <script>
     import "../app.css";
 
-
     let innerWidth = 0;
     let isDarkMode = true;
 
