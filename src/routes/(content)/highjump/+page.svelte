@@ -3,7 +3,7 @@
 
 <div class="divider dark:divider-primary divider-start">
     <h3 class="text-4xl">
-        I am on a mission
+        The story so far
     </h3>
 </div>
 
@@ -32,6 +32,9 @@ I didn't do any high jump because I thought to myself I had officially gave up h
 
 <!-- Goal now: LA 2028 -->
 
+<p>
+    It's been more then a year and half I haven't had a new PB in competition at the time of writing. Many things happen in between: I got injured a couple of times, I have a good coach line now, I am fully dedicated to pushing my limit. I moved back to JHU to mostly make high jump the next step in my career, and that is for a dream that is insanely difficult: to go to the Olympics. Sometime when I bring it up to someone who doesn't do high jump, they will try to convince me that is very difficult and basically impossible. I know, probably better than anyone else, afterall I am the one who is failing all the bars everyday. But I still want to try pushing my limits, and give everything to high jump this time. I just want to see how it looks like when I am competing at the highest level, and want to feel soaring over those high bars. No one can talk me out of it this time, not even me. As such, the story continues...
+</p>
 
 
 <div class="divider dark:divider-primary divider-start">
