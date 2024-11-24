@@ -1,5 +1,6 @@
 <script>
     import "../app.css";
+    import 'katex/dist/katex.min.css';
 
     let innerWidth = 0;
     let isDarkMode = true;
