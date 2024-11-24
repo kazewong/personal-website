@@ -34,7 +34,7 @@
     }
     
     h1{
-      @apply text-4xl py-3 font-bold font-sans dark:text-gray-100
+      @apply text-4xl py-3 font-bold dark:text-gray-100
     }
   
     h2{
