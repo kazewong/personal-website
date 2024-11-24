@@ -37,6 +37,9 @@
                     <li>
                         <a href="/highjump">High Jump</a>
                     </li>
+                    <li>
+                        <a href="/crafts">Crafts</a>
+                    </li>
                 </ul>
             </div>
             <div id="NavThemeSwitch" class="basis-1/5 swap swap-rotate">

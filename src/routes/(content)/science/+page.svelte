@@ -47,7 +47,7 @@
 Number of papers:
 Awards:
 Grants:
-Softwares
+Softwares:
 </p>
 
 <div class="divider dark:divider-primary divider-start">
@@ -78,10 +78,6 @@ Softwares
 			/>
 		</div>
 	</div>
-</div>
-
-<div class="divider dark:divider-primary divider-start">
-	<h3 class="text-4xl">Publications</h3>
 </div>
 
 <div class="divider dark:divider-primary divider-start">
