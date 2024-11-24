@@ -39,11 +39,12 @@ I didn't do any high jump because I thought to myself I had officially gave up h
 
 <div class="divider dark:divider-primary divider-start">
     <h3 class="text-4xl">
-        Data science and machine learning
+        Project Send Kaze to Olympics
     </h3>
 </div>
 
 <p>
-High jump is a simple sport: Get over the crossbar in whatever way you can as long as you takeoff on one foot. 
-I am certified not talented. I gave up
+High jump is a simple and pure sport: Get over the crossbar in whatever way you can as long as you takeoff on one foot. 
+I am certified not talented in High Jump, but I did get my PhD and I do a lot of machine learning. The question here is can my brain helps my body 
 </p>
+
