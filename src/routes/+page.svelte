@@ -6,7 +6,7 @@
 </script>
 
 <div class="flex flex-col min-h-screen items-center justify-center px-4 sm:px-6 lg:px-8 my-auto mx-auto max-w-[1024px] ">
-    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold">Hello, I am <span class="text-blue-600">Kaze Wong</span></h1>
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold">Hello, I am <span class="bg-gradient-to-r dark:from-blue-500 dark:to-cyan-300 from-indigo-400 to-blue-700  text-transparent bg-clip-text">Kaze Wong</span></h1>
     <h2 class="text-2xl sm:text-3xl md:text-4xl">
         I do science, I jump, and I make stuff
     </h2>
