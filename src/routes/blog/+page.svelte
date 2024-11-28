@@ -22,7 +22,7 @@
 						{post.meta.title}
 					</a>
 				</h2>
-				<p class="min-w-[100px]">
+				<p class="min-w-[105px]">
 					{post.meta.date}
 				</p>	
 			</div>
