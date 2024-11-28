@@ -10,9 +10,9 @@
 	<h3 class="text-4xl">Who am I</h3>
 </div>
 
-<div class="lg:flex justify-center py-8 w-full lg:w-[840px]">
+<div class="lg:flex justify-items-center py-8 min-w-[480px] lg:w-[1024px]">
 	<!-- Portrait -->
-	<div class="flex-col justify-center w-2/5">
+	<div class="flex-col justify-center w-4/5 lg:w-2/5">
 		<div class="justify-center flex">
 			<img src={portrait} alt="" width={147} height={147} class="rounded-full" />
 		</div>
@@ -25,7 +25,7 @@
 	</div>
 
 	<!-- Description -->
-	<div class=" w-3/5">
+	<div class=" lg:w-1/2 text-justify">
 		<p>
 			I am an assistant research professor in the Department of Applied Mathematics and Statistics
 			at Johns Hopkins University. I am also a software engineer with the Data Science and AI
@@ -37,6 +37,7 @@
 			for some of the topics I am currently working on.
 		</p>
 	</div>
+
 </div>
 
 <div class="divider dark:divider-primary divider-start">
