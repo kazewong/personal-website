@@ -14,9 +14,30 @@
     <!-- <div class="flex md:hidden"> -->
         <div class="flex justify-between bg-indigo-50 dark:bg-gray-900 {isDarkMode ? 'dark': ''}">
             <div class="px-4">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" stroke={isDarkMode ? "white": "currentColor"} class="w-12 h-12 fill-blue-500">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                </svg>
+                <details class="dropdown">
+                    <summary class="btn p-0 bg-transparent border-0 hover:bg-transparent">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" stroke={isDarkMode ? "white": "currentColor"} class="w-12 h-12 fill-blue-500">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                    </summary>
+                    <ul class="menu dropdown-content rounded-box z-[1] w-52 p-2 shadow bg-indigo-50 dark:bg-gray-900">
+                        <li>
+                            <a href="/">Home</a>
+                        </li>
+                        <li>
+                            <a href="/blog">Blog</a>
+                        </li>
+                        <li>
+                            <a href="/science">Science</a>
+                        </li>
+                        <li>
+                            <a href="/highjump">High Jump</a>
+                        </li>
+                        <li>
+                            <a href="/crafts">Crafts</a>
+                        </li>
+                    </ul>
+                </details>
             </div>
 
             <div id="NavThemeSwitch" class="px-4 swap swap-rotate">
