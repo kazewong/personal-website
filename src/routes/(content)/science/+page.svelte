@@ -60,7 +60,12 @@ Softwares:
 	<h3 class="text-4xl">Research Highlights</h3>
 </div>
 
-<div class="flex justify-center py-8 w-[480px] lg:w-[840px] mx-auto">
+<h1 class="bg-gradient-to-r from-red-500 via-yellow-300 to-indigo-40 text-transparent bg-clip-text">
+    Under constrcution
+</h1>
+
+
+<!-- <div class="flex justify-center py-8 w-[480px] lg:w-[840px] mx-auto">
 	<div class="flex-col">
 		<div class="py-4">
 			<ResponsiveCard
@@ -84,7 +89,7 @@ Softwares:
 			/>
 		</div>
 	</div>
-</div>
+</div> -->
 
 <div class="divider dark:divider-primary divider-start">
 	<h3 class="text-4xl">Students and collaborators</h3>
