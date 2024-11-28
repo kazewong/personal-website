@@ -11,7 +11,7 @@
 </div>
 
 <div class="w-full flex justify-center">
-	<div class="md:flex justify-items-center py-8 min-w-[480px] md:w-[720px]">
+	<div class="md:flex justify-items-center py-8 md:w-[720px]">
 		<!-- Portrait -->
 		<div class="flex-col justify-center w-4/5 md:w-2/5">
 			<div class="justify-center flex">
