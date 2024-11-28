@@ -6,9 +6,9 @@
 	export let description;
 </script>
 
-<div class="card shadow-xl bg-slate-700">
-	<figure class="object-fill">
-		<img class="object-fill" src={image} {alt} />
+<div class="card lg:card-side shadow-xl bg-slate-700 w-max[840px]">
+	<figure class="lg:w-3/5">
+		<img class="" src={image} {alt} />
 	</figure>
 
 	<div class="card-body">

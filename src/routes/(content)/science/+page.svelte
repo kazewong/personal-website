@@ -55,7 +55,7 @@ Softwares:
 	<h3 class="text-4xl">Research Highlights</h3>
 </div>
 
-<div class="flex justify-center py-8 w-full lg:w-[840px] mx-auto">
+<div class="flex justify-center py-8 w-[480px] lg:w-[840px] mx-auto">
 	<div class="flex-col">
 		<div class="py-4">
 			<ResponsiveCard
