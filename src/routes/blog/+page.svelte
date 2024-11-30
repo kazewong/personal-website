@@ -13,19 +13,21 @@
 
 <!-- Insert keyword filters here -->
 
-<ul>
-	{#each data.posts as post}
-		<li>
-			<div class="flex justify-between">
-				<h2 class="py-0 ">
-					<a href={post.path} class="py-0">
-						{post.meta.title}
-					</a>
-				</h2>
-				<p class="min-w-[105px]">
-					{post.meta.date}
-				</p>	
-			</div>
-		</li>
-	{/each}
-</ul>
+<div class="flex justify-center">
+	<ul class="w-[420px] md:w-[720px]">
+		{#each data.posts as post}
+			<li>
+				<div class="flex justify-between">
+					<h2 class="py-0 ">
+						<a href={post.path} class="py-0">
+							{post.meta.title}
+						</a>
+					</h2>
+					<p class="min-w-[105px]">
+						{post.meta.date}
+					</p>	
+				</div>
+			</li>
+		{/each}
+	</ul>
+</div>
