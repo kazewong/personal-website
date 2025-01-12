@@ -1,7 +1,21 @@
 <script>
 	import portrait from '$lib/assets/images/portrait.jpg';
-
 	import ResponsiveCard from '../../../components/ResponsiveCard.svelte';
+	import HighlightItem from './HighlightItem.svelte';
+
+	import highlight_data_file from './highlight_data.json';
+
+	const highlight_data = highlight_data_file.items.map((item) => {
+		return {
+			image: item.image,
+			title: item.title,
+			description: item.description,
+			alt_des: item.alt_des,
+		};
+	});
+
+	let highlight_current_id = $state(0);
+
 </script>
 
 <h1 class="flex justify-center text-6xl">I Do Science</h1>
@@ -58,6 +72,21 @@ Softwares:
 
 <div class="divider dark:divider-primary divider-start">
 	<h3 class="text-4xl">Research Highlights</h3>
+</div>
+
+<div class ="carousel w-full">
+	<div>
+		<HighlightItem
+			image={highlight_data[highlight_current_id].image}
+			title={highlight_data[highlight_current_id].title}
+			description={highlight_data[highlight_current_id].description}
+			alt_des={highlight_data[highlight_current_id].alt_des}
+		/>
+		<div>
+			<button on:click={() => highlight_current_id = (highlight_current_id + 1) % highlight_data.length} class="btn btn-circle">&lt</button>
+			<button on:click={() => highlight_current_id = (highlight_current_id + 1) % highlight_data.length} class="btn btn-circle">&gt</button>	
+		</div>
+	</div>
 </div>
 
 <h1 class="bg-gradient-to-r from-red-500 via-yellow-300 to-indigo-40 text-transparent bg-clip-text">
