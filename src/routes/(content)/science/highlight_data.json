@@ -1,16 +1,16 @@
 {
-    "items": [
-        {
-            "image": "https://inspirehep.net/files/fa27191ded742c2622bc6800c8915152",
-            "title": "Gravitational wave",
-            "description": "test",
-            "alt_des": "A medical scientist doctor holding a test tube"
-        },
-        {
-            "image": "https://github.com/kazewong/flowMC/blob/main/docs/logo_0810.png?raw=true",
-            "title": "flowMC",
-            "description": "test",
-            "alt_des": "test"
-        }
-    ]
+	"items": [
+		{
+			"image": "https://inspirehep.net/files/fa27191ded742c2622bc6800c8915152",
+			"title": "Gravitational wave",
+			"description": "test",
+			"alt_des": "A medical scientist doctor holding a test tube"
+		},
+		{
+			"image": "https://github.com/kazewong/flowMC/blob/main/docs/logo_0810.png?raw=true",
+			"title": "flowMC",
+			"description": "test",
+			"alt_des": "test"
+		}
+	]
 }

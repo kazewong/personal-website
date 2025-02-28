@@ -1,8 +1,8 @@
 ---
-title: "Dynamic slice in JAX"
-date: "2024-11-30"
-tags: ["Jax", "python", "snippet","tutorial"]
-shortDescription: "Indexing and updating a traced array in jax"
+title: 'Dynamic slice in JAX'
+date: '2024-11-30'
+tags: ['Jax', 'python', 'snippet', 'tutorial']
+shortDescription: 'Indexing and updating a traced array in jax'
 ---
 
 # Basic slicing in Jax
@@ -15,7 +15,7 @@ You have to use the `at` method in jax
 
 `array = array.at[index].set_value(new_value)`
 
-However, if you are trying to update a slice of the array with the normal `at` method, say the following, 
+However, if you are trying to update a slice of the array with the normal `at` method, say the following,
 
 `array = array.at[index: index+1].set_value(new_value)`
 

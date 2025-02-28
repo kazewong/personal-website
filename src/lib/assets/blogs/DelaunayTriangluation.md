@@ -1,14 +1,14 @@
 ---
-title: "Delanuay Triangulation"
-date: "2024-02-07"
-tags: ["julia", "parallel", "computational geometry", "triangulation"]
-shortDescription: "Drawing many triangles fast in julia"
+title: 'Delanuay Triangulation'
+date: '2024-02-07'
+tags: ['julia', 'parallel', 'computational geometry', 'triangulation']
+shortDescription: 'Drawing many triangles fast in julia'
 ---
 
 ## Why am I interested in Delaunay Triangulation?
 
 It is not uncommon to see Kaze working on some random stuff outside his usual bread and butter such as gravitational wave data analysis, but why Delaunay Triangulation?
-The backstory is I was prompted about some bottleneck in finding void in a cosmological survey, i.e. a point cloud. A popular algorithm used for finding void is [ZOBOV](https://arxiv.org/abs/0712.3049), which uses Voronoi tessellation to estimate the density field. There are more components to the algorithm such as using [Watershed](https://en.wikipedia.org/wiki/Watershed_(image_processing)) to group different Voronoi cells into voids, but the main computational cost seems to be in the Voronoi tessellation part. Delaunay Triangulation is the dual graph of Voronoi diagram, which means one you have a Delaunay triangulation, you can easily construct the corresponding Voronoi diagram. Due to some technical reasons, Voronoi diagram is usually constructed by first constructing the Delaunay Triangulation.
+The backstory is I was prompted about some bottleneck in finding void in a cosmological survey, i.e. a point cloud. A popular algorithm used for finding void is [ZOBOV](https://arxiv.org/abs/0712.3049), which uses Voronoi tessellation to estimate the density field. There are more components to the algorithm such as using [Watershed](<https://en.wikipedia.org/wiki/Watershed_(image_processing)>) to group different Voronoi cells into voids, but the main computational cost seems to be in the Voronoi tessellation part. Delaunay Triangulation is the dual graph of Voronoi diagram, which means one you have a Delaunay triangulation, you can easily construct the corresponding Voronoi diagram. Due to some technical reasons, Voronoi diagram is usually constructed by first constructing the Delaunay Triangulation.
 
 The backbone of Voronoi tessellation used in ZOBOV is [Qhull](http://www.qhull.org/html/), which is a library to construct convex hulls, Delaunay triangulation, and Voronoi diagrams. While `Qhull` is a well optimized library, it is a single thread library. I benchmarked its performance using the [scipy wrapper](https://docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.Voronoi.html), and it took about 40 seconds to process 10^6 points. In the future, there will be cosmological survey delivering 10^9 points, and it is not feasible to use `Qhull` as it is for such a large dataset.
 
@@ -25,6 +25,7 @@ The specific algorithm I choose to use is the rip-and-tent algorithm, and the id
 ## Serial version
 
 The core algorithm can be broken down into following steps:
+
 1. Construct initial bounding triangle
 2. Given a point, locates which triangles in the graph are in conflict with the new points.
 3. Insert the point, make the new triangles.
@@ -51,6 +52,7 @@ Implementing the parallel version is not conceptually difficuly, and we can in p
 Now we are given a bunch of points, we need to figure out what is the order of insertion. If two points are going to modify a common object within the tree, that means they are in-conflitc with each other, so one have to be inserted after another. I iterated through a couple of versions on this again, so in case you want to play the same game of trying to think about how would you find out the ordering, take a minute to make a sketch before you scroll down.
 
 And here are the different iterations I had:
+
 1. Locate which sites each point are in conflict with. Check if there is any intersection between the sites ripped by this point and any other point. If yes, discard the later point in this batch. This is horrible, since this scales O(n^2) with the number of point in a batch, and it wastes computation because we do not insert some points.
 2. Create an "occupancy" dictionary of list. For each point, push the id of the point into the entry with key equal to the sites the point is in conflict with. After populating the occupancy dictionary, we will have a dictionary with keys being a particular site id, and the value being all the point in conflict with that site. This is way better, since the construction of the occupancy dictionary is basically O(n). When checking whether a point can be inserted, we just have to check whether the sites and their neighbors contains other point. If not, the point can be safely inserted.
 3. While method 2 is better in figuring out which point can be inserted currently, it still waste computation checking for point that cannot be inserted right away. The next come to jesus moment I had was realizing the order of points in the occupancy dictionary can be used to figure out the order insertion. When two points are both in conflict with the same site, it just means we have to insert one after another. So we should be able to figure out independent lines of insertion and run them in parallel. This means we only have to construct the occupancy dictionary once, and figure out the order of insertion (also once), then we just let the insertion runs until finish.
@@ -59,7 +61,7 @@ And here are the different iterations I had:
 
 Because of my HPC background, the first thing that comes to my mind was how can I distribute the computation across multiple cores. But some more careful thought, this is actually not the best way to parallelize the algorithm. Unlike a typical distributed workload that nodes only communicate at some interface (e.g. if we are simulating a 3D turbulence simulation, the nearby block only talk to each other through their interface.), every newly inserted point essentially need to query the entire graph to figure out where the insertion should be and how to make the new neighbor. Communication cost is usually the biggest overhead in distributed workload, and one can guess distributing a big graph will be an absolute nightmare. So instead of thinking along the line of distributing and communicating, I went the route of staying in one node and multi-threading within a unifed memory environment.
 
-Julia has pretty good out-of-the-box threading support. For example, let say I want to turn 
+Julia has pretty good out-of-the-box threading support. For example, let say I want to turn
 
 ```
 Threads.@threads for i in 1:length(vertex)
@@ -71,7 +73,6 @@ Threads.@threads for i in 1:length(vertex)
 
 A combination of the race condition and the garbage collector makes it quite hard to push for maximum performance in Julia.
 For example, the most expensive part of the algorithm is computing the circumsphere of a simplex, which ideally I would want to parallel that part as much as possible.
-
 
 The problem is not all vertices can be inserted at once because of insertion conflicts. The next best thing I can do is to divide them in batches, with each batch contains only points that are not in conflict with each other, then I can at least parallelize inside each batch. The processing speed of each batch is limited by the slowest update within each batch, since we have to wait until the last update finishes before starting the next batch to avoid conflicts.
 Now if every updates within a batch takes about the same time to process, this would not be a big problem. However, the garbage collector seems to like to kick in once in a while and slow down that one particular updates a lot, meaning the runtime is actually domainated by the garbage collector.

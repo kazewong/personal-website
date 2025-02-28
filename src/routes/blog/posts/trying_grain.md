@@ -1,8 +1,8 @@
 ---
-title: "Trying Grain, a data loader for Jax"
-date: "2024-12-18"
-tags: ["Jax", "python", "snippet", "tutorial", "grain"]
-shortDescription: "Data loader for Jax"
+title: 'Trying Grain, a data loader for Jax'
+date: '2024-12-18'
+tags: ['Jax', 'python', 'snippet', 'tutorial', 'grain']
+shortDescription: 'Data loader for Jax'
 ---
 
 Even though I use `jax` for training my neural networks, I have been using `pytorch` for loading my data, as it was recommended on the `jax` documentation. Recently, I learned about `grain`, a data loader built for data loading for `jax`. Despite it is still at its early day, I decided to give it a try.
@@ -27,7 +27,7 @@ class CIFAR10DataSource(grain.RandomAccessDataSource):
                 data = pickle.load(f, encoding='bytes')
                 inputs.append(jnp.array(data[b'data']))
                 labels.append(jnp.array(data[b'labels']))
-        
+
         return jnp.concatenate(inputs).reshape(-1, 3, 32, 32), jnp.concatenate(labels)
 
     def __init__(self, data_dir: str = 'data/'):
@@ -46,7 +46,7 @@ class CIFAR10DataSource(grain.RandomAccessDataSource):
 
     def __getitem__(self, idx):
         return self.data[idx]
-    
+
     def __len__(self):
         return len(self.data)
 ```

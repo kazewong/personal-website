@@ -1,13 +1,13 @@
 ---
 title: 'Anti patterns in JAX'
-date: "2023-12-03"
+date: '2023-12-03'
 tags: ['jax', 'python']
-shortDescription: "Common antipatterns in JAX"
+shortDescription: 'Common antipatterns in JAX'
 ---
 
 Coding in Jax is fairly straight forward, as advertised on their [github repo](https://github.com/google/jax).
 
-However, thinking in Jax takes quite a bit of suffering to get used to. Here are some common antipatterns I have come across while coding in Jax. 
+However, thinking in Jax takes quite a bit of suffering to get used to. Here are some common antipatterns I have come across while coding in Jax.
 
 ## For-loops
 
@@ -22,5 +22,4 @@ def many_f(x):
 
 ## In-place replacement
 
-## 
-
+##

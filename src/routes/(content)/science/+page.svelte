@@ -10,12 +10,11 @@
 			image: item.image,
 			title: item.title,
 			description: item.description,
-			alt_des: item.alt_des,
+			alt_des: item.alt_des
 		};
 	});
 
 	let highlight_current_id = $state(0);
-
 </script>
 
 <h1 class="flex justify-center text-6xl">I Do Science</h1>
@@ -38,21 +37,21 @@
 				<h3 class=" text-xl text-center p-0">Johns Hopkins University</h3>
 			</div>
 		</div>
-	
+
 		<!-- Description -->
 		<div class=" md:w-3/5 text-justify">
 			<p>
 				I am an assistant research professor in the Department of Applied Mathematics and Statistics
 				at Johns Hopkins University. I am also a software engineer with the Data Science and AI
-				Institute. I have very broad interest in many different subjects. In brief, I spend 20-30% of
-				my time thinking about <strong>astrophysics</strong>, ~40% of my time trying to
+				Institute. I have very broad interest in many different subjects. In brief, I spend 20-30%
+				of my time thinking about <strong>astrophysics</strong>, ~40% of my time trying to
 				<strong>understand to make neural network robust and how to tune them</strong>, and the
-				remaining time <strong>building production-grade domain science applications</strong>. My work
-				is primarily computational and I care about <strong>open source software</strong> a lot. See below
-				for some of the topics I am currently working on.
+				remaining time <strong>building production-grade domain science applications</strong>. My
+				work is primarily computational and I care about <strong>open source software</strong> a lot.
+				See below for some of the topics I am currently working on.
 			</p>
 		</div>
-	</div>	
+	</div>
 </div>
 
 <div class="divider dark:divider-primary divider-start">
@@ -60,7 +59,7 @@
 </div>
 
 <h1 class="bg-gradient-to-r from-red-500 via-yellow-300 to-indigo-40 text-transparent bg-clip-text">
-    Under constrcution
+	Under constrcution
 </h1>
 
 <!-- <p>
@@ -74,7 +73,7 @@ Softwares:
 	<h3 class="text-4xl">Research Highlights</h3>
 </div>
 
-<div class ="carousel w-full">
+<div class="carousel w-full">
 	<div>
 		<HighlightItem
 			image={highlight_data[highlight_current_id].image}
@@ -83,16 +82,21 @@ Softwares:
 			alt_des={highlight_data[highlight_current_id].alt_des}
 		/>
 		<div>
-			<button on:click={() => highlight_current_id = (highlight_current_id + 1) % highlight_data.length} class="btn btn-circle">&lt</button>
-			<button on:click={() => highlight_current_id = (highlight_current_id + 1) % highlight_data.length} class="btn btn-circle">&gt</button>	
+			<button
+				on:click={() => (highlight_current_id = (highlight_current_id + 1) % highlight_data.length)}
+				class="btn btn-circle">&lt</button
+			>
+			<button
+				on:click={() => (highlight_current_id = (highlight_current_id + 1) % highlight_data.length)}
+				class="btn btn-circle">&gt</button
+			>
 		</div>
 	</div>
 </div>
 
 <h1 class="bg-gradient-to-r from-red-500 via-yellow-300 to-indigo-40 text-transparent bg-clip-text">
-    Under constrcution
+	Under constrcution
 </h1>
-
 
 <!-- <div class="flex justify-center py-8 w-[480px] lg:w-[840px] mx-auto">
 	<div class="flex-col">
@@ -125,5 +129,5 @@ Softwares:
 </div>
 
 <h1 class="bg-gradient-to-r from-red-500 via-yellow-300 to-indigo-40 text-transparent bg-clip-text">
-    Under constrcution
+	Under constrcution
 </h1>
