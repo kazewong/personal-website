@@ -13,7 +13,7 @@ However, thinking in Jax takes quite a bit of suffering to get used to. Here are
 
 Let say I have some function I want to loop over
 
-```
+```python
 def many_f(x):
     for i in range(100):
         x = f(x)
