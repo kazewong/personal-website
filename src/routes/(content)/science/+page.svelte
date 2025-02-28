@@ -97,9 +97,27 @@ Softwares:
 </h1>
 
 <div class="divider dark:divider-primary divider-start">
-	<h3 class="text-4xl">Students and collaborators</h3>
+	<h3 class="text-4xl">Research Group</h3>
 </div>
 
+<!-- <p>
+I enjoy 
+</p> -->
+
+<p>
+I only take students that are either directly recommended by my collaborators or students at Johns Hopkins University.
+</p>
+
+
+
+<div class="divider dark:divider-primary divider-start">
+	<h3 class="text-4xl">Students</h3>
+</div>
+
+<p>
+	Here is a list of students I have mentored
+
+</p>
 <h1 class="bg-gradient-to-r from-red-500 via-yellow-300 to-indigo-40 text-transparent bg-clip-text">
 	Under constrcution
 </h1>
