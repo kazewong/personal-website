@@ -74,22 +74,20 @@ Softwares:
 </div>
 
 <div class="carousel w-full">
-	<div>
+	<div class="w-full">
 		<HighlightItem
 			image={highlight_data[highlight_current_id].image}
 			title={highlight_data[highlight_current_id].title}
 			description={highlight_data[highlight_current_id].description}
 			alt_des={highlight_data[highlight_current_id].alt_des}
 		/>
-		<div>
+		<div class="flex justify-center w-full py-4">
 			<button
-				on:click={() => (highlight_current_id = (highlight_current_id + 1) % highlight_data.length)}
-				class="btn btn-circle">&lt</button
-			>
+				onclick={() => (highlight_current_id = (highlight_current_id + 1) % highlight_data.length)}
+				class="btn btn-circle">&lt</button>
 			<button
-				on:click={() => (highlight_current_id = (highlight_current_id + 1) % highlight_data.length)}
-				class="btn btn-circle">&gt</button
-			>
+				onclick={() => (highlight_current_id = (highlight_current_id + 1) % highlight_data.length)}
+				class="btn btn-circle">&gt</button>
 		</div>
 	</div>
 </div>
@@ -97,32 +95,6 @@ Softwares:
 <h1 class="bg-gradient-to-r from-red-500 via-yellow-300 to-indigo-40 text-transparent bg-clip-text">
 	Under constrcution
 </h1>
-
-<!-- <div class="flex justify-center py-8 w-[480px] lg:w-[840px] mx-auto">
-	<div class="flex-col">
-		<div class="py-4">
-			<ResponsiveCard
-				image="https://www.ligo.caltech.edu/system/pages/images/24/page/Gravity_Waves_StillImage.jpg?1699659823"
-				title="Gravitational Wave"
-				description="test"
-			/>
-		</div>
-		<div class="py-4">
-			<ResponsiveCard
-				image="https://www.ligo.caltech.edu/system/pages/images/24/page/Gravity_Waves_StillImage.jpg?1699659823"
-				title="Generative modeling for Astrophysics"
-				description="test"
-			/>
-		</div>
-		<div class="py-4">
-			<ResponsiveCard
-				image="https://github.com/kazewong/flowMC/raw/main/docs/logo_0810.png"
-				title="Adaptive MCMC"
-				description="test"
-			/>
-		</div>
-	</div>
-</div> -->
 
 <div class="divider dark:divider-primary divider-start">
 	<h3 class="text-4xl">Students and collaborators</h3>
