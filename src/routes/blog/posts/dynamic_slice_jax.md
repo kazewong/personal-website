@@ -9,19 +9,27 @@ shortDescription: 'Indexing and updating a traced array in jax'
 
 If you have a jax array you want update the value, instead of using the normal numpy way of
 
-`array[index] = new_value`
+```python
+array[index] = new_value
+```
 
 You have to use the `at` method in jax
 
-`array = array.at[index].set_value(new_value)`
+```python
+array = array.at[index].set_value(new_value)
+```
 
 However, if you are trying to update a slice of the array with the normal `at` method, say the following,
 
-`array = array.at[index: index+1].set_value(new_value)`
+```python
+array = array.at[index: index+1].set_value(new_value)
+```
 
 you may run into the following error:
 
-`IndexError: Array slice indices must have static start/stop/step to be used with NumPy indexing syntax. Found slice(Traced<ShapedArray(int32[], weak_type=True)>with<DynamicJaxprTrace(level=1/0)>, Traced<ShapedArray(int32[], weak_type=True)>with<DynamicJaxprTrace(level=1/0)>, None). To index a statically sized array at a dynamic position, try lax.dynamic_slice/dynamic_update_slice (JAX does not support dynamically sized arrays within JIT compiled functions).`
+```python
+IndexError: Array slice indices must have static start/stop/step to be used with NumPy indexing syntax. Found slice(Traced<ShapedArray(int32[], weak_type=True)>with<DynamicJaxprTrace(level=1/0)>, Traced<ShapedArray(int32[], weak_type=True)>with<DynamicJaxprTrace(level=1/0)>, None). To index a statically sized array at a dynamic position, try lax.dynamic_slice/dynamic_update_slice (JAX does not support dynamically sized arrays within JIT compiled functions).
+```
 
 # Dynamic slicing in Jax
 
