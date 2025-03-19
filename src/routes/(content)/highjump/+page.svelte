@@ -1,3 +1,32 @@
+<style>
+	.timeline-color {
+		background-color: var(--color-secondary);
+	}
+</style>
+
+<script lang="ts">
+	import anime from 'animejs';
+	let scrollY = $state(0);
+
+	$effect(() => {
+		if (scrollY > 100){
+			anime({
+				targets: '.timeline-color',
+				background-color: 'var(--color-primary)',
+			});
+		}
+		else {
+			anime({
+				targets: '.timeline-color',
+				background-color: 'var(--color-secondary)',
+			});
+		}
+	});
+
+</script>
+
+<svelte:window on:scroll={() => scrollY = window.scrollY} />
+
 <h1 class="flex justify-center text-6xl">I Jump</h1>
 
 <ul class="timeline timeline-vertical">
@@ -15,7 +44,7 @@
 			clip-rule="evenodd" />
 		</svg>
 	  </div>
-	  <hr class="bg-primary" />
+	  <hr class="timeline-color" />
 	</li>
 	<li>
 	  <hr />
