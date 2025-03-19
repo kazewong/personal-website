@@ -57,7 +57,7 @@
 			</details>
 		</div>
 
-		<div id="NavThemeSwitch" class="px-4 swap swap-rotate">
+		<!-- <div id="NavThemeSwitch" class="px-4 swap swap-rotate">
 			<button onclick={() => (isDarkMode = !isDarkMode)}>
 				{#if isDarkMode}
 					<svg
@@ -91,7 +91,7 @@
 					</svg>
 				{/if}
 			</button>
-		</div>
+		</div> -->
 	</div>
 	<!-- </div> -->
 {:else}
@@ -119,7 +119,7 @@
 					</li>
 				</ul>
 			</div>
-			<div id="NavThemeSwitch" class="basis-1/5 swap swap-rotate">
+			<!-- <div id="NavThemeSwitch" class="basis-1/5 swap swap-rotate">
 				<button onclick={() => (isDarkMode = !isDarkMode)}>
 					{#if isDarkMode}
 						<svg
@@ -153,7 +153,7 @@
 						</svg>
 					{/if}
 				</button>
-			</div>
+			</div> -->
 		</div>
 	</nav>
 {/if}
