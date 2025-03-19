@@ -12,13 +12,14 @@
 		if (scrollY > 100){
 			anime({
 				targets: '.timeline-color',
-				background-color: 'var(--color-primary)',
+				background: 'var(--color-primary)',
 			});
 		}
 		else {
 			anime({
 				targets: '.timeline-color',
-				background-color: 'var(--color-secondary)',
+				background: 'var(--color-secondary)',
+				
 			});
 		}
 	});
