@@ -58,7 +58,7 @@
 	<h3 class="text-4xl">Profile Summary</h3>
 </div>
 
-<h1 class="bg-gradient-to-r from-red-500 via-yellow-300 to-indigo-40 text-transparent bg-clip-text">
+<h1 class="bg-linear-to-r from-red-500 via-yellow-300 to-indigo-40 text-transparent bg-clip-text">
 	Under constrcution
 </h1>
 
@@ -92,7 +92,7 @@ Softwares:
 	</div>
 </div>
 
-<h1 class="bg-gradient-to-r from-red-500 via-yellow-300 to-indigo-40 text-transparent bg-clip-text">
+<h1 class="bg-linear-to-r from-red-500 via-yellow-300 to-indigo-40 text-transparent bg-clip-text">
 	Under constrcution
 </h1>
 
@@ -118,6 +118,6 @@ I only take students that are either directly recommended by my collaborators or
 	Here is a list of students I have mentored
 
 </p>
-<h1 class="bg-gradient-to-r from-red-500 via-yellow-300 to-indigo-40 text-transparent bg-clip-text">
+<h1 class="bg-linear-to-r from-red-500 via-yellow-300 to-indigo-40 text-transparent bg-clip-text">
 	Under constrcution
 </h1>

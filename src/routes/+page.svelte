@@ -10,7 +10,7 @@
 >
 	<h1 class="text-4xl sm:text-5xl md:text-6xl font-bold">
 		Hello, I am <span
-			class="bg-gradient-to-r dark:from-blue-500 dark:to-cyan-300 from-indigo-400 to-blue-700 text-transparent bg-clip-text"
+			class="bg-linear-to-r dark:from-blue-500 dark:to-cyan-300 from-indigo-400 to-blue-700 text-transparent bg-clip-text"
 			>Kaze Wong</span
 		>
 	</h1>

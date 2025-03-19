@@ -36,7 +36,7 @@
 					</svg>
 				</summary>
 				<ul
-					class="menu dropdown-content rounded-box z-[1] w-52 p-2 shadow bg-indigo-50 dark:bg-gray-900"
+					class="menu dropdown-content rounded-box z-1 w-52 p-2 shadow-sm bg-indigo-50 dark:bg-gray-900"
 				>
 					<li>
 						<a href="/">Home</a>
