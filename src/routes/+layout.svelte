@@ -1,11 +1,16 @@
-<script>
+<script lang="ts">
 	import '../app.css';
 	import 'katex/dist/katex.min.css';
+	interface Props {
+		children?: import('svelte').Snippet;
+	}
 
-	let innerWidth = 0;
-	let isDarkMode = true;
+	let { children }: Props = $props();
 
-	$: isMobile = innerWidth < 768;
+	let innerWidth = $state(0);
+	let isDarkMode = $state(true);
+
+	let isMobile = $derived(innerWidth < 768);
 </script>
 
 <svelte:window bind:innerWidth />
@@ -53,7 +58,7 @@
 		</div>
 
 		<div id="NavThemeSwitch" class="px-4 swap swap-rotate">
-			<button on:click={() => (isDarkMode = !isDarkMode)}>
+			<button onclick={() => (isDarkMode = !isDarkMode)}>
 				{#if isDarkMode}
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
@@ -115,7 +120,7 @@
 				</ul>
 			</div>
 			<div id="NavThemeSwitch" class="basis-1/5 swap swap-rotate">
-				<button on:click={() => (isDarkMode = !isDarkMode)}>
+				<button onclick={() => (isDarkMode = !isDarkMode)}>
 					{#if isDarkMode}
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
@@ -159,6 +164,6 @@
 
 <main class={isDarkMode ? 'dark' : ''}>
 	<div class="flex flex-col min-h-screen px-4 sm:px-6 lg:px-8 my-auto mx-auto">
-		<slot />
+		{@render children?.()}
 	</div>
 </main>

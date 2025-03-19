@@ -1,6 +1,6 @@
-<script>
-	export let data;
+<script lang="ts">
 	import '../../../prism-one-dark.css';
+	let { data } = $props();
 
 </script>
 
@@ -9,6 +9,6 @@
 	<h1>{data.title}</h1>
 	<p>Published: {data.date}</p>
 
-	<svelte:component this={data.content} />
+	<data.content />
 </article>
 

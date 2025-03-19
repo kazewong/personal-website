@@ -1,9 +1,18 @@
-<script>
-	export let image;
-	export let alt = '';
+<script lang="ts">
 
-	export let title;
-	export let description;
+	interface Props {
+		image: any;
+		alt?: string;
+		title: any;
+		description: any;
+	}
+
+	let {
+		image,
+		alt = '',
+		title,
+		description
+	}: Props = $props();
 </script>
 
 <div class="card card-compact glass lg:card-side shadow-xl bg-slate-700 w-max[840px]">
