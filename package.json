@@ -14,7 +14,7 @@
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^3.3.1",
 		"@sveltejs/adapter-vercel": "^5.4.8",
-		"@sveltejs/kit": "^2.8.2",
+		"@sveltejs/kit": "^2.12.0",
 		"@sveltejs/vite-plugin-svelte": "^4.0.0",
 		"@types/eslint": "^9.6.1",
 		"autoprefixer": "^10.4.20",
@@ -43,5 +43,79 @@
 		"animejs": "^3.2.2",
 		"dompurify": "^3.2.1",
 		"marked": "^15.0.2"
+	},
+	"exports": {
+		"./package.json": "./package.json",
+		"./assets/blogs/DelaunayTriangluation.svelte": {
+			"types": "./package/assets/blogs/DelaunayTriangluation.svelte.d.ts",
+			"svelte": "./package/assets/blogs/DelaunayTriangluation.svelte",
+			"default": "./package/assets/blogs/DelaunayTriangluation.svelte"
+		},
+		"./assets/blogs/StartSKO.svelte": {
+			"types": "./package/assets/blogs/StartSKO.svelte.d.ts",
+			"svelte": "./package/assets/blogs/StartSKO.svelte",
+			"default": "./package/assets/blogs/StartSKO.svelte"
+		},
+		"./assets/blogs/flowMC.svelte": {
+			"types": "./package/assets/blogs/flowMC.svelte.d.ts",
+			"svelte": "./package/assets/blogs/flowMC.svelte",
+			"default": "./package/assets/blogs/flowMC.svelte"
+		},
+		"./assets/blogs/jax.svelte": {
+			"types": "./package/assets/blogs/jax.svelte.d.ts",
+			"svelte": "./package/assets/blogs/jax.svelte",
+			"default": "./package/assets/blogs/jax.svelte"
+		},
+		"./assets/blogs/typstGood.svelte": {
+			"types": "./package/assets/blogs/typstGood.svelte.d.ts",
+			"svelte": "./package/assets/blogs/typstGood.svelte",
+			"default": "./package/assets/blogs/typstGood.svelte"
+		},
+		"./assets/favicons/Github_logo_trans.png": "./package/assets/favicons/Github_logo_trans.png",
+		"./assets/favicons/Linkedin_logo_trans.png": "./package/assets/favicons/Linkedin_logo_trans.png",
+		"./assets/favicons/Twitter_logo_trans.png": "./package/assets/favicons/Twitter_logo_trans.png",
+		"./assets/favicons/Youtube_logo_trans.png": "./package/assets/favicons/Youtube_logo_trans.png",
+		"./assets/images/FerrisWheel.png": "./package/assets/images/FerrisWheel.png",
+		"./assets/images/StoryCollider.png": "./package/assets/images/StoryCollider.png",
+		"./assets/images/portrait.jpg": "./package/assets/images/portrait.jpg",
+		".": {
+			"types": "./package/index.d.ts",
+			"svelte": "./package/index.js",
+			"default": "./package/index.js"
+		},
+		"./utils": {
+			"types": "./package/utils/index.d.ts",
+			"svelte": "./package/utils/index.js",
+			"default": "./package/utils/index.js"
+		}
+	},
+	"files": [
+		"package"
+	],
+	"svelte": "./package/index.js",
+	"typesVersions": {
+		">4.0": {
+			"assets/blogs/DelaunayTriangluation.svelte": [
+				"./package/assets/blogs/DelaunayTriangluation.svelte.d.ts"
+			],
+			"assets/blogs/StartSKO.svelte": [
+				"./package/assets/blogs/StartSKO.svelte.d.ts"
+			],
+			"assets/blogs/flowMC.svelte": [
+				"./package/assets/blogs/flowMC.svelte.d.ts"
+			],
+			"assets/blogs/jax.svelte": [
+				"./package/assets/blogs/jax.svelte.d.ts"
+			],
+			"assets/blogs/typstGood.svelte": [
+				"./package/assets/blogs/typstGood.svelte.d.ts"
+			],
+			"index.d.ts": [
+				"./package/index.d.ts"
+			],
+			"utils": [
+				"./package/utils/index.d.ts"
+			]
+		}
 	}
 }
