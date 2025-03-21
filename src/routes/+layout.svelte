@@ -2,6 +2,8 @@
 	import '../app.css';
 	import 'katex/dist/katex.min.css';
 	import { injectAnalytics } from '@vercel/analytics/sveltekit';
+
+	injectAnalytics();
 	interface Props {
 		children?: import('svelte').Snippet;
 	}
