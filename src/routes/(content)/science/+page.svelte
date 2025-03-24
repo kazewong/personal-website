@@ -119,11 +119,11 @@
 I only take students that are either directly recommended by my collaborators or students at Johns Hopkins University.
 </p>
 
-<div class="divider dark:divider-primary divider-start">
+<!-- <div class="divider dark:divider-primary divider-start">
 	<h3 class="text-4xl">Students</h3>
 </div>
 
-<!-- <p>
+<p>
 	Here is a list of students I have mentored
 
 </p>
