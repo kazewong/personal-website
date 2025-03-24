@@ -24,9 +24,9 @@
 </div>
 
 <div class="w-full flex justify-center">
-	<div class="md:flex justify-items-center py-8 md:w-[720px]">
+	<div class="lg:flex justify-items-center py-8 lg:w-[720px]">
 		<!-- Portrait -->
-		<div class="flex-col justify-center w-4/5 md:w-2/5">
+		<div class="flex-col justify-center w-4/5 lg:w-2/5">
 			<div class="justify-center flex">
 				<img src={portrait} alt="" width={147} height={147} class="rounded-full" />
 			</div>
@@ -39,7 +39,7 @@
 		</div>
 
 		<!-- Description -->
-		<div class=" md:w-3/5 text-justify">
+		<div class=" lg:w-3/5 text-justify">
 			<p>
 				I am an assistant research professor in the Department of Applied Mathematics and Statistics
 				at Johns Hopkins University. I am also a software engineer with the Data Science and AI
@@ -55,13 +55,12 @@
 </div>
 
 <div class="divider dark:divider-primary divider-start">
-	<h3 class="text-4xl">Profile Summary</h3>
+	<h3 class="text-4xl">CV</h3>
 </div>
-
-<h1 class="bg-linear-to-r from-red-500 via-yellow-300 to-indigo-40 text-transparent bg-clip-text">
-	Under constrcution
-</h1>
-
+<div class="flex justify-center">
+	<iframe src="https://github.com/kazewong/CV/blob/main/cv.pdf" width="500" height="375" 
+	type="application/pdf">
+</div>
 <!-- <p>
 Number of papers:
 Awards:

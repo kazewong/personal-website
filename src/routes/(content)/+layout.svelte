@@ -7,7 +7,7 @@
 </script>
 
 <div class="flex justify-center content-start py-16">
-	<div class="w-[420px] md:w-[840px]">
+	<div class="w-xl md:w-2xl lg:w-5xl">
 		{@render children?.()}
 	</div>
 </div>

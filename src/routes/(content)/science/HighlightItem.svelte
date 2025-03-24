@@ -2,14 +2,15 @@
 	let { image, title, description, alt_des } = $props();
 </script>
 
-<div class="card card-compact w-full min-h-[300px] h-auto">
-	<div class="flex justify-center">
-		<h2 class="card-title text-2xl">{title}</h2>
-	</div>
-	<figure class="max-h-[600px]">
+<div class="card lg:card-side bg-base-100 shadow-sm">
+	<figure class="max-w-sm">
 		<img src={image} alt={alt_des} class="rounded-lg"/>
 	</figure>
 	<div class="card-body">
-		<p class="text-justify">{description}</p>
+	  <h2 class="card-title">New album is released!</h2>
+	  <p>Click the button to listen on Spotiwhy app.</p>
+	  <div class="card-actions justify-end">
+		<button class="btn btn-primary">Listen</button>
+	  </div>
 	</div>
-</div>
+  </div>
