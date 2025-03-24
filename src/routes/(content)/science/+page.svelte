@@ -54,21 +54,37 @@
 	</div>
 </div>
 
-<div class="divider dark:divider-primary divider-start">
-	<h3 class="text-4xl">CV</h3>
-</div>
-<div class="flex justify-center">
-	<iframe src="https://github.com/kazewong/CV/blob/main/cv.pdf" width="500" height="375" 
-	type="application/pdf">
-</div>
-<!-- <p>
-Number of papers:
-Awards:
-Grants:
-Softwares:
-</p> -->
 
 <div class="divider dark:divider-primary divider-start">
+	<h3 class="text-4xl">Link tree</h3>
+</div>
+
+<div class="flex justify-center gap-4">
+	<a href="https://github.com/kazewong/CV/blob/main/cv.pdf">
+		<button class="btn btn-accent btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl">
+				CV
+		</button>
+	</a>
+	<a href="https://inspirehep.net/authors/1789361?ui-citation-summary=true">
+		<button class="btn btn-accent btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl">
+				InspireHEP
+		</button>
+	</a>
+	<a href="https://scholar.google.com/citations?user=oQDoPMsAAAAJ&hl=en">
+		<button class="btn btn-accent btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl">
+				Google Scholar
+		</button>
+	</a>
+	<a href="https://ui.adsabs.harvard.edu/search/p_=0&q=%3Dauthor%3A%22Wong%2C%20Kaze%20W.%20K.%22&sort=date%20desc%2C%20bibcode%20desc">
+		<button class="btn btn-accent btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-xl">
+				NASA/ADS
+		</button>
+	</a>
+</div>
+
+
+
+<div class="divider dark:divider-primary divider-start pb-16">
 	<h3 class="text-4xl">Research Highlights</h3>
 </div>
 
@@ -96,27 +112,21 @@ Softwares:
 </h1>
 
 <div class="divider dark:divider-primary divider-start">
-	<h3 class="text-4xl">Research Group</h3>
+	<h3 class="text-4xl">Research Topics</h3>
 </div>
-
-<!-- <p>
-I enjoy 
-</p> -->
 
 <p>
 I only take students that are either directly recommended by my collaborators or students at Johns Hopkins University.
 </p>
 
-
-
 <div class="divider dark:divider-primary divider-start">
 	<h3 class="text-4xl">Students</h3>
 </div>
 
-<p>
+<!-- <p>
 	Here is a list of students I have mentored
 
 </p>
 <h1 class="bg-linear-to-r from-red-500 via-yellow-300 to-indigo-40 text-transparent bg-clip-text">
 	Under constrcution
-</h1>
+</h1> -->
