@@ -3,7 +3,7 @@
 </script>
 
 <div class="card lg:card-side bg-sky-900 shadow-sm">
-	<figure class="max-w-sm">
+	<figure class="max-w-sm  object-contain">
 		<img src={image} alt={alt_des} class="rounded-lg"/>
 	</figure>
 	<div class="card-body">
