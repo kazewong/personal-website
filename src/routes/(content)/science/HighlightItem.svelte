@@ -1,5 +1,5 @@
 <script lang="ts">
-	let { image, title, description, alt_des } = $props();
+	let { image, title, description, alt_des, date } = $props();
 </script>
 
 <div class="card lg:card-side bg-sky-900 shadow-sm">
@@ -9,8 +9,11 @@
 	<div class="card-body">
 	  <h2 class="card-title">{title}</h2>
 	  <p>{description}</p>
-	  <div class="card-actions justify-end">
-		<button class="btn btn-secondary">Listen</button>
+	  <div class="flex justify-between">
+			<p>{date}</p>
+			<div class="card-actions">
+			<button class="btn btn-secondary">Listen</button>
+			</div>	
 	  </div>
 	</div>
-  </div>
+</div>
