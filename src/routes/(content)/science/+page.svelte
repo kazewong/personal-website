@@ -95,7 +95,7 @@
 	</div>
 	
 	{#each highlight_data as item,index}
-		<div class="w-full">
+		<div class="w-full py-4">
 			<HighlightItem
 				image={item.image}
 				title={item.title}
