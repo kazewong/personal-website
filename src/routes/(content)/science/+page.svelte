@@ -94,25 +94,18 @@
 		<h3 class="text-4xl">Research Highlights</h3>
 	</div>
 	
-	<div class="carousel w-full">
+	{#each highlight_data as item,index}
 		<div class="w-full">
 			<HighlightItem
-				image={highlight_data[highlight_current_id].image}
-				title={highlight_data[highlight_current_id].title}
-				description={highlight_data[highlight_current_id].description}
-				alt_des={highlight_data[highlight_current_id].alt_des}
-				date={highlight_data[highlight_current_id].date}
+				image={item.image}
+				title={item.title}
+				description={item.description}
+				alt_des={item.alt_des}
+				date={item.date}
+				left={index % 2 == 0}
 			/>
-			<div class="flex justify-center w-full py-4">
-				<button
-					onclick={() => (highlight_current_id = (highlight_current_id + 1) % highlight_data.length)}
-					class="btn btn-circle">&lt</button>
-				<button
-					onclick={() => (highlight_current_id = (highlight_current_id + 1) % highlight_data.length)}
-					class="btn btn-circle">&gt</button>
-			</div>
-		</div>
-	</div>
+		</div>	
+	{/each}
 </div>
 
 
