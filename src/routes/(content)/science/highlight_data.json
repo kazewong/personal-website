@@ -13,6 +13,13 @@
 			"description": "Inferring properties of a model given some data is one of the most routinely performed tasks in data analysis, and Monte Carlo method is a popular tool for this purpose. ",
 			"alt_des": "test",
 			"data": ""
+		},
+		{
+			"image": "https://i.postimg.cc/hvrNvhRd/gi-net.png",
+			"title": "Symmetries in Machine Learning",
+			"description": "Under construction",
+			"alt_des": "test",
+			"data": ""
 		}
 	]
 }

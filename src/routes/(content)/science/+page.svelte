@@ -122,7 +122,7 @@
 
 <div class="block">
 	<div class="divider dark:divider-primary divider-start">
-		<h3 class="text-4xl">Research Topics</h3>
+		<h3 class="text-4xl">Research projects</h3>
 	</div>
 	
 	<p>
