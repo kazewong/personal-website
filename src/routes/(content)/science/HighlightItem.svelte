@@ -2,34 +2,31 @@
 	let { image, title, description, alt_des, date, left } = $props();
 </script>
 
-<div class="card lg:card-side bg-sky-900 shadow-sm">
-	{#if left}
-		<figure class="max-w-sm  object-contain">
-			<img src={image} alt={alt_des} class="rounded-lg"/>
-		</figure>
-		<div class="card-body">
+{#snippet figure(image: string, alt_des: string)}
+	<figure class="max-w-sm  object-contain">
+		<img src={image} alt={alt_des} class="rounded-lg"/>
+	</figure>
+{/snippet}
+
+{#snippet info(title: string, description: string, date: string)}
+	<div class="card-body">
 		<h2 class="card-title">{title}</h2>
 		<p>{description}</p>
 		<div class="flex justify-between">
-				<p>{date}</p>
-				<div class="card-actions">
+			<p>{date}</p>
+			<div class="card-actions">
 				<button class="btn btn-secondary">Listen</button>
-				</div>	
+			</div>	
 		</div>
-		</div>
+	</div>
+{/snippet}
+
+<div class="card lg:card-side bg-sky-900 shadow-sm">
+	{#if left}
+		{@render figure(image, alt_des)}
+		{@render info(title, description, date)}
 	{:else}
-		<div class="card-body">
-			<h2 class="card-title">{title}</h2>
-			<p>{description}</p>
-			<div class="flex justify-between">
-				<p>{date}</p>
-				<div class="card-actions">
-					<button class="btn btn-secondary">Listen</button>
-				</div>	
-			</div>
-		</div>
-		<figure class="max-w-sm  object-contain">
-			<img src={image} alt={alt_des} class="rounded-lg"/>
-		</figure>
+		{@render info(title, description, date)}
+		{@render figure(image, alt_des)}
 	{/if}
 </div>
