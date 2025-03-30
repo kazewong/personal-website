@@ -4,8 +4,8 @@
 </script>
 
 {#snippet figure(image: string, alt_des: string)}
-	<div class="lg:max-w-sm lg:max-h-max">
-		<img class="object-fill lg:object-contain lg:h-full lg:bg-white rounded-lg" src={image} alt={alt_des}/>
+	<div class="lg:w-fit lg:max-w-sm lg:max-h-max">
+		<img class="lg:object-contain lg:h-full lg:bg-white rounded-lg" src={image} alt={alt_des}/>
 	</div>
 {/snippet}
 

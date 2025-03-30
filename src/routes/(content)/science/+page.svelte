@@ -19,11 +19,11 @@
 	let highlight_current_id = $state(0);
 </script>
 
-<h1 class="flex justify-center text-6xl">I Do Science</h1>
+<h1 class="flex justify-center">I Do Science</h1>
 
 <div class="block">
 	<div class="divider dark:divider-primary divider-start">
-		<h3 class="text-4xl">Who am I</h3>
+		<h2 class="text-4xl">Who am I</h2>
 	</div>
 	
 	<div class="w-full flex justify-center">
@@ -35,9 +35,9 @@
 				</div>
 				<div class="justify-center flex-col">
 					<h2 class="text-4xl text-center p-0">Kaze W. K Wong</h2>
-					<h3 class="text-xl text-center p-0">Assistant Research Professor</h3>
-					<h3 class="text-xl text-center p-0">Research Software Engineer</h3>
-					<h3 class=" text-xl text-center p-0">Johns Hopkins University</h3>
+					<h2 class="text-xl text-center p-0">Assistant Research Professor</h2>
+					<h2 class="text-xl text-center p-0">Research Software Engineer</h2>
+					<h2 class=" text-xl text-center p-0">Johns Hopkins University</h2>
 				</div>
 			</div>
 	
@@ -61,7 +61,7 @@
 
 <div class="block">
 	<div class="divider dark:divider-primary divider-start">
-		<h3 class="text-4xl">Link tree</h3>
+		<h2 class="text-4xl">Link tree</h2>
 	</div>
 	
 	<div class="flex justify-center gap-4">
@@ -92,11 +92,11 @@
 
 <div class="block">
 	<div class="divider dark:divider-primary divider-start pb-4">
-		<h3 class="text-4xl">Research Interest</h3>
+		<h2>Research Interest</h2>
 	</div>
 
 	<p>
-		Here are 
+		Here are a list of my current research interests
 	</p>
 	
 	{#each highlight_data as item,index}
@@ -121,9 +121,10 @@
 
 <div class="block">
 	<div class="divider dark:divider-primary divider-start">
-		<h3 class="text-4xl">Research projects</h3>
+		<h2 class="text-4xl">Research projects</h2>
 	</div>
 	
+	<h2></h2>
 	<p>
 	I only take students that are either directly recommended by my collaborators or students at Johns Hopkins University.
 	</p>
