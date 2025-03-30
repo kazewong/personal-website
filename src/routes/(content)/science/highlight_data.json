@@ -2,7 +2,7 @@
 	"items": [
 		{
 			"image": "https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs42254-021-00303-8/MediaObjects/42254_2021_303_Fig1_HTML.png",
-			"title": "Fast Gravitational-wave Parameter Estimation without Compromises",
+			"title": "Gravitational wave astronomy",
 			"description": "",
 			"alt_des": "GW150914",
 			"date": "01-12-2023",
@@ -10,7 +10,7 @@
 		},
 		{
 			"image": "https://github.com/kazewong/flowMC/blob/main/docs/logo_0810.png?raw=true",
-			"title": "Adaptive MCMC with flowMC",
+			"title": "Adaptive Monte Carlo",
 			"description": "",
 			"alt_des": "flowMC logo",
 			"data": "",
@@ -24,6 +24,14 @@
 			"data": "",
 			"link": "https://www.cis.jhu.edu/~wgregor4/assets/GeometricImageNet_II_camera_ready.pdf"
 
+		},
+		{
+			"image": "https://i.postimg.cc/3x0q2J4N/flowMC.png",
+			"title": "Machine learning in sport",
+			"description": "Under construction",
+			"alt_des": "flowMC logo",
+			"data": "",
+			"link": ""
 		}
 	]
 }

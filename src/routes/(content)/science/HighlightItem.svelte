@@ -3,20 +3,20 @@
 </script>
 
 {#snippet figure(image: string, alt_des: string)}
-	<figure class="max-w-sm  object-contain">
-		<img src={image} alt={alt_des} class="rounded-lg"/>
-	</figure>
+	<div class="max-w-full md:max-w-sm">
+		<img class="object-contain h-full bg-white rounded-lg" src={image} alt={alt_des}/>
+	</div>
 {/snippet}
 
 {#snippet info(title: string, description: string, date: string)}
 	<div class="card-body">
-		<h2 class="card-title">{title}</h2>
+		<h2 class="card-title text-3xl">{title}</h2>
 		<p>{description}</p>
 		{#if left}
 			<div class="flex justify-end">
 				<div class="card-actions">
 					<a href={link}>
-						<button class="btn btn-secondary">Read more</button>
+						<button class="btn btn-secondary text-xl">Read more</button>
 					</a>
 				</div>	
 			</div>
@@ -24,7 +24,7 @@
 			<div class="flex justify-start">
 				<div class="card-actions">
 					<a href={link}>
-						<button class="btn btn-secondary">Read more</button>
+						<button class="btn btn-secondary text-xl">Read more</button>
 					</a>
 				</div>	
 			</div>
@@ -32,7 +32,7 @@
 	</div>
 {/snippet}
 
-<div class="card lg:card-side bg-sky-900 shadow-sm">
+<div class="card lg:card-side bg-sky-900 shadow-sm h-96">
 	{#if left}
 		{@render figure(image, alt_des)}
 		{@render info(title, description, date)}

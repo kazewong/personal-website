@@ -92,7 +92,7 @@
 
 <div class="block">
 	<div class="divider dark:divider-primary divider-start pb-16">
-		<h3 class="text-4xl">Research Highlights</h3>
+		<h3 class="text-4xl">Research Interest</h3>
 	</div>
 	
 	{#each highlight_data as item,index}
