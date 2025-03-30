@@ -11,7 +11,8 @@
 			title: item.title,
 			description: item.description,
 			alt_des: item.alt_des,
-			date: item.date
+			date: item.date,
+			link: item.link,
 		};
 	});
 
@@ -103,6 +104,7 @@
 				alt_des={item.alt_des}
 				date={item.date}
 				left={index % 2 == 0}
+				link={item.link}
 			/>
 		</div>	
 	{/each}

@@ -1,5 +1,5 @@
 <script lang="ts">
-	let { image, title, description, alt_des, date, left } = $props();
+	let { image, title, description, alt_des, link, date, left } = $props();
 </script>
 
 {#snippet figure(image: string, alt_des: string)}
@@ -12,12 +12,23 @@
 	<div class="card-body">
 		<h2 class="card-title">{title}</h2>
 		<p>{description}</p>
-		<div class="flex justify-between">
-			<p>{date}</p>
-			<div class="card-actions">
-				<button class="btn btn-secondary">Listen</button>
-			</div>	
-		</div>
+		{#if left}
+			<div class="flex justify-end">
+				<div class="card-actions">
+					<a href={link}>
+						<button class="btn btn-secondary">Read more</button>
+					</a>
+				</div>	
+			</div>
+		{:else}
+			<div class="flex justify-start">
+				<div class="card-actions">
+					<a href={link}>
+						<button class="btn btn-secondary">Read more</button>
+					</a>
+				</div>	
+			</div>
+		{/if}
 	</div>
 {/snippet}
 
