@@ -1,10 +1,11 @@
 <script lang="ts">
 	let { image, title, description, alt_des, link, date, left } = $props();
+	let innerWidth = $state(0);
 </script>
 
 {#snippet figure(image: string, alt_des: string)}
-	<div class="max-w-full md:max-w-sm">
-		<img class="object-contain h-full bg-white rounded-lg" src={image} alt={alt_des}/>
+	<div class="lg:max-w-sm lg:max-h-max">
+		<img class="object-fill lg:object-contain lg:h-full lg:bg-white rounded-lg" src={image} alt={alt_des}/>
 	</div>
 {/snippet}
 
@@ -32,12 +33,20 @@
 	</div>
 {/snippet}
 
-<div class="card lg:card-side bg-sky-900 shadow-sm h-96">
-	{#if left}
-		{@render figure(image, alt_des)}
-		{@render info(title, description, date)}
+<svelte:window bind:innerWidth />
+
+<div class="card lg:card-side bg-sky-900 shadow-sm lg:h-96">
+	{#if innerWidth > 1024}
+		{#if left}
+			{@render figure(image, alt_des)}
+			{@render info(title, description, date)}
+		{:else}
+			{@render info(title, description, date)}
+			{@render figure(image, alt_des)}
+		{/if}
 	{:else}
-		{@render info(title, description, date)}
 		{@render figure(image, alt_des)}
+		{@render info(title, description, date)}
 	{/if}
+
 </div>
