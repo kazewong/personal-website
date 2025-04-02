@@ -88,8 +88,6 @@
 	</div>	
 </div>
 
-
-
 <div class="block">
 	<div class="divider dark:divider-primary divider-start pb-4">
 		<h2>Research Interest</h2>

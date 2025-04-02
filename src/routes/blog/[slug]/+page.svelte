@@ -7,6 +7,11 @@
 <svelte:head>
 	<title>{data.title}</title>
 	<meta name="description" content={data.shortDescription} />
+	<meta property="og:title" content={data.title} />
+	<meta property="og:description" content={data.shortDescription} />
+	<meta property="og:type" content="website" />
+	<meta property="og:image" content={data.image_url} />
+
 </svelte:head>
 
 <article class="max-h-full">

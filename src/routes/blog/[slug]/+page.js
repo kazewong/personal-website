@@ -3,12 +3,14 @@ export async function load({ params }) {
 	const { title, date } = post.metadata;
 	const content = post.default;
 	const shortDescription = post.metadata.shortDescription;
+	const image_url = post.metadata.image_url;
 
 
 	return {
 		content,
 		title,
 		date,
-		shortDescription
+		shortDescription,
+		image_url
 	};
 }
