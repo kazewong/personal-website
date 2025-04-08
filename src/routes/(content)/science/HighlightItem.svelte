@@ -1,10 +1,11 @@
 <script lang="ts">
+    import DOMPurify from 'dompurify';
 	let { image, title, description, alt_des, link, date, left } = $props();
 	let innerWidth = $state(0);
 </script>
 
 {#snippet figure(image: string, alt_des: string)}
-	<div class="lg:w-fit lg:max-w-sm lg:max-h-max">
+	<div class="min-w-sm nlg:w-fit lg:max-w-sm lg:max-h-max">
 		<img class="lg:object-contain lg:h-full lg:bg-white rounded-lg" src={image} alt={alt_des}/>
 	</div>
 {/snippet}
@@ -12,7 +13,7 @@
 {#snippet info(title: string, description: string, date: string)}
 	<div class="card-body">
 		<h2 class="card-title text-3xl">{title}</h2>
-		<p>{description}</p>
+		<p>{@html DOMPurify.sanitize(description)}</p>
 		{#if left}
 			<div class="flex justify-end">
 				<div class="card-actions">
