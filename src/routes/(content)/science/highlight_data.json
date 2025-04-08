@@ -10,8 +10,8 @@
 		},
 		{
 			"image": "https://github.com/kazewong/flowMC/blob/main/docs/logo_0810.png?raw=true",
-			"title": "Adaptive Monte Carlo",
-			"description": "",
+			"title": "Adaptive MCMC",
+			"description": "Markov Chain Monte Carlo (MCMC) is very commonly used in fundamental science to solve data analysis problems. I am the lead developer of <a href='https://github.com/kazewong/flowMC'><b>flowMC</b></a>, an open source software package for adaptive MCMC. It is written in jax, has machine learning capabilities, and is designed to solve sampling problems with complicated geometries.",
 			"alt_des": "flowMC logo",
 			"data": "",
 			"link": "https://github.com/kazewong/flowMC"
@@ -28,7 +28,7 @@
 		{
 			"image": "https://i.postimg.cc/XqTvGX0Q/high-jump-screenshot.png",
 			"title": "Machine learning in sport",
-			"description": "Under construction",
+			"description": "I am interested in using data science, machine learning, and software engineering to improve the performance of athletes. This includes building computer vision models, extracting analytics from raw data, and create biomechanical models. I also care a lot of about actually deploying the methods and seeing the results as opposed to just publishing.",
 			"alt_des": "flowMC logo",
 			"data": "",
 			"link": ""

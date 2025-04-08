@@ -122,7 +122,6 @@
 		<h2 class="text-4xl">Research projects</h2>
 	</div>
 	
-	<h2></h2>
 	<p>
 	I only take students that are either directly recommended by my collaborators or students at Johns Hopkins University.
 	</p>
