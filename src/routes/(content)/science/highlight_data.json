@@ -18,8 +18,8 @@
 		},
 		{
 			"image": "https://i.postimg.cc/hvrNvhRd/gi-net.png",
-			"title": "Symmetries in Machine Learning",
-			"description": "Under construction",
+			"title": "Understanding Machine Learning with physics",
+			"description": "Trained as a physicist, I want to understand the general principles separating a working machine learning model from a non-working one with some physical arguments. This also includes work I am doing to improve the performance of machine learning models with physical principles. This includes infusing machine learning models with symmetries and understanding the accuracy limits of machine learning from a statistical mechanics perspective.",
 			"alt_des": "Geometric filters",
 			"data": "",
 			"link": "https://www.cis.jhu.edu/~wgregor4/assets/GeometricImageNet_II_camera_ready.pdf"
