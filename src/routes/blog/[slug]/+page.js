@@ -5,7 +5,6 @@ export async function load({ params }) {
 	const shortDescription = post.metadata.shortDescription;
 	const image_url = post.metadata.image_url;
 
-
 	return {
 		content,
 		title,

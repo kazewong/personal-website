@@ -1,12 +1,12 @@
 <script lang="ts">
-    import DOMPurify from 'dompurify';
+	import DOMPurify from 'dompurify';
 	let { image, title, description, alt_des, link, date, left } = $props();
 	let innerWidth = $state(0);
 </script>
 
 {#snippet figure(image: string, alt_des: string)}
 	<div class="min-w-sm nlg:w-fit lg:max-w-sm lg:max-h-max">
-		<img class="lg:object-contain lg:h-full lg:bg-white rounded-lg" src={image} alt={alt_des}/>
+		<img class="lg:object-contain lg:h-full lg:bg-white rounded-lg" src={image} alt={alt_des} />
 	</div>
 {/snippet}
 
@@ -20,7 +20,7 @@
 					<a href={link}>
 						<button class="btn btn-secondary text-xl">Read more</button>
 					</a>
-				</div>	
+				</div>
 			</div>
 		{:else}
 			<div class="flex justify-start">
@@ -28,7 +28,7 @@
 					<a href={link}>
 						<button class="btn btn-secondary text-xl">Read more</button>
 					</a>
-				</div>	
+				</div>
 			</div>
 		{/if}
 	</div>
@@ -49,5 +49,4 @@
 		{@render figure(image, alt_des)}
 		{@render info(title, description, date)}
 	{/if}
-
 </div>

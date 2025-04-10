@@ -1,5 +1,4 @@
 <script lang="ts">
-
 	interface Props {
 		image: any;
 		alt?: string;
@@ -7,12 +6,7 @@
 		description: any;
 	}
 
-	let {
-		image,
-		alt = '',
-		title,
-		description
-	}: Props = $props();
+	let { image, alt = '', title, description }: Props = $props();
 </script>
 
 <div class="card card-compact glass lg:card-side shadow-xl bg-slate-700 w-max[840px]">

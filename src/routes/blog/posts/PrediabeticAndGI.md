@@ -1,21 +1,22 @@
 ---
-title: "Monitoring my glucose level with a continuous glucose monitor"
-date: "2025-03-20"
-tags: ["Life Style", "Health", "Data Science", "Prediabetic"]
-shortDescription: "Optimizing my diet with data"
+title: 'Monitoring my glucose level with a continuous glucose monitor'
+date: '2025-03-20'
+tags: ['Life Style', 'Health', 'Data Science', 'Prediabetic']
+shortDescription: 'Optimizing my diet with data'
 ---
 
 Last year around March, I went into a routine checkup which they did a normal blood test for me. After a couple of days, I got an email from the physician saying everything is great. Considering my athletic lifestyle, this comes as no surprise. However, the email also mentioned my hemoglobin A1c level, which is an indicator of basically how caramelized a person blood is, indicates I am touching the lower end of prediabetic level. This was a bit of a shock to me: my body fat level is about 11% at the time; I exercise basically everyday for at least two hours; I don't drink, don't smoke, don't even drink soda and eat relatively healthy, how come I got prediabetic? Okay my grandfather was diabetic, so genes might play a role, but still, I was not expecting this.
 
 I didn't take it very seriously at first. Time passes and it was February 2025. I was trying to lose some weight and basically got on a super high protein diet (probably too high and I dialed it back to have more carbs while maintaining a calories deficit). During a high jump competition, I suddenly felt a drain of energy: I couldn't see very well, felt dizzy, and profoundly tired. I knew this is a sign of hypoglycemia, which is my body cannot produce enough glucose to fuel my body. I yelled to my coach to get me some sugar, and he got me some gummi bears, which I ate and felt better. This happened again two weeks later in a training session, so I knew something is off about my glucose level.
 
-I got a [stelo](https://www.stelo.com/) continuous glucose monitor (CGM) to monitor my glucose level. The device is a small patch that you put on your arm, and it will measure your glucose level every 5 minutes. Here is what I ate and my glucose level for the first day: 
+I got a [stelo](https://www.stelo.com/) continuous glucose monitor (CGM) to monitor my glucose level. The device is a small patch that you put on your arm, and it will measure your glucose level every 5 minutes. Here is what I ate and my glucose level for the first day:
+
 <div class="flex justify-center">
     <img src="https://i.postimg.cc/8Pqfw52r/Screenshot-2025-03-20-210716.png" alt="My food for the first day" />
     <img src="https://i.postimg.cc/fTw5fHh9/Screenshot-20250320-204104-Stelo.jpg" alt="My glucose level for the first day" class="px-2"/>
 </div>
 
-The breakfast was completely fine: yogurt, a bunch of keto cereal, and some oat banana pancake I made. the glucose level was staying in a good range. Then the lunch 
+The breakfast was completely fine: yogurt, a bunch of keto cereal, and some oat banana pancake I made. the glucose level was staying in a good range. Then the lunch
 scared the crap out of me.
 I was having a meeting with student, and I ate a small piece of whole wheat bread with some lite cream cheese. And this spiked my glucose level like crazy. The highest peak got to almost 190 mg/dL, which is far beyond the normal 140 mg/dL and getting close to the diabetic level of 200 mg/dL. It was just a whole wheat bread I made myself, and I only put one teaspoon of date sugar in it. I didn't expect the whole wheat bread to spike my glucose level that bad, and the sugar crash that I thought it was normal my entire life, turns out to be an obvious sign of high glucose level.
 
