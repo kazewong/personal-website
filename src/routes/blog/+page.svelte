@@ -17,8 +17,8 @@
 	{#each data.posts as post}
 		<li>
 			<div class="flex justify-between">
-				<h2 class="py-0">
-					<a href={post.path} class="py-0">
+				<h2 class="py-0 text-2xl">
+					<a href={post.path}>
 						{post.meta.title}
 					</a>
 				</h2>
