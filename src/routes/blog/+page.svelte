@@ -7,6 +7,7 @@
 
 	type Tag = {
 		name: string;
+		path: string;
 		selected: boolean;
 	}
 
@@ -19,11 +20,44 @@
 			if (!tag_names.includes(capitalizeFirstLetter(tag))) {
 				tags.push({
 					name: capitalizeFirstLetter(tag),
+					path: post.path,
 					selected: false
 				});
 			}
 		}
 	}
+
+	// Filter posts based on selected tags
+	function filterPosts() {
+		return data.posts.filter(post => {
+			if (post.meta.tags.length === 0) return true;
+			return post.meta.tags.some(tag => {
+				const tagName = capitalizeFirstLetter(tag);
+				return tags.find(t => t.name === tagName && t.selected);
+			});
+		});
+	}
+	let filtered_posts = $derived.by(() => {
+		return filterPosts();
+	});
+
+	// Sort posts by date
+	function sortPosts(posts: any[]) {
+		return posts.sort((a, b) => {
+			const dateA = new Date(a.meta.date);
+			const dateB = new Date(b.meta.date);
+			return dateB.getTime() - dateA.getTime();
+		});
+	}
+	let sorted_posts = $derived.by(() => {
+		return sortPosts(filtered_posts);
+	});
+	let renderPosts = $derived.by(() => {
+		return {
+			posts: sorted_posts,
+			tags: tags
+		};
+	});
 
 
 </script>
@@ -63,18 +97,36 @@
 </div>
 
 <ul>
-	{#each data.posts as post}
-		<li>
-			<div class="flex justify-between">
-				<h2 class="py-0 text-2xl">
-					<a href={post.path}>
-						{post.meta.title}
-					</a>
-				</h2>
-				<p class="min-w-[105px]">
-					{post.meta.date}
-				</p>
-			</div>
-		</li>
-	{/each}
+	{#if renderPosts.posts.length === 0}
+		{#each data.posts as post}
+			<li>
+				<div class="flex justify-between">
+					<h2 class="py-0 text-2xl">
+						<a href={post.path}>
+							{post.meta.title}
+						</a>
+					</h2>
+					<p class="min-w-[105px]">
+						{post.meta.date}
+					</p>
+				</div>
+			</li>
+		{/each}
+	{:else}
+		{#each renderPosts.posts as post}
+			<li>
+				<div class="flex justify-between">
+					<h2 class="py-0 text-2xl">
+						<a href={post.path}>
+							{post.meta.title}
+						</a>
+					</h2>
+					<p class="min-w-[105px]">
+						{post.meta.date}
+					</p>
+				</div>
+			</li>
+		{/each}
+	{/if}
+
 </ul>
