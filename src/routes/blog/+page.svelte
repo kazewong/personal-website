@@ -60,6 +60,7 @@
 	});
 
 
+
 </script>
 
 <div id="Header" class="py-4">
@@ -69,6 +70,19 @@
 		run with this too seriously. The rest of the content includes short tutorials, project updates,
 		and some random opinions I have. Enjoy!
 	</h3>
+</div>
+
+<div>
+	<button
+		class="btn btn-error"
+		onclick={() => {
+			for (const tag of tags) {
+				tag.selected = false;
+			}
+		}}
+	>
+		Reset
+	</button>
 </div>
 
 <!-- Insert keyword filters here -->
@@ -94,19 +108,6 @@
 			</button>
 		{/if}
 	{/each}
-</div>
-
-<div>
-	<button
-		class="btn btn-error"
-		onclick={() => {
-			for (const tag of tags) {
-				tag.selected = false;
-			}
-		}}
-	>
-		Reset
-	</button>
 </div>
 
 <ul>
