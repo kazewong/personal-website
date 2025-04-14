@@ -1,5 +1,5 @@
 <script lang="ts">
-	import DOMPurify from 'dompurify';
+	import DOMPurify from 'isomorphic-dompurify';
 	let { image, title, description, alt_des, link, date, left } = $props();
 	let innerWidth = $state(0);
 </script>
