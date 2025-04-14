@@ -96,6 +96,19 @@
 	{/each}
 </div>
 
+<div>
+	<button
+		class="btn btn-error"
+		onclick={() => {
+			for (const tag of tags) {
+				tag.selected = false;
+			}
+		}}
+	>
+		Reset
+	</button>
+</div>
+
 <ul>
 	{#if renderPosts.posts.length === 0}
 		{#each data.posts as post}
