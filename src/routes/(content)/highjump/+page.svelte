@@ -28,7 +28,7 @@
 <ul class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
 	<li>
 		<div class="timeline-middle"></div>
-		<div class="timeline-start mb-10 md:text-end">
+		<div class="timeline-start mb-10 md:text-end flex-1 flex flex-col justify-center">
 			<time class="font-mono italic">2009</time>
 			<div class="text-lg font-black">A humble beginning</div>
 			<p class="text-justify">
@@ -41,11 +41,11 @@
 				when I was 20, and went to the US for my graduate study.
 			</p>
 		</div>
-		<div class="timeline-end md:mb-10 flex justify-center items-center">
+		<div class="timeline-end md:mb-10 flex justify-center items-center flex-1">
 			<img
 				src="/highschool_hj.jpg"
 				alt="High School High Jump"
-				class="rounded-lg max-w-xs shadow-lg"
+				class="timeline-img rounded-lg shadow-lg w-full h-full object-cover"
 			/>
 		</div>
 		<hr />
@@ -53,7 +53,7 @@
 	<li>
 		<hr />
 		<div class="timeline-middle"></div>
-		<div class="timeline-end md:mb-10">
+		<div class="timeline-end md:mb-10 flex-1 flex flex-col justify-center">
 			<time class="font-mono italic">2017</time>
 			<div class="text-lg font-black">Goodbye for science</div>
 			<p class="text-justify">
@@ -70,11 +70,11 @@
 				decided to try graduating and get back into jumping.
 			</p>
 		</div>
-		<div class="timeline-start mb-10 md:text-end flex justify-center items-center">
+		<div class="timeline-start mb-10 md:text-end flex justify-center items-center flex-1">
 			<img
 				src="/graduate_hj.jpg"
 				alt="Graduate School High Jump"
-				class="rounded-lg max-w-xs shadow-lg"
+				class="timeline-img rounded-lg shadow-lg w-full h-full object-cover"
 			/>
 		</div>
 		<hr />
@@ -82,7 +82,7 @@
 	<li>
 		<hr />
 		<div class="timeline-middle"></div>
-		<div class="timeline-start mb-10 md:text-end">
+		<div class="timeline-start mb-10 md:text-end flex-1 flex flex-col justify-center">
 			<time class="font-mono italic">2021</time>
 			<div class="text-lg font-black">Back into the pond</div>
 			<p class="text-justify">
@@ -96,11 +96,11 @@
 				demotivating. But as I kept working on it, I got back to 180cm in Feburary 2022.
 			</p>
 		</div>
-		<div class="timeline-end md:mb-10 flex justify-center items-center">
+		<div class="timeline-end md:mb-10 flex justify-center items-center flex-1">
 			<img
 				src="/backtohj.png"
 				alt="Back to High Jump"
-				class="rounded-lg max-w-xs shadow-lg"
+				class="timeline-img rounded-lg shadow-lg w-full h-full object-cover"
 			/>
 		</div>
 		<hr />
@@ -108,7 +108,7 @@
 	<li>
 		<hr />
 		<div class="timeline-middle"></div>
-		<div class="timeline-end md:mb-10">
+		<div class="timeline-end md:mb-10 flex-1 flex flex-col justify-center">
 			<time class="font-mono italic">2022</time>
 			<div class="text-lg font-black">Breaking new ground</div>
 			<p class="text-justify">
@@ -116,8 +116,7 @@
 				Growing up from Hong Kong, we were constantly told that we expire after the college, which
 				is about 21. Any age after that is too old for track and field, and we should move on. I
 				listened at the time, put my spikes away, and tried to be an adult (!?). But in June 2022, I
-				finally got it for the first time, my first 190cm. Half a year later, I went up to 195 cm in
-				Feburary 2023. I was 27, and I was clearing height the younger me didn't believe he could.
+				finally got it for the first time, my first 190cm. Half a year later, I went up
 			</p>
 		</div>
 		<div class="timeline-start mb-10 md:text-end flex justify-center items-center">
