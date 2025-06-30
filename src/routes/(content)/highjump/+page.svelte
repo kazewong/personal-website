@@ -41,6 +41,13 @@
 				when I was 20, and went to the US for my graduate study.
 			</p>
 		</div>
+		<div class="timeline-end md:mb-10 flex justify-center items-center">
+			<img
+				src="/highschool_hj.jpg"
+				alt="High School High Jump"
+				class="rounded-lg max-w-xs shadow-lg"
+			/>
+		</div>
 		<hr />
 	</li>
 	<li>
@@ -63,6 +70,13 @@
 				decided to try graduating and get back into jumping.
 			</p>
 		</div>
+		<div class="timeline-start mb-10 md:text-end flex justify-center items-center">
+			<img
+				src="/graduate_hj.jpg"
+				alt="Graduate School High Jump"
+				class="rounded-lg max-w-xs shadow-lg"
+			/>
+		</div>
 		<hr />
 	</li>
 	<li>
@@ -82,6 +96,13 @@
 				demotivating. But as I kept working on it, I got back to 180cm in Feburary 2022.
 			</p>
 		</div>
+		<div class="timeline-end md:mb-10 flex justify-center items-center">
+			<img
+				src="/backtohj.png"
+				alt="Back to High Jump"
+				class="rounded-lg max-w-xs shadow-lg"
+			/>
+		</div>
 		<hr />
 	</li>
 	<li>
@@ -98,6 +119,9 @@
 				finally got it for the first time, my first 190cm. Half a year later, I went up to 195 cm in
 				Feburary 2023. I was 27, and I was clearing height the younger me didn't believe he could.
 			</p>
+		</div>
+		<div class="timeline-start mb-10 md:text-end flex justify-center items-center">
+			<img src="/195.png" alt="195cm Jump" class="rounded-lg max-w-xs shadow-lg" />
 		</div>
 		<hr />
 	</li>
