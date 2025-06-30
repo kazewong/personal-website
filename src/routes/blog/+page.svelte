@@ -9,11 +9,11 @@
 		name: string;
 		path: string;
 		selected: boolean;
-	}
+	};
 
 	let tags: Tag[] = $state([]);
 	let tag_names: string[] = $derived.by(() => {
-		return tags.map(tag => tag.name);
+		return tags.map((tag) => tag.name);
 	});
 	for (const post of data.posts) {
 		for (const tag of post.meta.tags) {
@@ -29,12 +29,14 @@
 
 	// Filter posts based on selected tags
 	function filterPosts() {
-		return data.posts.filter(post => {
-			if (post.meta.tags.length === 0) return true;
-			return post.meta.tags.some(tag => {
-				const tagName = capitalizeFirstLetter(tag);
-				return tags.find(t => t.name === tagName && t.selected);
-			});
+		const selected = tags.filter((t) => t.selected).map((t) => t.name);
+		if (selected.length === 0) {
+			return data.posts;
+		}
+		return data.posts.filter((post) => {
+			const postTagNames = post.meta.tags.map(capitalizeFirstLetter);
+			// Only include posts that have ALL selected tags
+			return selected.every((sel) => postTagNames.includes(sel));
 		});
 	}
 	let filtered_posts = $derived.by(() => {
@@ -59,8 +61,26 @@
 		};
 	});
 
-
-
+	// Compute visible tags based on selected tags and compatible tags in posts
+	let visibleTags = $derived.by(() => {
+		const selected = tags.filter((t) => t.selected).map((t) => t.name);
+		if (selected.length === 0) {
+			return tags;
+		}
+		// Find all tags that appear in posts matching all selected tags
+		const compatibleTagSet = new Set<string>();
+		for (const post of data.posts) {
+			const postTagNames = post.meta.tags.map(capitalizeFirstLetter);
+			if (selected.every((sel) => postTagNames.includes(sel))) {
+				for (const tag of postTagNames) {
+					compatibleTagSet.add(tag);
+				}
+			}
+		}
+		// Always include selected tags so they can be unselected
+		selected.forEach((tag) => compatibleTagSet.add(tag));
+		return tags.filter((tag) => compatibleTagSet.has(tag.name));
+	});
 </script>
 
 <div id="Header" class="py-4">
@@ -87,7 +107,7 @@
 
 <!-- Insert keyword filters here -->
 <div class="flex flex-wrap gap-2 py-2">
-	{#each tags as tag}
+	{#each visibleTags as tag}
 		{#if tag.selected}
 			<button
 				class="btn lg:btn-md btn-accent"
@@ -142,5 +162,4 @@
 			</li>
 		{/each}
 	{/if}
-
 </ul>
