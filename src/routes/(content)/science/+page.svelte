@@ -116,10 +116,8 @@
 		<h2 class="text-4xl">Research projects</h2>
 	</div>
 
-	<h3>
-	Requirements for working with me
-	</h3>
-	
+	<h3>Requirements for working with me</h3>
+
 	<p>
 		I am trying to be more and more careful in taking in student these days, mainly because since I
 		begun my faculty position, I have received many more requests from students wanting to join my
@@ -136,13 +134,15 @@
 	<ol>
 		<li>
 			I only take students that are either directly recommended by my collaborators or students at
-			Johns Hopkins University. Please <b>do not </b> reach out to me if you do not satisfy this condition. If you violate this condition, I will block your email address, and veto your application whenever I have the chance. Please take this seriously.
+			Johns Hopkins University. Please <b>do not </b> reach out to me if you do not satisfy this condition.
+			If you violate this condition, I will block your email address, and veto your application whenever
+			I have the chance. Please take this seriously.
 		</li>
 		<li>
 			Prospective students should have a strong background in computing. This includes but not
 			limited to being proficient in linux, programming languages such as Python, Julia, C/C++ or
-			Rust, and experience with version control. You can still consider joining if you don't have these
-			skills, but you will need to learn them quickly.
+			Rust, and experience with version control. You can still consider joining if you don't have
+			these skills, but you will need to learn them quickly.
 		</li>
 		<li>
 			Being able to commit at least 10 hours per week and be responsible, including being punctual
@@ -151,41 +151,42 @@
 	</ol>
 
 	<p>
-	   While I tend to be easygoing in general, I am quite demanding when it comes to work-related matters. I believe professionalism is the most important thing I can teach my students: If I take up a job, I will complete with all of my soul no matter what adversarial conditions I face. Of course I understand things never go as planned and life gets in the way, but I will push you to go beyond your limits and be a better version of yourself. That process is not always pleasant, but I believe this professional mindset will carve a path for you to success.
+		While I tend to be easygoing in general, I am quite demanding when it comes to work-related
+		matters. I believe professionalism is the most important thing I can teach my students: If I
+		take up a job, I will complete with all of my soul no matter what adversarial conditions I face.
+		Of course I understand things never go as planned and life gets in the way, but I will push you
+		to go beyond your limits and be a better version of yourself. That process is not always
+		pleasant, but I believe this professional mindset will carve a path for you to success.
 	</p>
-	
-	<h3>
-	   Open Projects
-	</h3>
+
+	<h3>Open Projects</h3>
 	<p>
-	   If you still decide to send me an email to work with me after reading the paragraphs above, we are in game! Here below is a list of open projects I have for new students who are interested in working with me:
+		If you still decide to send me an email to work with me after reading the paragraphs above, we
+		are in game! Here below is a list of open projects I have for new students who are interested in
+		working with me:
 	</p>
-	
+
 	<ol>
-	   <li>
-			Machine learning analysis for sports performance
-		</li>
-		<li>
-		   Development of adaptive monte carlo methods
-		</li>
-		<li>
-			Observational astronomy data analysis
-		</li>
+		<li>Machine learning analysis for sports performance</li>
+		<li>Development of adaptive monte carlo methods</li>
+		<li>Observational astronomy data analysis</li>
 	</ol>
-	
-	They are ordered by required skills. Sport analytics being the most beginner friendly and observational astronomy being the most advanced.
-	
-	<h3>
-	   Perks you will receive
-	</h3>
-	
+
+	They are ordered by required skills. Sport analytics being the most beginner friendly and
+	observational astronomy being the most advanced.
+
+	<h3>Perks you will receive</h3>
+
 	<p>
-	   If you are eligible, and find a project that excites you, then let me further entice you with perks you will receive while working with me:
+		If you are eligible, and find a project that excites you, then let me further entice you with
+		perks you will receive while working with me:
 	</p>
-	
+
 	<ol>
-	    <li>Access to my GPU cluster</li>
+		<li>Access to my GPU cluster</li>
 		<li>Learn practical computing skills such as MLOps and high performance computing</li>
-		<li>Opportunity to a publication. I ground all of my research in the context of a publication.</li>
+		<li>
+			Opportunity to a publication. I ground all of my research in the context of a publication.
+		</li>
 	</ol>
 </div>

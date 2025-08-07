@@ -5,27 +5,36 @@
 		return string.charAt(0).toUpperCase() + string.slice(1);
 	}
 
+	type Post = {
+		path: string;
+		meta: {
+			title: string;
+			date: string;
+			tags: string[];
+		};
+	};
+
 	type Tag = {
 		name: string;
 		path: string;
 		selected: boolean;
 	};
 
-	let tags: Tag[] = $state([]);
-	let tag_names: string[] = $derived.by(() => {
-		return tags.map((tag) => tag.name);
-	});
-	for (const post of data.posts) {
-		for (const tag of post.meta.tags) {
-			if (!tag_names.includes(capitalizeFirstLetter(tag))) {
-				tags.push({
-					name: capitalizeFirstLetter(tag),
-					path: post.path,
-					selected: false
-				});
+	function getInitialTags() {
+		const all_tags = new Set<string>();
+		for (const post of data.posts) {
+			for (const tag of post.meta.tags) {
+				all_tags.add(capitalizeFirstLetter(tag));
 			}
 		}
+		return Array.from(all_tags).map((name) => ({
+			name,
+			path: '', // path is not really used per tag
+			selected: false
+		}));
 	}
+
+	let tags: Tag[] = $state(getInitialTags());
 
 	// Filter posts based on selected tags
 	function filterPosts() {
@@ -44,7 +53,7 @@
 	});
 
 	// Sort posts by date
-	function sortPosts(posts: any[]) {
+	function sortPosts(posts: Post[]) {
 		return posts.sort((a, b) => {
 			const dateA = new Date(a.meta.date);
 			const dateB = new Date(b.meta.date);
@@ -92,25 +101,13 @@
 	</h3>
 </div>
 
-<div>
-	<button
-		class="btn btn-error"
-		onclick={() => {
-			for (const tag of tags) {
-				tag.selected = false;
-			}
-		}}
-	>
-		Reset
-	</button>
-</div>
 
 <!-- Insert keyword filters here -->
 <div class="flex flex-wrap gap-2 py-2">
 	{#each visibleTags as tag}
 		{#if tag.selected}
 			<button
-				class="btn lg:btn-md btn-accent"
+				class="btn btn-sm btn-outline btn-accent"
 				onclick={() => {
 					tag.selected = !tag.selected;
 				}}
@@ -119,7 +116,7 @@
 			</button>
 		{:else}
 			<button
-				class="btn lg:btn-md btn-secondary"
+				class="btn btn-sm btn-outline"
 				onclick={() => {
 					tag.selected = !tag.selected;
 				}}
