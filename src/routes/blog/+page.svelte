@@ -101,18 +101,6 @@
 	</h3>
 </div>
 
-<div>
-	<button
-		class="btn btn-error"
-		onclick={() => {
-			for (const tag of tags) {
-				tag.selected = false;
-			}
-		}}
-	>
-		Reset
-	</button>
-</div>
 
 <!-- Insert keyword filters here -->
 <div class="flex flex-wrap gap-2 py-2">
