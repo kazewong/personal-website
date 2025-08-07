@@ -1,7 +1,7 @@
 ---
 title: 'Why should we train AI on simulations?'
 date: '2025-05-27'
-tags: ['Machine learning', 'Simulation', ]
+tags: ['Machine learning', 'Simulation']
 shortDescription: 'Some thoughts on emulator'
 ---
 
@@ -36,4 +36,3 @@ When I wrote the "What can emulator do?" section, I do have some answers in mind
 ## Hybrid simulation
 
 A problem that is near and dear to my heart is compact binary simulations in numerical relativity (NR). NR simulations are increadbly complicated and expansive to simulation, and various groups spend hundreds of millions of CPU hours to get several thousands of these simulations. In a typical simulation, there could be $$\sim10^9$$ grid points used in one simulate. But in the end, the system are quite simple, it is two balls with some waves! Clearly we don't need $$10^9$$ numbers to describe the system. The fact that there are human-produced reduced representation of the system such as effective one body approach suggests these is at least some reduced representation of the system that can be learned. The question is, can we build such a system that can learn a reduced representation from this seemingly complicate set of equations? If yes, we can probably speed up the simulation by a lot without sacraficing accuracy.
-
