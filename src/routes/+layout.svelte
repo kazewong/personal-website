@@ -3,8 +3,6 @@
 	import 'katex/dist/katex.min.css';
 	import { dev } from '$app/environment';
 	import { injectAnalytics } from '@vercel/analytics/sveltekit';
-	import { page } from '$app/stores';
-	import { fadeSlideIn, fadeSlideOut } from '$lib/utils/transitions';
 
 	injectAnalytics({ mode: dev ? 'development' : 'production' });
 	interface Props {
@@ -169,13 +167,7 @@
 </svelte:head>
 
 <main class={isDarkMode ? 'dark' : ''}>
-	{#key $page.url.pathname}
-		<div
-			class="flex flex-col min-h-screen px-4 sm:px-6 lg:px-8 my-auto mx-auto"
-			in:fadeSlideIn={{ duration: 300 }}
-			out:fadeSlideOut={{ duration: 300 }}
-		>
-			{@render children?.()}
-		</div>
-	{/key}
+	<div class="flex flex-col min-h-screen px-4 sm:px-6 lg:px-8 my-auto mx-auto">
+		{@render children?.()}
+	</div>
 </main>
