@@ -1,9 +1,9 @@
 <script lang="ts">
 	interface Props {
-		image: any;
+		image: string;
 		alt?: string;
-		title: any;
-		description: any;
+		title: string;
+		description: string;
 	}
 
 	let { image, alt = '', title, description }: Props = $props();

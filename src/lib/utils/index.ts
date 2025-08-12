@@ -15,8 +15,17 @@ export const fetchMarkdownPosts = async () => {
 		iterablePostFiles.map(async ([path, resolver]) => {
 			const { metadata } = (await resolver()) as PostResolver;
 			const postPath = path.slice(11, 17) + path.slice(23, -3);
+			const capitalizedTags = metadata.tags.map((tag) =>
+				tag
+					.split(' ')
+					.map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+					.join(' ')
+			);
 			return {
-				meta: metadata,
+				meta: {
+					...metadata,
+					tags: capitalizedTags
+				},
 				path: postPath
 			};
 		})

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import DOMPurify from 'isomorphic-dompurify';
-	let { image, title, description, alt_des, link, date, left } = $props();
+	let { image, title, description, alt_des, link, left } = $props();
 	let innerWidth = $state(0);
 </script>
 
@@ -10,9 +10,10 @@
 	</div>
 {/snippet}
 
-{#snippet info(title: string, description: string, date: string)}
+{#snippet info(title: string, description: string)}
 	<div class="card-body">
 		<h2 class="card-title text-3xl">{title}</h2>
+		<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 		<p>{@html DOMPurify.sanitize(description)}</p>
 		{#if left}
 			<div class="flex justify-end">
@@ -40,13 +41,13 @@
 	{#if innerWidth > 1024}
 		{#if left}
 			{@render figure(image, alt_des)}
-			{@render info(title, description, date)}
+			{@render info(title, description)}
 		{:else}
-			{@render info(title, description, date)}
+			{@render info(title, description)}
 			{@render figure(image, alt_des)}
 		{/if}
 	{:else}
 		{@render figure(image, alt_des)}
-		{@render info(title, description, date)}
+		{@render info(title, description)}
 	{/if}
 </div>

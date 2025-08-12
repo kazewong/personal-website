@@ -1,24 +1,3 @@
-<script lang="ts">
-	import anime from 'animejs';
-	let scrollY = $state(0);
-
-	$effect(() => {
-		if (scrollY > 100) {
-			anime({
-				targets: '.timeline-color',
-				background: 'var(--color-primary)'
-			});
-		} else {
-			anime({
-				targets: '.timeline-color',
-				background: 'var(--color-base-200)'
-			});
-		}
-	});
-</script>
-
-<svelte:window on:scroll={() => (scrollY = window.scrollY)} />
-
 <h1 class="flex justify-center text-6xl">I Jump</h1>
 
 <div class="divider dark:divider-primary divider-start">
@@ -167,9 +146,3 @@
 	takeoff on one foot. I am certified not talented in High Jump, but I did get my PhD and I do a lot
 	of machine learning. The question here is can my brain helps my body
 </p>
-
-<style>
-	.timeline-color {
-		background-color: var(--color-secondary);
-	}
-</style>
