@@ -42,7 +42,7 @@
 		if (selected.length === 0) {
 			return data.posts;
 		}
-		return data.posts.filter((post) => {
+		return data.posts.filter((post: Post) => {
 			const postTagNames = post.meta.tags.map(capitalizeFirstLetter);
 			// Only include posts that have ALL selected tags
 			return selected.every((sel) => postTagNames.includes(sel));
@@ -90,6 +90,36 @@
 		selected.forEach((tag) => compatibleTagSet.add(tag));
 		return tags.filter((tag) => compatibleTagSet.has(tag.name));
 	});
+
+	let tagSearch = $state('');
+
+	let searchedTags = $derived.by(() => {
+		if (tagSearch === '') {
+			return visibleTags;
+		}
+		return visibleTags.filter((tag) => tag.name.toLowerCase().includes(tagSearch.toLowerCase()));
+	});
+
+	const tagsPerPage = 10;
+	let currentPage = $state(1);
+
+	let paginatedTags = $derived.by(() => {
+		const start = (currentPage - 1) * tagsPerPage;
+		const end = start + tagsPerPage;
+		return searchedTags.slice(start, end);
+	});
+
+	function nextPage() {
+		if (currentPage * tagsPerPage < searchedTags.length) {
+			currentPage++;
+		}
+	}
+
+	function prevPage() {
+		if (currentPage > 1) {
+			currentPage--;
+		}
+	}
 </script>
 
 <div id="Header" class="py-4">
@@ -101,30 +131,48 @@
 	</h3>
 </div>
 
-
 <!-- Insert keyword filters here -->
-<div class="flex flex-wrap gap-2 py-2">
-	{#each visibleTags as tag}
-		{#if tag.selected}
-			<button
-				class="btn btn-sm btn-outline btn-accent"
-				onclick={() => {
-					tag.selected = !tag.selected;
-				}}
-			>
-				{tag.name}
-			</button>
-		{:else}
-			<button
-				class="btn btn-sm btn-outline"
-				onclick={() => {
-					tag.selected = !tag.selected;
-				}}
-			>
-				{tag.name}
-			</button>
-		{/if}
-	{/each}
+<div class="flex flex-col gap-2 py-2">
+	<input
+		type="text"
+		placeholder="Search Tags"
+		class="input input-bordered"
+		bind:value={tagSearch}
+	/>
+	<div class="flex flex-wrap gap-2 py-2">
+		{#each paginatedTags as tag}
+			{#if tag.selected}
+				<button
+					class="btn btn-sm btn-outline btn-accent"
+					onclick={() => {
+						tag.selected = !tag.selected;
+					}}
+				>
+					{tag.name}
+				</button>
+			{:else}
+				<button
+					class="btn btn-sm btn-outline"
+					onclick={() => {
+						tag.selected = !tag.selected;
+					}}
+				>
+					{tag.name}
+				</button>
+			{/if}
+		{/each}
+	</div>
+	<div class="flex justify-center items-center gap-4">
+		<button class="btn btn-sm" onclick={prevPage} disabled={currentPage === 1}> Previous </button>
+		<span>Page {currentPage} of {Math.ceil(searchedTags.length / tagsPerPage)}</span>
+		<button
+			class="btn btn-sm"
+			onclick={nextPage}
+			disabled={currentPage * tagsPerPage >= searchedTags.length}
+		>
+			Next
+		</button>
+	</div>
 </div>
 
 <ul>
