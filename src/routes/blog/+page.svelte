@@ -97,7 +97,9 @@
 		if (tagSearch === '') {
 			return visibleTags;
 		}
-		return visibleTags.filter((tag) => tag.name.toLowerCase().includes(tagSearch.toLowerCase()));
+		return visibleTags.filter((tag) =>
+			tag.name.toLowerCase().startsWith(tagSearch.toLowerCase())
+		);
 	});
 
 	const tagsPerPage = 10;
