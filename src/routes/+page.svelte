@@ -10,30 +10,20 @@
 		const tl = createTimeline({ defaults: { duration: 750 } });
 		const hello_animation = animate(text.split('#hello', { words: false, chars: true }).chars, {
 			// Property keyframes
-			y: [
-				{ to: '-2.75rem', ease: 'outExpo', duration: 600 },
-				{ to: 0, ease: 'outBounce', duration: 800, delay: 100 }
+			scale: [
+				{ from: '1', to: '2', ease: 'inOutCirc', duration: 400 },
+				{ from: '2', to: '1', ease: 'outExpo', duration: 400 }
 			],
-			// Property specific parameters
-			rotate: {
-				from: '-1turn',
-				delay: 0
-			},
+			opacity: [{ from: 0, to: 1, duration: 600, ease: 'inOutCirc' }],
 			delay: stagger(50),
 			ease: 'inOutCirc'
 		});
 		const name_animation = animate('#name', {
 			// Property keyframes
-			x: [
-				{ to: '+2.75rem', ease: 'outExpo', duration: 600 },
-				{ to: 0, ease: 'outBounce', duration: 800, delay: 100 }
-			],
-			opacity: [
-				{ to: 0, duration: 600, ease: 'outExpo' },
-				{ to: 1, duration: 800, delay: 100 }
-			]
+			x: [{ from: '+2.75rem', to: '0', ease: 'outExpo', duration: 600 }],
+			opacity: [{ from: 0, to: 1, duration: 600, ease: 'outExpo' }]
 		});
-		tl.label('hello').sync(hello_animation, 0).sync(name_animation, 50);
+		tl.label('hello').sync(hello_animation, 0).sync(name_animation, 1000);
 	});
 </script>
 
