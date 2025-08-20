@@ -14,7 +14,11 @@
 
 <article class="max-h-full">
 	<h1>{data.title}</h1>
+	<h3>{data.shortDescription}</h3>
 	<p>Published: {data.date}</p>
 
+	
 	<data.content />
 </article>
+
+

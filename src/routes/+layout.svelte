@@ -170,4 +170,64 @@
 	<div class="flex flex-col min-h-screen px-4 sm:px-6 lg:px-8 my-auto mx-auto">
 		{@render children?.()}
 	</div>
+	<footer
+		class="w-full mt-auto py-4 bg-indigo-50 dark:bg-gray-900 text-center text-gray-700 dark:text-gray-300"
+	>
+		<div class="flex flex-col items-center space-y-2">
+			<div class="flex flex-row justify-center space-x-4">
+				<a
+					href="https://github.com/kazewong"
+					class="dark:invert"
+					title="Github"
+					target="_blank"
+					rel="noopener"
+				>
+					<img
+						src="/src/lib/assets/favicons/Github_logo_trans.png"
+						width="28"
+						height="28"
+						alt="Github"
+					/>
+				</a>
+				<a
+					href="https://www.youtube.com/channel/UCt6jkLTx5GBkGQ57HiPaeLg"
+					class="dark:invert"
+					title="Youtube"
+					target="_blank"
+					rel="noopener"
+				>
+					<img
+						src="/src/lib/assets/favicons/Youtube_logo_trans.png"
+						width="28"
+						height="28"
+						alt="Youtube"
+					/>
+				</a>
+				<a href="https://twitter.com/physicskaze" title="Twitter" target="_blank" rel="noopener">
+					<img
+						src="/src/lib/assets/favicons/Twitter_logo_trans.png"
+						width="28"
+						height="28"
+						alt="Twitter"
+					/>
+				</a>
+				<a
+					href="https://www.linkedin.com/in/kazewkwong/"
+					title="Linkedin"
+					target="_blank"
+					rel="noopener"
+				>
+					<img
+						src="/src/lib/assets/favicons/Linkedin_logo_trans.png"
+						width="28"
+						height="28"
+						alt="Linkedin"
+					/>
+				</a>
+			</div>
+			<div>
+				&copy; {new Date().getFullYear()} Kaze Wong
+			</div>
+		</div>
+	</footer>
 </main>
