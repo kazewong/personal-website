@@ -1,6 +1,10 @@
 <script lang="ts">
 	let { data } = $props();
 
+	// ==========================
+	// Tag logic
+	// ==========================
+
 	function capitalizeFirstLetter(string: string) {
 		return string.charAt(0).toUpperCase() + string.slice(1);
 	}
@@ -97,9 +101,7 @@
 		if (tagSearch === '') {
 			return visibleTags;
 		}
-		return visibleTags.filter((tag) =>
-			tag.name.toLowerCase().startsWith(tagSearch.toLowerCase())
-		);
+		return visibleTags.filter((tag) => tag.name.toLowerCase().startsWith(tagSearch.toLowerCase()));
 	});
 
 	const tagsPerPage = 10;
@@ -120,6 +122,30 @@
 	function prevPage() {
 		if (currentPage > 1) {
 			currentPage--;
+		}
+	}
+
+	// ==========================
+	// Post pagination logic
+	// ==========================
+	const postsPerPage = 10;
+	let postPage = $state(1);
+
+	let paginatedPosts = $derived.by(() => {
+		const start = (postPage - 1) * postsPerPage;
+		const end = start + postsPerPage;
+		return renderPosts.posts.slice(start, end);
+	});
+
+	function nextPostPage() {
+		if (postPage * postsPerPage < renderPosts.posts.length) {
+			postPage++;
+		}
+	}
+
+	function prevPostPage() {
+		if (postPage > 1) {
+			postPage--;
 		}
 	}
 </script>
@@ -180,21 +206,10 @@
 </div>
 
 <ul>
-	{#if renderPosts.posts.length === 0}
-		{#each data.posts as post}
-			<li class="mb-2">
-				<div>
-					<p class="text-sm text-gray-500">{post.meta.date}</p>
-				</div>
-				<div>
-					<h2 class="py-0 text-2xl">
-						<a href={post.path}>{post.meta.title}</a>
-					</h2>
-				</div>
-			</li>
-		{/each}
+	{#if paginatedPosts.length === 0}
+		<li>No posts found.</li>
 	{:else}
-		{#each renderPosts.posts as post}
+		{#each paginatedPosts as post}
 			<li class="mb-2">
 				<div>
 					<p class="text-sm text-gray-500">{post.meta.date}</p>
@@ -208,3 +223,12 @@
 		{/each}
 	{/if}
 </ul>
+<div class="flex justify-center items-center gap-4 py-4">
+	<button class="btn btn-sm" onclick={prevPostPage} disabled={postPage === 1}>Previous</button>
+	<span>Page {postPage} of {Math.ceil(renderPosts.posts.length / postsPerPage)}</span>
+	<button
+		class="btn btn-sm"
+		onclick={nextPostPage}
+		disabled={postPage * postsPerPage >= renderPosts.posts.length}>Next</button
+	>
+</div>
