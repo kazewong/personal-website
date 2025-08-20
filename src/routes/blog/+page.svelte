@@ -125,6 +125,8 @@
 </script>
 
 <div id="Header" class="py-4">
+	<h1 class="flex justify-center">My random thoughts</h1>
+
 	<h3 class="font-sans text-justify">
 		Here are a bunch of random posts that I think it would be useful and/or fun to read. For more
 		academic stuff you find here, note that these are mostly some informal ideas I have, so don't
@@ -180,31 +182,27 @@
 <ul>
 	{#if renderPosts.posts.length === 0}
 		{#each data.posts as post}
-			<li>
-				<div class="flex justify-between">
+			<li class="mb-2">
+				<div>
+					<p class="text-sm text-gray-500">{post.meta.date}</p>
+				</div>
+				<div>
 					<h2 class="py-0 text-2xl">
-						<a href={post.path}>
-							{post.meta.title}
-						</a>
+						<a href={post.path}>{post.meta.title}</a>
 					</h2>
-					<p class="min-w-[105px]">
-						{post.meta.date}
-					</p>
 				</div>
 			</li>
 		{/each}
 	{:else}
 		{#each renderPosts.posts as post}
-			<li>
-				<div class="flex justify-between">
+			<li class="mb-2">
+				<div>
+					<p class="text-sm text-gray-500">{post.meta.date}</p>
+				</div>
+				<div>
 					<h2 class="py-0 text-2xl">
-						<a href={post.path}>
-							{post.meta.title}
-						</a>
+						<a href={post.path}>{post.meta.title}</a>
 					</h2>
-					<p class="min-w-[105px]">
-						{post.meta.date}
-					</p>
 				</div>
 			</li>
 		{/each}
