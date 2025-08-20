@@ -9,7 +9,6 @@
 	onMount(() => {
 		const tl = createTimeline({ defaults: { duration: 750 } });
 		const hello_animation = animate(text.split('#hello', { words: false, chars: true }).chars, {
-			// Property keyframes
 			scale: [
 				{ from: '1', to: '2', ease: 'inOutCirc', duration: 400 },
 				{ from: '2', to: '1', ease: 'outExpo', duration: 400 }
@@ -18,12 +17,21 @@
 			delay: stagger(50),
 			ease: 'inOutCirc'
 		});
+
 		const name_animation = animate('#name', {
-			// Property keyframes
 			x: [{ from: '+2.75rem', to: '0', ease: 'outExpo', duration: 600 }],
 			opacity: [{ from: 0, to: 1, duration: 600, ease: 'outExpo' }]
 		});
-		tl.label('hello').sync(hello_animation, 0).sync(name_animation, 1000);
+
+		const socials_animation = animate('#socials', {
+			y: [{ from: '+2rem', to: '0', ease: 'outExpo', duration: 600 }],
+			opacity: [{ from: 0, to: 1, duration: 600, ease: 'outExpo' }],
+		});
+
+		tl.label('hello')
+			.sync(hello_animation, 0)
+			.sync(name_animation, 1000)
+			.sync(socials_animation, 1500);
 	});
 </script>
 
@@ -40,14 +48,13 @@
 		</h1>
 	</div>
 	<h2 class="text-2xl sm:text-3xl md:text-4xl">I jump, I do science, and I make stuff</h2>
-	<div class="flex flex-row">
+	<div class="flex flex-row py-2" id="socials">
 		<a href="https://github.com/kazewong" class="px-2 dark:invert">
 			<img src={Github_logo_trans} width={40} height={40} alt="Github" />
 		</a>
 		<a href="https://www.youtube.com/channel/UCt6jkLTx5GBkGQ57HiPaeLg" class="px-2 dark:invert">
 			<img src={Youtube_logo_trans} width={40} height={40} alt="Youtube" />
 		</a>
-
 		<a href="https://twitter.com/physicskaze" class="px-2">
 			<img src={Twitter_logo_trans} width={40} height={40} alt="Twitter" />
 		</a>
