@@ -4,6 +4,11 @@
 	import { dev } from '$app/environment';
 	import { injectAnalytics } from '@vercel/analytics/sveltekit';
 
+	import Github_logo_trans from '$lib/assets/favicons/Github_logo_trans.png';
+	import Linkedin_logo_trans from '$lib/assets/favicons/Linkedin_logo_trans.png';
+	import Twitter_logo_trans from '$lib/assets/favicons/Twitter_logo_trans.png';
+	import Youtube_logo_trans from '$lib/assets/favicons/Youtube_logo_trans.png';
+
 	injectAnalytics({ mode: dev ? 'development' : 'production' });
 	interface Props {
 		children?: import('svelte').Snippet;
@@ -182,12 +187,7 @@
 					target="_blank"
 					rel="noopener"
 				>
-					<img
-						src="/src/lib/assets/favicons/Github_logo_trans.png"
-						width="28"
-						height="28"
-						alt="Github"
-					/>
+					<img src={Github_logo_trans} width="28" height="28" alt="Github" />
 				</a>
 				<a
 					href="https://www.youtube.com/channel/UCt6jkLTx5GBkGQ57HiPaeLg"
@@ -196,20 +196,10 @@
 					target="_blank"
 					rel="noopener"
 				>
-					<img
-						src="/src/lib/assets/favicons/Youtube_logo_trans.png"
-						width="28"
-						height="28"
-						alt="Youtube"
-					/>
+					<img src={Youtube_logo_trans} width="28" height="28" alt="Youtube" />
 				</a>
 				<a href="https://twitter.com/physicskaze" title="Twitter" target="_blank" rel="noopener">
-					<img
-						src="/src/lib/assets/favicons/Twitter_logo_trans.png"
-						width="28"
-						height="28"
-						alt="Twitter"
-					/>
+					<img src={Twitter_logo_trans} width="28" height="28" alt="Twitter" />
 				</a>
 				<a
 					href="https://www.linkedin.com/in/kazewkwong/"
@@ -217,12 +207,7 @@
 					target="_blank"
 					rel="noopener"
 				>
-					<img
-						src="/src/lib/assets/favicons/Linkedin_logo_trans.png"
-						width="28"
-						height="28"
-						alt="Linkedin"
-					/>
+					<img src={Linkedin_logo_trans} width="28" height="28" alt="Linkedin" />
 				</a>
 			</div>
 			<div>
