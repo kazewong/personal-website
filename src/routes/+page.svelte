@@ -23,15 +23,37 @@
 			opacity: [{ from: 0, to: 1, duration: 600, ease: 'outExpo' }]
 		});
 
+		const jump_animation = animate('#jump', {
+			y: [{ from: '2rem', to: '0', ease: 'outExpo', duration: 600 }],
+			opacity: [{ from: 0, to: 1, duration: 600, ease: 'outExpo' }],
+			delay: stagger(50)
+		});
+
+		const code_animation = animate('#code'
+		, {
+			y: [{ from: '2rem', to: '0', ease: 'outExpo', duration: 600 }],
+			opacity: [{ from: 0, to: 1, duration: 600, ease: 'outExpo' }],
+			delay: stagger(50)
+		});
+
+		const craft_animation = animate('#craft', {
+			y: [{ from: '2rem', to: '0', ease: 'outExpo', duration: 600 }],
+			opacity: [{ from: 0, to: 1, duration: 600, ease: 'outExpo' }],
+			delay: stagger(50)
+		});
+
 		const socials_animation = animate('#socials', {
 			y: [{ from: '+2rem', to: '0', ease: 'outExpo', duration: 600 }],
-			opacity: [{ from: 0, to: 1, duration: 600, ease: 'outExpo' }],
+			opacity: [{ from: 0, to: 1, duration: 600, ease: 'outExpo' }]
 		});
 
 		tl.label('hello')
 			.sync(hello_animation, 0)
 			.sync(name_animation, 1000)
-			.sync(socials_animation, 1500);
+			.sync(jump_animation, 1200)
+			.sync(code_animation, 1400)
+			.sync(craft_animation, 1600)
+			.sync(socials_animation, 1900);
 	});
 </script>
 
@@ -47,7 +69,12 @@
 			Kaze Wong
 		</h1>
 	</div>
-	<h2 class="text-2xl sm:text-3xl md:text-4xl">I jump, I do science, and I make stuff</h2>
+	<div class="flex">
+		<h2 class="text-2xl sm:text-3xl md:text-4xl pe-2" id="jump">I jump,</h2>
+		<h2 class="text-2xl sm:text-3xl md:text-4xl pe-2" id="code">I code,</h2>
+		<h2 class="text-2xl sm:text-3xl md:text-4xl" id="craft">I make stuff</h2>
+	</div>
+
 	<div class="flex flex-row py-2" id="socials">
 		<a href="https://github.com/kazewong" class="px-2 dark:invert">
 			<img src={Github_logo_trans} width={40} height={40} alt="Github" />
