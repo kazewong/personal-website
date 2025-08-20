@@ -145,7 +145,7 @@
 		{#each paginatedTags as tag}
 			{#if tag.selected}
 				<button
-					class="btn btn-sm btn-outline btn-accent"
+					class="btn btn-md btn-outline btn-accent"
 					onclick={() => {
 						tag.selected = !tag.selected;
 					}}
@@ -154,7 +154,7 @@
 				</button>
 			{:else}
 				<button
-					class="btn btn-sm btn-outline"
+					class="btn btn-md btn-outline"
 					onclick={() => {
 						tag.selected = !tag.selected;
 					}}

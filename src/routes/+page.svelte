@@ -14,7 +14,7 @@
 			>Kaze Wong</span
 		>
 	</h1>
-	<h2 class="text-2xl sm:text-3xl md:text-4xl">I do science, I jump, and I make stuff</h2>
+	<h2 class="text-2xl sm:text-3xl md:text-4xl"> I jump, I do science, and I make stuff</h2>
 	<div class="flex flex-row">
 		<a href="https://github.com/kazewong" class="px-2 dark:invert">
 			<img src={Github_logo_trans} width={40} height={40} alt="Github" />
