@@ -150,7 +150,7 @@
 	}
 </script>
 
-<div id="Header" class="py-4">
+<div id="Header">
 	<h1 class="flex justify-center">My random thoughts</h1>
 
 	<h3 class="font-sans text-justify">
