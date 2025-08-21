@@ -134,7 +134,7 @@
 						<a href="/blog">Blog</a>
 					</li>
 					<li>
-						<a href="/science">Science</a>
+						<a href="/research">Research</a>
 					</li>
 					<li>
 						<a href="/highjump">High Jump</a>
