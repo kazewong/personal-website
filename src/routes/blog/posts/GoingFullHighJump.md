@@ -1,5 +1,5 @@
 ---
-title: 'I Am Going Full Time in High Jump'
+title: 'I am going full time in high jump'
 date: '2025-08-20'
 tags: ['High Jump', 'Personal',]
 shortDescription: 'A new page of my life'

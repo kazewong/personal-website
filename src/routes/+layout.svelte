@@ -54,11 +54,12 @@
 						<a href="/blog">Blog</a>
 					</li>
 					<li>
-						<a href="/science">Science</a>
-					</li>
-					<li>
 						<a href="/highjump">High Jump</a>
 					</li>
+					<li>
+						<a href="/code">Code</a>
+					</li>
+
 					<li>
 						<a href="/crafts">Crafts</a>
 					</li>
@@ -134,10 +135,10 @@
 						<a href="/blog">Blog</a>
 					</li>
 					<li>
-						<a href="/research">Research</a>
+						<a href="/highjump">High Jump</a>
 					</li>
 					<li>
-						<a href="/highjump">High Jump</a>
+						<a href="/code">Code</a>
 					</li>
 					<li>
 						<a href="/crafts">Crafts</a>
