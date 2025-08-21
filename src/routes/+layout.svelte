@@ -72,9 +72,9 @@
 							<ul
 								class="menu dropdown-content rounded-box z-10 w-44 p-2 shadow-sm bg-indigo-50  dark:bg-gray-900 text-gray-100"
 							>
-								<li>
-									<a href="/science">Science</a>
-								</li>
+							<li>
+								<a href="/legacy_science">Science</a>
+							</li>
 							</ul>
 						</details>
 					</li>
@@ -153,7 +153,7 @@
 								class="menu dropdown-content rounded-box z-10 w-44 p-2 shadow-sm bg-indigo-50 dark:bg-gray-900"
 							>
 								<li>
-									<a href="/science">Science</a>
+									<a href="/legacy_science">Science</a>
 								</li>
 
 							</ul>
