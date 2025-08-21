@@ -62,6 +62,22 @@
 					<li>
 						<a href="/crafts">Crafts</a>
 					</li>
+					<li>
+						<details class="dropdown">
+							<summary
+								class="px-2 py-1 bg-transparent border-0 hover:underline cursor-pointer list-none"
+							>
+								Legacy
+							</summary>
+							<ul
+								class="menu dropdown-content rounded-box z-10 w-44 p-2 shadow-sm bg-indigo-50  dark:bg-gray-900 text-gray-100"
+							>
+								<li>
+									<a href="/science">Science</a>
+								</li>
+							</ul>
+						</details>
+					</li>
 				</ul>
 			</details>
 		</div>
@@ -125,6 +141,23 @@
 					</li>
 					<li>
 						<a href="/crafts">Crafts</a>
+					</li>
+					<li>
+						<details class="dropdown">
+							<summary
+								class=" bg-transparent border-0 hover:underline cursor-pointer list-none text-gray-100"
+							>
+								Legacy
+							</summary>
+							<ul
+								class="menu dropdown-content rounded-box z-10 w-44 p-2 shadow-sm bg-indigo-50 dark:bg-gray-900"
+							>
+								<li>
+									<a href="/science">Science</a>
+								</li>
+
+							</ul>
+						</details>
 					</li>
 				</ul>
 			</div>
