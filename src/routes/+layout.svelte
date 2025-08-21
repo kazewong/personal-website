@@ -73,7 +73,7 @@
 								class="menu dropdown-content rounded-box z-10 w-44 p-2 shadow-sm bg-indigo-50  dark:bg-gray-900 text-gray-100"
 							>
 							<li>
-								<a href="/legacy_science">Science</a>
+								<a href="/jhu_science">Science</a>
 							</li>
 							</ul>
 						</details>
@@ -153,7 +153,7 @@
 								class="menu dropdown-content rounded-box z-10 w-44 p-2 shadow-sm bg-indigo-50 dark:bg-gray-900"
 							>
 								<li>
-									<a href="/legacy_science">Science</a>
+									<a href="/jhu_science">Science</a>
 								</li>
 
 							</ul>
