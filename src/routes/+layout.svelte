@@ -71,11 +71,11 @@
 								Legacy
 							</summary>
 							<ul
-								class="menu dropdown-content rounded-box z-10 w-44 p-2 shadow-sm bg-indigo-50  dark:bg-gray-900 text-gray-100"
+								class="menu dropdown-content rounded-box z-10 w-44 p-2 shadow-sm bg-indigo-50 dark:bg-gray-900 text-gray-100"
 							>
-							<li>
-								<a href="/jhu_science">Science</a>
-							</li>
+								<li>
+									<a href="/jhu_science">Science</a>
+								</li>
 							</ul>
 						</details>
 					</li>
@@ -121,7 +121,12 @@
 	</div>
 	<!-- </div> -->
 {:else}
-	<nav id="NavBar" class="w-full mx-auto bg-indigo-50 dark:bg-gray-900 {isDarkMode ? 'dark' : ''}">
+	<nav
+		id="NavBar"
+		class="sticky top-0 z-20 shadow-md w-full mx-auto bg-indigo-50 dark:bg-gray-900 {isDarkMode
+			? 'dark'
+			: ''}"
+	>
 		<div id="NavContainer" class="flex flex-row py-4 max-w-[1024px] mx-auto">
 			<div id="NavLogo" class="basis-1/5 px-8">
 				<p class="text-nowrap">Kaze Wong</p>
@@ -156,7 +161,6 @@
 								<li>
 									<a href="/jhu_science">Science</a>
 								</li>
-
 							</ul>
 						</details>
 					</li>
@@ -206,7 +210,7 @@
 </svelte:head>
 
 <main class={isDarkMode ? 'dark' : ''}>
-	<div class="flex flex-col min-h-screen  my-auto mx-auto">
+	<div class="flex flex-col min-h-screen my-auto mx-auto">
 		{@render children?.()}
 	</div>
 	<footer
