@@ -7,7 +7,7 @@ shortDescription: 'A new page of my life'
 	
 Today I decided to tell my boss at Johns Hopkins University I will not be with them in the future. There are many reasons for this decision, but by far the biggest factor is that I met a legendary coach, <a href="https://en.wikipedia.org/wiki/Jeremy_Fischer_(athlete)">Jeremy Fischer</a>, who lives in San Diego and said he would coach me if I move there. I restarted high jump in 2022, and it has been the absolute highest priority for me. So when offered this opportunity, it is inevitable that I will take it. In November 2025, I will move to San Diego and start training full time with Jeremy.
 
-The long version of the high jump story will have its own videos and posts, and you bet I cannot shut up about it. But this 
+The long version of the high jump story will have its own videos and posts, and you bet I cannot shut up about it. But this post is about what is going to happen to my life as a scientist.
 
 ## What will happen to scientist Kaze?
 
