@@ -20,7 +20,6 @@
 	});
 
 	let slider_pos: number = $state(50);
-	let fraction: number = $derived(slider_pos / 100);
 </script>
 
 <!-- Hero section: High jump athlete + scientist -->
@@ -39,7 +38,6 @@
 			<div class="absolute inset-0 bg-green-400" style="clip-path: inset(0 0 0 {slider_pos}%);">
 				<div class="flex flex-col items-center justify-center h-full">
 					<h1>High Jump</h1>
-
 					<h2 class="text-4xl font-bold text-white drop-shadow-lg">Scientist</h2>
 				</div>
 			</div>
@@ -53,10 +51,10 @@
 				bind:value={slider_pos}
 			/>
 			<!-- Visible Slider Bar -->
-			<!-- <div
+			<div
 				class="absolute top-0 bottom-0"
-				style="left: calc(var(--slider-pos, 50%) - 2px); width: 4px; background: rgba(255,255,255,0.8); pointer-events: none; transition: left 0.2s;"
-			></div> -->
+				style="left: calc({slider_pos}% - 2px); width: 4px; background: rgba(255,255,255,0.8); pointer-events: none;"
+			></div>
 		</div>
 	</div>
 </section>
@@ -83,15 +81,3 @@
 	</div>
 </section>
 
-<h1 class="flex justify-center text-6xl">
-	<span id="title_hj" class="px-2">High Jump</span>
-	<span id="title_athlete" class="px-2">Athlete</span>
-	<span id="title_plus" class="px-2">+</span>
-	<span id="title_scientist" class="px-2">Scientist</span>
-</h1>
-
-<!-- Make countdown to LA2028 -->
-
-<!-- Track progression -->
-
-<!-- Show ) ()-->
