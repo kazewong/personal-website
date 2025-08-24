@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { animate, stagger, text, createTimeline } from 'animejs';
 	import { onMount } from 'svelte';
+	import { slide } from 'svelte/transition';
 
 	onMount(() => {
 		const tl = createTimeline({ defaults: { duration: 750 } });
@@ -17,8 +18,9 @@
 
 		tl.label('title').sync(hj_animation, 0);
 	});
-	
-	var slider_pos: number = $state(50);
+
+	let slider_pos: number = $state(50);
+	let fraction: number = $derived(slider_pos / 100);
 </script>
 
 <!-- Hero section: High jump athlete + scientist -->
@@ -27,14 +29,17 @@
 		<!-- Image Comparison Slider Container -->
 		<div class="w-full h-screen relative overflow-hidden">
 			<!-- Left Side: Athlete (placeholder color) -->
-			<div class="absolute inset-0 bg-blue-400" style="width: var(--slider-pos, 50%); transition: width 0.2s;">
-				<div class="flex items-center justify-center h-full">
+			<div class="absolute inset-0 bg-blue-400">
+				<div class="flex flex-col items-center justify-center h-full">
+					<h1>High Jump</h1>
 					<h2 class="text-4xl font-bold text-white drop-shadow-lg">Athlete</h2>
 				</div>
 			</div>
 			<!-- Right Side: Scientist (placeholder color) -->
-			<div class="absolute inset-0 bg-green-400" style="clip-path: inset(0 0 0 calc(var(--slider-pos, 50%))); transition: clip-path 0.2s;">
-				<div class="flex items-center justify-center h-full">
+			<div class="absolute inset-0 bg-green-400" style="clip-path: inset(0 0 0 {slider_pos}%);">
+				<div class="flex flex-col items-center justify-center h-full">
+					<h1>High Jump</h1>
+
 					<h2 class="text-4xl font-bold text-white drop-shadow-lg">Scientist</h2>
 				</div>
 			</div>
@@ -43,19 +48,15 @@
 				type="range"
 				min="0"
 				max="100"
-				value="50"
 				class="absolute z-10 w-full h-full opacity-0 cursor-ew-resize"
 				style="top:0; left:0;"
-				oninput={(e) => {
-                    slider_pos = parseInt(e.target.value);
-                    document.documentElement.style.setProperty('--slider-pos', `${slider_pos}%`);
-                }}
+				bind:value={slider_pos}
 			/>
 			<!-- Visible Slider Bar -->
-			<div
+			<!-- <div
 				class="absolute top-0 bottom-0"
 				style="left: calc(var(--slider-pos, 50%) - 2px); width: 4px; background: rgba(255,255,255,0.8); pointer-events: none; transition: left 0.2s;"
-			></div>
+			></div> -->
 		</div>
 	</div>
 </section>
@@ -94,4 +95,3 @@
 <!-- Track progression -->
 
 <!-- Show ) ()-->
-
