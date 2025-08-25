@@ -1,9 +1,27 @@
 <script lang="ts">
 	import { animate, stagger, text, createTimeline } from 'animejs';
 	import { onMount } from 'svelte';
-	import { slide } from 'svelte/transition';
+	import chartjs from 'chart.js/auto';
+	import resultsData from './Results.json';
+
+	let slider_pos: number = $state(50);
+
+	let size = $state(50);
+	let color = $state('#ff3e00');
+
+	let canvas;
+
+	$effect(() => {
+		const context = canvas.getContext('2d');
+		context.clearRect(0, 0, canvas.width, canvas.height);
+
+		// this will re-run whenever `color` or `size` change
+		context.fillStyle = color;
+		context.fillRect(0, 0, size, size);
+	});
 
 	onMount(() => {
+		// Slider Animation
 		const tl = createTimeline({ defaults: { duration: 750 } });
 
 		const hj_animation = animate(text.split(title[0], { words: false, chars: true }).chars, {
@@ -18,25 +36,39 @@
 
 		tl.label('title').sync(hj_animation, 0);
 	});
-
-	let slider_pos: number = $state(50);
 </script>
 
 <!-- Hero section: High jump athlete + scientist -->
 <section>
-	<div class="relative min-h-screen flex items-center justify-center bg-base-200">
+	<div class="relative flex items-center justify-center bg-base-200">
 		<!-- Image Comparison Slider Container -->
 		<div class="w-full h-screen relative overflow-hidden">
-			<!-- Left Side: Athlete (placeholder color) -->
-			<div class="absolute inset-0 bg-blue-400">
-				<div class="flex flex-col items-center justify-center h-full">
+			<!-- Left Side: Athlete (background iframe) -->
+			<div class="absolute inset-0">
+				<iframe
+					loading="lazy"
+					title="Gumlet video player"
+					src="https://play.gumlet.io/embed/68ace4a90a8c57042db4d12f?background=true&autoplay=true&loop=true&disableControls=true"
+					style="border:none; position: absolute; top: 0; left: 0; height: 100%; width: 100%;"
+					allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen;"
+				>
+				</iframe>
+				<div class="flex flex-col items-center justify-center h-full relative z-10">
 					<h1>High Jump</h1>
 					<h2 class="text-4xl font-bold text-white drop-shadow-lg">Athlete</h2>
 				</div>
 			</div>
-			<!-- Right Side: Scientist (placeholder color) -->
+			<!-- Right Side: Scientist (background iframe) -->
 			<div class="absolute inset-0 bg-green-400" style="clip-path: inset(0 0 0 {slider_pos}%);">
-				<div class="flex flex-col items-center justify-center h-full">
+				<iframe
+					loading="lazy"
+					title="Gumlet video player"
+					src="https://play.gumlet.io/embed/68ace4a919535c52ef283c0a?background=true&autoplay=true&loop=true&disableControls=true"
+					style="border:none; position: absolute; top: 0; left: 0; height: 100%; width: 100%;"
+					allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen;"
+				>
+				</iframe>
+				<div class="flex flex-col items-center justify-center h-full relative z-10">
 					<h1>High Jump</h1>
 					<h2 class="text-4xl font-bold text-white drop-shadow-lg">Scientist</h2>
 				</div>
@@ -64,11 +96,16 @@
 	<div class="hero bg-base-500 min-h-screen">
 		<div class="hero-content text-center">
 			<div class="">
-				<h1 class="text-5xl font-bold">Athlete</h1>
+				<h1 class="text-5xl font-bold">Road to LA</h1>
 			</div>
 		</div>
 	</div>
 </section>
+
+<!-- Chart showing PB over time and upcoming big competition -->
+<div class="flex justify-center my-8">
+	<canvas bind:this={canvas} width="800" height="400"></canvas>
+</div>
 
 <!-- Scientist Intro -->
 <section>
@@ -80,4 +117,3 @@
 		</div>
 	</div>
 </section>
-
