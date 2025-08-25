@@ -40,8 +40,8 @@
 
 <section>
 	<div class="relative flex justify-center bg-base-900">
-		<div class="relative w-full max-w-screen-2xl aspect-video">
-			<div class="w-full h-full relative overflow-hidden bg-base-200">
+		<div class="relative w-screen  aspect-video">
+			<div class="w-full min-h-full relative overflow-hidden bg-base-200">
 				<div class="absolute inset-0">
 					<iframe
 						loading="lazy"
