@@ -41,13 +41,13 @@
 <section>
 	<div class="relative flex justify-center bg-base-900">
 		<div class="relative w-screen  aspect-video">
-			<div class="w-full min-h-full relative overflow-hidden bg-base-200">
+			<div class="w-full h-full relative overflow-hidden bg-base-200">
 				<div class="absolute inset-0">
 					<iframe
 						loading="lazy"
 						title="Gumlet video player"
 						src="https://play.gumlet.io/embed/68ace4a90a8c57042db4d12f?background=true&autoplay=true&loop=true&disableControls=true"
-						style="border:none; position: absolute; top: 0; left: 0; height: 100%; width: 100%;filter: brightness(85%)"
+						style="border:none; position: absolute; top: 0; left: 0; height: 100%; width: 100%;filter: brightness(85%);"
 						allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen;"
 					>
 					</iframe>

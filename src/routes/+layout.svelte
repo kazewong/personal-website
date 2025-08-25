@@ -210,7 +210,7 @@
 </svelte:head>
 
 <main class={isDarkMode ? 'dark' : ''}>
-	<div class="flex flex-col min-h-screen my-auto mx-auto">
+	<div class="flex flex-col max-w-[1920px] min-h-screen my-auto mx-auto">
 		{@render children?.()}
 	</div>
 	<footer
