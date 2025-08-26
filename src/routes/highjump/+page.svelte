@@ -82,7 +82,14 @@
 						beginAtZero: false,
 						title: {
 							display: true,
-							text: 'Height (cm)'
+							text: 'Height (cm)',
+							color: '#fff'
+						},
+						ticks: {
+							color: '#fff'
+						},
+						grid: {
+							color: '#fff2',
 						},
 						suggestedMin: Math.min(...data.filter(v => v !== null), 180) - 5,
 						suggestedMax: Math.max(...data.filter(v => v !== null), 200) + 5
@@ -90,7 +97,25 @@
 					x: {
 						title: {
 							display: true,
-							text: 'Competition'
+							text: 'Competition',
+							color: '#fff'
+						},
+						ticks: {
+							color: '#fff'
+						},
+						grid: {
+							color: '#fff2',
+						}
+					}
+				},
+				plugins: {
+					tooltip: {
+						callbacks: {
+							title: function(tooltipItems) {
+								// Show competition name on hover
+								const idx = tooltipItems[0].dataIndex;
+								return processedResults[idx]?.Competition || '';
+							}
 						}
 					}
 				}
