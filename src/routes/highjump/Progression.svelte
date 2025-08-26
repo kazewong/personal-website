@@ -51,19 +51,38 @@
 		const { processedResults, startDate } = processResults(resultsData.items);
 
 		// Prepare scatter data: {x: timestamp, y: height}
-		const scatterData = processedResults.map((item) => {
-			const heightNum = Number(item.Height);
-			if (item.timestamp !== undefined && !isNaN(heightNum)) {
-				return {
-					x: item.timestamp,
-					y: heightNum,
-					_competition: item.Competition,
-					_date: item.Date
-				};
-			} else {
-				return null;
-			}
-		}).filter((point) => point !== null);
+		let prevHeight: number | null = null;
+		const scatterData = processedResults
+			.map((item) => {
+				const heightNum = Number(item.Height);
+				let isImputed = false;
+				let y: number | null = null;
+				if (item.timestamp !== undefined && !isNaN(heightNum)) {
+					y = heightNum;
+					prevHeight = heightNum;
+				} else if (item.timestamp !== undefined && prevHeight !== null) {
+					y = prevHeight;
+					isImputed = true;
+				}
+				if (item.timestamp !== undefined && y !== null) {
+					return {
+						x: item.timestamp,
+						y: y,
+						_competition: item.Competition,
+						_date: item.Date,
+						_isImputed: isImputed
+					};
+				} else {
+					return null;
+				}
+			})
+			.filter((point) => point !== null);
+
+		// Set end date to September 2028
+		const endDate = new Date(2028, 8, 30).getTime(); // September is month 8 (0-based), day 30
+
+		const xMin = 0;
+		const xMax = (endDate - startDate) / 1000;
 
 		chartInstance = new chartjs(context, {
 			type: 'scatter',
@@ -75,8 +94,11 @@
 						borderWidth: 2,
 						showLine: false,
 						pointRadius: 6,
-						pointBackgroundColor: scatterData.map((v) => v ? '#2563eb' : '#a3a3a3'),
-						borderColor: '#2563eb'
+						pointBackgroundColor: scatterData.map((v) =>
+							v && v._isImputed ? 'rgba(255,255,255,0)' : '#2563eb'
+						),
+						borderColor: scatterData.map((v) => (v && v._isImputed ? '#fff' : '#2563eb')),
+						pointStyle: scatterData.map((v) => (v && v._isImputed ? 'triangle' : 'circle'))
 					}
 				]
 			},
@@ -107,7 +129,7 @@
 						},
 						ticks: {
 							color: '#fff',
-							callback: function(value) {
+							callback: function (value) {
 								const timestamp = Number(value);
 								const dateObj = new Date(timestamp * 1000 + startDate);
 								const month = dateObj.toLocaleString('default', { month: 'short' });
@@ -117,7 +139,9 @@
 						},
 						grid: {
 							color: '#fff2'
-						}
+						},
+						min: xMin,
+						max: xMax
 					}
 				},
 				plugins: {
@@ -135,7 +159,11 @@
 								const dataPoint = scatterData[tooltipItem.dataIndex];
 								const dateObj = new Date(dataPoint.x * 1000 + startDate);
 								const dateStr = dateObj.toLocaleDateString();
-								return `Date: ${dateStr}, Height: ${dataPoint.y} cm`;
+								let label = `Date: ${dateStr}, Height: ${dataPoint.y} cm`;
+								if (dataPoint._isImputed) {
+									label += ' (imputed)';
+								}
+								return label;
 							}
 						}
 					}
