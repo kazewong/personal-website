@@ -50,37 +50,33 @@
 
 		const { processedResults, startDate } = processResults(resultsData.items);
 
-		const labels = processedResults.map((item) => {
-			if (item.timestamp !== undefined) {
-				const dateObj = new Date(item.timestamp * 1000 + startDate);
-				const month = dateObj.toLocaleString('default', { month: 'short' });
-				const year = dateObj.getFullYear();
-				return `${month} ${year}`;
-			} else {
-				return item.Date;
-			}
-		});
-
-		const data = processedResults.map((item) => {
+		// Prepare scatter data: {x: timestamp, y: height}
+		const scatterData = processedResults.map((item) => {
 			const heightNum = Number(item.Height);
-			return !isNaN(heightNum) ? heightNum : null;
-		});
+			if (item.timestamp !== undefined && !isNaN(heightNum)) {
+				return {
+					x: item.timestamp,
+					y: heightNum,
+					_competition: item.Competition,
+					_date: item.Date
+				};
+			} else {
+				return null;
+			}
+		}).filter((point) => point !== null);
 
 		chartInstance = new chartjs(context, {
-			type: 'line',
+			type: 'scatter',
 			data: {
-				labels: labels,
 				datasets: [
 					{
 						label: 'Height (cm)',
-						data: data,
+						data: scatterData,
 						borderWidth: 2,
-						fill: false,
-						tension: 0.2,
+						showLine: false,
 						pointRadius: 6,
-						pointBackgroundColor: data.map((v) => (v === null ? '#a3a3a3' : '#2563eb')),
-						borderColor: '#2563eb',
-						spanGaps: true
+						pointBackgroundColor: scatterData.map((v) => v ? '#2563eb' : '#a3a3a3'),
+						borderColor: '#2563eb'
 					}
 				]
 			},
@@ -99,17 +95,25 @@
 						grid: {
 							color: '#fff2'
 						},
-						suggestedMin: Math.min(...data.filter((v) => v !== null), 180) - 5,
-						suggestedMax: Math.max(...data.filter((v) => v !== null), 200) + 5
+						suggestedMin: Math.min(...scatterData.map((v) => v!.y), 180) - 5,
+						suggestedMax: Math.max(...scatterData.map((v) => v!.y), 200) + 5
 					},
 					x: {
+						type: 'linear',
 						title: {
 							display: true,
-							text: 'Competition',
+							text: 'Date',
 							color: '#fff'
 						},
 						ticks: {
-							color: '#fff'
+							color: '#fff',
+							callback: function(value) {
+								const timestamp = Number(value);
+								const dateObj = new Date(timestamp * 1000 + startDate);
+								const month = dateObj.toLocaleString('default', { month: 'short' });
+								const year = dateObj.getFullYear();
+								return `${month} ${year}`;
+							}
 						},
 						grid: {
 							color: '#fff2'
@@ -124,7 +128,14 @@
 						callbacks: {
 							title: function (tooltipItems) {
 								const idx = tooltipItems[0].dataIndex;
-								return processedResults[idx]?.Competition || '';
+								const dataPoint = scatterData[idx];
+								return dataPoint?._competition || '';
+							},
+							label: function (tooltipItem) {
+								const dataPoint = scatterData[tooltipItem.dataIndex];
+								const dateObj = new Date(dataPoint.x * 1000 + startDate);
+								const dateStr = dateObj.toLocaleDateString();
+								return `Date: ${dateStr}, Height: ${dataPoint.y} cm`;
 							}
 						}
 					}
