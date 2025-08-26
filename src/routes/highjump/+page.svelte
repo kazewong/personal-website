@@ -17,42 +17,81 @@
 	};
 
 	// Parse date into timestamp
-	let results: (ResultItem & { timestamp: number | null; linearTime: number | null })[] = resultsData.map((r) => {
-    const date = new Date(r.Date);
-    const timestamp = isNaN(date.getTime()) ? null : date.getTime();
-    return { ...r, timestamp, linearTime: null };
-  });
-
-	// Find earliest valid timestamp for normalization
-	const validTimestamps = results
-		.filter((r) => r.timestamp !== null)
-		.map((r) => r.timestamp as number);
-	const minTimestamp = Math.min(...validTimestamps);
-
-	// Add linearTime (days since first competition)
-	results = results.map((r) => ({
-		...r,
-		linearTime: r.timestamp !== null ? (r.timestamp - minTimestamp) / (1000 * 60 * 60 * 24) : null
-	}));
-
+	const processedResults: ResultItem[] = resultsData.items.map(item => {
+		// Parse date string "DD-MM-YYYY" into timestamp (ms since epoch)
+		let timestamp: number | undefined = undefined;
+		if (item.Date && item.Date.match(/^\d{2}-\d{2}-\d{4}$/)) {
+			const [day, month, year] = item.Date.split('-').map(Number);
+			timestamp = new Date(year, month - 1, day).getTime();
+		}
+		return { ...item, timestamp };
+	});
+	// Sort by timestamp
+	processedResults.sort((a, b) => (a.timestamp ?? 0) - (b.timestamp ?? 0));
+	const startDate = new Date(2021, 10, 1).getTime(); // November is month 10 (0-based)
+	processedResults.forEach(item => {
+		if (item.timestamp !== undefined) {
+			item.timestamp = (item.timestamp - startDate) / 1000; // convert ms to seconds
+		}
+	});
+	
+	
 	$effect(() => {
 		const context = canvas.getContext('2d');
+		if (!context) return;
+
+		// Prepare data for plotting: x-axis is Month and Year (e.g., "Feb 2023")
+		const labels = processedResults.map(item => {
+			if (item.timestamp !== undefined) {
+				const dateObj = new Date(item.timestamp * 1000 + startDate);
+				const month = dateObj.toLocaleString('default', { month: 'short' });
+				const year = dateObj.getFullYear();
+				return `${month} ${year}`;
+			} else {
+				// For items without a valid timestamp, fallback to original date string
+				return item.Date;
+			}
+		});
+
+		const data = processedResults.map(item => {
+			const heightNum = Number(item.Height);
+			return !isNaN(heightNum) ? heightNum : null;
+		});
+
 		new chartjs(context, {
 			type: 'line',
 			data: {
-				labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+				labels: labels,
 				datasets: [
 					{
-						label: '# of Votes',
-						data: [12, 19, 3, 5, 2, 3],
-						borderWidth: 1
+						label: 'Height (cm)',
+						data: data,
+						borderWidth: 2,
+						fill: false,
+						tension: 0.2,
+						pointRadius: 6,
+						pointBackgroundColor: data.map(v => v === null ? '#a3a3a3' : '#2563eb'),
+						borderColor: '#2563eb',
+						spanGaps: true
 					}
 				]
 			},
 			options: {
 				scales: {
 					y: {
-						beginAtZero: true
+						beginAtZero: false,
+						title: {
+							display: true,
+							text: 'Height (cm)'
+						},
+						suggestedMin: Math.min(...data.filter(v => v !== null), 180) - 5,
+						suggestedMax: Math.max(...data.filter(v => v !== null), 200) + 5
+					},
+					x: {
+						title: {
+							display: true,
+							text: 'Competition'
+						}
 					}
 				}
 			}
@@ -61,19 +100,7 @@
 
 	onMount(() => {
 		// Slider Animation
-		const tl = createTimeline({ defaults: { duration: 750 } });
 
-		const hj_animation = animate(text.split(title[0], { words: false, chars: true }).chars, {
-			scale: [
-				{ from: '1', to: '2', ease: 'inOutCirc', duration: 400 },
-				{ from: '2', to: '1', ease: 'outExpo', duration: 400 }
-			],
-			opacity: [{ from: 0, to: 1, duration: 600, ease: 'inOutCirc' }],
-			delay: stagger(50),
-			ease: 'inOutCirc'
-		});
-
-		tl.label('title').sync(hj_animation, 0);
 	});
 </script>
 
