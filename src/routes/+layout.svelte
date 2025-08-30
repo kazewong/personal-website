@@ -59,9 +59,11 @@
 					<li>
 						<a href="/code">Code</a>
 					</li>
-
 					<li>
 						<a href="/animation">Animation</a>
+					</li>
+					<li>
+						<a href="/cooking">Cooking</a>
 					</li>
 					<li>
 						<details class="dropdown">
@@ -147,6 +149,9 @@
 					</li>
 					<li>
 						<a href="/animation">Animation</a>
+					</li>
+					<li>
+						<a href="/cooking">Cooking</a>
 					</li>
 					<li>
 						<details class="dropdown">
