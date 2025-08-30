@@ -59,7 +59,12 @@
 		// Helper to compress x value
 		function compressX(x: number) {
 			if (x < compressStartSec) return x;
-			if (x > compressEndSec) return (compressEndSec - compressStartSec) / compressFactor + (x - compressEndSec) + compressStartSec;
+			if (x > compressEndSec)
+				return (
+					(compressEndSec - compressStartSec) / compressFactor +
+					(x - compressEndSec) +
+					compressStartSec
+				);
 			return compressStartSec + (x - compressStartSec) / compressFactor;
 		}
 
@@ -158,10 +163,16 @@
 								let origX: number;
 								if (compressedX < compressStartSec) {
 									origX = compressedX;
-								} else if (compressedX < compressStartSec + (compressEndSec - compressStartSec) / compressFactor) {
+								} else if (
+									compressedX <
+									compressStartSec + (compressEndSec - compressStartSec) / compressFactor
+								) {
 									origX = compressStartSec + (compressedX - compressStartSec) * compressFactor;
 								} else {
-									origX = compressEndSec + (compressedX - (compressStartSec + (compressEndSec - compressStartSec) / compressFactor));
+									origX =
+										compressEndSec +
+										(compressedX -
+											(compressStartSec + (compressEndSec - compressStartSec) / compressFactor));
 								}
 								const dateObj = new Date(origX * 1000 + startDate);
 								const month = dateObj.toLocaleString('default', { month: 'short' });
@@ -179,14 +190,14 @@
 						max: xMax,
 						afterBuildTicks: (axis) => {
 							// Ensure Feb 2022 is present in the ticks
-							const ticks = axis.ticks.map(t => t.value);
+							const ticks = axis.ticks.map((t) => t.value);
 							// Find if compressedFeb2022 is already present (allowing for floating point error)
-							const exists = ticks.some(v => Math.abs(v - compressedFeb2022) < 1);
+							const exists = ticks.some((v) => Math.abs(v - compressedFeb2022) < 1);
 							if (!exists) {
 								// Insert compressedFeb2022 in sorted order
 								ticks.push(compressedFeb2022);
 								ticks.sort((a, b) => a - b);
-								axis.ticks = ticks.map(v => ({ value: v }));
+								axis.ticks = ticks.map((v) => ({ value: v }));
 							}
 						}
 					}
