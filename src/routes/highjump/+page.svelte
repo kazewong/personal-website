@@ -59,16 +59,26 @@
 </section>
 
 <!-- Athlete Intro -->
-<section></section>
 <section>
-	<div>
-		<div class="hero bg-base-500 min-h-4xl py-4">
-			<div class="hero-content text-center">
-				<div class="">
-					<h1 class="text-5xl font-bold">My competition results</h1>
-					<div class="flex justify-center my-8 lg:w-4xl">
-						<Progression {resultsData} />
-					</div>
+   	<div class="hero bg-base-500 min-h-4xl py-4">
+		<div class="hero-content text-center">
+			<div class="">
+				<h1 class="text-5xl font-bold">My competition results</h1>
+				<div class="flex justify-center my-8 lg:w-4xl">
+					<Progression {resultsData} />
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section>
+	<div class="hero bg-base-500 min-h-4xl py-4">
+		<div class="hero-content text-center">
+			<div class="">
+				<h1 class="text-5xl font-bold">My competition results</h1>
+				<div class="flex justify-center my-8 lg:w-4xl">
+					<Progression {resultsData} />
 				</div>
 			</div>
 		</div>

@@ -28,7 +28,7 @@
 		});
 		// Sort by timestamp
 		processedResults.sort((a, b) => (a.timestamp ?? 0) - (b.timestamp ?? 0));
-		const startDate = new Date(2021, 10, 1).getTime(); // November is month 10 (0-based)
+		const startDate = new Date(2013, 10, 1).getTime(); // November is month 10 (0-based)
 		processedResults.forEach((item) => {
 			if (item.timestamp !== undefined) {
 				item.timestamp = (item.timestamp - startDate) / 1000; // convert ms to seconds
