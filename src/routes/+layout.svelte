@@ -54,7 +54,7 @@
 						<a href="/blog">Blog</a>
 					</li>
 					<li>
-						<a href="/highjump">High Jump</a>
+						<a href="/highjump">Jump</a>
 					</li>
 					<li>
 						<a href="/code">Code</a>

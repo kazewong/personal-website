@@ -6,7 +6,7 @@
 	let { children }: Props = $props();
 </script>
 
-<div class="flex justify-center content-start py-4">
+<div class="flex justify-center content-start p-4">
 	<div class="w-xl md:w-2xl lg:w-5xl">
 		{@render children?.()}
 	</div>
