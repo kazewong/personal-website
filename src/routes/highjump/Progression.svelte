@@ -36,7 +36,6 @@
 		});
 		return { processedResults, startDate };
 	}
-
 	function renderChart() {
 		if (!canvas) return;
 		const context = canvas.getContext('2d');
@@ -49,6 +48,20 @@
 		}
 
 		const { processedResults, startDate } = processResults(resultsData.items);
+
+		// Define the compression range
+		const compressStart = new Date(2017, 0, 1).getTime(); // Jan 1, 2017
+		const compressEnd = new Date(2021, 11, 31).getTime(); // Dec 31, 2021
+		const compressStartSec = (compressStart - startDate) / 1000;
+		const compressEndSec = (compressEnd - startDate) / 1000;
+		const compressFactor = 10;
+
+		// Helper to compress x value
+		function compressX(x: number) {
+			if (x < compressStartSec) return x;
+			if (x > compressEndSec) return (compressEndSec - compressStartSec) / compressFactor + (x - compressEndSec) + compressStartSec;
+			return compressStartSec + (x - compressStartSec) / compressFactor;
+		}
 
 		// Prepare scatter data: {x: timestamp, y: height}
 		let prevHeight: number | null = null;
@@ -65,8 +78,11 @@
 					isImputed = true;
 				}
 				if (item.timestamp !== undefined && y !== null) {
+					const origX = item.timestamp;
+					const compressedX = compressX(origX);
 					return {
-						x: item.timestamp,
+						x: compressedX,
+						_origX: origX,
 						y: y,
 						_competition: item.Competition,
 						_date: item.Date,
@@ -82,7 +98,14 @@
 		const endDate = new Date(2028, 8, 30).getTime(); // September is month 8 (0-based), day 30
 
 		const xMin = 0;
-		const xMax = (endDate - startDate) / 1000;
+		const origXMax = (endDate - startDate) / 1000;
+		const xMax = compressX(origXMax);
+
+		// --- Ensure Feb 2022 is shown on the x-axis ---
+		// Calculate the compressed x value for Feb 2022
+		const feb2022 = new Date(2022, 1, 1).getTime(); // Feb is month 1 (0-based)
+		const feb2022Sec = (feb2022 - startDate) / 1000;
+		const compressedFeb2022 = compressX(feb2022Sec);
 
 		chartInstance = new chartjs(context, {
 			type: 'scatter',
@@ -130,18 +153,42 @@
 						ticks: {
 							color: '#fff',
 							callback: function (value) {
-								const timestamp = Number(value);
-								const dateObj = new Date(timestamp * 1000 + startDate);
+								const compressedX = Number(value);
+								// Invert the compression to get the original timestamp
+								let origX: number;
+								if (compressedX < compressStartSec) {
+									origX = compressedX;
+								} else if (compressedX < compressStartSec + (compressEndSec - compressStartSec) / compressFactor) {
+									origX = compressStartSec + (compressedX - compressStartSec) * compressFactor;
+								} else {
+									origX = compressEndSec + (compressedX - (compressStartSec + (compressEndSec - compressStartSec) / compressFactor));
+								}
+								const dateObj = new Date(origX * 1000 + startDate);
 								const month = dateObj.toLocaleString('default', { month: 'short' });
 								const year = dateObj.getFullYear();
 								return `${month} ${year}`;
-							}
+							},
+							maxRotation: 45,
+							minRotation: 45,
+							autoSkip: true
 						},
 						grid: {
 							color: '#fff2'
 						},
 						min: xMin,
-						max: xMax
+						max: xMax,
+						afterBuildTicks: (axis) => {
+							// Ensure Feb 2022 is present in the ticks
+							const ticks = axis.ticks.map(t => t.value);
+							// Find if compressedFeb2022 is already present (allowing for floating point error)
+							const exists = ticks.some(v => Math.abs(v - compressedFeb2022) < 1);
+							if (!exists) {
+								// Insert compressedFeb2022 in sorted order
+								ticks.push(compressedFeb2022);
+								ticks.sort((a, b) => a - b);
+								axis.ticks = ticks.map(v => ({ value: v }));
+							}
+						}
 					}
 				},
 				plugins: {
@@ -157,7 +204,9 @@
 							},
 							label: function (tooltipItem) {
 								const dataPoint = scatterData[tooltipItem.dataIndex];
-								const dateObj = new Date(dataPoint.x * 1000 + startDate);
+								// Use the original x for the tooltip date
+								const origX = dataPoint._origX !== undefined ? dataPoint._origX : dataPoint.x;
+								const dateObj = new Date(origX * 1000 + startDate);
 								const dateStr = dateObj.toLocaleDateString();
 								let label = `Date: ${dateStr}, Height: ${dataPoint.y} cm`;
 								if (dataPoint._isImputed) {
