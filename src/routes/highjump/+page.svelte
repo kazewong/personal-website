@@ -63,9 +63,9 @@
    	<div class="hero bg-base-500 min-h-4xl py-4">
 		<div class="hero-content text-center">
 			<div class="">
-				<h1 class="text-5xl font-bold">My competition results</h1>
+				<h1 class="text-5xl font-bold">I am a high jumper</h1>
 				<div class="flex justify-center my-8 lg:w-4xl">
-					<Progression {resultsData} />
+					
 				</div>
 			</div>
 		</div>
@@ -92,7 +92,7 @@
 	<div class="hero bg-base-500 min-h-screen">
 		<div class="hero-content text-center">
 			<div class="">
-				<h1 class="text-5xl font-bold">Scientist</h1>
+				<h1 class="text-5xl font-bold">I am also a high jump scientist</h1>
 			</div>
 		</div>
 	</div>

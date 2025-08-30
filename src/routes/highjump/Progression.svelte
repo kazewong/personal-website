@@ -18,6 +18,7 @@
 	};
 
 	// Chart instance for cleanup
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	let chartInstance: any = null;
 
 	function processResults(items: ResultItem[]) {
