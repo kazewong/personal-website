@@ -1,6 +1,10 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import chartjs from 'chart.js/auto';
+	import { Chart, registerables } from 'chart.js';
+	import annotationPlugin from 'chartjs-plugin-annotation';
+
+	Chart.register(...registerables);
+	Chart.register(annotationPlugin);
 
 	export let resultsData: { items: Array<{ Competition: string; Date: string; Height: string }> };
 
@@ -54,7 +58,7 @@
 		const compressEnd = new Date(2021, 11, 31).getTime(); // Dec 31, 2021
 		const compressStartSec = (compressStart - startDate) / 1000;
 		const compressEndSec = (compressEnd - startDate) / 1000;
-		const compressFactor = 10;
+		const compressFactor = 3;
 
 		// Helper to compress x value
 		function compressX(x: number) {
@@ -106,13 +110,7 @@
 		const origXMax = (endDate - startDate) / 1000;
 		const xMax = compressX(origXMax);
 
-		// --- Ensure Feb 2022 is shown on the x-axis ---
-		// Calculate the compressed x value for Feb 2022
-		const feb2022 = new Date(2022, 1, 1).getTime(); // Feb is month 1 (0-based)
-		const feb2022Sec = (feb2022 - startDate) / 1000;
-		const compressedFeb2022 = compressX(feb2022Sec);
-
-		chartInstance = new chartjs(context, {
+		chartInstance = new Chart(context, {
 			type: 'scatter',
 			data: {
 				datasets: [
@@ -187,19 +185,8 @@
 							color: '#fff2'
 						},
 						min: xMin,
-						max: xMax,
-						afterBuildTicks: (axis) => {
-							// Ensure Feb 2022 is present in the ticks
-							const ticks = axis.ticks.map((t) => t.value);
-							// Find if compressedFeb2022 is already present (allowing for floating point error)
-							const exists = ticks.some((v) => Math.abs(v - compressedFeb2022) < 1);
-							if (!exists) {
-								// Insert compressedFeb2022 in sorted order
-								ticks.push(compressedFeb2022);
-								ticks.sort((a, b) => a - b);
-								axis.ticks = ticks.map((v) => ({ value: v }));
-							}
-						}
+						max: xMax
+						// Removed afterBuildTicks that enforced Feb 2022
 					}
 				},
 				plugins: {
@@ -224,6 +211,31 @@
 									label += ' (imputed)';
 								}
 								return label;
+							}
+						}
+					},
+					annotation: {
+						annotations: {
+							gaveUpHJ: {
+								type: 'label',
+								xValue: (() => {
+									const nov2016 = new Date(2018, 10, 1).getTime(); // November is month 10 (0-based)
+									const nov2016Sec = (nov2016 - startDate) / 1000;
+									return compressX(nov2016Sec);
+								})(),
+								yValue: Math.max(...scatterData.map((v) => v!.y), 205),
+								content: ['Gave up HJ', 'for grad school'],
+								color: '#fff',
+								backgroundColor: 'rgba(255, 0, 0, 0.3)',
+								font: {
+									size: 16,
+									weight: 'bold'
+								},
+								position: {
+									x: 'center',
+									y: 'start'
+								},
+								padding: 8
 							}
 						}
 					}
