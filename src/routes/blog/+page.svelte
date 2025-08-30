@@ -216,7 +216,13 @@
 				</div>
 				<div>
 					<h2 class="py-0 text-2xl">
-						<a href={post.path}>{post.meta.title}</a>
+						<a
+							href={post.path}
+							class="transition-all duration-150 hover:text-gray-50 hover:scale-105"
+							style="display: inline-block;"
+						>
+							{post.meta.title}
+						</a>
 					</h2>
 				</div>
 			</li>
