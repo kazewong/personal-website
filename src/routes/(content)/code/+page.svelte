@@ -1,7 +1,7 @@
 <script>
 </script>
 
-<h1 class="flex justify-center">My codes</h1>
+<h1 class="flex justify-center">I am a Software Engineer</h1>
 
 <div class="">
 	<p>
@@ -13,8 +13,6 @@
 <!-- CV -->
 
 <!-- Area -->
-
-<h1>Area</h1>
 
 <div>
 	<h2>Deep learning</h2>

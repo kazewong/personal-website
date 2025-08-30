@@ -70,7 +70,7 @@
 							<summary
 								class="px-2 py-1 bg-transparent border-0 hover:underline cursor-pointer list-none"
 							>
-								Legacy
+								Others
 							</summary>
 							<ul
 								class="menu dropdown-content rounded-box z-10 w-44 p-2 shadow-sm bg-indigo-50 dark:bg-gray-900 text-gray-100"
@@ -158,7 +158,7 @@
 							<summary
 								class=" bg-transparent border-0 hover:underline cursor-pointer list-none text-gray-100"
 							>
-								Legacy
+								Others
 							</summary>
 							<ul
 								class="menu dropdown-content rounded-box z-10 w-44 p-2 shadow-sm bg-indigo-50 dark:bg-gray-900"
