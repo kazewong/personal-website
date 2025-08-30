@@ -252,4 +252,15 @@
 	});
 </script>
 
-<canvas bind:this={canvas} width="100%" height={window.innerWidth < 1000 ? "80" : "60"}></canvas>    
+<canvas
+ bind:this={canvas}
+ width="100%"
+ {...{
+  height:
+   typeof window !== 'undefined'
+    ? window.innerWidth < 1000
+     ? '80'
+     : '60'
+    : '60'
+ }}
+></canvas>
