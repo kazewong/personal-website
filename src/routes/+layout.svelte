@@ -61,7 +61,7 @@
 					</li>
 
 					<li>
-						<a href="/crafts">Crafts</a>
+						<a href="/animation">Animation</a>
 					</li>
 					<li>
 						<details class="dropdown">
@@ -140,13 +140,13 @@
 						<a href="/blog">Blog</a>
 					</li>
 					<li>
-						<a href="/highjump">High Jump</a>
+						<a href="/highjump">Jump</a>
 					</li>
 					<li>
 						<a href="/code">Code</a>
 					</li>
 					<li>
-						<a href="/crafts">Crafts</a>
+						<a href="/animation">Animation</a>
 					</li>
 					<li>
 						<details class="dropdown">

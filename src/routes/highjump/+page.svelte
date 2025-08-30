@@ -60,7 +60,7 @@
 
 <!-- Athlete Intro -->
 <section>
-   	<div class="hero bg-base-500 min-h-4xl py-4">
+	<div class="hero bg-base-500 min-h-4xl py-4">
 		<div class="hero-content text-center">
 			<div class="">
 				<h1 class="text-5xl font-bold">I am a high jumper</h1>
