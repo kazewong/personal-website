@@ -8,27 +8,47 @@
 	import side from '$lib/assets/videos/side_small.mp4';
 
 	let slider_pos: number = $state(50);
+	// let scroll_progress = $state(0);
+	// const getValues = () => {
+	// 	scroll_progress = observer.scroll;
+	// 	console.log(scroll_progress);
+	// };
+	let scrollObserver: ScrollObserver = $state(null);
 
-	const [container] = utils.$('.scroll-container');
+	onMount(() => {
+		scrollObserver = onScroll({
+			container: '.scroll-container',
+			sync: true,
+			debug: true,
+		});
+		animate('#highjumptitle', {
+			scale: [
+				{ from: '1', to: '10', duration: 600, easing: 'easeInOutQuad' },
+				{ from: '10', to: '1', duration: 600, easing: 'easeInOutQuad' }
+			],
+			opacity: [{ from: 0, to: 1, duration: 1200, easing: 'easeInOutQuad' }],
+			delay: stagger(50),
+			autoplay: scrollObserver
+		});
 
-	// animate(video_time, {
-	// 	value: duration,
-	// 	ease: 'linear',
-	// 	autoplay: onScroll({
-	// 		container: '.scroll-container',
-	// 		sync: true,
-	// 		debug: true,
-	// 		onUpdate: ({ progress }) => {
-	// 			video_time.value = progress * duration;
-	// 		}
-	// 	})
-	// });
-	onMount(() => {});
+		// const rolling_animation = (target: TargetsParam) => {
+		// 	return animate(target, {
+		// 		x: 15,
+		// 		easing: 'linear'
+		// 	});
+		// };
+
+		// scrollObserver.link(rolling_animation('#highjumptitle'));
+	});
 </script>
+
+<!-- <div class="sticky top-0">
+	<h1>slider_pos: {scroll_progress}</h1>
+</div> -->
 
 <div class="scroll-container scroll-y">
 	<div class="scroll-content">
-		<section class="scroll-section">
+		<!-- <section class="scroll-section">
 			<div class="relative flex justify-center bg-base-900">
 				<div class="relative w-screen aspect-video">
 					<div class="w-full h-full relative overflow-hidden bg-base-200">
@@ -68,20 +88,19 @@
 					</div>
 				</div>
 			</div>
-		</section>
+		</section> -->
 
 		<!-- High Jump story -->
 		<section class="scroll-section">
 			<div class="hero bg-base-500 min-h-4xl py-4">
 				<div class="hero-content text-center">
 					<div class="">
-						<h1 class="text-5xl font-bold">My High Jump story</h1>
-						<div class="flex justify-center my-8 lg:w-4xl"></div>
+						<h1 class="text-5xl font-bold" id="highjumptitle">My High Jump story</h1>
 					</div>
 				</div>
 			</div>
 
-			<ul class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
+			<!-- <ul class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
 				<li>
 					<div class="timeline-middle"></div>
 					<div class="timeline-start mb-10 md:text-end flex-1 flex flex-col justify-center">
@@ -206,10 +225,10 @@
 					</div>
 					<hr />
 				</li>
-			</ul>
+			</ul> -->
 		</section>
 
-		<section  class="scroll-section">
+		<!-- <section class="scroll-section">
 			<div class="hero bg-base-500 min-h-4xl py-4">
 				<div class="hero-content text-center">
 					<div class="">
@@ -220,8 +239,7 @@
 					</div>
 				</div>
 			</div>
-		</section>
-
+		</section> -->
 
 		<!-- Science part -->
 		<section>
@@ -235,3 +253,11 @@
 		</section>
 	</div>
 </div>
+
+<style>
+	.scroll-container {
+		height: 100vh;
+		overflow-y: scroll;
+		scroll-snap-type: y mandatory;
+	}
+</style>

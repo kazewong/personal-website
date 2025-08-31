@@ -13,7 +13,7 @@
 				{ from: '1', to: '2', ease: 'inOutCirc', duration: 400 },
 				{ from: '2', to: '1', ease: 'outExpo', duration: 400 }
 			],
-			opacity: [{ from: 0, to: 1, duration: 600, ease: 'inOutCirc' }],
+			// opacity: [{ from: 0, to: 1, duration: 600, ease: 'inOutCirc' }],
 			delay: stagger(50),
 			ease: 'inOutCirc'
 		});
