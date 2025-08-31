@@ -1,11 +1,21 @@
 <script lang="ts">
-	import { animate, stagger, text, createTimeline, onScroll, utils } from 'animejs';
+	import { animate, stagger, createTimeline, onScroll } from 'animejs';
 	import { onMount } from 'svelte';
 	import resultsData from './Results.json';
+	import StoryData from './StoryData.json';
 	import Progression from './Progression.svelte';
 
 	import pov from '$lib/assets/videos/pov_small.mp4';
 	import side from '$lib/assets/videos/side_small.mp4';
+
+	type StoryItem = {
+		image: string | null;
+		year: string;
+		title: string;
+		text: string;
+	};
+
+	const storyData: StoryItem[] = StoryData as StoryItem[];
 
 	let slider_pos: number = $state(50);
 	let scroll_progress = $state(0);
@@ -16,7 +26,6 @@
 	let scrollObserver: ScrollObserver = $state(null);
 
 	let year = $state({ value: '2009' });
-	const test_text = ['This is a test', 'Another test', 'Final test'];
 
 	const rolling_effect = () => {
 		const duration: number = 600;
@@ -49,50 +58,52 @@
 		});
 
 		// Year animation
-		const timeline = createTimeline({ defaults: { duration: 750 } });
-
-		const year_animation = animate(year, {
-			value: [2009, 2017, 2021, 2022, 2024, 2025],
-			round: 1,
-			easing: 'easeInOutQuad',
-			duration: 1000
+		const timeline = createTimeline({
+			defaults: { duration: 750 },
+			autoplay: onScroll({
+				container: '.scroll-container',
+				sync: true,
+				debug: true,
+				enter: 'bottom top',
+				leave: 'top bottom'
+			})
 		});
+		let current_time: number = 0;
 		timeline.label('start');
-		timeline.sync(year_animation, 0);
 
 		// Main text animation
-		
-		const text_timeline = createTimeline({ defaults: { duration: 750 } });
-		text_timeline.label('start2');
-		text_timeline
-			.add('#test-text-0', {
-				x: [
-					{ from: 100, to: 0, easing: 'easeInOutQuad' },
-					{ from: 0, to: -100, easing: 'easeInOutQuad', delay: 1000 }
-				],
-				opacity: [
-					{ from: 0, to: 1, easing: 'easeInOutQuad', duration: 1000 },
-					{ from: 1, to: 0, easing: 'easeInOutQuad', delay: 1000, duration: 500 }
-				],
-				duration: 1000
-			})
-			.add('#test-text-1', {
-				x: [
-					{ from: 100, to: 0, easing: 'easeInOutQuad' },
-					{ from: 0, to: -100, easing: 'easeInOutQuad', delay: 1000 }
-				],
-				opacity: [
-					{ from: 0, to: 1, easing: 'easeInOutQuad', duration: 1000 },
-					{ from: 1, to: 0, easing: 'easeInOutQuad', delay: 1000, duration: 500 }
-				],
-				duration: 1000
-			})
-			.add('#test-text-2', {
-				x: [{ from: 100, to: 0, easing: 'easeInOutQuad' }],
-				opacity: [{ from: 0, to: 1, easing: 'easeInOutQuad', duration: 1000 }],
-				duration: 1000
-			});
-		
+
+		timeline.label('text-start');
+		storyData.forEach((item, i) => {
+			timeline
+				.add(
+					`#test-text-${i}`,
+					{
+						x: [
+							{ from: 100, to: 0, easing: 'easeInOutQuad' },
+							{ from: 0, to: -100, easing: 'easeInOutQuad', delay: 1000 }
+						],
+						opacity: [
+							{ from: 0, to: 1, easing: 'easeInOutQuad', duration: 1000 },
+							{ from: 1, to: 0, easing: 'easeInOutQuad', delay: 1000, duration: 500 }
+						]
+					},
+					current_time
+				)
+				.add(
+					year,
+					{
+						value: item.year,
+						round: 1,
+						easing: 'easeInOutQuad'
+					},
+					current_time
+				);
+			current_time += 2000; // 1s display + 1s transition
+		});
+
+		// Image animation
+
 		// Chart animation
 
 		animate('#highjumptitle', rolling_effect());
@@ -101,13 +112,13 @@
 </script>
 
 <div class="sticky top-0">
-    <h1>I am revmaping this page, and it is going to be so sick soon</h1>
+	<h1>I am revmaping this page, and it is going to be so sick soon</h1>
 	<h1>slider_pos: {scroll_progress}</h1>
 </div>
 
-<div class="scroll-container">
+<div class="scroll-container h-screen">
 	<div class="scroll-content">
-		<!-- <section class="scroll-section">
+		<section class="scroll-section">
 			<div class="relative flex justify-center bg-base-900">
 				<div class="relative w-screen aspect-video">
 					<div class="w-full h-full relative overflow-hidden bg-base-200">
@@ -147,33 +158,31 @@
 					</div>
 				</div>
 			</div>
-		</section> -->
+		</section>
 
 		<!-- High Jump story -->
-		<!-- <div class="scroll-section">
-			<div class="hero bg-base-500 min-h-4xl py-4 h-screen">
+		<div class="scroll-section">
+			<div class="hero bg-base-500 min-h-4xl py-4">
 				<div class="hero-content text-center">
 					<div class="perspective-dramatic perspective-origin-bottom">
 						<h1 class="text-5xl font-bold" id="highjumptitle">My High Jump story</h1>
 					</div>
 				</div>
 			</div>
-		</div> -->
+		</div>
 
 		<div>
 			<div class="scroll-section">
 				<h1>{year.value}</h1>
 				<h2 class="relative">
-					{#each test_text as text_item, i}
-						<span id="test-text-{i}" class="absolute opacity-0"
-							>{text_item}</span
-						>
+					{#each storyData as item, i}
+						<span id="test-text-{i}" class="absolute opacity-0">{item.text}</span>
 					{/each}
 				</h2>
 			</div>
 		</div>
 
-		<!-- <section class="scroll-section">
+		<section class="scroll-section">
 			<div class="hero bg-base-500 min-h-4xl py-4">
 				<div class="hero-content text-center">
 					<div class="">
@@ -184,10 +193,10 @@
 					</div>
 				</div>
 			</div>
-		</section> -->
+		</section>
 
 		<!-- Science part -->
-		<!-- <section>
+		<section>
 			<div class="hero bg-base-500 min-h-screen">
 				<div class="hero-content text-center">
 					<div class="">
@@ -195,7 +204,7 @@
 					</div>
 				</div>
 			</div>
-		</section> -->
+		</section>
 	</div>
 </div>
 
