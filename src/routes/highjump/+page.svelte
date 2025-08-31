@@ -59,14 +59,14 @@
 
 		// Year animation
 		const timeline = createTimeline({
-			defaults: { duration: 750 },
-			autoplay: onScroll({
-				container: '.scroll-container',
-				sync: true,
-				debug: true,
-				enter: 'bottom top',
-				leave: 'top bottom'
-			})
+			defaults: { duration: 750 }
+			// autoplay: onScroll({
+			// 	container: '.scroll-container',
+			// 	sync: true,
+			// 	debug: true,
+			// 	enter: 'bottom top',
+			// 	leave: 'top bottom'
+			// })
 		});
 		let current_time: number = 0;
 		timeline.label('start');
@@ -128,7 +128,7 @@
 
 <div class="scroll-container">
 	<div class="scroll-content">
-		<section class="scroll-section">
+		<div class="scroll-section">
 			<div class="relative flex justify-center bg-base-900">
 				<div class="relative w-screen aspect-video">
 					<div class="w-full h-full relative overflow-hidden bg-base-200">
@@ -168,7 +168,7 @@
 					</div>
 				</div>
 			</div>
-		</section>
+		</div>
 
 		<!-- High Jump story -->
 		<div class="scroll-section">
@@ -177,28 +177,26 @@
 					<div class="perspective-dramatic perspective-origin-bottom">
 						<h1 class="text-5xl font-bold" id="highjumptitle">My High Jump story</h1>
 					</div>
+					<h1>{year.value}</h1>
 				</div>
 			</div>
-		</div>
 
-		<h1>{year.value}</h1>
-		<div class="flex justify-center">
-			<div class="min-w-[50%]">
-				<div class="relative">
+			<div class="flex justify-center">
+				<div class="grid place-items-center w-[40%]">
 					{#each storyData as item, i}
-						<p id="test-text-{i}" class="text-2xl absolute opacity-0">{item.text}</p>
+						<p id="test-text-{i}" class="text-2xl opacity-0 col-start-1 row-start-1">
+							{item.text}
+						</p>
 					{/each}
 				</div>
-			</div>
-			<div class="min-w-[50%]">
-				<div class="relative">
+				<div class="grid place-items-center w-[40%]">
 					{#each storyData as item, i}
 						{#if item.image}
 							<img
 								id="test-img-{i}"
 								src={item.image}
 								alt={item.title}
-								class=" absolute opacity-0"
+								class=" opacity-0 col-start-1 row-start-1"
 							/>
 						{/if}
 					{/each}
@@ -220,7 +218,7 @@
 		</section> -->
 
 		<!-- Science part -->
-		<section class="scroll-section">
+		<div class="scroll-section">
 			<div class="hero bg-base-500">
 				<div class="hero-content text-center">
 					<div class="">
@@ -228,7 +226,7 @@
 					</div>
 				</div>
 			</div>
-		</section>
+		</div>
 	</div>
 </div>
 
