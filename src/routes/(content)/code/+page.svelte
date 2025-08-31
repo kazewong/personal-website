@@ -20,7 +20,7 @@
 		animate('#typewriter', {
 			borderColor: [{ from: '#fff', to: '#fff0', duration: 50}],
 			loopDelay: 500,
-			loop: 4,
+			loop: 5,
 			alternate: true
 			
 		});
