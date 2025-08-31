@@ -19,7 +19,7 @@
 		scrollObserver = onScroll({
 			container: '.scroll-container',
 			sync: true,
-			debug: true,
+			// debug: true,
 			enter: 'bottom top',
 			leave: 'top bottom'
 		});
@@ -254,10 +254,11 @@
 	</div>
 </div>
 
+<!-- This is needed for the scrolling to work -->
 <style>
 	.scroll-container {
 		height: 100vh;
 		overflow-y: scroll;
-		scroll-snap-type: y mandatory;
+		scrollbar-width: none;
 	}
 </style>
