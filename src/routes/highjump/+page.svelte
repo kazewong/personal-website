@@ -19,26 +19,21 @@
 		scrollObserver = onScroll({
 			container: '.scroll-container',
 			sync: true,
-			debug: true,
-		});
-		animate('#highjumptitle', {
-			scale: [
-				{ from: '1', to: '10', duration: 600, easing: 'easeInOutQuad' },
-				{ from: '10', to: '1', duration: 600, easing: 'easeInOutQuad' }
-			],
-			opacity: [{ from: 0, to: 1, duration: 1200, easing: 'easeInOutQuad' }],
-			delay: stagger(50),
-			autoplay: scrollObserver
+			debug: true
 		});
 
-		// const rolling_animation = (target: TargetsParam) => {
-		// 	return animate(target, {
-		// 		x: 15,
-		// 		easing: 'linear'
-		// 	});
-		// };
+		const rolling_animation = (target: TargetsParam) => {
+			return animate(target, {
+				scale: [
+					{ from: '1', to: '10', duration: 600, easing: 'easeInOutQuad' },
+					{ from: '10', to: '1', duration: 600, easing: 'easeInOutQuad' }
+				],
+				opacity: [{ from: 0, to: 1, duration: 1200, easing: 'easeInOutQuad' }],
+				delay: stagger(50)
+			});
+		};
 
-		// scrollObserver.link(rolling_animation('#highjumptitle'));
+		scrollObserver.link(rolling_animation('#highjumptitle'));
 	});
 </script>
 
