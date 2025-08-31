@@ -15,23 +15,16 @@
 	// };
 	let scrollObserver: ScrollObserver = $state(null);
 
-	onMount(() => {
-		scrollObserver = onScroll({
-			container: '.scroll-container',
-			sync: true,
-			debug: true,
-			enter: 'bottom top',
-			leave: 'top bottom'
-		});
-		animate('#highjumptitle', {
-			scale: [
-				{ from: '1', to: '10', duration: 600, easing: 'easeInOutQuad' },
-				{ from: '10', to: '1', duration: 600, easing: 'easeInOutQuad' }
-			],
-			opacity: [{ from: 0, to: 1, duration: 1200, easing: 'easeInOutQuad' }],
+	const rolling_effect = () => {
+		const duration: number = 600;
+		return {
+			perspective: '100px',
+			rotateX: [{ from: -25, to: 0, duration: duration, easing: 'easeInOutQuad' }],
+			y: [{ from: 50, to: 0, duration: duration, easing: 'easeInOutQuad' }],
+			opacity: [{ from: 0, to: 1, duration: duration, easing: 'easeInOutQuad' }],
 			delay: stagger(50),
 			onUpdate: () => {
-			  scroll_progress = scrollObserver.progress;
+				scroll_progress = scrollObserver.progress;
 			},
 			autoplay: onScroll({
 				container: '.scroll-container',
@@ -40,22 +33,19 @@
 				enter: 'bottom top',
 				leave: 'top bottom'
 			})
+		};
+	};
+
+	onMount(() => {
+		scrollObserver = onScroll({
+			container: '.scroll-container',
+			sync: true,
+			debug: true,
+			enter: 'bottom top',
+			leave: 'top bottom'
 		});
-		animate('#scientisttitle', {
-			scale: [
-				{ from: '1', to: '10', duration: 600, easing: 'easeInOutQuad' },
-				{ from: '10', to: '1', duration: 600, easing: 'easeInOutQuad' }
-			],
-			opacity: [{ from: 0, to: 1, duration: 1200, easing: 'easeInOutQuad' }],
-			delay: stagger(50),
-			autoplay: onScroll({
-				container: '.scroll-container',
-				sync: true,
-				debug: true,
-				enter: 'bottom top',
-				leave: 'top bottom'
-			})
-		});
+		animate('#highjumptitle', rolling_effect());
+		animate('#scientisttitle', rolling_effect());
 	});
 </script>
 
@@ -111,7 +101,7 @@
 		<section class="scroll-section">
 			<div class="hero bg-base-500 min-h-4xl py-4">
 				<div class="hero-content text-center">
-					<div class="">
+					<div class="perspective-dramatic perspective-origin-bottom">
 						<h1 class="text-5xl font-bold" id="highjumptitle">My High Jump story</h1>
 					</div>
 				</div>
