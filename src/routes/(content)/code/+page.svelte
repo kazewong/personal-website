@@ -21,7 +21,8 @@
 			borderColor: [{ from: '#fff', to: '#fff0', duration: 50}],
 			loopDelay: 500,
 			loop: 5,
-			alternate: true
+			alternate: true,
+			reversed: true
 			
 		});
 	});
