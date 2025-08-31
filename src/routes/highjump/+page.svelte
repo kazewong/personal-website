@@ -91,6 +91,16 @@
 					current_time
 				)
 				.add(
+					`#test-img-${i}`,
+					{
+						opacity: [
+							{ from: 0, to: 1, easing: 'easeInOutQuad', duration: 1000 },
+							{ from: 1, to: 0, easing: 'easeInOutQuad', delay: 1000, duration: 500 }
+						]
+					},
+					current_time
+				)
+				.add(
 					year,
 					{
 						value: item.year,
@@ -116,7 +126,7 @@
 	<h1>slider_pos: {scroll_progress}</h1>
 </div>
 
-<div class="scroll-container h-screen">
+<div class="scroll-container">
 	<div class="scroll-content">
 		<section class="scroll-section">
 			<div class="relative flex justify-center bg-base-900">
@@ -171,18 +181,32 @@
 			</div>
 		</div>
 
-		<div>
-			<div class="scroll-section">
-				<h1>{year.value}</h1>
-				<h2 class="relative">
+		<h1>{year.value}</h1>
+		<div class="flex justify-center">
+			<div class="min-w-[50%]">
+				<div class="relative">
 					{#each storyData as item, i}
-						<span id="test-text-{i}" class="absolute opacity-0">{item.text}</span>
+						<p id="test-text-{i}" class="text-2xl absolute opacity-0">{item.text}</p>
 					{/each}
-				</h2>
+				</div>
+			</div>
+			<div class="min-w-[50%]">
+				<div class="relative">
+					{#each storyData as item, i}
+						{#if item.image}
+							<img
+								id="test-img-{i}"
+								src={item.image}
+								alt={item.title}
+								class=" absolute opacity-0"
+							/>
+						{/if}
+					{/each}
+				</div>
 			</div>
 		</div>
 
-		<section class="scroll-section">
+		<!-- <section class="scroll-section">
 			<div class="hero bg-base-500 min-h-4xl py-4">
 				<div class="hero-content text-center">
 					<div class="">
@@ -193,11 +217,11 @@
 					</div>
 				</div>
 			</div>
-		</section>
+		</section> -->
 
 		<!-- Science part -->
-		<section>
-			<div class="hero bg-base-500 min-h-screen">
+		<section class="scroll-section">
+			<div class="hero bg-base-500">
 				<div class="hero-content text-center">
 					<div class="">
 						<h1 class="text-5xl font-bold" id="scientisttitle">I am also a high jump scientist</h1>
