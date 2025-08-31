@@ -8,7 +8,7 @@
 	import side from '$lib/assets/videos/side_small.mp4';
 
 	let slider_pos: number = $state(50);
-	// let scroll_progress = $state(0);
+	let scroll_progress = $state(0);
 	// const getValues = () => {
 	// 	scroll_progress = observer.scroll;
 	// 	console.log(scroll_progress);
@@ -19,7 +19,9 @@
 		scrollObserver = onScroll({
 			container: '.scroll-container',
 			sync: true,
-			debug: true
+			debug: true,
+			enter: 'bottom top',
+			leave: 'top bottom'
 		});
 
 		const rolling_animation = (target: TargetsParam) => {
@@ -29,7 +31,10 @@
 					{ from: '10', to: '1', duration: 600, easing: 'easeInOutQuad' }
 				],
 				opacity: [{ from: 0, to: 1, duration: 1200, easing: 'easeInOutQuad' }],
-				delay: stagger(50)
+				delay: stagger(50),
+				onUpdate: () => {
+					scroll_progress = scrollObserver.progress;
+				}
 			});
 		};
 
@@ -37,13 +42,13 @@
 	});
 </script>
 
-<!-- <div class="sticky top-0">
+<div class="sticky top-0">
 	<h1>slider_pos: {scroll_progress}</h1>
-</div> -->
+</div>
 
 <div class="scroll-container scroll-y">
 	<div class="scroll-content">
-		<!-- <section class="scroll-section">
+		<section class="scroll-section">
 			<div class="relative flex justify-center bg-base-900">
 				<div class="relative w-screen aspect-video">
 					<div class="w-full h-full relative overflow-hidden bg-base-200">
@@ -83,7 +88,7 @@
 					</div>
 				</div>
 			</div>
-		</section> -->
+		</section>
 
 		<!-- High Jump story -->
 		<section class="scroll-section">
