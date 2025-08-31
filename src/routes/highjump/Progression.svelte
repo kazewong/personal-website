@@ -215,33 +215,34 @@
 							}
 						}
 					},
-					annotation: window.innerWidth < 1000
-						? false
-						: {
-								annotations: {
-									gaveUpHJ: {
-										type: 'label',
-										xValue: (() => {
-											const nov2016 = new Date(2018, 10, 1).getTime(); // November is month 10 (0-based)
-											const nov2016Sec = (nov2016 - startDate) / 1000;
-											return compressX(nov2016Sec);
-										})(),
-										yValue: Math.max(...scatterData.map((v) => v!.y), 205),
-										content: ['Gave up HJ', 'for grad school'],
-										color: '#fff',
-										backgroundColor: 'rgba(255, 0, 0, 0.3)',
-										font: {
-											size: 16,
-											weight: 'bold'
-										},
-										position: {
-											x: 'center',
-											y: 'start'
-										},
-										padding: 8
+					annotation:
+						window.innerWidth < 1000
+							? false
+							: {
+									annotations: {
+										gaveUpHJ: {
+											type: 'label',
+											xValue: (() => {
+												const nov2016 = new Date(2018, 10, 1).getTime(); // November is month 10 (0-based)
+												const nov2016Sec = (nov2016 - startDate) / 1000;
+												return compressX(nov2016Sec);
+											})(),
+											yValue: Math.max(...scatterData.map((v) => v!.y), 205),
+											content: ['Gave up HJ', 'for grad school'],
+											color: '#fff',
+											backgroundColor: 'rgba(255, 0, 0, 0.3)',
+											font: {
+												size: 16,
+												weight: 'bold'
+											},
+											position: {
+												x: 'center',
+												y: 'start'
+											},
+											padding: 8
+										}
 									}
 								}
-							}
 				}
 			}
 		});
@@ -253,14 +254,9 @@
 </script>
 
 <canvas
- bind:this={canvas}
- width="100%"
- {...{
-  height:
-   typeof window !== 'undefined'
-    ? window.innerWidth < 1000
-     ? '80'
-     : '60'
-    : '60'
- }}
+	bind:this={canvas}
+	width="100%"
+	{...{
+		height: typeof window !== 'undefined' ? (window.innerWidth < 1000 ? '80' : '60') : '60'
+	}}
 ></canvas>

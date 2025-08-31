@@ -48,6 +48,7 @@
 			leave: 'top bottom'
 		});
 
+		// Year animation
 		const timeline = createTimeline({ defaults: { duration: 750 } });
 
 		const year_animation = animate(year, {
@@ -59,6 +60,8 @@
 		timeline.label('start');
 		timeline.sync(year_animation, 0);
 
+		// Main text animation
+		
 		const text_timeline = createTimeline({ defaults: { duration: 750 } });
 		text_timeline.label('start2');
 		text_timeline
@@ -89,6 +92,8 @@
 				opacity: [{ from: 0, to: 1, easing: 'easeInOutQuad', duration: 1000 }],
 				duration: 1000
 			});
+		
+		// Chart animation
 
 		animate('#highjumptitle', rolling_effect());
 		animate('#scientisttitle', rolling_effect());
@@ -96,6 +101,7 @@
 </script>
 
 <div class="sticky top-0">
+    <h1>I am revmaping this page, and it is going to be so sick soon</h1>
 	<h1>slider_pos: {scroll_progress}</h1>
 </div>
 
