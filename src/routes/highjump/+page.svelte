@@ -121,11 +121,6 @@
 	});
 </script>
 
-<div class="sticky top-0">
-	<h1>I am revmaping this page, and it is going to be so sick soon</h1>
-	<h1>slider_pos: {scroll_progress}</h1>
-</div>
-
 <div class="scroll-container">
 	<div class="scroll-content">
 		<div class="scroll-section">
