@@ -176,8 +176,8 @@
 				<div class="hero-content text-center">
 					<div class="perspective-dramatic perspective-origin-bottom">
 						<h1 class="text-5xl font-bold" id="highjumptitle">My High Jump story</h1>
+						<h1>{year.value}</h1>
 					</div>
-					<h1>{year.value}</h1>
 				</div>
 			</div>
 
