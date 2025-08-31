@@ -19,26 +19,43 @@
 		scrollObserver = onScroll({
 			container: '.scroll-container',
 			sync: true,
-			// debug: true,
+			debug: true,
 			enter: 'bottom top',
 			leave: 'top bottom'
 		});
-
-		const rolling_animation = (target: TargetsParam) => {
-			return animate(target, {
-				scale: [
-					{ from: '1', to: '10', duration: 600, easing: 'easeInOutQuad' },
-					{ from: '10', to: '1', duration: 600, easing: 'easeInOutQuad' }
-				],
-				opacity: [{ from: 0, to: 1, duration: 1200, easing: 'easeInOutQuad' }],
-				delay: stagger(50),
-				onUpdate: () => {
-					scroll_progress = scrollObserver.progress;
-				}
-			});
-		};
-
-		scrollObserver.link(rolling_animation('#highjumptitle'));
+		animate('#highjumptitle', {
+			scale: [
+				{ from: '1', to: '10', duration: 600, easing: 'easeInOutQuad' },
+				{ from: '10', to: '1', duration: 600, easing: 'easeInOutQuad' }
+			],
+			opacity: [{ from: 0, to: 1, duration: 1200, easing: 'easeInOutQuad' }],
+			delay: stagger(50),
+			onUpdate: () => {
+			  scroll_progress = scrollObserver.progress;
+			},
+			autoplay: onScroll({
+				container: '.scroll-container',
+				sync: true,
+				debug: true,
+				enter: 'bottom top',
+				leave: 'top bottom'
+			})
+		});
+		animate('#scientisttitle', {
+			scale: [
+				{ from: '1', to: '10', duration: 600, easing: 'easeInOutQuad' },
+				{ from: '10', to: '1', duration: 600, easing: 'easeInOutQuad' }
+			],
+			opacity: [{ from: 0, to: 1, duration: 1200, easing: 'easeInOutQuad' }],
+			delay: stagger(50),
+			autoplay: onScroll({
+				container: '.scroll-container',
+				sync: true,
+				debug: true,
+				enter: 'bottom top',
+				leave: 'top bottom'
+			})
+		});
 	});
 </script>
 
@@ -246,7 +263,7 @@
 			<div class="hero bg-base-500 min-h-screen">
 				<div class="hero-content text-center">
 					<div class="">
-						<h1 class="text-5xl font-bold">I am also a high jump scientist</h1>
+						<h1 class="text-5xl font-bold" id="scientisttitle">I am also a high jump scientist</h1>
 					</div>
 				</div>
 			</div>
