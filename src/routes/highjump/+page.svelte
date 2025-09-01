@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { animate, stagger, createTimeline, onScroll } from 'animejs';
+	import { animate, stagger, createTimeline, onScroll, utils } from 'animejs';
 	import { onMount } from 'svelte';
 	import resultsData from './Results.json';
 	import StoryData from './StoryData.json';
@@ -33,7 +33,6 @@
 			perspective: '100px',
 			rotateX: [{ from: -25, to: 0, duration: duration, easing: 'easeInOutQuad' }],
 			y: [{ from: 50, to: 0, duration: duration, easing: 'easeInOutQuad' }],
-			opacity: [{ from: 0, to: 1, duration: duration, easing: 'easeInOutQuad' }],
 			delay: stagger(50),
 			onUpdate: () => {
 				scroll_progress = scrollObserver.scroll;
@@ -59,21 +58,27 @@
 
 		// Year animation
 		const timeline = createTimeline({
-			defaults: { duration: 750 }
-			// autoplay: onScroll({
-			// 	container: '.scroll-container',
-			// 	sync: true,
-			// 	debug: true,
-			// 	enter: 'bottom top',
-			// 	leave: 'top bottom'
-			// })
+			defaults: { duration: 3000 },
+			autoplay: onScroll({
+				container: '.scroll-container',
+				sync: true,
+				debug: true,
+				enter: '-10px top',
+				leave: 'top bottom'
+			})
 		});
 		let current_time: number = 0;
 		timeline.label('start');
 
-		// Main text animation
+		timeline.add('#video-section', {
+			opacity: [{ from: 1, to: 0}], easing: 'easeInOutQuad'
+		});
+		timeline.add('#story-section', {
+			opacity: [{ from: 0, to: 1, easing: 'easeInOutQuad' }]
+		});
 
-		timeline.label('text-start');
+		// Story animation
+
 		storyData.forEach((item, i) => {
 			timeline
 				.add(
@@ -104,6 +109,7 @@
 					year,
 					{
 						value: item.year,
+						modifier: utils.snap(1),
 						round: 1,
 						easing: 'easeInOutQuad'
 					},
@@ -112,10 +118,12 @@
 			current_time += 2000; // 1s display + 1s transition
 		});
 
-		// Image animation
-
-		// Chart animation
-
+		// timeline.add('#story-section', {
+		// 	opacity: [{ from: 1, to: 0, easing: 'easeInOutQuad', duration: 1000 }]
+		// });
+		// timeline.add('#science-section', {
+		// 	opacity: [{ from: 0, to: 1, easing: 'easeInOutQuad', duration: 1000 }]
+		// });
 		animate('#highjumptitle', rolling_effect());
 		animate('#scientisttitle', rolling_effect());
 	});
@@ -123,7 +131,7 @@
 
 <div class="scroll-container">
 	<div class="scroll-content">
-		<div class="scroll-section">
+		<div class="scroll-section" id="video-section">
 			<div class="relative flex justify-center bg-base-900">
 				<div class="relative w-screen aspect-video">
 					<div class="w-full h-full relative overflow-hidden bg-base-200">
@@ -166,7 +174,7 @@
 		</div>
 
 		<!-- High Jump story -->
-		<div class="scroll-section">
+		<div class="scroll-section" id="story-section">
 			<div class="hero bg-base-500 min-h-4xl py-4">
 				<div class="hero-content text-center">
 					<div class="perspective-dramatic perspective-origin-bottom">
@@ -213,7 +221,7 @@
 		</section> -->
 
 		<!-- Science part -->
-		<div class="scroll-section">
+		<div class="scroll-section" id="science-section">
 			<div class="hero bg-base-500">
 				<div class="hero-content text-center">
 					<div class="">
@@ -230,6 +238,17 @@
 	.scroll-container {
 		height: 100vh;
 		overflow-y: scroll;
-		scrollbar-width: none;
+		/*scrollbar-width: none;*/
+	}
+
+	.scroll-content {
+		height: 300vh;
+		position: relative;
+	}
+
+	.scroll-section {
+		top: 0;
+		overflow: hidden;
+		position: sticky;
 	}
 </style>
