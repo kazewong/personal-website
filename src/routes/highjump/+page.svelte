@@ -19,13 +19,18 @@
 	const storyData: StoryItem[] = StoryData as StoryItem[];
 
 	let slider_pos: number = $state(50);
-	let scroll_progress = $state(0);
-	// const getValues = () => {
-	// 	scroll_progress = observer.scroll;
-	// 	console.log(scroll_progress);
-	// };
-	let scrollObserver: ScrollObserver = $state(null);
+	let scroll_container: HTMLDivElement;
+	let scroll_progress: number = $state(0);
+	function scroll_snap() {
+		const section_height = window.innerHeight;
+		const scroll_top = scroll_container.scrollTop;
+		const section_index = Math.round(scroll_top / section_height);
+		const target_scroll_top = section_index * section_height;
+		scroll_container.scrollTo({ top: target_scroll_top, behavior: 'smooth' })
+		scroll_progress = scroll_container.scrollTop;
+	}
 
+	let scrollObserver: ScrollObserver = $state(null);
 	let year = $state({ value: '2009' });
 
 	const rolling_effect = () => {
@@ -115,7 +120,6 @@
 
 			onUpdate: (self) => {
 				timeline.currentTime = self.scroll;
-				scroll_progress = self.scroll;
 			}
 		});
 
@@ -134,13 +138,13 @@
 	<h1>scroll: {scroll_progress}</h1>
 </div>
 
-<div class="scroll-container">
+<div class="scroll-container" bind:this={scroll_container} onscroll={scroll_snap}>
 	<div class="scroll-content">
 		<div class="scroll-section" id="video-section">
 			<div class="relative flex justify-center bg-base-900">
 				<div class="relative w-screen aspect-video">
 					<div class="w-full h-full relative overflow-hidden bg-base-200">
-						<div class="absolute inset-0">
+						<div class="absolute inset-0" id="video-left">
 							<video src={pov} muted preload="metadata" autoplay loop>
 								<track kind="captions" />
 							</video>
@@ -150,7 +154,11 @@
 							</div>
 						</div>
 
-						<div class="absolute inset-0" style="clip-path: inset(0 0 0 {slider_pos}%);">
+						<div
+							class="absolute inset-0"
+							style="clip-path: inset(0 0 0 {slider_pos}%);"
+							id="video-right"
+						>
 							<video src={side} muted preload="metadata" autoplay loop>
 								<track kind="captions" />
 							</video>
@@ -227,7 +235,7 @@
 
 		<!-- Science part -->
 		<div class="scroll-section opacity-0" id="science-section">
-			<div class="hero bg-base-500">
+			<div class="hero bg-base-500 py-4">
 				<div class="hero-content text-center">
 					<div class="">
 						<h1 class="text-5xl font-bold" id="scientisttitle">I am also a high jump scientist</h1>
