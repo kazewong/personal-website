@@ -7,6 +7,7 @@
 
 	import pov from '$lib/assets/videos/pov_small.mp4';
 	import side from '$lib/assets/videos/side_small.mp4';
+	import { time } from 'three/src/nodes/TSL.js';
 
 	type StoryItem = {
 		image: string | null;
@@ -48,30 +49,18 @@
 	};
 
 	onMount(() => {
-		scrollObserver = onScroll({
-			container: '.scroll-container',
-			sync: true,
-			debug: true,
-			enter: 'bottom top',
-			leave: 'top bottom'
-		});
-
 		// Year animation
+		const time_unit: number = 750; // 1 second per year
 		const timeline = createTimeline({
-			defaults: { duration: 3000 },
-			autoplay: onScroll({
-				container: '.scroll-container',
-				sync: true,
-				debug: true,
-				enter: '-10px top',
-				leave: 'top bottom'
-			})
+			defaults: { duration: time_unit },
+			autoplay: false
 		});
 		let current_time: number = 0;
 		timeline.label('start');
 
 		timeline.add('#video-section', {
-			opacity: [{ from: 1, to: 0}], easing: 'easeInOutQuad'
+			opacity: [{ from: 1, to: 0 }],
+			easing: 'easeInOutQuad'
 		});
 		timeline.add('#story-section', {
 			opacity: [{ from: 0, to: 1, easing: 'easeInOutQuad' }]
@@ -86,11 +75,11 @@
 					{
 						x: [
 							{ from: 100, to: 0, easing: 'easeInOutQuad' },
-							{ from: 0, to: -100, easing: 'easeInOutQuad', delay: 1000 }
+							{ from: 0, to: -100, easing: 'easeInOutQuad', delay: time_unit }
 						],
 						opacity: [
-							{ from: 0, to: 1, easing: 'easeInOutQuad', duration: 1000 },
-							{ from: 1, to: 0, easing: 'easeInOutQuad', delay: 1000, duration: 500 }
+							{ from: 0, to: 1, easing: 'easeInOutQuad' },
+							{ from: 1, to: 0, easing: 'easeInOutQuad', delay: 1000 }
 						]
 					},
 					current_time
@@ -99,8 +88,8 @@
 					`#test-img-${i}`,
 					{
 						opacity: [
-							{ from: 0, to: 1, easing: 'easeInOutQuad', duration: 1000 },
-							{ from: 1, to: 0, easing: 'easeInOutQuad', delay: 1000, duration: 500 }
+							{ from: 0, to: 1, easing: 'easeInOutQuad' },
+							{ from: 1, to: 0, easing: 'easeInOutQuad', delay: 1000 }
 						]
 					},
 					current_time
@@ -115,19 +104,35 @@
 					},
 					current_time
 				);
-			current_time += 2000; // 1s display + 1s transition
+			current_time += time_unit * 2; // 1s display + 1s transition
 		});
 
-		// timeline.add('#story-section', {
-		// 	opacity: [{ from: 1, to: 0, easing: 'easeInOutQuad', duration: 1000 }]
-		// });
-		// timeline.add('#science-section', {
-		// 	opacity: [{ from: 0, to: 1, easing: 'easeInOutQuad', duration: 1000 }]
-		// });
-		animate('#highjumptitle', rolling_effect());
-		animate('#scientisttitle', rolling_effect());
+		scrollObserver = onScroll({
+			container: '.scroll-container',
+			debug: true,
+			enter: 'bottom top',
+			leave: 'top bottom',
+
+			onUpdate: (self) => {
+				timeline.currentTime = self.scroll;
+				scroll_progress = self.scroll;
+			}
+		});
+
+		timeline.add('#story-section', {
+			opacity: [{ from: 1, to: 0, easing: 'easeInOutQuad', duration: 1000 }]
+		});
+		timeline.add('#science-section', {
+			opacity: [{ from: 0, to: 1, easing: 'easeInOutQuad', duration: 1000 }]
+		});
+		// animate('#highjumptitle', rolling_effect());
+		// animate('#scientisttitle', rolling_effect());
 	});
 </script>
+
+<div class="sticky">
+	<h1>scroll: {scroll_progress}</h1>
+</div>
 
 <div class="scroll-container">
 	<div class="scroll-content">
@@ -174,7 +179,7 @@
 		</div>
 
 		<!-- High Jump story -->
-		<div class="scroll-section" id="story-section">
+		<div class="scroll-section grid-cols-1 grid-rows-1" id="story-section">
 			<div class="hero bg-base-500 min-h-4xl py-4">
 				<div class="hero-content text-center">
 					<div class="perspective-dramatic perspective-origin-bottom">
@@ -221,7 +226,7 @@
 		</section> -->
 
 		<!-- Science part -->
-		<div class="scroll-section" id="science-section">
+		<div class="scroll-section opacity-0" id="science-section">
 			<div class="hero bg-base-500">
 				<div class="hero-content text-center">
 					<div class="">
@@ -236,13 +241,13 @@
 <!-- This is needed for the scrolling to work -->
 <style>
 	.scroll-container {
-		height: 100vh;
+		height: 2000vh;
 		overflow-y: scroll;
-		/*scrollbar-width: none;*/
+		scrollbar-width: none;
 	}
 
 	.scroll-content {
-		height: 300vh;
+		height: 4000vh; /* Make sure this is taller than the container */
 		position: relative;
 	}
 
