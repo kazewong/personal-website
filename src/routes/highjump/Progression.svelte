@@ -111,6 +111,8 @@
 		const origXMax = (endDate - startDate) / 1000;
 		const xMax = compressX(origXMax);
 
+		
+		
 		chartInstance = new Chart(context, {
 			type: 'scatter',
 			data: {

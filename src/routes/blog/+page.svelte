@@ -169,6 +169,17 @@
 		class="input input-bordered"
 		bind:value={tagSearch}
 	/>
+	<div class="flex justify-center items-center gap-4">
+		<button class="btn btn-sm" onclick={prevPage} disabled={currentPage === 1}> Previous </button>
+		<span>Page {currentPage} of {Math.ceil(searchedTags.length / tagsPerPage)}</span>
+		<button
+			class="btn btn-sm"
+			onclick={nextPage}
+			disabled={currentPage * tagsPerPage >= searchedTags.length}
+		>
+			Next
+		</button>
+	</div>
 	<div class="flex flex-wrap gap-2 py-2">
 		{#each paginatedTags as tag}
 			{#if tag.selected}
@@ -192,17 +203,15 @@
 			{/if}
 		{/each}
 	</div>
-	<div class="flex justify-center items-center gap-4">
-		<button class="btn btn-sm" onclick={prevPage} disabled={currentPage === 1}> Previous </button>
-		<span>Page {currentPage} of {Math.ceil(searchedTags.length / tagsPerPage)}</span>
-		<button
-			class="btn btn-sm"
-			onclick={nextPage}
-			disabled={currentPage * tagsPerPage >= searchedTags.length}
-		>
-			Next
-		</button>
-	</div>
+</div>
+<div class="flex justify-center items-center gap-4 py-4">
+	<button class="btn btn-sm" onclick={prevPostPage} disabled={postPage === 1}>Previous</button>
+	<span>Page {postPage} of {Math.ceil(renderPosts.posts.length / postsPerPage)}</span>
+	<button
+		class="btn btn-sm"
+		onclick={nextPostPage}
+		disabled={postPage * postsPerPage >= renderPosts.posts.length}>Next</button
+	>
 </div>
 
 <ul>
@@ -229,12 +238,3 @@
 		{/each}
 	{/if}
 </ul>
-<div class="flex justify-center items-center gap-4 py-4">
-	<button class="btn btn-sm" onclick={prevPostPage} disabled={postPage === 1}>Previous</button>
-	<span>Page {postPage} of {Math.ceil(renderPosts.posts.length / postsPerPage)}</span>
-	<button
-		class="btn btn-sm"
-		onclick={nextPostPage}
-		disabled={postPage * postsPerPage >= renderPosts.posts.length}>Next</button
-	>
-</div>

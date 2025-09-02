@@ -5,7 +5,7 @@
 	let title = $state('');
 
 	onMount(() => {
-		const fullText = 'I am a Software Engineer';
+		const fullText = 'I write a lot of code';
 
 		let i = 0;
 		function typeWriter() {
@@ -18,12 +18,11 @@
 		typeWriter();
 
 		animate('#typewriter', {
-			borderColor: [{ from: '#fff', to: '#fff0', duration: 50}],
+			borderColor: [{ from: '#fff', to: '#fff0', duration: 50 }],
 			loopDelay: 500,
 			loop: 5,
 			alternate: true,
 			reversed: true
-			
 		});
 	});
 </script>
