@@ -142,12 +142,20 @@
 			}
 		});
 
-		timeline.add('#story-section', {
-			opacity: [{ from: 1, to: 0, easing: 'easeInOutQuad' }]
-		}, current_time);
-		timeline.add('#science-section', {
-			opacity: [{ from: 0, to: 1, easing: 'easeInOutQuad' }]
-		}, current_time);
+		timeline.add(
+			'#story-section',
+			{
+				opacity: [{ from: 1, to: 0, easing: 'easeInOutQuad' }]
+			},
+			current_time
+		);
+		timeline.add(
+			'#science-section',
+			{
+				opacity: [{ from: 0, to: 1, easing: 'easeInOutQuad' }]
+			},
+			current_time
+		);
 
 		const total_duration = timeline.duration;
 		const scroll_length = scrollObserver.distance;
@@ -223,7 +231,10 @@
 			<div class="flex justify-center">
 				<div class="grid place-items-center w-[40%]">
 					{#each storyData as item, i}
-						<p id="test-text-{i}" class="text-2xl opacity-0 col-start-1 row-start-1">
+						<p
+							id="test-text-{i}"
+							class=" opacity-0 col-start-1 row-start-1 text-sm max-h-64 overflow-y-scroll lg:text-2xl lg:overflow-auto lg:max-h-full"
+						>
 							{item.text}
 						</p>
 					{/each}
@@ -235,7 +246,7 @@
 								id="test-img-{i}"
 								src={item.image}
 								alt={item.title}
-								class=" opacity-0 col-start-1 row-start-1"
+								class=" opacity-0 col-start-1 row-start-1 text-sm max-h-64 overflow-y-scroll lg:text-2xl lg:overflow-auto lg:max-h-full"
 							/>
 						{/if}
 					{/each}
