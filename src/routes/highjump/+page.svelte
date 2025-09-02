@@ -63,7 +63,7 @@
 				}
 			}
 			scroll_container.scrollTo({ top: closest, behavior: 'smooth' });
-		}, 120); // 120ms after last scroll event
+		}, 80); // 120ms after last scroll event
 	}
 	onMount(() => {
 		// Year animation
@@ -150,17 +150,33 @@
 			current_time
 		);
 		timeline.add(
+			'#results-section',
+			{
+				opacity: [{ from: 0, to: 1, easing: 'easeInOutQuad' }]
+			},
+			current_time
+		);
+		
+		current_time += time_unit * 2;
+		
+		timeline.add(
+			'#results-section',
+			{
+				opacity: [{ from: 1, to: 0, easing: 'easeInOutQuad' }]
+			},
+			current_time
+		);
+		timeline.add(
 			'#science-section',
 			{
 				opacity: [{ from: 0, to: 1, easing: 'easeInOutQuad' }]
 			},
 			current_time
 		);
+		
 
 		const total_duration = timeline.duration;
-		const scroll_length = scrollObserver.distance;
-		const n_sections = 6;
-		console.log(total_duration, scroll_length);
+		const n_sections = 7;
 		for (let i = 0; i <= n_sections; i++) {
 			scroll_breakpoints.push((i * total_duration) / n_sections);
 		}
@@ -254,7 +270,7 @@
 			</div>
 		</div>
 
-		<!-- <section class="scroll-section">
+		<section class="scroll-section opacity-0" id="results-section">
 			<div class="hero bg-base-500 min-h-4xl py-4">
 				<div class="hero-content text-center">
 					<div class="">
@@ -265,7 +281,7 @@
 					</div>
 				</div>
 			</div>
-		</section> -->
+		</section>
 
 		<!-- Science part -->
 		<div class="scroll-section opacity-0" id="science-section">
