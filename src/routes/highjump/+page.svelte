@@ -7,7 +7,7 @@
 
 	import pov from '$lib/assets/videos/pov_small.mp4';
 	import side from '$lib/assets/videos/side_small.mp4';
-	import { time } from 'three/src/nodes/TSL.js';
+	import Scene from '../(experimental)/threejs/Scene.svelte';
 
 	type StoryItem = {
 		image: string | null;
@@ -17,18 +17,10 @@
 	};
 
 	const storyData: StoryItem[] = StoryData as StoryItem[];
+	const time_unit: number = 750; // 1 second per year
 
 	let slider_pos: number = $state(50);
 	let scroll_container: HTMLDivElement;
-	let scroll_progress: number = $state(0);
-	function scroll_snap() {
-		const section_height = window.innerHeight;
-		const scroll_top = scroll_container.scrollTop;
-		const section_index = Math.round(scroll_top / section_height);
-		const target_scroll_top = section_index * section_height;
-		scroll_container.scrollTo({ top: target_scroll_top, behavior: 'smooth' })
-		scroll_progress = scroll_container.scrollTop;
-	}
 
 	let scrollObserver: ScrollObserver = $state(null);
 	let year = $state({ value: '2009' });
@@ -53,9 +45,28 @@
 		};
 	};
 
+	let scroll_breakpoints: number[] = $state([]);
+
+	function scroll_snap() {
+		// Only snap when user stops scrolling (debounce)
+		if (scroll_snap._timeout) clearTimeout(scroll_snap._timeout);
+		scroll_snap._timeout = setTimeout(() => {
+			const scroll_top = scroll_container.scrollTop;
+			// Find the closest breakpoint in scroll_breakpoints
+			let closest = scroll_breakpoints[0];
+			let minDiff = Math.abs(scroll_top - closest);
+			for (let i = 1; i < scroll_breakpoints.length; i++) {
+				const diff = Math.abs(scroll_top - scroll_breakpoints[i]);
+				if (diff < minDiff) {
+					minDiff = diff;
+					closest = scroll_breakpoints[i];
+				}
+			}
+			scroll_container.scrollTo({ top: closest, behavior: 'smooth' });
+		}, 120); // 120ms after last scroll event
+	}
 	onMount(() => {
 		// Year animation
-		const time_unit: number = 750; // 1 second per year
 		const timeline = createTimeline({
 			defaults: { duration: time_unit },
 			autoplay: false
@@ -63,13 +74,21 @@
 		let current_time: number = 0;
 		timeline.label('start');
 
-		timeline.add('#video-section', {
-			opacity: [{ from: 1, to: 0 }],
-			easing: 'easeInOutQuad'
-		});
-		timeline.add('#story-section', {
-			opacity: [{ from: 0, to: 1, easing: 'easeInOutQuad' }]
-		});
+		timeline.add(
+			'#video-section',
+			{
+				opacity: [{ from: 1, to: 0 }],
+				easing: 'easeInOutQuad'
+			},
+			0
+		);
+		timeline.add(
+			'#story-section',
+			{
+				opacity: [{ from: 0, to: 1, easing: 'easeInOutQuad' }]
+			},
+			0
+		);
 
 		// Story animation
 
@@ -124,19 +143,23 @@
 		});
 
 		timeline.add('#story-section', {
-			opacity: [{ from: 1, to: 0, easing: 'easeInOutQuad', duration: 1000 }]
-		});
+			opacity: [{ from: 1, to: 0, easing: 'easeInOutQuad' }]
+		}, current_time);
 		timeline.add('#science-section', {
-			opacity: [{ from: 0, to: 1, easing: 'easeInOutQuad', duration: 1000 }]
-		});
+			opacity: [{ from: 0, to: 1, easing: 'easeInOutQuad' }]
+		}, current_time);
+
+		const total_duration = timeline.duration;
+		const scroll_length = scrollObserver.distance;
+		const n_sections = 6;
+		console.log(total_duration, scroll_length);
+		for (let i = 0; i <= n_sections; i++) {
+			scroll_breakpoints.push((i * total_duration) / n_sections);
+		}
 		// animate('#highjumptitle', rolling_effect());
 		// animate('#scientisttitle', rolling_effect());
 	});
 </script>
-
-<div class="sticky">
-	<h1>scroll: {scroll_progress}</h1>
-</div>
 
 <div class="scroll-container" bind:this={scroll_container} onscroll={scroll_snap}>
 	<div class="scroll-content">
