@@ -32,18 +32,25 @@ I think even an AI that has reached singularity is still going to be somewhat in
 
 Finally, the property I want to focus on is the third one, that the AI can progress science infinitely fast. Let me just say I don't think this is true, and here is the blog post to explain why.
 
-
 # Okay AI can improve itself, now what?
 
-I think there is a misconception about what is going to happen after the AI can start to determininistically improve its performance, both in 
+I think it is a misconception that once AI reaches singularity then overnight it becomes this entity that is centuries ahead of our time. Even when AI can deterministically improve itself, this doesn't necessarily mean the timescale of improvement is of days, weeks, or months. To speculate on the timescale of AI improvement under no constraint is beyond my imgination, but I can at least list some of the limiting factors that could potentially limit the rate of improvement of AI.
 
-## Energy restriction
+## Energy limitation
 
-However efficient the machine might be, it cannot defy physical law.
+However efficient the machine might be, it is difficult for me to imagine it defying our understanding of the laws of physics, at least within this century. To scale up in intelligence, which I define as the capability to solve increasing more diverse and complex problems, more and more energy is likely required. At the same time, being able to solve many problems at once, which is what we can imagine an AI overlord may want to do, also requires more energy.
 
-## Data Restriction
+One may say the AI can improve its own efficiency, but there is a limit to how efficient a problem can be solved. So at some point the AI is going to need more energy to reach both higher intelligence and higher throughput. And here is how energy production rate is going to limit the rate of improvement of AI.
+Constructing new power plants takes time, and there are costs associated with running the power distribution infrastructure. It would be an interesting calculation to estimate how much energy is required to run a ASI, perhaps in another blog post.
 
-## Rate of improvement
+## Hardware limitation
+
+Going hand in hand with energy limitation is hardware limitation. To scale up an AI intelligence and throughput, not only it needs more energy but also more processing power, memory, and storage. After the AI gains control over energy production, it also needs to optimize the production and deployment of hardware. Obviously both energy production and hardware production are complex problems associated with their own timescale, from raw material extraction, to logistics and manufacturing, to deployment and maintenance. If the AI is to mass produce robots to help with these tasks, then it will add another layer of complexity of robot design and manufacturing. It is hard to pinpoint how quickly the AI can solve these problems in the real world, but I think a reasonable guess is that a planet-scale factory is not going to be bulit in the next two decades. 
+
+## Data limitation
+
+While the first two limitations are somewhat an engineering problem that perhaps some sci-fi scenario happens and expedite the process, data limitation remains a more fundamental issue, at least for some subset of problems. Say the AI wants revolutionalize our understanding to the Sun, in particular to be able to drastically improve its capability of predicting solar activity such as solar flares over a timescale of 50 years. The limiting factor here is the amount and quality of data we have over such period, which means the AI has to at least wait for 50 years or some reasonable fraction of it to collect the data. Theory can only help so much, and if you are not convinced, try changing the subject from the Sun to the farside of Neptune.
+This is an example to point there will be a set of problems that just have a fundamentally long timescale, and no matter how intelligent the AI is, it cannot speed up the process.
 
 # Some big questions
 
