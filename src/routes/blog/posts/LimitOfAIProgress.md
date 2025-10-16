@@ -49,14 +49,23 @@ Going hand in hand with energy limitation is hardware limitation. To scale up an
 
 ## Data limitation
 
-While the first two limitations are somewhat an engineering problem that perhaps some sci-fi scenario happens and expedite the process, data limitation remains a more fundamental issue, at least for some subset of problems. Say the AI wants revolutionalize our understanding to the Sun, in particular to be able to drastically improve its capability of predicting solar activity such as solar flares over a timescale of 50 years. The limiting factor here is the amount and quality of data we have over such period, which means the AI has to at least wait for 50 years or some reasonable fraction of it to collect the data. Theory can only help so much, and if you are not convinced, try changing the subject from the Sun to the farside of Neptune.
-This is an example to point there will be a set of problems that just have a fundamentally long timescale, and no matter how intelligent the AI is, it cannot speed up the process.
+While the first two limitations are somewhat an engineering problem that perhaps some sci-fi scenario happens and expedite the process, data limitation remains a more fundamental issue, at least for some subset of problems. Say the AI wants revolutionalize our understanding to the Sun, in particular to be able to drastically improve its capability of predicting solar activity such as solar flares over a timescale of 50 years. The limiting factor here is the amount and quality of data we have over such period, which means the AI has to at least wait for 50 years or some reasonable fraction of it to collect the data. Theory can only help so much, and if you are not convinced yet, try changing the subject from the Sun to the farside of Neptune.
+This is an example to point **there will be a set of problems that just have a fundamentally long timescale, and no matter how intelligent the AI is, it cannot speed up the process.**
 
 # Some big questions
 
 ## Will AI exterminate human like SkyNet?
 
-On one hand life is very hard to exterminate, on the other hand the machine could be really good. Either way, if AI is to create misery, it is going to be a ton of misery
+Probably not. Exterminating humans is quite difficult: nuke can miss some bunkers and bioweapons may miss some pocket of isolated tribes. Not to say the AI does not have the capability to set back modern civilization to a pre-industrial level, but total extinction is much harder than eliminating 99.99% of human population (And there will still be 100k people left).
+Secondly, killer robots are not that efficient. Imagine in the far future that somehow this advance AI is still killing human with humanoid machine with guns, how primitive is that. Even human have come up with better ways to kill each other, such as neutron bombs. **So no, AI is not likely to exterminate human, and certainly not in a SkyNet way if it does.**
 
-## Implication
+## What will be left for human to do?
+
+Gladiator. I have always been saying since undergraduate time that in the far future where AI can do everything human can do and better, the only "job" for human exclusively is human gladiator. People used to say AI can never do art and creative jobs, that aged like fine milk. The only truely irreplaceable quality of human is the fact that we are human. We still watch horse races despite cars are much faster. In the same vein, the only thing economically productive left for human is to serve as a specimen for whatever purpose.
+
+That sounded radical, nonetheless I think it is the only logical conclusion I can think of. Now the more meaningful question is what will be the purpose of "job" in the post-ASI world. And that I think we should look no further than what is already happening now. Have you ever wondered why a certain occupation exists, or in an amount that doesn't make sense? White collar jobs such as admins in university in the US always confuse me because I see a large number of them but yet every time I need something done it is always counter productive (yes, personal beef when I was a professor).
+Let's be real, not every job in the world is necessary or near necessary. By necessary I don't mean for the society, but it could be for the organization itself. Entities such as large corporations, governments, and universities have a tendency to bloat in size and headcount by fragmenting a job that can be handled by one person into multiple positions, or creating new positions that are not necessary.
+And the takers of these jobs are not necessarily searching for meaning in these jobs, it is merely a way to make a living. So in the post-ASI world where jobs no longer requires human as input, the questions become how to maintain living standard and what is the meaning of labour. This is a huge topic that we can go back and forth for days so I am not going to list all the points I can think of, but here is my thought: chill, do something that is meaningful to you purely because you want to do it. Read a book not to gain some advantage in a job, write a book not to be published and make money. Do the thing just to do the thing. 
+
+
 
