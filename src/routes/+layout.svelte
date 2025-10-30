@@ -56,12 +56,12 @@
 					<li>
 						<a href="/highjump">Jump</a>
 					</li>
-					<li>
+					<!-- <li>
 						<a href="/code">Code</a>
-					</li>
-					<li>
+					</li> -->
+					<!-- <li>
 						<a href="/animation">Animation</a>
-					</li>
+					</li> -->
 					<li>
 						<a href="/cooking">Cooking</a>
 					</li>
