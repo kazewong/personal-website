@@ -27,11 +27,10 @@
 	let scroll_breakpoints: number[] = $state([]);
 	let scroll_current_index: number = $state(0);
 	let scroll_snap: () => void = $state(() => {});
-	let scrolly: number = $state(0);
 
 	onMount(() => {
-	    const n_sections = StoryData.length;	
-		const time_unit = scroll_container.clientHeight / ((n_sections+1)*2) ; // 1 second per section
+	    const n_sections = StoryData.length + 3;
+		const time_unit = scroll_container.clientHeight / (n_sections*2) ; // 1 second per section
 		console.log('Total length in pixel:', scroll_container.clientHeight, 'Number of sections:', n_sections, 'Time unit (px):', time_unit);
 		// Year animation
 		const timeline = createTimeline({
@@ -39,24 +38,30 @@
 			autoplay: false
 		});
 		let current_time: number = 0;
-		const total_duration = timeline.duration;
 		for (let i = 0; i <= n_sections; i++) {
-			scroll_breakpoints.push((i * total_duration) / n_sections);
+			scroll_breakpoints.push(i * time_unit);
 		}
 		console.log('Scroll breakpoints:', scroll_breakpoints);
 		timeline.label('start');
 
+		let scroll_snap_timeout: ReturnType<typeof setTimeout> | null = null;
+
 		scroll_snap = () => {
 			// Only snap when user stops scrolling (debounce)
-			const scroll_top = scroll_container.scrollTop;
-			// Find the closest breakpoint in scroll_breakpoints
-			let minDiff = scroll_top % time_unit ;
-			console.log('Scroll top:', scroll_top, 'Current:', scroll_current_index, 'Diff:', minDiff, time_unit);
-			if (minDiff > time_unit) {
-				// scrolling down
-				scroll_current_index += 1;
-				// scroll_container.scrollTo({ top: scroll_current_index * time_unit, behavior: 'smooth' });
+			if (scroll_snap_timeout) {
+				clearTimeout(scroll_snap_timeout);
 			}
+			scroll_snap_timeout = setTimeout(() => {
+				const scroll_top = scroll_container.scrollTop;
+				// Find the closest breakpoint in scroll_breakpoints
+				let minDiff = scroll_top - scroll_breakpoints[scroll_current_index];
+				console.log('Scroll top:', scroll_top, 'Current:', Math.trunc(scroll_top / time_unit), 'Diff:', minDiff, 'Index:', scroll_current_index);
+				if (minDiff >100) {
+					// scrolling down
+					scroll_current_index += 1;
+					scroll_container.scrollTo({ top: (scroll_current_index) * time_unit, behavior: 'smooth' });
+				}
+			}, 150); // 150ms debounce
 		};
 
 		timeline.add(
@@ -163,8 +168,6 @@
 		// animate('#scientisttitle', rolling_effect());
 	});
 </script>
-
-<svelte:window bind:scrollY={scrolly} />
 
 <div class="scroll-container" bind:this={scroll_container} onscroll={scroll_snap}>
 	<div class="scroll-content">
