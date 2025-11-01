@@ -61,7 +61,7 @@
 					scroll_current_index += 1;
 					scroll_container.scrollTo({ top: (scroll_current_index) * time_unit, behavior: 'smooth' });
 				}
-			}, 150); // 150ms debounce
+			}, 30); // 150ms debounce
 		};
 
 		timeline.add(
@@ -123,7 +123,6 @@
 
 		scrollObserver = onScroll({
 			container: '.scroll-container',
-			debug: true,
 			enter: 'bottom top',
 			leave: 'top bottom',
 
