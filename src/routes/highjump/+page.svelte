@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { animate, stagger, createTimeline, onScroll, utils } from 'animejs';
+	import { animate, stagger, createTimeline, onScroll, utils, ScrollObserver } from 'animejs';
 	import { onMount } from 'svelte';
 	import resultsData from './Results.json';
 	import StoryData from './StoryData.json';
@@ -17,62 +17,47 @@
 	};
 
 	const storyData: StoryItem[] = StoryData as StoryItem[];
-	const time_unit: number = 750; // 1 second per year
 
 	let slider_pos: number = $state(50);
-	let scroll_container: HTMLDivElement;
 
 	let scrollObserver: ScrollObserver = $state(null);
 	let year = $state({ value: '2009' });
 
-	const rolling_effect = () => {
-		const duration: number = 600;
-		return {
-			perspective: '100px',
-			rotateX: [{ from: -25, to: 0, duration: duration, easing: 'easeInOutQuad' }],
-			y: [{ from: 50, to: 0, duration: duration, easing: 'easeInOutQuad' }],
-			delay: stagger(50),
-			onUpdate: () => {
-				scroll_progress = scrollObserver.scroll;
-			},
-			autoplay: onScroll({
-				container: '.scroll-container',
-				sync: true,
-				debug: true,
-				enter: 'bottom top',
-				leave: 'top bottom'
-			})
-		};
-	};
-
+	let scroll_container: HTMLDivElement;
 	let scroll_breakpoints: number[] = $state([]);
+	let scroll_current_index: number = $state(0);
+	let scroll_snap: () => void = $state(() => {});
+	let scrolly: number = $state(0);
 
-	function scroll_snap() {
-		// Only snap when user stops scrolling (debounce)
-		if (scroll_snap._timeout) clearTimeout(scroll_snap._timeout);
-		scroll_snap._timeout = setTimeout(() => {
-			const scroll_top = scroll_container.scrollTop;
-			// Find the closest breakpoint in scroll_breakpoints
-			let closest = scroll_breakpoints[0];
-			let minDiff = Math.abs(scroll_top - closest);
-			for (let i = 1; i < scroll_breakpoints.length; i++) {
-				const diff = Math.abs(scroll_top - scroll_breakpoints[i]);
-				if (diff < minDiff) {
-					minDiff = diff;
-					closest = scroll_breakpoints[i];
-				}
-			}
-			scroll_container.scrollTo({ top: closest, behavior: 'smooth' });
-		}, 80); // 120ms after last scroll event
-	}
 	onMount(() => {
+	    const n_sections = StoryData.length;	
+		const time_unit = scroll_container.clientHeight / ((n_sections+1)*2) ; // 1 second per section
+		console.log('Total length in pixel:', scroll_container.clientHeight, 'Number of sections:', n_sections, 'Time unit (px):', time_unit);
 		// Year animation
 		const timeline = createTimeline({
-			defaults: { duration: time_unit },
+			defaults: { duration: time_unit, easing: 'linear' },
 			autoplay: false
 		});
 		let current_time: number = 0;
+		const total_duration = timeline.duration;
+		for (let i = 0; i <= n_sections; i++) {
+			scroll_breakpoints.push((i * total_duration) / n_sections);
+		}
+		console.log('Scroll breakpoints:', scroll_breakpoints);
 		timeline.label('start');
+
+		scroll_snap = () => {
+			// Only snap when user stops scrolling (debounce)
+			const scroll_top = scroll_container.scrollTop;
+			// Find the closest breakpoint in scroll_breakpoints
+			let minDiff = scroll_top % time_unit ;
+			console.log('Scroll top:', scroll_top, 'Current:', scroll_current_index, 'Diff:', minDiff, time_unit);
+			if (minDiff > time_unit) {
+				// scrolling down
+				scroll_current_index += 1;
+				// scroll_container.scrollTo({ top: scroll_current_index * time_unit, behavior: 'smooth' });
+			}
+		};
 
 		timeline.add(
 			'#video-section',
@@ -128,7 +113,7 @@
 					},
 					current_time
 				);
-			current_time += time_unit * 2; // 1s display + 1s transition
+			current_time += time_unit; // 1s display + 1s transition
 		});
 
 		scrollObserver = onScroll({
@@ -156,9 +141,9 @@
 			},
 			current_time
 		);
-		
+
 		current_time += time_unit * 2;
-		
+
 		timeline.add(
 			'#results-section',
 			{
@@ -173,17 +158,13 @@
 			},
 			current_time
 		);
-		
 
-		const total_duration = timeline.duration;
-		const n_sections = 7;
-		for (let i = 0; i <= n_sections; i++) {
-			scroll_breakpoints.push((i * total_duration) / n_sections);
-		}
 		// animate('#highjumptitle', rolling_effect());
 		// animate('#scientisttitle', rolling_effect());
 	});
 </script>
+
+<svelte:window bind:scrollY={scrolly} />
 
 <div class="scroll-container" bind:this={scroll_container} onscroll={scroll_snap}>
 	<div class="scroll-content">
