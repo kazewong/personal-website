@@ -29,9 +29,16 @@
 	let scroll_snap: () => void = $state(() => {});
 
 	onMount(() => {
-	    const n_sections = StoryData.length + 3;
-		const time_unit = scroll_container.clientHeight / (n_sections*2) ; // 1 second per section
-		console.log('Total length in pixel:', scroll_container.clientHeight, 'Number of sections:', n_sections, 'Time unit (px):', time_unit);
+		const n_sections = StoryData.length + 3;
+		const time_unit = scroll_container.clientHeight / (n_sections * 2); // 1 second per section
+		// console.log(
+		// 	'Total length in pixel:',
+		// 	scroll_container.clientHeight,
+		// 	'Number of sections:',
+		// 	n_sections,
+		// 	'Time unit (px):',
+		// 	time_unit
+		// );
 		// Year animation
 		const timeline = createTimeline({
 			defaults: { duration: time_unit, easing: 'linear' },
@@ -44,6 +51,16 @@
 		console.log('Scroll breakpoints:', scroll_breakpoints);
 		timeline.label('start');
 
+		scrollObserver = onScroll({
+			container: '.scroll-container',
+			enter: 'bottom top',
+			leave: 'top bottom',
+
+			onUpdate: (self) => {
+				timeline.currentTime = self.scroll;
+			}
+		});
+
 		let scroll_snap_timeout: ReturnType<typeof setTimeout> | null = null;
 
 		scroll_snap = () => {
@@ -55,18 +72,27 @@
 				const scroll_top = scroll_container.scrollTop;
 				// Find the closest breakpoint in scroll_breakpoints
 				let minDiff = scroll_top - scroll_breakpoints[scroll_current_index];
-				console.log('Scroll top:', scroll_top, 'Current:', Math.trunc(scroll_top / time_unit), 'Diff:', minDiff, 'Index:', scroll_current_index);
-				if (minDiff >100) {
+				// console.log(
+				// 	'Scroll top:',
+				// 	scroll_top,
+				// 	'Current:',
+				// 	Math.trunc(scroll_top / time_unit),
+				// 	'Diff:',
+				// 	minDiff,
+				// 	'Index:',
+				// 	scroll_current_index
+				// );
+				if (minDiff > 100) {
 					// scrolling down
 					scroll_current_index += 1;
 					scroll_current_index = Math.min(scroll_breakpoints.length - 1, scroll_current_index);
-					scroll_container.scrollTo({ top: (scroll_current_index) * time_unit, behavior: 'smooth' });
+					scroll_container.scrollTo({ top: scroll_current_index * time_unit, behavior: 'smooth' });
 				}
 				if (minDiff < -100) {
 					// scrolling down
 					scroll_current_index -= 1;
 					scroll_current_index = Math.max(0, scroll_current_index);
-					scroll_container.scrollTo({ top: (scroll_current_index) * time_unit, behavior: 'smooth' });
+					scroll_container.scrollTo({ top: scroll_current_index * time_unit, behavior: 'smooth' });
 				}
 			}, 50); // 150ms debounce
 		};
@@ -289,13 +315,17 @@
 <!-- This is needed for the scrolling to work -->
 <style>
 	.scroll-container {
+		/*height: var(--scroll_container_height);*/
 		height: 2000vh;
 		overflow-y: scroll;
 		scrollbar-width: none;
 	}
 
 	.scroll-content {
-		height: 4000vh; /* Make sure this is taller than the container */
+		/*height: var(
+			--scroll_content_height
+		); */
+		height: 4000vh;
 		position: relative;
 	}
 
