@@ -59,9 +59,16 @@
 				if (minDiff >100) {
 					// scrolling down
 					scroll_current_index += 1;
+					scroll_current_index = Math.min(scroll_breakpoints.length - 1, scroll_current_index);
 					scroll_container.scrollTo({ top: (scroll_current_index) * time_unit, behavior: 'smooth' });
 				}
-			}, 30); // 150ms debounce
+				if (minDiff < -100) {
+					// scrolling down
+					scroll_current_index -= 1;
+					scroll_current_index = Math.max(0, scroll_current_index);
+					scroll_container.scrollTo({ top: (scroll_current_index) * time_unit, behavior: 'smooth' });
+				}
+			}, 50); // 150ms debounce
 		};
 
 		timeline.add(
