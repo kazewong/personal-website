@@ -1,5 +1,7 @@
 <script lang="ts">
 	import '../app.css';
+	import { resolve } from '$app/paths';
+
 	import 'katex/dist/katex.min.css';
 	import { dev } from '$app/environment';
 	import { injectAnalytics } from '@vercel/analytics/sveltekit';
@@ -27,8 +29,8 @@
 {#if isMobile}
 	<!-- <div class="flex md:hidden"> -->
 	<div class="flex justify-between bg-indigo-50 dark:bg-gray-900 {isDarkMode ? 'dark' : ''}">
-		<div class="dropdown dropdown-hover">
-			<summary class="btn px-2 pt-2 bg-transparent border-0 hover:bg-transparent">
+		<div class="dropdown">
+			<div tabindex="0" role="button" class="px-2 pt-2">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 24 24"
@@ -42,12 +44,13 @@
 						d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
 					/>
 				</svg>
-			</summary>
+			</div>
 			<ul
-				class="menu dropdown-content rounded-box z-1 w-52 p-2 shadow-sm bg-indigo-50 dark:bg-gray-900"
+				tabindex="-1"
+				class=" dropdown-content menu rounded-box z-1 w-52 p-2 shadow-sm bg-indigo-50 dark:bg-gray-900"
 			>
 				<li>
-					<a href="/">Home</a>
+					<a href='./'>Home</a>
 				</li>
 				<li>
 					<a href="/blog">Blog</a>
@@ -64,7 +67,7 @@
 				<li>
 					<a href="/cooking">Cooking</a>
 				</li>
-				<li>
+				<!-- <li>
 					<details class="dropdown">
 						<summary
 							class="px-2 py-1 bg-transparent border-0 hover:underline cursor-pointer list-none"
@@ -79,7 +82,7 @@
 							</li>
 						</ul>
 					</details>
-				</li>
+				</li> -->
 			</ul>
 		</div>
 

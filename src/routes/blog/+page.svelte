@@ -1,4 +1,7 @@
 <script lang="ts">
+	import { SvelteSet } from 'svelte/reactivity';
+	import { resolve } from '$app/paths';
+
 	let { data } = $props();
 
 	// ==========================
@@ -25,7 +28,7 @@
 	};
 
 	function getInitialTags() {
-		const all_tags = new Set<string>();
+		const all_tags = new SvelteSet<string>();
 		for (const post of data.posts) {
 			for (const tag of post.meta.tags) {
 				all_tags.add(capitalizeFirstLetter(tag));
@@ -81,7 +84,7 @@
 			return tags;
 		}
 		// Find all tags that appear in posts matching all selected tags
-		const compatibleTagSet = new Set<string>();
+		const compatibleTagSet = new SvelteSet<string>();
 		for (const post of data.posts) {
 			const postTagNames = post.meta.tags.map(capitalizeFirstLetter);
 			if (selected.every((sel) => postTagNames.includes(sel))) {
@@ -181,7 +184,7 @@
 		</button>
 	</div>
 	<div class="flex flex-wrap gap-2 py-2">
-		{#each paginatedTags as tag}
+		{#each paginatedTags as tag (tag.name)}
 			{#if tag.selected}
 				<button
 					class="btn btn-md btn-outline btn-accent"
@@ -218,7 +221,7 @@
 	{#if paginatedPosts.length === 0}
 		<li>No posts found.</li>
 	{:else}
-		{#each paginatedPosts as post}
+		{#each paginatedPosts as post (post.path)}
 			<li class="mb-2">
 				<div>
 					<p class="text-sm text-gray-500">{post.meta.date}</p>
@@ -226,7 +229,7 @@
 				<div>
 					<h2 class="py-0 text-2xl">
 						<a
-							href={post.path}
+							href={resolve(post.path)}
 							class="transition-all duration-150 hover:text-gray-50 hover:scale-105"
 							style="display: inline-block;"
 						>
