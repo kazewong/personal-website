@@ -316,7 +316,7 @@
 <style>
 	.scroll-container {
 		/*height: var(--scroll_container_height);*/
-		height: 2000vh;
+		height: 1000vh;
 		overflow-y: scroll;
 		scrollbar-width: none;
 	}
@@ -325,7 +325,7 @@
 		/*height: var(
 			--scroll_content_height
 		); */
-		height: 4000vh;
+		height: 2000vh;
 		position: relative;
 	}
 

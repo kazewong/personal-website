@@ -27,9 +27,8 @@
 {#if isMobile}
 	<!-- <div class="flex md:hidden"> -->
 	<div class="flex justify-between bg-indigo-50 dark:bg-gray-900 {isDarkMode ? 'dark' : ''}">
-		<div class="px-4">
-			<details class="dropdown">
-				<summary class="btn p-0 bg-transparent border-0 hover:bg-transparent">
+		<div class="dropdown dropdown-hover">
+			<summary class="btn px-2 pt-2 bg-transparent border-0 hover:bg-transparent">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						viewBox="0 0 24 24"
@@ -44,45 +43,44 @@
 						/>
 					</svg>
 				</summary>
-				<ul
-					class="menu dropdown-content rounded-box z-1 w-52 p-2 shadow-sm bg-indigo-50 dark:bg-gray-900"
-				>
-					<li>
-						<a href="/">Home</a>
-					</li>
-					<li>
-						<a href="/blog">Blog</a>
-					</li>
-					<li>
-						<a href="/highjump">Jump</a>
-					</li>
-					<!-- <li>
+			<ul
+				class="menu dropdown-content rounded-box z-1 w-52 p-2 shadow-sm bg-indigo-50 dark:bg-gray-900"
+			>
+				<li>
+					<a href="/">Home</a>
+				</li>
+				<li>
+					<a href="/blog">Blog</a>
+				</li>
+				<li>
+					<a href="/highjump">Jump</a>
+				</li>
+				<!-- <li>
 						<a href="/code">Code</a>
 					</li> -->
-					<!-- <li>
+				<!-- <li>
 						<a href="/animation">Animation</a>
 					</li> -->
-					<li>
-						<a href="/cooking">Cooking</a>
-					</li>
-					<li>
-						<details class="dropdown">
-							<summary
-								class="px-2 py-1 bg-transparent border-0 hover:underline cursor-pointer list-none"
-							>
-								Others
-							</summary>
-							<ul
-								class="menu dropdown-content rounded-box z-10 w-44 p-2 shadow-sm bg-indigo-50 dark:bg-gray-900 text-gray-100"
-							>
-								<li>
-									<a href="/jhu_science">Science</a>
-								</li>
-							</ul>
-						</details>
-					</li>
-				</ul>
-			</details>
+				<li>
+					<a href="/cooking">Cooking</a>
+				</li>
+				<li>
+					<details class="dropdown">
+						<summary
+							class="px-2 py-1 bg-transparent border-0 hover:underline cursor-pointer list-none"
+						>
+							Others
+						</summary>
+						<ul
+							class="menu dropdown-content rounded-box z-10 w-44 p-2 shadow-sm bg-indigo-50 dark:bg-gray-900 text-gray-100"
+						>
+							<li>
+								<a href="/jhu_science">Science</a>
+							</li>
+						</ul>
+					</details>
+				</li>
+			</ul>
 		</div>
 
 		<!-- <div id="NavThemeSwitch" class="px-4 swap swap-rotate">
