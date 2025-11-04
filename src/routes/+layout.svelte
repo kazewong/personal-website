@@ -135,7 +135,7 @@
 			? 'dark'
 			: ''}"
 	>
-		<div id="NavContainer" class="flex flex-row py-4 max-w-[1024px] mx-auto">
+		<div id="NavContainer" class="flex flex-row py-4 max-w-5xl mx-auto">
 			<div id="NavLogo" class="basis-1/5 px-8">
 				<p class="text-nowrap">Kaze Wong</p>
 			</div>
@@ -221,7 +221,7 @@
 </svelte:head>
 
 <main class={isDarkMode ? 'dark' : ''}>
-	<div class="flex flex-col max-w-[1920px] min-h-screen my-auto mx-auto">
+	<div class="flex flex-col max-w-[1920px]min-h-screen my-auto mx-auto">
 		{@render children?.()}
 	</div>
 	<footer

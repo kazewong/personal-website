@@ -31,14 +31,14 @@
 	onMount(() => {
 		const n_sections = StoryData.length + 3;
 		const time_unit = scroll_container.clientHeight / (n_sections * 2); // 1 second per section
-		// console.log(
-		// 	'Total length in pixel:',
-		// 	scroll_container.clientHeight,
-		// 	'Number of sections:',
-		// 	n_sections,
-		// 	'Time unit (px):',
-		// 	time_unit
-		// );
+		console.log(
+			'Total length in pixel:',
+			scroll_container.clientHeight,
+			'Number of sections:',
+			n_sections,
+			'Time unit (px):',
+			time_unit
+		);
 		// Year animation
 		const timeline = createTimeline({
 			defaults: { duration: time_unit, easing: 'linear' },
@@ -82,13 +82,13 @@
 				// 	'Index:',
 				// 	scroll_current_index
 				// );
-				if (minDiff > 100) {
+				if (minDiff > time_unit/10) {
 					// scrolling down
 					scroll_current_index += 1;
 					scroll_current_index = Math.min(scroll_breakpoints.length - 1, scroll_current_index);
 					scroll_container.scrollTo({ top: scroll_current_index * time_unit, behavior: 'smooth' });
 				}
-				if (minDiff < -100) {
+				if (minDiff < -time_unit/10) {
 					// scrolling down
 					scroll_current_index -= 1;
 					scroll_current_index = Math.max(0, scroll_current_index);
@@ -126,7 +126,7 @@
 						],
 						opacity: [
 							{ from: 0, to: 1, easing: 'easeInOutQuad' },
-							{ from: 1, to: 0, easing: 'easeInOutQuad', delay: 1000 }
+							{ from: 1, to: 0, easing: 'easeInOutQuad', delay: time_unit }
 						]
 					},
 					current_time
@@ -136,7 +136,7 @@
 					{
 						opacity: [
 							{ from: 0, to: 1, easing: 'easeInOutQuad' },
-							{ from: 1, to: 0, easing: 'easeInOutQuad', delay: 1000 }
+							{ from: 1, to: 0, easing: 'easeInOutQuad', delay: time_unit }
 						]
 					},
 					current_time
