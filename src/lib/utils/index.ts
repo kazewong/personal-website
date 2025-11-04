@@ -8,7 +8,7 @@ type PostResolver = {
 
 export const fetchMarkdownPosts = async () => {
 	// const allPostFiles = import.meta.glob('/src/lib/assets/blogs/*.md');
-	const allPostFiles = import.meta.glob("/src/routes/blog/posts/*.md");
+	const allPostFiles = import.meta.glob('/src/routes/blog/posts/*.md');
 	const iterablePostFiles = Object.entries(allPostFiles);
 
 	const allPosts = await Promise.all(

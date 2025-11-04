@@ -25,7 +25,7 @@
 			/>
 		</div> -->
 
-		<!-- <div class="scroll-section">
+<!-- <div class="scroll-section">
 			<div class="timeline-end md:mb-10 flex-1 flex flex-col justify-center">
 				<time class="font-mono italic">2017</time>
 				<div class="text-lg font-black">Goodbye for science</div>

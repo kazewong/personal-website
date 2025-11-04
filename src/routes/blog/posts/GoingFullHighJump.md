@@ -1,10 +1,10 @@
 ---
 title: 'I am going full time in high jump'
 date: '2025-08-20'
-tags: ['High Jump', 'Personal',]
+tags: ['High Jump', 'Personal']
 shortDescription: 'A new page of my life'
 ---
-	
+
 Today I decided to tell my boss at Johns Hopkins University I will not be with them in the future. There are many reasons for this decision, but by far the biggest factor is that I met a legendary coach, <a href="https://en.wikipedia.org/wiki/Jeremy_Fischer_(athlete)">Jeremy Fischer</a>, who lives in San Diego and said he would coach me if I move there. I restarted high jump in 2022, and it has been the absolute highest priority for me. So when offered this opportunity, it is inevitable that I will take it. In November 2025, I will move to San Diego and start training full time with Jeremy.
 
 The long version of the high jump story will have its own videos and posts, and you bet I cannot shut up about it. But this post is about what is going to happen to my life as a scientist.
@@ -17,13 +17,13 @@ It's not like overnight I put on a tin foil hat and start preaching the Earth is
 
 I vividly remember the moments I was originally enthralled by the life style of a scientist:
 
-- *<span style="color:red">[The following part is AI generated, and I think it is funny to see the fact that LLM cannot predict out of distribution thing very well.]</span>* I was in a physics class, and the professor was explaining the concept of "symmetry breaking" in particle physics. The idea that the universe could have been different, but it chose to be this way, was mind-blowing to me. I wanted to understand the world at a fundamental level, and I wanted to contribute to that understanding.
+- _<span style="color:red">[The following part is AI generated, and I think it is funny to see the fact that LLM cannot predict out of distribution thing very well.]</span>_ I was in a physics class, and the professor was explaining the concept of "symmetry breaking" in particle physics. The idea that the universe could have been different, but it chose to be this way, was mind-blowing to me. I wanted to understand the world at a fundamental level, and I wanted to contribute to that understanding.
 
-- *<span style="color:#90ee90">[My actual experience]</span>* It was two distinct moments in form 5 (roughly corresponds to 11th grades in the US): The first one was a graduate from our secondary school just got his PhD in Chemistry, who was the first person from our secondary school who got that I believed, came back for a panel discussion about his journey in one of the regular seminar. I honestly don't remember most of the talk, but one line stuck with me (the exact wording is fading in my memory, and it was in Cantonese): **"No matter how small the topic is, I feel like I am doing something no one else in human history have done it, and I am the first person ever to see the results in front of me."**.
+- _<span style="color:#90ee90">[My actual experience]</span>_ It was two distinct moments in form 5 (roughly corresponds to 11th grades in the US): The first one was a graduate from our secondary school just got his PhD in Chemistry, who was the first person from our secondary school who got that I believed, came back for a panel discussion about his journey in one of the regular seminar. I honestly don't remember most of the talk, but one line stuck with me (the exact wording is fading in my memory, and it was in Cantonese): **"No matter how small the topic is, I feel like I am doing something no one else in human history have done it, and I am the first person ever to see the results in front of me."**.
 
 Not too long after, in one of the English lessions, our English teacher showed us the movie "A Beautiful Mind". There were a series of scene showing John Nash was fully dedicated to his research, writing his equations on the windows, then seasons passed by. **It was at that moment I start longing for this pure dedication to a single purpose.** (That was the beginning of the movie, as for what happened in the remaining part of the story, let's hope I don't run into that.)
 
-It was these two moments that gave me the unreasonable presistance to push through all the hardships I have faced in the past years. I cannot explain why this sense of being at the forefront of human knowledge drilled into my brain so much, but this has become a part of the core of my existence. If I have to summarize this feeling, it would be a *[Kakizome](http://en.wikipedia.org/wiki/Kakizome)* that I saw in Kyoto University when I was visiting: **前人未達**, which roughly translates to "*where the predecessors have not reached*".
+It was these two moments that gave me the unreasonable presistance to push through all the hardships I have faced in the past years. I cannot explain why this sense of being at the forefront of human knowledge drilled into my brain so much, but this has become a part of the core of my existence. If I have to summarize this feeling, it would be a _[Kakizome](http://en.wikipedia.org/wiki/Kakizome)_ that I saw in Kyoto University when I was visiting: **前人未達**, which roughly translates to "_where the predecessors have not reached_".
 
 In recent years, I felt this spirit was fading away. I was still pushing the limit of what can be done in my own field, but I also started to care about publications, citations, grants, job security, my reputation in the field, etc. After I progress in my career, I couldn't help to feel disgusted by the fact that I am no longer as purely intended as I was before.
 I want to go back to who I once was, not chained by the academic system, just going beyond the horizon of humand knowledge.

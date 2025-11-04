@@ -29,20 +29,20 @@
 	<div class="flex justify-between bg-indigo-50 dark:bg-gray-900 {isDarkMode ? 'dark' : ''}">
 		<div class="dropdown dropdown-hover">
 			<summary class="btn px-2 pt-2 bg-transparent border-0 hover:bg-transparent">
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						viewBox="0 0 24 24"
-						stroke-width="2"
-						stroke={isDarkMode ? 'white' : 'currentColor'}
-						class="w-12 h-12 fill-blue-500"
-					>
-						<path
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-						/>
-					</svg>
-				</summary>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 24 24"
+					stroke-width="2"
+					stroke={isDarkMode ? 'white' : 'currentColor'}
+					class="w-12 h-12 fill-blue-500"
+				>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+					/>
+				</svg>
+			</summary>
 			<ul
 				class="menu dropdown-content rounded-box z-1 w-52 p-2 shadow-sm bg-indigo-50 dark:bg-gray-900"
 			>

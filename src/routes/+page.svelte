@@ -29,8 +29,7 @@
 			delay: stagger(50)
 		});
 
-		const code_animation = animate('#code'
-		, {
+		const code_animation = animate('#code', {
 			y: [{ from: '2rem', to: '0', ease: 'outExpo', duration: 600 }],
 			opacity: [{ from: 0, to: 1, duration: 600, ease: 'outExpo' }],
 			delay: stagger(50)

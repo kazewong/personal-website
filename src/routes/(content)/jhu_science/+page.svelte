@@ -16,7 +16,10 @@
 	});
 </script>
 
-<h3 class="flex justify-center text-red-600">This is a page when I was at Johns Hopkins University as a professor, information on this page is outdated.</h3>
+<h3 class="flex justify-center text-red-600">
+	This is a page when I was at Johns Hopkins University as a professor, information on this page is
+	outdated.
+</h3>
 
 <h1 class="flex justify-center">I Do Science</h1>
 
