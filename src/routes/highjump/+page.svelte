@@ -82,13 +82,13 @@
 				// 	'Index:',
 				// 	scroll_current_index
 				// );
-				if (minDiff > time_unit/10) {
+				if (minDiff > time_unit / 10) {
 					// scrolling down
 					scroll_current_index += 1;
 					scroll_current_index = Math.min(scroll_breakpoints.length - 1, scroll_current_index);
 					scroll_container.scrollTo({ top: scroll_current_index * time_unit, behavior: 'smooth' });
 				}
-				if (minDiff < -time_unit/10) {
+				if (minDiff < -time_unit / 10) {
 					// scrolling down
 					scroll_current_index -= 1;
 					scroll_current_index = Math.max(0, scroll_current_index);
@@ -251,34 +251,36 @@
 
 		<!-- High Jump story -->
 		<div class="scroll-section grid-cols-1 grid-rows-1" id="story-section">
-			<div class="hero bg-base-500 min-h-4xl py-4">
-				<div class="hero-content text-center">
+			<div class="bg-base-500 min-h-4xl py-4">
+				<div class=" text-center">
 					<div class="perspective-dramatic perspective-origin-bottom">
-						<h1 class="text-5xl font-bold" id="highjumptitle">My High Jump story</h1>
-						<h1>{year.value}</h1>
+						<h1 class="text-xl font-bold md:text-5xl py-2" id="highjumptitle">
+							My High Jump story
+						</h1>
+						<h1 class="text-xl font-bold md:text-5xl py-2">{year.value}</h1>
 					</div>
 				</div>
 			</div>
 
-			<div class="flex justify-center">
-				<div class="grid place-items-center w-[40%]">
-					{#each storyData as item, i}
+			<div class="flex flex-col justify-center gap-4 md:flex-row">
+				<div class="grid m-auto w-[80%] md:w-[45%] md:place-items-center md:m-2">
+					{#each storyData as item, i (item)}
 						<p
 							id="test-text-{i}"
-							class=" opacity-0 col-start-1 row-start-1 text-sm max-h-64 overflow-y-scroll lg:text-2xl lg:overflow-auto lg:max-h-full"
+							class=" opacity-0 col-start-1 row-start-1 text-sm max-h-64 overflow-y-scroll md:text-lg lg:overflow-auto md:max-h-full"
 						>
 							{item.text}
 						</p>
 					{/each}
 				</div>
-				<div class="grid place-items-center w-[40%]">
-					{#each storyData as item, i}
+				<div class="grid m-auto w-[80%] md:w-[45%] md:place-items-center md:m-2">
+					{#each storyData as item, i (item)}
 						{#if item.image}
 							<img
 								id="test-img-{i}"
 								src={item.image}
 								alt={item.title}
-								class=" opacity-0 col-start-1 row-start-1 text-sm max-h-64 overflow-y-scroll lg:text-2xl lg:overflow-auto lg:max-h-full"
+								class=" opacity-0 col-start-1 row-start-1 text-sm max-h-64 overflow-y-scroll place-self-center lg:text-2xl lg:overflow-auto lg:max-h-full"
 							/>
 						{/if}
 					{/each}

@@ -57,7 +57,7 @@
 </script>
 
 <div
-	class="flex flex-col min-h-screen items-center justify-center px-4 sm:px-6 lg:px-8 my-auto mx-auto max-w-[1024px]"
+	class="flex flex-col min-h-screen items-center justify-center px-4 sm:px-6 lg:px-8 my-auto mx-auto max-w-5xl"
 >
 	<div class="flex">
 		<h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold" id="hello">Hello, I am</h1>
