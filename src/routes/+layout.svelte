@@ -1,6 +1,5 @@
 <script lang="ts">
 	import '../app.css';
-	import { resolve } from '$app/paths';
 
 	import 'katex/dist/katex.min.css';
 	import { dev } from '$app/environment';
@@ -29,8 +28,8 @@
 {#if isMobile}
 	<!-- <div class="flex md:hidden"> -->
 	<div class="flex justify-between bg-indigo-50 dark:bg-gray-900 {isDarkMode ? 'dark' : ''}">
-		<div class="dropdown">
-			<div tabindex="0" role="button" class="px-2 pt-2">
+		<div class="dropdown flex-1">
+			<div tabindex="0" role="button" class="pl-2 pt-2">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 24 24"
@@ -50,7 +49,7 @@
 				class=" dropdown-content menu rounded-box z-1 w-52 p-2 shadow-sm bg-indigo-50 dark:bg-gray-900"
 			>
 				<li>
-					<a href='./'>Home</a>
+					<a href="./">Home</a>
 				</li>
 				<li>
 					<a href="/blog">Blog</a>
@@ -85,6 +84,12 @@
 				</li> -->
 			</ul>
 		</div>
+
+		<div class="flex-1 flex items-center justify-center text-center">
+			<div class="text-2xl font-oswald font-bold">KW</div>
+		</div>
+
+		<div class="flex-1"></div>
 
 		<!-- <div id="NavThemeSwitch" class="px-4 swap swap-rotate">
 			<button onclick={() => (isDarkMode = !isDarkMode)}>
