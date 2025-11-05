@@ -1,5 +1,13 @@
 <script lang="ts">
-	import { animate, stagger, createTimeline, onScroll, utils, ScrollObserver } from 'animejs';
+	import {
+		animate,
+		stagger,
+		createTimeline,
+		onScroll,
+		utils,
+		ScrollObserver,
+		cubicBezier
+	} from 'animejs';
 	import { onMount } from 'svelte';
 	import resultsData from './Results.json';
 	import StoryData from './StoryData.json';
@@ -41,7 +49,7 @@
 		);
 		// Year animation
 		const timeline = createTimeline({
-			defaults: { duration: time_unit, easing: 'linear' },
+			defaults: { duration: time_unit },
 			autoplay: false
 		});
 		let current_time: number = 0;
@@ -55,10 +63,11 @@
 			container: '.scroll-container',
 			enter: 'bottom top',
 			leave: 'top bottom',
-
 			onUpdate: (self) => {
 				timeline.currentTime = self.scroll;
-			}
+			},
+
+			debug: true
 		});
 
 		let scroll_snap_timeout: ReturnType<typeof setTimeout> | null = null;
@@ -82,13 +91,13 @@
 					'Index:',
 					scroll_current_index
 				);
-				if (minDiff > time_unit / 10) {
+				if (minDiff > time_unit / 20) {
 					// scrolling down
 					scroll_current_index += 1;
 					scroll_current_index = Math.min(scroll_breakpoints.length - 1, scroll_current_index);
 					scroll_container.scrollTo({ top: scroll_current_index * time_unit, behavior: 'smooth' });
 				}
-				if (minDiff < -time_unit / 10) {
+				if (minDiff < -time_unit / 20) {
 					// scrolling down
 					scroll_current_index -= 1;
 					scroll_current_index = Math.max(0, scroll_current_index);
@@ -101,14 +110,16 @@
 			'#video-section',
 			{
 				opacity: [{ from: 1, to: 0, duration: time_unit / 2 }],
-				easing: 'inOut'
+				ease: cubicBezier(0.1, 0.7, 0.782, 0.995)
 			},
 			0
 		);
 		timeline.add(
 			'#story-section',
 			{
-				opacity: [{ from: 0, to: 1, easing: 'inOut', duration: time_unit / 4 }]
+				opacity: [
+					{ from: 0, to: 1, ease: cubicBezier(0.1, 0.7, 0.782, 0.995), duration: time_unit / 4 }
+				]
 			},
 			time_unit / 2
 		);
@@ -121,15 +132,20 @@
 					`#test-text-${i}`,
 					{
 						x: [
-							{ from: 100, to: 0, easing: 'inOut' },
-							{ from: 0, to: -100, easing: 'inOut', delay: time_unit }
+							{ from: 100, to: 0, ease: cubicBezier(0.1, 0.7, 0.782, 0.995) },
+							{ from: 0, to: -100, ease: cubicBezier(0.1, 0.7, 0.782, 0.995), delay: time_unit }
 						],
 						opacity: [
-							{ from: 0, to: 1, easing: 'inOut', duration: time_unit / 2 },
+							{
+								from: 0,
+								to: 1,
+								ease: cubicBezier(0.1, 0.7, 0.782, 0.995),
+								duration: time_unit / 2
+							},
 							{
 								from: 1,
 								to: 0,
-								easing: 'inOut',
+								ease: cubicBezier(0.1, 0.7, 0.782, 0.995),
 								duration: time_unit / 4,
 								delay: time_unit / 2
 							}
@@ -141,11 +157,16 @@
 					`#test-img-${i}`,
 					{
 						opacity: [
-							{ from: 0, to: 1, easing: 'inOut', duration: time_unit / 2 },
+							{
+								from: 0,
+								to: 1,
+								ease: cubicBezier(0.1, 0.7, 0.782, 0.995),
+								duration: time_unit / 2
+							},
 							{
 								from: 1,
 								to: 0,
-								easing: 'inOut',
+								ease: cubicBezier(0.1, 0.7, 0.782, 0.995),
 								duration: time_unit / 4,
 								delay: time_unit / 2
 							}
@@ -159,7 +180,7 @@
 						value: item.year,
 						modifier: utils.snap(1),
 						round: 1,
-						easing: 'inOut'
+						ease: cubicBezier(0.1, 0.7, 0.782, 0.995)
 					},
 					current_time
 				);
@@ -169,14 +190,18 @@
 		timeline.add(
 			'#story-section',
 			{
-				opacity: [{ from: 1, to: 0, easing: 'inOut', duration: time_unit / 2 }]
+				opacity: [
+					{ from: 1, to: 0, ease: cubicBezier(0.1, 0.7, 0.782, 0.995), duration: time_unit / 2 }
+				]
 			},
 			current_time
 		);
 		timeline.add(
 			'#results-section',
 			{
-				opacity: [{ from: 0, to: 1, easing: 'inOut', duration: time_unit / 4 }]
+				opacity: [
+					{ from: 0, to: 1, ease: cubicBezier(0.1, 0.7, 0.782, 0.995), duration: time_unit / 4 }
+				]
 			},
 			current_time + time_unit / 2
 		);
@@ -186,14 +211,18 @@
 		timeline.add(
 			'#results-section',
 			{
-				opacity: [{ from: 1, to: 0, easing: 'inOut', duration: time_unit / 2 }]
+				opacity: [
+					{ from: 1, to: 0, ease: cubicBezier(0.1, 0.7, 0.782, 0.995), duration: time_unit / 2 }
+				]
 			},
 			current_time
 		);
 		timeline.add(
 			'#science-section',
 			{
-				opacity: [{ from: 0, to: 1, easing: 'inOut', duration: time_unit / 4 }]
+				opacity: [
+					{ from: 0, to: 1, ease: cubicBezier(0.1, 0.7, 0.782, 0.995), duration: time_unit / 4 }
+				]
 			},
 			current_time + time_unit / 2
 		);
@@ -290,12 +319,12 @@
 			</div>
 		</div>
 
-		<section class="scroll-section opacity-0" id="results-section">
-			<div class="hero bg-base-500 min-h-4xl py-4">
-				<div class="hero-content text-center">
-					<div class=" w-2xl lg:w-4xl">
-						<h1 class="text-5xl font-bold">My competition results</h1>
-						<div class="flex justify-center my-8 w-2xl lg:w-4xl">
+		<section class="scroll-section grid-cols-1 grid-rows-1 opacity-0" id="results-section">
+			<div class="bg-base-500 py-4">
+				<div class="">
+					<div class=" w-full">
+						<h1 class="text-xl text-center md:text-5xl font-bold">My competition results</h1>
+						<div class="flex justify-center my-8 mx-8">
 							<Progression {resultsData} />
 						</div>
 					</div>

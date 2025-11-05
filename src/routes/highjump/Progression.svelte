@@ -216,8 +216,8 @@
 						}
 					},
 					annotation:
-						window.innerWidth < 1000
-							? false
+						window.innerWidth < 800
+							? { annotations: {} }
 							: {
 									annotations: {
 										gaveUpHJ: {
