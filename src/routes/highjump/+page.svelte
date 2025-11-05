@@ -72,16 +72,16 @@
 				const scroll_top = scroll_container.scrollTop;
 				// Find the closest breakpoint in scroll_breakpoints
 				let minDiff = scroll_top - scroll_breakpoints[scroll_current_index];
-				// console.log(
-				// 	'Scroll top:',
-				// 	scroll_top,
-				// 	'Current:',
-				// 	Math.trunc(scroll_top / time_unit),
-				// 	'Diff:',
-				// 	minDiff,
-				// 	'Index:',
-				// 	scroll_current_index
-				// );
+				console.log(
+					'Scroll top:',
+					scroll_top,
+					'Current:',
+					Math.trunc(scroll_top / time_unit),
+					'Diff:',
+					minDiff,
+					'Index:',
+					scroll_current_index
+				);
 				if (minDiff > time_unit / 10) {
 					// scrolling down
 					scroll_current_index += 1;
@@ -94,23 +94,23 @@
 					scroll_current_index = Math.max(0, scroll_current_index);
 					scroll_container.scrollTo({ top: scroll_current_index * time_unit, behavior: 'smooth' });
 				}
-			}, 50); // 150ms debounce
+			}, 30); // 150ms debounce
 		};
 
 		timeline.add(
 			'#video-section',
 			{
-				opacity: [{ from: 1, to: 0 }],
-				easing: 'easeInOutQuad'
+				opacity: [{ from: 1, to: 0, duration: time_unit / 2 }],
+				easing: 'inOut'
 			},
 			0
 		);
 		timeline.add(
 			'#story-section',
 			{
-				opacity: [{ from: 0, to: 1, easing: 'easeInOutQuad' }]
+				opacity: [{ from: 0, to: 1, easing: 'inOut', duration: time_unit / 4 }]
 			},
-			0
+			time_unit / 2
 		);
 
 		// Story animation
@@ -121,12 +121,18 @@
 					`#test-text-${i}`,
 					{
 						x: [
-							{ from: 100, to: 0, easing: 'easeInOutQuad' },
-							{ from: 0, to: -100, easing: 'easeInOutQuad', delay: time_unit }
+							{ from: 100, to: 0, easing: 'inOut' },
+							{ from: 0, to: -100, easing: 'inOut', delay: time_unit }
 						],
 						opacity: [
-							{ from: 0, to: 1, easing: 'easeInOutQuad' },
-							{ from: 1, to: 0, easing: 'easeInOutQuad', delay: time_unit }
+							{ from: 0, to: 1, easing: 'inOut', duration: time_unit / 2 },
+							{
+								from: 1,
+								to: 0,
+								easing: 'inOut',
+								duration: time_unit / 4,
+								delay: time_unit / 2
+							}
 						]
 					},
 					current_time
@@ -135,8 +141,14 @@
 					`#test-img-${i}`,
 					{
 						opacity: [
-							{ from: 0, to: 1, easing: 'easeInOutQuad' },
-							{ from: 1, to: 0, easing: 'easeInOutQuad', delay: time_unit }
+							{ from: 0, to: 1, easing: 'inOut', duration: time_unit / 2 },
+							{
+								from: 1,
+								to: 0,
+								easing: 'inOut',
+								duration: time_unit / 4,
+								delay: time_unit / 2
+							}
 						]
 					},
 					current_time
@@ -147,36 +159,26 @@
 						value: item.year,
 						modifier: utils.snap(1),
 						round: 1,
-						easing: 'easeInOutQuad'
+						easing: 'inOut'
 					},
 					current_time
 				);
 			current_time += time_unit; // 1s display + 1s transition
 		});
 
-		scrollObserver = onScroll({
-			container: '.scroll-container',
-			enter: 'bottom top',
-			leave: 'top bottom',
-
-			onUpdate: (self) => {
-				timeline.currentTime = self.scroll;
-			}
-		});
-
 		timeline.add(
 			'#story-section',
 			{
-				opacity: [{ from: 1, to: 0, easing: 'easeInOutQuad' }]
+				opacity: [{ from: 1, to: 0, easing: 'inOut', duration: time_unit / 2 }]
 			},
 			current_time
 		);
 		timeline.add(
 			'#results-section',
 			{
-				opacity: [{ from: 0, to: 1, easing: 'easeInOutQuad' }]
+				opacity: [{ from: 0, to: 1, easing: 'inOut', duration: time_unit / 4 }]
 			},
-			current_time
+			current_time + time_unit / 2
 		);
 
 		current_time += time_unit * 2;
@@ -184,16 +186,16 @@
 		timeline.add(
 			'#results-section',
 			{
-				opacity: [{ from: 1, to: 0, easing: 'easeInOutQuad' }]
+				opacity: [{ from: 1, to: 0, easing: 'inOut', duration: time_unit / 2 }]
 			},
 			current_time
 		);
 		timeline.add(
 			'#science-section',
 			{
-				opacity: [{ from: 0, to: 1, easing: 'easeInOutQuad' }]
+				opacity: [{ from: 0, to: 1, easing: 'inOut', duration: time_unit / 4 }]
 			},
-			current_time
+			current_time + time_unit / 2
 		);
 
 		// animate('#highjumptitle', rolling_effect());
@@ -250,7 +252,7 @@
 		</div>
 
 		<!-- High Jump story -->
-		<div class="scroll-section grid-cols-1 grid-rows-1" id="story-section">
+		<div class="scroll-section grid-cols-1 grid-rows-1 opacity-0" id="story-section">
 			<div class="bg-base-500 min-h-4xl py-4">
 				<div class=" text-center">
 					<div class="perspective-dramatic perspective-origin-bottom">
@@ -291,9 +293,9 @@
 		<section class="scroll-section opacity-0" id="results-section">
 			<div class="hero bg-base-500 min-h-4xl py-4">
 				<div class="hero-content text-center">
-					<div class="">
+					<div class=" w-2xl lg:w-4xl">
 						<h1 class="text-5xl font-bold">My competition results</h1>
-						<div class="flex justify-center my-8 lg:w-4xl">
+						<div class="flex justify-center my-8 w-2xl lg:w-4xl">
 							<Progression {resultsData} />
 						</div>
 					</div>
