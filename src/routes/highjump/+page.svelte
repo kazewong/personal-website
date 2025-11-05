@@ -66,8 +66,6 @@
 			onUpdate: (self) => {
 				timeline.currentTime = self.scroll;
 			},
-
-			debug: true
 		});
 
 		let scroll_snap_timeout: ReturnType<typeof setTimeout> | null = null;
