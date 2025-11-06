@@ -65,7 +65,7 @@
 			leave: 'top bottom',
 			onUpdate: (self) => {
 				timeline.currentTime = self.scroll;
-			},
+			}
 		});
 
 		let scroll_snap_timeout: ReturnType<typeof setTimeout> | null = null;
@@ -336,6 +336,11 @@
 				<div class="hero-content text-center">
 					<div class="">
 						<h1 class="text-5xl font-bold" id="scientisttitle">I am also a high jump scientist</h1>
+						<h1
+							class="bg-linear-to-r from-red-500 via-yellow-300 to-indigo-40 text-transparent bg-clip-text text-center"
+						>
+							Under constrcution
+						</h1>
 					</div>
 				</div>
 			</div>
