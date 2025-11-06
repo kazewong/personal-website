@@ -157,10 +157,10 @@
 	<h1 class="flex justify-center">My random thoughts</h1>
 
 	<h3 class="font-sans text-justify">
-		Here are a bunch of random posts that I think it would be useful and/or fun to read. For more
-		academic stuff you find here, note that these are mostly some informal ideas I have, so don't
-		run with this too seriously. The rest of the content includes short tutorials, project updates,
-		and some random opinions I have. Enjoy!
+		Here you can find some of my life updates, technical tutorials, crazy ideas, and controversial
+		opinions. Note that some time I like to put on my crazy hat, mostly just to see how things could
+		look like when we go to a hypothetical extreme. That does not mean I live by those opinions and
+		I will tag them as crazy when I think these are ideas I deem stupid too. Anyway, Enjoy!
 	</h3>
 </div>
 
