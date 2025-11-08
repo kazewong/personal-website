@@ -1,8 +1,8 @@
 ---
-title: 'What happens after AI progress reaches the singularity?'
+title: 'Back to studying'
 date: '2025-10-11'
-tags: ['Machine learning', 'AI']
-shortDescription: 'Some postulations on the future of AI'
+tags: ['Data Science']
+shortDescription: 'Patching up holes in my knowledge'
 ---
 
 # Premise

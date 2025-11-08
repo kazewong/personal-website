@@ -1,7 +1,7 @@
 ---
 title: 'Use Typst now'
 date: '2024-11-22'
-tags: ['Type setting', 'Typst']
+tags: [ 'Writing', 'Tool']
 shortDescription: 'Stop using LaTeX'
 ---
 

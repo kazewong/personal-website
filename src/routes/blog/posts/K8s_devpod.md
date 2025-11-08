@@ -1,7 +1,7 @@
 ---
 title: 'Setting up a development environment with Devpod in K8s'
 date: '2025-06-30'
-tags: ['Kubernetes', 'Devpod', 'DevOps', 'Containerization']
+tags: ['Kubernetes',  'DevOps', 'Containerization']
 shortDescription: 'Remote containerized development environment with Devpod in Kubernetes'
 ---
 

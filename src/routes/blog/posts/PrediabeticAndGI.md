@@ -1,7 +1,7 @@
 ---
 title: 'Monitoring my glucose level with a continuous glucose monitor'
 date: '2025-03-20'
-tags: ['Life Style', 'Health', 'Data Science', 'Prediabetic']
+tags: ['Life Style', 'Health', 'Data Science']
 shortDescription: 'Optimizing my diet with data'
 ---
 

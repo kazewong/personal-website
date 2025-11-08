@@ -1,7 +1,7 @@
 ---
 title: 'Trying Grain, a data loader for Jax'
 date: '2024-12-18'
-tags: ['Jax', 'python', 'snippet', 'tutorial', 'grain']
+tags: ['Jax', 'python', 'snippet', 'tutorial', 'tool']
 shortDescription: 'Data loader for Jax'
 ---
 

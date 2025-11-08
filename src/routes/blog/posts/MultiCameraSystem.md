@@ -1,7 +1,7 @@
 ---
 title: 'Multi-camera system for high jump'
 date: '2025-03-13'
-tags: ['High Jump', 'computer vision', 'raspberry pi', 'data science']
+tags: ['High Jump', 'Computer Vision', 'raspberry pi', 'Data Science']
 shortDescription: 'High fps ip camera system'
 ---
 
