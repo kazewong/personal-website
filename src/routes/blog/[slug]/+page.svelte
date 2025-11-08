@@ -25,4 +25,9 @@
         text-decoration: underline;
         color: cyan;
     }
+    
+    .markdown :global(li) {
+        margin-left: 1.5rem;
+        list-style-type: disc;
+    }
 </style>
