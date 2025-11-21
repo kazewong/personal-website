@@ -1,5 +1,5 @@
 // src/routes/api/posts/+server.js
-import { fetchMarkdownPosts } from '$lib/utils';
+import { fetchMarkdownPosts } from '$routes/blog/utils';
 import { json } from '@sveltejs/kit';
 
 type Post = {
