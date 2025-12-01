@@ -1,5 +1,5 @@
 <div class="flex justify-center">
-	<h1 class="px-2">Cooking</h1>
+	<h1 class="px-2"><s class="text-red-500">Diet</s> Smart Eating</h1>
 </div>
 
 <h3 class="font-sans text-justify">
@@ -10,8 +10,9 @@
 
 <h3 class="font-sans text-justify">
 	The problem with being a high jumper is I have to be extremely lean. I am 185cm tall, and my
-	maintaince weight should be around 67kg while cutting down to potentially 63kg or 60kg during
-	competition season This means I need to watch what I eat very closely.
+	maintaince weight should be around 67kg, and I should cutt down to potentially 63kg or 60kg during
+	competition season. At the same time, not eating enough will impede my performance or even lead to
+	injury. This means I need to watch what I eat very closely.
 </h3>
 
 <div class="flex-col justify-center">
@@ -54,11 +55,24 @@
 
 <p>
 	For anyone who has experience with dieting <span class="font-bold">WHILE</span> training will know
-	how difficult it is to cut to around 5-7% body fat while maintaining performance. The most
-	critical part of a successful diet is <span class="font-bold">NOT</span> to rely on will power, but
-	smart planning and preparation. This page is dedicated to tracking my progress, sharing my receipes,
+	how difficult it is to cut to around 5-7% body fat while maintaining performance. <span class="text-white font-bold text-xl">The most
+	critical part of a successful diet is NOT to rely on will power, but
+	smart planning and preparation. </span> This page is dedicated to tracking my progress, sharing my receipes,
 	and experiences along the way.
 </p>
+
+<section>
+	<h1 class="text-center">Data</h1>
+	<p></p>
+</section>
+
+<section>
+	<h1 class="text-center">Inventory</h1>
+</section>
+
+<section>
+	<h1 class="text-center">Recipes</h1>
+</section>
 
 <h1
 	class="bg-linear-to-r from-red-500 via-yellow-300 to-indigo-40 text-transparent bg-clip-text text-center"

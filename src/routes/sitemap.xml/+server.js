@@ -6,7 +6,7 @@ export async function GET() {
 		'/',
 		'/blog',
 		'/highjump',
-		'/cooking',
+		'/food',
 		'/jhu_science',
 		'/code',
 		'/animation',
