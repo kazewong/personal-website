@@ -55,10 +55,12 @@
 
 <p>
 	For anyone who has experience with dieting <span class="font-bold">WHILE</span> training will know
-	how difficult it is to cut to around 5-7% body fat while maintaining performance. <span class="text-white font-bold text-xl">The most
-	critical part of a successful diet is NOT to rely on will power, but
-	smart planning and preparation. </span> This page is dedicated to tracking my progress, sharing my receipes,
-	and experiences along the way.
+	how difficult it is to cut to around 5-7% body fat while maintaining performance.
+	<span class="text-white font-bold text-xl"
+		>The most critical part of a successful diet is NOT to rely on will power, but smart planning
+		and preparation.
+	</span> This page is dedicated to tracking my progress, sharing my receipes, and experiences along
+	the way.
 </p>
 
 <section>
@@ -66,12 +68,30 @@
 	<p></p>
 </section>
 
-<section>
-	<h1 class="text-center">Inventory</h1>
-</section>
-
-<section>
-	<h1 class="text-center">Recipes</h1>
+<section id="meal-design">
+	<h1 class="text-center">Meal design</h1>
+	<p>
+		Instead of just a bunch of recipes, I think it would be more interesting to make this section
+		based on how I design my meals.
+	</p>
+	<h2>Principles</h2>
+	<p>
+		This section goes into the top general principles I employ in keeping myself lean and fueled
+	</p>
+	<h2>Meal Optimization</h2>
+	<p>
+		Make it cheap, make it fast, make it lean. This section is all about choosing the right
+		trade-offs
+	</p>
+	<h2>Auxilary Control</h2>
+	<p>
+		Sometimes the battle is won somewhere else. Here are tricks I use to achive my nutrition goal.
+	</p>
+	<h2>Experiments</h2>
+	<p>
+		Here contains individual experiments I run to potentially improve my diet, or just creating
+		abominations.
+	</p>
 </section>
 
 <h1
