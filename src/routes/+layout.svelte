@@ -63,9 +63,9 @@
 				<!-- <li>
 						<a href="/animation">Animation</a>
 					</li> -->
-				<li>
+				<!-- <li>
 					<a href="/food">Food</a>
-				</li>
+				</li> -->
 				<!-- <li>
 					<details class="dropdown">
 						<summary
@@ -156,9 +156,9 @@
 					<li>
 						<a href="/animation">Animation</a>
 					</li> -->
-					<li>
+					<!-- <li>
 						<a href="/food">Food</a>
-					</li>
+					</li> -->
 					<li>
 						<details class="dropdown">
 							<summary
