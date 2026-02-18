@@ -107,7 +107,7 @@
 		return visibleTags.filter((tag) => tag.name.toLowerCase().startsWith(tagSearch.toLowerCase()));
 	});
 
-	const tagsPerPage = 10;
+	const tagsPerPage = 20;
 	let currentPage = $state(1);
 
 	let paginatedTags = $derived.by(() => {

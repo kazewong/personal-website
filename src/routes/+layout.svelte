@@ -9,6 +9,7 @@
 	import Linkedin_logo_trans from '$lib/assets/favicons/Linkedin_logo_trans.png';
 	import Twitter_logo_trans from '$lib/assets/favicons/Twitter_logo_trans.png';
 	import Youtube_logo_trans from '$lib/assets/favicons/Youtube_logo_trans.png';
+	import Instagram_logo_trans from '$lib/assets/favicons/Instagram_logo_trans.png';
 
 	injectAnalytics({ mode: dev ? 'development' : 'production' });
 	interface Props {
@@ -246,6 +247,15 @@
 					rel="noopener"
 				>
 					<img src={Youtube_logo_trans} width="28" height="28" alt="Youtube" />
+				</a>
+				<a
+					href="https://www.instagram.com/kazehighjump/"
+					title="Instagram"
+					class="dark:invert"
+					target="_blank"
+					rel="noopener"
+				>
+					<img src={Instagram_logo_trans} width="28" height="28" alt="Instagram" />
 				</a>
 				<a href="https://twitter.com/physicskaze" title="Twitter" target="_blank" rel="noopener">
 					<img src={Twitter_logo_trans} width="28" height="28" alt="Twitter" />
