@@ -3,6 +3,8 @@
 	import Linkedin_logo_trans from '$lib/assets/favicons/Linkedin_logo_trans.png';
 	import Twitter_logo_trans from '$lib/assets/favicons/Twitter_logo_trans.png';
 	import Youtube_logo_trans from '$lib/assets/favicons/Youtube_logo_trans.png';
+	import Instagram_logo_trans from '$lib/assets/favicons/Instagram_logo_trans.png';
+	import Substack_logo_trans from '$lib/assets/favicons/Substack_logo_trans.png';
 	import { animate, stagger, text, createTimeline } from 'animejs';
 	import { onMount } from 'svelte';
 
@@ -80,6 +82,12 @@
 		</a>
 		<a href="https://www.youtube.com/channel/UCt6jkLTx5GBkGQ57HiPaeLg" class="px-2 dark:invert">
 			<img src={Youtube_logo_trans} width={40} height={40} alt="Youtube" />
+		</a>
+		<a href="https://www.instagram.com/kazehighjump/" class="px-2 dark:invert">
+			<img src={Instagram_logo_trans} width={40} height={40} alt="Instagram" />
+		</a>
+		<a href="https://kazewong.substack.com/?utm_campaign=profile_chips" class="px-2">
+			<img src={Substack_logo_trans} width={40} height={40} alt="Substack" />
 		</a>
 		<a href="https://twitter.com/physicskaze" class="px-2">
 			<img src={Twitter_logo_trans} width={40} height={40} alt="Twitter" />

@@ -10,6 +10,7 @@
 	import Twitter_logo_trans from '$lib/assets/favicons/Twitter_logo_trans.png';
 	import Youtube_logo_trans from '$lib/assets/favicons/Youtube_logo_trans.png';
 	import Instagram_logo_trans from '$lib/assets/favicons/Instagram_logo_trans.png';
+	import Substack_logo_trans from '$lib/assets/favicons/Substack_logo_trans.png';
 
 	injectAnalytics({ mode: dev ? 'development' : 'production' });
 	interface Props {
@@ -257,9 +258,14 @@
 				>
 					<img src={Instagram_logo_trans} width="28" height="28" alt="Instagram" />
 				</a>
+				<a href="https://kazewong.substack.com/?utm_campaign=profile_chips" title="Substack">
+					<img src={Substack_logo_trans} width="28" height="28" alt="Instagram" />
+				</a>
+
 				<a href="https://twitter.com/physicskaze" title="Twitter" target="_blank" rel="noopener">
 					<img src={Twitter_logo_trans} width="28" height="28" alt="Twitter" />
 				</a>
+
 				<a
 					href="https://www.linkedin.com/in/kazewkwong/"
 					title="Linkedin"
