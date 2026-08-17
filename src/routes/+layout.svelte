@@ -68,6 +68,9 @@
 				<!-- <li>
 					<a href="/food">Food</a>
 				</li> -->
+				<li>
+					<a href="/restaurants">Restaurants</a>
+				</li>
 				<!-- <li>
 					<details class="dropdown">
 						<summary
@@ -171,6 +174,9 @@
 							<ul
 								class="menu dropdown-content rounded-box z-10 w-44 p-2 shadow-sm bg-indigo-50 dark:bg-gray-900"
 							>
+								<li>
+									<a href="/restaurants">Restaurants</a>
+								</li>
 								<li>
 									<a href="/jhu_science">Science</a>
 								</li>
